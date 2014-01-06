@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="81" ManualTCId="UC52-TC113" TCName="TC113 - Resume self-start LI from Current Learning">
+  <WF>
+    <Task Name="Login to LMS" Desc="Performs login of a valid user into LMS" TaskSeq="1" ID="1">Login.XML</Task>
+    <Task Name="FindandLaunchTraining" Desc="FindandLaunchTraining" TaskSeq="2" ID="103">FindandLaunchTraining.XML</Task>
+    <Task Name="CloseTraining" Desc="CloseTraining" TaskSeq="3" ID="104">CloseTraining.XML</Task>
+    <Task Name="Navigate LMS Main Tab" Desc="Navigate LMS Main Tab" TaskSeq="4" ID="48">NavigateLMS_MainTab.XML</Task>
+    <Task Name="Perform Resume Action in Self-started (Home)" Desc="Perform Resume Action in Self-started section in Home Page" TaskSeq="5" ID="143">Perform_ResumeAction_Self-Started.XML</Task>
+    <Task Name="VerifyLinksInLaunchedCourse" Desc="VerifyLinksInLaunchedCourse" TaskSeq="6" ID="105">VerifyLinksInLaunchedCourse.XML</Task>
+    <Task Name="Add BookMark" Desc="Add BookMark" TaskSeq="7" ID="106">Add BookMark.XML</Task>
+    <Task Name="Send Email from Course Viewer" Desc="Send Email from Course Viewer" TaskSeq="8" ID="128">SendEmail_CourseViewer.XML</Task>
+    <Task Name="CloseTraining" Desc="CloseTraining" TaskSeq="9" ID="104">CloseTraining.XML</Task>
+    <Task Name="Perform Actions in Self-Sarted section in Home Pg" Desc="Perform Actions in Self-Sarted section in Home Page" TaskSeq="10" ID="141">PerformAction_SelfStart_HomePage.XML</Task>
+    <Task Name="Verify LI Count in Self-start in Current Learning" Desc="Verify LI Count in Self-start in Current Learning in Home page" TaskSeq="11" ID="151">Verify_LICount_inSelf-Start_Home.XML</Task>
+    <Task Name="LMS_LogOut" Desc="LMS_LogOut" TaskSeq="12" ID="35">LMS_LogOut.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="1" Name="Login to LMS" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;{LMS_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{LMS_URL}">
+            </Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precisionuser74@plms.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precision</Param>
+          </Step>
+          <Step StepId="4" ActionID="60800" ActionName="SelectItem" ObjectName="languages">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="141" Name="Perform Actions in Self-Sarted section in Home Pg" TaskSeq="10">
+        <TaskDataSet Iteration="1">
+          <Step StepId="281" ActionID="60908" ActionName="StoreRowNoOfCellText" ObjectName="SelfStartedLearning">
+            <Param Name="&quot;RowNo_SelfLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_SelfLI">
+            </Param>
+            <Param Name="cell text" ParamSeq="2" Parameterized="1" Data="">Advanced Modeling with Pro/ENGINEER Wildfire 4.0</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="282" ActionID="100015" ActionName="ClickImageAtCellandchooseOkOnConfirmation" ObjectName="SelfStartedLearning">
+            <Param Name="ScrOrTitle" ParamSeq="1" Parameterized="1" Data="">Remove</Param>
+            <Param Name="&quot;{RowNo_SelfLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_SelfLI}">
+            </Param>
+            <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="151" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="151" Name="Verify LI Count in Self-start in Current Learning" TaskSeq="11">
+        <TaskDataSet Iteration="1">
+          <Step StepId="283" ActionID="60903" ActionName="StoreColumnCount" ObjectName="SelfStartedLearning">
+            <Param Name="&quot;Col Count of Self-Start&quot;" ParamSeq="1" Parameterized="0" Data="Col Count of Self-Start">
+            </Param>
+            <Param Name="row" ParamSeq="2" Parameterized="1" Data="">2</Param>
+          </Step>
+          <Step StepId="286" ActionID="60904" ActionName="StoreRowCount" ObjectName="SelfStartedLearning">
+            <Param Name="&quot;Row Count of Self-Start&quot;" ParamSeq="1" Parameterized="0" Data="Row Count of Self-Start">
+            </Param>
+          </Step>
+          <Step StepId="285" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{Col Count of Self-Start}&quot;" ParamSeq="1" Parameterized="0" Data="{Col Count of Self-Start}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">1</Param>
+            <Param Name="&quot;false&quot;" ParamSeq="3" Parameterized="0" Data="false">
+            </Param>
+          </Step>
+          <Step StepId="287" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{Row Count of Self-Start}&quot;" ParamSeq="1" Parameterized="0" Data="{Row Count of Self-Start}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">2</Param>
+            <Param Name="&quot;false&quot;" ParamSeq="3" Parameterized="0" Data="false">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="35" Name="LMS_LogOut" TaskSeq="12">
+        <TaskDataSet Iteration="1">
+          <Step StepId="92" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">3</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="103" Name="FindandLaunchTraining" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="177" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="61" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Precision LMS : Find Training">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Advanced Modeling with Pro/ENGINEER Wildfire 4.0</Param>
+          </Step>
+          <Step StepId="162" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap">
+            </Param>
+          </Step>
+          <Step StepId="170" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="288" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="60" ActionID="60200" ActionName="Set" ObjectName="FT_searchKeyword">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">"Advanced Modeling with Pro/ENGINEER Wildfire 4.0"</Param>
+          </Step>
+          <Step StepId="59" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">All</Param>
+          </Step>
+          <Step StepId="58" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Format">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Online Course</Param>
+          </Step>
+          <Step StepId="57" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">All Languages</Param>
+          </Step>
+          <Step StepId="56" ActionID="60800" ActionName="SelectItem" ObjectName="FT_CreatedBy">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Anyone</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="104" Name="CloseTraining" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="169" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="PageTitle" ParamSeq="1" Parameterized="1" Data="">null</Param>
+          </Step>
+          <Step StepId="187" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="48" Name="Navigate LMS Main Tab" TaskSeq="4">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Welcome to Precision LMS">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Home</Param>
+          </Step>
+          <Step StepId="51" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="143" Name="Perform Resume Action in Self-started (Home)" TaskSeq="5">
+        <TaskDataSet Iteration="1">
+          <Step StepId="155" ActionID="60908" ActionName="StoreRowNoOfCellText" ObjectName="SelfStartedLearning">
+            <Param Name="&quot;RowNo_AssignLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_AssignLI">
+            </Param>
+            <Param Name="cell text" ParamSeq="2" Parameterized="1" Data="">Advanced Modeling with Pro/ENGINEER Wildfire 4.0</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="156" ActionID="60911" ActionName="ClickImageInCell" ObjectName="SelfStartedLearning">
+            <Param Name="imgAlt" ParamSeq="1" Parameterized="1" Data="">Resume</Param>
+            <Param Name="&quot;{RowNo_AssignLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_AssignLI}">
+            </Param>
+            <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="151" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+          <Step StepId="154" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="105" Name="VerifyLinksInLaunchedCourse" TaskSeq="6">
+        <TaskDataSet Iteration="1">
+          <Step StepId="240" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="241" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="244" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="224" ActionID="60202" ActionName="VerifyExistence" ObjectName="Email To">
+            <Param Name="existence" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+          <Step StepId="217" ActionID="60701" ActionName="VerifyExistence" ObjectName="Show Course Map">
+            <Param Name="existence" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+          <Step StepId="221" ActionID="60701" ActionName="VerifyExistence" ObjectName="Lecture Mode">
+            <Param Name="existence" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+          <Step StepId="239" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="106" Name="Add BookMark" TaskSeq="7">
+        <TaskDataSet Iteration="1">
+          <Step StepId="225" ActionID="60200" ActionName="Set" ObjectName="Bookmark name">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC113 Bookmark</Param>
+          </Step>
+          <Step StepId="236" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="128" Name="Send Email from Course Viewer" TaskSeq="8">
+        <TaskDataSet Iteration="1">
+          <Step StepId="245" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="224" ActionID="60200" ActionName="Set" ObjectName="Email To">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">rkishore@ptc.com</Param>
+          </Step>
+          <Step StepId="246" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="104" Name="CloseTraining" TaskSeq="9">
+        <TaskDataSet Iteration="1">
+          <Step StepId="169" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="PageTitle" ParamSeq="1" Parameterized="1" Data="">null</Param>
+          </Step>
+          <Step StepId="187" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

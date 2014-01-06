@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Manage License Delegation list" Desc="Verify Manage License Delegation list" TaskID="122" Path="Verify_ManageLic_Delegation.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="78" stepSeq="2" ObjectId="143" ObjectName="Manage Licenses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="255" stepSeq="3" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;KeyRowNo_DelegateLic&quot;" ParamSeq="1" Parameterized="0" Data="KeyRowNo_DelegateLic" />
+    <Param Name="Library Name to Delegate" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="254" stepSeq="4" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99994" ActionName="ClickLinkTitleAtCell">
+    <Param Name="&quot;Delegate&quot;" ParamSeq="1" Parameterized="0" Data="Delegate" />
+    <Param Name="&quot;{KeyRowNo_DelegateLic}&quot;" ParamSeq="2" Parameterized="0" Data="{KeyRowNo_DelegateLic}" />
+    <Param Name="&quot;6&quot;" ParamSeq="3" Parameterized="0" Data="6" />
+  </Step>
+  <Step StepId="256" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="251" stepSeq="6" ObjectId="324" ObjectName="Current Delegates table" ObjectTypeId="3009" ActionId="60917" ActionName="CompareTableColumnData">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+    <Param Name="User Email IDs" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="92" stepSeq="7" ObjectId="323" ObjectName="Submit Delegate Link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="95" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

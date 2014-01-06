@@ -1,0 +1,284 @@
+//----------------------------------------------------------------------
+// Recorded 6/15/2009 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+var
+
+
+dclparam
+
+
+dclfunc
+
+  function fScenario02
+  var
+    hWebStoredCtx_Precision_LMS_Find_Trainin : number;
+    hWeb0                                    : number;
+  begin
+
+ 
+   WebPageAddUrl("/static/images/find-training/go-arrow.png");
+    WebPageAddUrl("/static/images/global/icons/content/topic_lg.png");
+    WebPageAddUrl("/static/images/e-learning_icon_sm.gif");
+    WebPageAddUrl("/static/images/online_test_icon_sm.gif");
+    // Info: HTTP status "404 Not Found" for URL: https://fusion-lb.ptc.com/static/images/login/arrow.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl("/static/images/login/arrow.gif");
+    ThinkTime(rShortTime);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 7
+ 
+    ThinkTime(rShortTime);
+    WebFormPostEx("https://fusion-lb.ptc.com/plms/app/search", SC02_PLMS_APP_SEARCH003, SC02_PLMS_APP_SEARCH004, 0.56);
+    WebFormPostEx("https://fusion-lb.ptc.com/plms/app/search", SC02_PLMS_APP_SEARCH005, SC02_PLMS_APP_SEARCH006, 13.23);
+ 
+    WebPageAddUrl("/static/images/global/icons/show-more.png");
+    // Redirecting 
+    // https://fusion-lb.ptc.com/plms/app/search?wicket:interface=:2:findTraining:ftSearchForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/plms/app/?wicket:interface=:2:1:::
+    WebPageSubmit(NULL, SC02_PLMS_APP_SEARCH007, "Precision LMS : Find Training (#1)"); // Form 1
+    WebPageStoreContext(hWebStoredCtx_Precision_LMS_Find_Trainin);
+ 
+    WebPageAddUrl("/static/images/e-learning_icon_sm.gif");
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/optimize_mode.gif");
+    WebPageAddUrl("/static/images/excercise_mode.gif");
+    WebPageAddUrl("/static/images/add_bookmark.gif");
+    WebPageAddUrl("/static/images/email.gif");
+    WebPageAddUrl("/static/images/icons/designer/module-standard.gif");
+    WebPageAddUrl("/static/images/icons/designer/topic-standard.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    WebPageAddUrl("/static/images/online_test_icon_sup_sm.gif");
+    WebPageAddUrl("/static/images/indicator.gif");
+    // Redirecting 
+    // https://fusion-lb.ptc.com/plms/app/?wicket:interface=:2:findTraining:selectForm:grouper:findTrainingResults:searchRe
+    // sults:1:courseLink:1:ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/plms/app/?wicket:interface=viewerPageMap:0::::
+    // Warning: Frameset was loaded incomplete, missing frames:
+    // https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1intro.html
+    ThinkTime(rShortTime);
+    WebPageLink("Advanced Detailing", "Course Viewer : Advanced Detailing"); // Link 8
+    WebTcpipConnect(hWeb0, "127.0.0.1", 5152);
+    WebTcpipSendBin(hWeb0, "\h4A51534D0000000300000000"); // JQSM········
+    WebTcpipShutdown(hWeb0);
+ 
+    WebCookieSet(
+      "fusion.viewstate.ieFudge=12%2C94%2C4%2C30; domain=.ptc.com; path=/plms/app; expires=Thu, 24 Jun 2021 12:05:29 GMT", 
+      "https://fusion-lb.ptc.com/plms/app/");
+    WebCookieSet(
+      "fusion.viewstate.currentSessionId=afd70bc7-ee72-48bc-8b39-50caba1a0eb7; domain=.ptc.com; path=/plms/app; expires=Thu, 24"
+      " Jun 2021 12:05:29 GMT", "https://fusion-lb.ptc.com/plms/app/");
+    WebCookieSet("fusion.viewstate.width=225; domain=.ptc.com; path=/plms/app; expires=Thu, 24 Jun 2021 12:05:29 GMT", 
+      "https://fusion-lb.ptc.com/plms/app/");
+    WebCookieSet("fusion.viewstate.minimized=; domain=.ptc.com; path=/plms/app; expires=Thu, 24 Jun 2021 12:05:29 GMT", 
+      "https://fusion-lb.ptc.com/plms/app/");
+    ThinkTime(24.5);
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/", SC02_PLMS_APP_008); // Ajax identified
+ 
+    WebPageAddUrl("/static/images/e-learning_icon_sm.gif");
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/optimize_mode.gif");
+    WebPageAddUrl("/static/images/excercise_mode.gif");
+    WebPageAddUrl("/static/images/add_bookmark.gif");
+    WebPageAddUrl("/static/images/email.gif");
+    WebPageAddUrl("/static/images/icons/designer/module-standard.gif");
+    WebPageAddUrl("/static/images/icons/designer/topic-standard.gif");
+    WebPageAddUrl("/static/images/online_test_icon_sup_sm.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    WebPageAddUrl("/static/images/indicator.gif");
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "Course Viewer : Advanced Detailing (#1)", SC02_PLMS_APP_009);
+ 
+    ThinkTime(rNextPage);
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#1)", SC02_PLMS_APP_010); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s1con.html"
+      , "q1s1con.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#2)", SC02_PLMS_APP_011); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s1app.html"
+      , "q1s1app.html");
+ 
+    ThinkTime(rNextPage);
+    WebFormGet("https://fusion-lb.ptc.com/plms/app/", SC02_PLMS_APP_012, 0.19);
+ 
+    WebPageAddUrl("../core_graphics/note_1.gif");
+    WebPageAddUrl("graphics/view6.jpg");
+    WebPageUrl(
+      "https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s1demo.html", 
+      "q1s1demo.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#3)", SC02_PLMS_APP_013); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s2con.html"
+      , "q1s2con.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#4)", SC02_PLMS_APP_014); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s2app.html"
+      , "q1s2app.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#5)", SC02_PLMS_APP_015); // Ajax identified
+ 
+    WebPageUrl(
+      "https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s2demo.html", 
+      "q1s2demo.html");
+ 
+    ThinkTime(6.1);
+    WebFormGet("https://fusion-lb.ptc.com/plms/app/", SC02_PLMS_APP_016, 0.48);
+ 
+    WebPageUrl(
+      "https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s2prac.html", 
+      "q1s2prac.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#6)", SC02_PLMS_APP_017); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s3con.html"
+      , "q1s3con.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#7)", SC02_PLMS_APP_018); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s3app.html"
+      , "q1s3app.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#8)", SC02_PLMS_APP_019); // Ajax identified
+ 
+    WebPageUrl(
+      "https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s3demo.html", 
+      "q1s3demo.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#9)", SC02_PLMS_APP_020); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s4con.html"
+      , "q1s4con.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#10)", SC02_PLMS_APP_021); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s4app.html"
+      , "q1s4app.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#11)", SC02_PLMS_APP_022); // Ajax identified
+ 
+    WebPageUrl(
+      "https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s4demo.html", 
+      "q1s4demo.html");
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/", "/plms/app/ (#12)", SC02_PLMS_APP_023); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb.ptc.com/content/coach_cp_9a4d1f82-648d-4c7d-be07-6c6c4ab036ac/qadvdtl/q1rdefvw/q1s5con.html"
+      , "q1s5con.html");
+ 
+    ThinkTime(rNextPage);
+    WebFormGet("https://fusion-lb.ptc.com/plms/app/", SC02_PLMS_APP_024, 8.53);
+ 
+    WebPageAddUrl("/static/images/global/arrow-list.png");
+    WebPageAddUrl("/static/images/global/ptcu-logo.png");
+    WebPageAddUrl("/static/images/global/precision-lms-logo.png");
+    WebPageAddUrl("/static/images/global/ptcu-logo-small.png");
+    WebPageAddUrl("/static/images/global/dots.png");
+    // Redirecting https://fusion-lb.ptc.com/plms/app/?wicket:interface=:2:logoutLink:1:ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/plms/app/pages/Login/
+    WebPageLink("Log Out", "Precision LMS : Login (#1)", 1, NULL, hWebStoredCtx_Precision_LMS_Find_Trainin); // Link 4
+    WebPageDeleteContext(hWebStoredCtx_Precision_LMS_Find_Trainin);
+ 
+    // Info: HTTP status "403 Forbidden" for URL: 
+    // https://fusion-lb.ptc.com/web/notifications/fusion_maint_msg.html?0.8460314864133939
+    WebIgnoreServerError(403, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl("https://fusion-lb.ptc.com/web/notifications/fusion_maint_msg.html", "403 Forbidden (#1)", 
+      SC02_WEB_NOTIFICATIONS_FUSION_MAINT_M025);
+  end fScenario02;
+
+dclform
+
+  SC02_PLMS_APP_SEARCH003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTraining:ftSearchForm:categories::IBehaviorListener:0:",
+    "random"                    := "0.005953886468291092";
+
+  SC02_PLMS_APP_SEARCH004:
+    "categories"                := "cat_id_e2747e9a-58b5-4464-b72e-bd3692fa099e",
+    ""                          := "";
+
+  SC02_PLMS_APP_SEARCH005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTraining:ftSearchForm:categories::IBehaviorListener:0:",
+    "random"                    := "0.9183480647516036";
+
+  SC02_PLMS_APP_SEARCH006:
+    "categories"                := "cat_id_e2747e9a-58b5-4464-b72e-bd3692fa099e",
+    ""                          := "";
+
+  SC02_PLMS_APP_SEARCH007:
+    "ftSearchForm_hf_0"         := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "ftSearchType"              := "1", // added
+    "searchField"               := "Advanced Detailing", // changed
+    "categories"                := "cat_id_e2747e9a-58b5-4464-b72e-bd3692fa099e", // added
+    "version"                   := "class_id_0d990888-682b-466f-8061-429c59c94490", // added
+    "search"                    := "" <USE_HTML_VAL> ; // unchanged, value: ""
+
+  SC02_PLMS_APP_008 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer::IBehaviorListener:6:";
+
+  SC02_PLMS_APP_009 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0::::";
+
+  SC02_PLMS_APP_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5038799987486304";
+
+  SC02_PLMS_APP_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7370072689051355";
+
+  SC02_PLMS_APP_012 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8707263776821827";
+
+  SC02_PLMS_APP_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.4334933557532769";
+
+  SC02_PLMS_APP_014 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.21365532565753176";
+
+  SC02_PLMS_APP_015 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7360870072155239";
+
+  SC02_PLMS_APP_016 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.32290382786980315";
+
+  SC02_PLMS_APP_017 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6832669207945355";
+
+  SC02_PLMS_APP_018 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.554508366653394";
+
+  SC02_PLMS_APP_019 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5565797496491003";
+
+  SC02_PLMS_APP_020 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6095133217745451";
+
+  SC02_PLMS_APP_021 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.000162042720981026";
+
+  SC02_PLMS_APP_022 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.23655074160943967";
+
+  SC02_PLMS_APP_023 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.9779553056619081";
+
+  SC02_PLMS_APP_024 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:viewer::IBehaviorListener:6:";
+
+  SC02_WEB_NOTIFICATIONS_FUSION_MAINT_M025:
+    ""                          := "0.8460314864133939";
+

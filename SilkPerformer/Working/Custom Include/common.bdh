@@ -1,0 +1,63 @@
+const
+  //this const is used to replace the server making is easy to change servers
+
+  // Fusion Load Test Dev Environment -- NO LOADBALANCER
+//  SITE                    := "http://fusion-lb1.ptc.com:4080";
+//  SITE_NODE                := "/direct";
+
+  // Fusion Load Test Dev Environment -- THRU LOADBALANCER
+  SITE_NODE                := "/direct";
+  SITE                    := "https://fusion-lb.ptc.com";
+
+
+
+
+//  SITE_CONTENT             := "stablelocal_content";
+  SITE_CONTENT             := "content";
+  
+  
+//  SITE_NODE_NAME           := "stablelocal";
+  SITE_NODE_NAME           := "Unnamed page";
+
+
+
+// For Fusion  hosted install (ldap users)
+  USER_CSV_FILE            := "Precision1000UsersSilkPerformer.csv";
+  MANAGER_CSV_FILE         := "ManagersSilkPerf.csv";
+
+dclrand
+  // Random Variables Section used for think time randomization
+  // For realist load test with increasing workload
+/*******
+  rShortTime              : RndUniF (10.0 .. 10.0);      
+  rQuestionHeading        : RndUniF (20.0 .. 20.0);      
+  rNextQuestion           : RndUniF (20.0 .. 25.0);      
+  rLongNextQuestion       : RndUniF (30.0 .. 35.0);      
+  rSkillQuestion          : RndUniF (180.0 .. 180.0); 
+  rLoginStagger           : RndUniF (3.0 .. 60.0);
+  rNextAssessment         : RndUniF (15.0 .. 25.0);      
+  // Video wait time, between 10 mins and 20 mins
+  rFlashVideoWaitTime      : RndUniF (600.0 .. 1200.0);      
+*******/
+
+  // Random Variables Section used for think time randomization
+  // Much more aggressive to provide more load...
+  rShortTime              : RndUniF (1.0 .. 10.0);      
+  rQuestionHeading        : RndUniF (2.0 .. 10.0);      
+  
+  // typical value for users 
+//  rNextQuestion           : RndUniF (60.0 .. 600.0);
+
+  rNextPage           		: RndUniF (60.0 .. 600.0);  // 1 - 10 min
+  rNextQuestion           : RndUniF (60.0 .. 180.0);//1-3 min
+  rLongNextQuestion       : RndUniF (180.0 .. 300.0);          
+  rSkillQuestion          : RndUniF (300.0 .. 1200.0);   // 5-20 min
+  rLoginStagger           : RndUniF (0.0 .. 0.1);
+  rNextAssessment         : RndUniF (20.0 .. 100.0);      
+  // Video wait time, between 10 mins and 20 mins
+//  rVideoLecture     			: RndUniF (180.0 .. 300.0);		
+//  rVideoDemo     					: RndUniF (600.0 .. 1200.0); 
+  rVideoLecture     			: RndUniF (300.0 .. 900.0);	// 5-15 min	
+  rVideoDemo     					: RndUniF (900.0 .. 2100.0); // 15-35 min
+  
+ 

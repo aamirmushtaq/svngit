@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="61" ManualTCId="Pre_UC48" TCName="UC48 - PreCondition">
+  <WF>
+    <Task Name="Login to IPA" Desc="Performs login of a valid user into IPA" TaskSeq="1" ID="2">IPA Login.XML</Task>
+    <Task Name="CreateLibInitial" Desc="CreateLibInitial" TaskSeq="2" ID="20">CreateLibInitial.XML</Task>
+    <Task Name="CreateLibSelectFinish" Desc="CreateLibSelectFinish" TaskSeq="3" ID="21">CreateLibSelectFinish.XML</Task>
+    <Task Name="SaveLib" Desc="SaveLib" TaskSeq="4" ID="26">SaveLib.XML</Task>
+    <Task Name="Logout From IPA" Desc="Perform logout of the user from IPA" TaskSeq="5" ID="4">IPA Logout.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="2" Name="Login to IPA" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;{IPA_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{IPA_URL}">
+            </Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="IPA_userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof_verify_manager@ptcunoemail.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="IPA_password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof7763</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="20" Name="CreateLibInitial" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="7" ActionID="60200" ActionName="Set" ObjectName="name">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC99 library -1 with Standard Content</Param>
+          </Step>
+          <Step StepId="8" ActionID="60200" ActionName="Set" ObjectName="description">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC99 library -1 with Standard Content</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="21" Name="CreateLibSelectFinish" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="33" ActionID="60924" ActionName="ClickCheckboxInCell" ObjectName="ListOfLearningItems">
+            <Param Name="&quot;{rowNum}&quot;" ParamSeq="1" Parameterized="0" Data="{rowNum}">
+            </Param>
+            <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+          <Step StepId="40" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="255" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;null&quot;" ParamSeq="1" Parameterized="0" Data="null">
+            </Param>
+          </Step>
+          <Step StepId="32" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="254" ActionID="60117" ActionName="SelectFrame" ObjectName="">
+            <Param Name="&quot;relative=top&quot;" ParamSeq="1" Parameterized="0" Data="relative=top">
+            </Param>
+          </Step>
+          <Step StepId="11" ActionID="60800" ActionName="SelectItem" ObjectName="Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+          <Step StepId="12" ActionID="60800" ActionName="SelectItem" ObjectName="Type">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Online Course</Param>
+          </Step>
+          <Step StepId="13" ActionID="60800" ActionName="SelectItem" ObjectName="Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">COACH for Pro/ENGINEER</Param>
+          </Step>
+          <Step StepId="16" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="34" ActionID="60908" ActionName="StoreRowNoOfCellText" ObjectName="ListOfLearningItems">
+            <Param Name="&quot;rowNum&quot;" ParamSeq="1" Parameterized="0" Data="rowNum">
+            </Param>
+            <Param Name="cell text" ParamSeq="2" Parameterized="1" Data="">Assemblies</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="2">
+          <Step StepId="33" ActionID="60924" ActionName="ClickCheckboxInCell" ObjectName="ListOfLearningItems">
+            <Param Name="&quot;{rowNum}&quot;" ParamSeq="1" Parameterized="0" Data="{rowNum}">
+            </Param>
+            <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+          <Step StepId="40" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="255" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;null&quot;" ParamSeq="1" Parameterized="0" Data="null">
+            </Param>
+          </Step>
+          <Step StepId="32" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="254" ActionID="60117" ActionName="SelectFrame" ObjectName="">
+            <Param Name="&quot;relative=top&quot;" ParamSeq="1" Parameterized="0" Data="relative=top">
+            </Param>
+          </Step>
+          <Step StepId="11" ActionID="60800" ActionName="SelectItem" ObjectName="Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">French</Param>
+          </Step>
+          <Step StepId="12" ActionID="60800" ActionName="SelectItem" ObjectName="Type">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Online Course</Param>
+          </Step>
+          <Step StepId="13" ActionID="60800" ActionName="SelectItem" ObjectName="Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Arbortext</Param>
+          </Step>
+          <Step StepId="16" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="34" ActionID="60908" ActionName="StoreRowNoOfCellText" ObjectName="ListOfLearningItems">
+            <Param Name="&quot;rowNum&quot;" ParamSeq="1" Parameterized="0" Data="rowNum">
+            </Param>
+            <Param Name="cell text" ParamSeq="2" Parameterized="1" Data="">Arbortext 5.2 - Arbortext Editor - Utilisation du balisage structuré</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="26" Name="SaveLib" TaskSeq="4">
+        <TaskDataSet Iteration="1">
+          <Step StepId="4" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="2" ActionID="60106" ActionName="PressKeys" ObjectName="">
+            <Param Name="&quot;~{ENTER~}&quot;" ParamSeq="1" Parameterized="0" Data="~{ENTER~}">
+            </Param>
+          </Step>
+          <Step StepId="3" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">4</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="4" Name="Logout From IPA" TaskSeq="5">
+        <TaskDataSet Iteration="1">
+          <Step StepId="35" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">4</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

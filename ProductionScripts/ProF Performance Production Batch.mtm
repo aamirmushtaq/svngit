@@ -1,0 +1,21 @@
+[Files]
+NumberOfFiles=5
+File1=D:\ProductionScripts\sc_I-Mode_Assessment_Production;1
+File2=D:\ProductionScripts\sc_S-Mode_Assessment_Production;1
+File3=D:\ProductionScripts\sc_IN_RE_03_Manag_Assess_Reports(SingleUser);0
+File4=D:\ProductionScripts\sc_IN_UM_01_Manager_Team;0
+File5=D:\ProductionScripts\sc_ST_RE_03_Admin_Assess_Reports;0
+[Report]
+CreateReport=Yes
+DefaultLocation=Yes
+ViewReport=Yes
+ReportHeader=Yes
+RunStartedHeader=Yes
+RunEndedHeader=Yes
+ReportLocation=Yes
+IterationsHeader=Yes
+[Mail]
+SendMail=2
+To=kkapoor@ptc.com;rkishore@ptc.com
+Subject=Pro/F Production Regression Batch Results.
+Message=Pro/F Production Regression Batch will run everyday twice on QA Test Machine at 4:00AM EST and at 5:00PM EST.E-mail is sent to QA Team with attchments of the batch results.Refer to Wiki site for more details http://sspwiki.ptc.com/confluence/display/AC/System+FAQ

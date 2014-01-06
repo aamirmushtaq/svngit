@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify License in My Accounts for Linked Lib" Desc="Verify License in My Accounts for Order with Linked Libraries" TaskID="83" Path="VerifyLic_My_Accounts_LinkedLib.XML">
+  <Step StepId="204" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="203" stepSeq="2" ObjectId="279" ObjectName="License details Table" ObjectTypeId="3009" ActionId="60918" ActionName="VerifyDataExistInColumn">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+    <Param Name="License Type" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

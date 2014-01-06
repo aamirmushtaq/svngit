@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="AssignLearningPath" Desc="AssignLearningPath" TaskID="63" Path="AssignLearningPath.XML">
+  <Step StepId="51" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="50" stepSeq="2" ObjectId="148" ObjectName="Assign Learning" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="63" stepSeq="3" ObjectId="249" ObjectName="ALW_LearningPathRadio" ObjectTypeId="3005" ActionId="60504" ActionName="Select" />
+  <Step StepId="66" stepSeq="4" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="65" stepSeq="5" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;rowLP&quot;" ParamSeq="1" Parameterized="0" Data="rowLP" />
+    <Param Name="Learning Path" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="109" stepSeq="6" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99999" ActionName="ClickRadioInCell">
+    <Param Name="&quot;{rowLP}&quot;" ParamSeq="1" Parameterized="0" Data="{rowLP}" />
+    <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="106" stepSeq="7" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+</Task>

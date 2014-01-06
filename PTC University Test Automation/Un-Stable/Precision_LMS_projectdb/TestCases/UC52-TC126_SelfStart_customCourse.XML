@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="88" ManualTCId="UC52-TC126" TCName="TC126 - Self-start My Organizaition Custom Course">
+  <WF>
+    <Task Name="Login to LMS" Desc="Performs login of a valid user into LMS" TaskSeq="1" ID="1">Login.XML</Task>
+    <Task Name="Navigate LMS Main Tab" Desc="Navigate LMS Main Tab" TaskSeq="2" ID="48">NavigateLMS_MainTab.XML</Task>
+    <Task Name="Select function from Administration page" Desc="Select any activity in Administration page, example-Manage learning, users, reports, content design etc" TaskSeq="3" ID="57">SelectAdministrationFunction.XML</Task>
+    <Task Name="Create Empty Course" Desc="Create Empty Course function" TaskSeq="4" ID="53">CreateEmptyCourse.XML</Task>
+    <Task Name="Verify Empty Course created" Desc="Verify Empty Course created successfully" TaskSeq="5" ID="58">VerifyEmptyCourseCreation.XML</Task>
+    <Task Name="Promote Course from Dev to Released State" Desc="Promote Course from development to Released State" TaskSeq="6" ID="59">PromoteCourse_ReleasedState.XML</Task>
+    <Task Name="Find Training and Open Course Details light box" Desc="Find Training and Open the Course Details light box" TaskSeq="7" ID="144">FindTraining_OpenCourseDetails_popup.XML</Task>
+    <Task Name="Verify Course Details popup" Desc="Verify Course Details popup" TaskSeq="8" ID="145">Verify_CourseDetails_popup.XML</Task>
+    <Task Name="Send Email from Course Details Popup" Desc="Send Email operation from Course Details Popup" TaskSeq="9" ID="135">SendEmail_Course_Details_Popup.XML</Task>
+    <Task Name="Launch Course from Course Details popup" Desc="Launch Course from Course Details popup" TaskSeq="10" ID="136">LaunchCourse_CourseDetails_popup.XML</Task>
+    <Task Name="VerifyLinksInLaunchedCourse" Desc="VerifyLinksInLaunchedCourse" TaskSeq="11" ID="105">VerifyLinksInLaunchedCourse.XML</Task>
+    <Task Name="Add BookMark" Desc="Add BookMark" TaskSeq="12" ID="106">Add BookMark.XML</Task>
+    <Task Name="Send Email from Course Viewer" Desc="Send Email from Course Viewer" TaskSeq="13" ID="128">SendEmail_CourseViewer.XML</Task>
+    <Task Name="CloseTraining" Desc="CloseTraining" TaskSeq="14" ID="104">CloseTraining.XML</Task>
+    <Task Name="Navigate LMS Main Tab" Desc="Navigate LMS Main Tab" TaskSeq="15" ID="48">NavigateLMS_MainTab.XML</Task>
+    <Task Name="Perform Actions in Self-Sarted section in Home Pg" Desc="Perform Actions in Self-Sarted section in Home Page" TaskSeq="16" ID="141">PerformAction_SelfStart_HomePage.XML</Task>
+    <Task Name="Verify Completed Learnings Section in Home Page" Desc="Verify Completed Learnings Tab in Home Page" TaskSeq="17" ID="133">Verify_CompletedLearningSection_HomePg.XML</Task>
+    <Task Name="LMS_LogOut" Desc="LMS_LogOut" TaskSeq="18" ID="35">LMS_LogOut.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="1" Name="Login to LMS" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;{LMS_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{LMS_URL}">
+            </Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precisionuser75@plms.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precision</Param>
+          </Step>
+          <Step StepId="4" ActionID="60800" ActionName="SelectItem" ObjectName="languages">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="136" Name="Launch Course from Course Details popup" TaskSeq="10">
+        <TaskDataSet Iteration="1">
+          <Step StepId="271" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap">
+            </Param>
+          </Step>
+          <Step StepId="270" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">3</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="105" Name="VerifyLinksInLaunchedCourse" TaskSeq="11">
+        <TaskDataSet Iteration="1">
+          <Step StepId="240" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="241" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="244" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="224" ActionID="60202" ActionName="VerifyExistence" ObjectName="Email To">
+            <Param Name="existence" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+          <Step StepId="217" ActionID="60701" ActionName="VerifyExistence" ObjectName="Show Course Map">
+            <Param Name="existence" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+          <Step StepId="221" ActionID="60701" ActionName="VerifyExistence" ObjectName="Lecture Mode">
+            <Param Name="existence" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+          <Step StepId="239" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="106" Name="Add BookMark" TaskSeq="12">
+        <TaskDataSet Iteration="1">
+          <Step StepId="225" ActionID="60200" ActionName="Set" ObjectName="Bookmark name">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC126 Bookmark</Param>
+          </Step>
+          <Step StepId="236" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="128" Name="Send Email from Course Viewer" TaskSeq="13">
+        <TaskDataSet Iteration="1">
+          <Step StepId="245" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="224" ActionID="60200" ActionName="Set" ObjectName="Email To">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">rkishore@ptc.com</Param>
+          </Step>
+          <Step StepId="246" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="104" Name="CloseTraining" TaskSeq="14">
+        <TaskDataSet Iteration="1">
+          <Step StepId="169" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="PageTitle" ParamSeq="1" Parameterized="1" Data="">null</Param>
+          </Step>
+          <Step StepId="187" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="48" Name="Navigate LMS Main Tab" TaskSeq="15">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Welcome to Precision LMS">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Home</Param>
+          </Step>
+          <Step StepId="51" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="141" Name="Perform Actions in Self-Sarted section in Home Pg" TaskSeq="16">
+        <TaskDataSet Iteration="1">
+          <Step StepId="281" ActionID="60908" ActionName="StoreRowNoOfCellText" ObjectName="SelfStartedLearning">
+            <Param Name="&quot;RowNo_SelfLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_SelfLI">
+            </Param>
+            <Param Name="cell text" ParamSeq="2" Parameterized="1" Data="">TC126 - Custom Course</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="282" ActionID="100015" ActionName="ClickImageAtCellandchooseOkOnConfirmation" ObjectName="SelfStartedLearning">
+            <Param Name="ScrOrTitle" ParamSeq="1" Parameterized="1" Data="">Mark Complete</Param>
+            <Param Name="&quot;{RowNo_SelfLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_SelfLI}">
+            </Param>
+            <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="151" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="133" Name="Verify Completed Learnings Section in Home Page" TaskSeq="17">
+        <TaskDataSet Iteration="1">
+          <Step StepId="285" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="60912" ActionName="StoreRowNoContainingCellText" ObjectName="Completed Learning Table">
+            <Param Name="&quot;RowNo_CompleteLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_CompleteLI">
+            </Param>
+            <Param Name="cellText" ParamSeq="2" Parameterized="1" Data="">TC126 - Custom Course</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="268" ActionID="60906" ActionName="VerifyCellText" ObjectName="Completed Learning Table">
+            <Param Name="data" ParamSeq="1" Parameterized="1" Data="">---</Param>
+            <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_CompleteLI}">
+            </Param>
+            <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="269" ActionID="60906" ActionName="VerifyCellText" ObjectName="Completed Learning Table">
+            <Param Name="data" ParamSeq="1" Parameterized="1" Data="">-</Param>
+            <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_CompleteLI}">
+            </Param>
+            <Param Name="&quot;5&quot;" ParamSeq="3" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="281" ActionID="60925" ActionName="VerifyImageInCell" ObjectName="Completed Learning Table">
+            <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="1" Parameterized="0" Data="{RowNo_CompleteLI}">
+            </Param>
+            <Param Name="&quot;6&quot;" ParamSeq="2" Parameterized="0" Data="6">
+            </Param>
+            <Param Name="ScrOrTitle" ParamSeq="3" Parameterized="1" Data="">Review</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="35" Name="LMS_LogOut" TaskSeq="18">
+        <TaskDataSet Iteration="1">
+          <Step StepId="92" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">2</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="48" Name="Navigate LMS Main Tab" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Welcome to Precision LMS">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Administration</Param>
+          </Step>
+          <Step StepId="51" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="57" Name="Select function from Administration page" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Precision LMS : Administration">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Manage Courses &amp; Assessments</Param>
+          </Step>
+          <Step StepId="66" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="53" Name="Create Empty Course" TaskSeq="4">
+        <TaskDataSet Iteration="1">
+          <Step StepId="57" ActionID="60200" ActionName="Set" ObjectName="Duration Hours">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">1</Param>
+          </Step>
+          <Step StepId="56" ActionID="60200" ActionName="Set" ObjectName="Duration Minutes">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">20</Param>
+          </Step>
+          <Step StepId="83" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Manage Courses &amp; Assessments Page">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Licensing</Param>
+          </Step>
+          <Step StepId="65" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="85" ActionID="60800" ActionName="SelectItem" ObjectName="Custom Library Selection">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">PTC Test Org Custom Library</Param>
+          </Step>
+          <Step StepId="84" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="64" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Course Designer">
+            <Param Name="&quot;Link to My Own Topic&quot;" ParamSeq="1" Parameterized="0" Data="Link to My Own Topic">
+            </Param>
+          </Step>
+          <Step StepId="67" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="54" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Course Designer">
+            <Param Name="&quot;Save &amp; Close&quot;" ParamSeq="1" Parameterized="0" Data="Save &amp; Close">
+            </Param>
+          </Step>
+          <Step StepId="68" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+          <Step StepId="51" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="52" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Manage Courses &amp; Assessments Choice Popup">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Start with an empty course</Param>
+          </Step>
+          <Step StepId="53" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="61" ActionID="60200" ActionName="Set" ObjectName="Title">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC126 - Custom Course</Param>
+          </Step>
+          <Step StepId="60" ActionID="60200" ActionName="Set" ObjectName="Description_1">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC126 - Custom Course</Param>
+          </Step>
+          <Step StepId="59" ActionID="60800" ActionName="SelectItem" ObjectName="Category_1">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Pro/ENGINEER</Param>
+          </Step>
+          <Step StepId="58" ActionID="60800" ActionName="SelectItem" ObjectName="Version">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Wildfire 3.0</Param>
+          </Step>
+          <Step StepId="55" ActionID="60800" ActionName="SelectItem" ObjectName="Language_1">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="58" Name="Verify Empty Course created" TaskSeq="5">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60918" ActionName="VerifyDataExistInColumn" ObjectName="Custom Contents table">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+            <Param Name="columndata" ParamSeq="2" Parameterized="1" Data="">TC126 - Custom Course</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="59" Name="Promote Course from Dev to Released State" TaskSeq="6">
+        <TaskDataSet Iteration="1">
+          <Step StepId="74" ActionID="60912" ActionName="StoreRowNoContainingCellText" ObjectName="Custom Contents table">
+            <Param Name="&quot;ExpRowNo&quot;" ParamSeq="1" Parameterized="0" Data="ExpRowNo">
+            </Param>
+            <Param Name="cellText" ParamSeq="2" Parameterized="1" Data="">TC126 - Custom Course</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="78" ActionID="60918" ActionName="VerifyDataExistInColumn" ObjectName="Custom Contents table">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+            <Param Name="columndata" ParamSeq="2" Parameterized="1" Data="">TC126 - Custom Course</Param>
+          </Step>
+          <Step StepId="86" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="70" ActionID="60911" ActionName="ClickImageInCell" ObjectName="Custom Contents table">
+            <Param Name="&quot;Promote&quot;" ParamSeq="1" Parameterized="0" Data="Promote">
+            </Param>
+            <Param Name="&quot;{ExpRowNo}&quot;" ParamSeq="2" Parameterized="0" Data="{ExpRowNo}">
+            </Param>
+            <Param Name="&quot;7&quot;" ParamSeq="3" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+          <Step StepId="75" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="118" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;120&quot;" ParamSeq="1" Parameterized="0" Data="120">
+            </Param>
+          </Step>
+          <Step StepId="87" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+          <Step StepId="80" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="144" Name="Find Training and Open Course Details light box" TaskSeq="7">
+        <TaskDataSet Iteration="1">
+          <Step StepId="170" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="60" ActionID="60200" ActionName="Set" ObjectName="FT_searchKeyword">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">"TC126 - Custom Course"</Param>
+          </Step>
+          <Step StepId="59" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Pro/ENGINEER</Param>
+          </Step>
+          <Step StepId="58" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Format">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Online Course</Param>
+          </Step>
+          <Step StepId="57" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+          <Step StepId="56" ActionID="60800" ActionName="SelectItem" ObjectName="FT_CreatedBy">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">My Organization</Param>
+          </Step>
+          <Step StepId="177" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="145" Name="Verify Course Details popup" TaskSeq="8">
+        <TaskDataSet Iteration="1">
+          <Step StepId="156" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Details table">
+            <Param Name="&quot;1&quot;" ParamSeq="1" Parameterized="0" Data="1">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Duration (hh :mm)^01:20</Param>
+          </Step>
+          <Step StepId="155" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Details table">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Assessment included^No</Param>
+          </Step>
+          <Step StepId="160" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Details table">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Category &amp; version^Pro/ENGINEER - Wildfire 3.0</Param>
+          </Step>
+          <Step StepId="161" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Details table">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Language^English</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="135" Name="Send Email from Course Details Popup" TaskSeq="9">
+        <TaskDataSet Iteration="1">
+          <Step StepId="271" ActionID="60200" ActionName="Set" ObjectName="Email To">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">rkishore@ptc.com</Param>
+          </Step>
+          <Step StepId="1" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

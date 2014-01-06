@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Perform Resume Action in Self-started (Home)" Desc="Perform Resume Action in Self-started section in Home Page" TaskID="143" Path="Perform_ResumeAction_Self-Started.XML">
+  <Step StepId="155" stepSeq="1" ObjectId="115" ObjectName="SelfStartedLearning" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;RowNo_AssignLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_AssignLI" />
+    <Param Name="LI Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="156" stepSeq="2" ObjectId="115" ObjectName="SelfStartedLearning" ObjectTypeId="3009" ActionId="60911" ActionName="ClickImageInCell">
+    <Param Name="Action to Perform" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowNo_AssignLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_AssignLI}" />
+    <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="151" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7" />
+  </Step>
+  <Step StepId="154" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap" />
+  </Step>
+</Task>

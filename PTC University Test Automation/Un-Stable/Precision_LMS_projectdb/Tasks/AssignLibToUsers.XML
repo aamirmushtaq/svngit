@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="AssignLibToUsers" Desc="AssignLibToUsers" TaskID="32" Path="AssignLibToUsers.XML">
+  <Step StepId="51" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="50" stepSeq="2" ObjectId="148" ObjectName="Assign Learning" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="63" stepSeq="3" ObjectId="188" ObjectName="ALW_OnlineCourse" ObjectTypeId="3005" ActionId="60504" ActionName="Select" />
+  <Step StepId="66" stepSeq="4" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="65" stepSeq="5" ObjectId="154" ObjectName="ALW_Select Learning" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="64" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="70" stepSeq="7" ObjectId="191" ObjectName="ALW_SearchLibName" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Library Name" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="69" stepSeq="8" ObjectId="197" ObjectName="FT_Category" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Category" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="68" stepSeq="9" ObjectId="195" ObjectName="FT_Format" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Format" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="67" stepSeq="10" ObjectId="193" ObjectName="FT_Language" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="73" stepSeq="11" ObjectId="194" ObjectName="FT_CreatedBy" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="CreatedBy" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="72" stepSeq="12" ObjectId="190" ObjectName="ALW_SearchBtn" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="99" stepSeq="13" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="94" stepSeq="14" ObjectId="215" ObjectName="SLI_coursetoSelect" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="101" stepSeq="15" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="105" stepSeq="16" ObjectId="229" ObjectName="SLI_OkBtn" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="104" stepSeq="17" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;15&quot;" ParamSeq="1" Parameterized="0" Data="15" />
+  </Step>
+  <Step StepId="106" stepSeq="18" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="107" stepSeq="19" ObjectId="208" ObjectName="Select User" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="108" stepSeq="20" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+</Task>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Assign Learning Wizard Step 1 - 2" Desc="Assign Learning Wizard acitivty for Step 1 and 2" TaskID="95" Path="AssignLearningWizard_Step_1-2.XML">
+  <Step StepId="211" stepSeq="1" ObjectId="188" ObjectName="ALW_OnlineCourse" ObjectTypeId="3005" ActionId="60504" ActionName="Select" />
+  <Step StepId="210" stepSeq="2" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="209" stepSeq="3" ObjectId="189" ObjectName="ALW_SelectLearning" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="1" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="wait in Assign LI" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

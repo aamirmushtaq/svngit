@@ -1,0 +1,18 @@
+[Files]
+NumberOfFiles=2
+File1=D:\Fusion_QA\Automation\Scripts\sc_IPA_UAT;1
+File2=D:\Fusion_QA\Automation\Scripts\sc_LMS_UAT;1
+[Report]
+CreateReport=Yes
+DefaultLocation=Yes
+ViewReport=Yes
+ReportHeader=Yes
+RunStartedHeader=Yes
+RunEndedHeader=Yes
+ReportLocation=Yes
+IterationsHeader=Yes
+[Mail]
+SendMail=3
+To=fusion-qa@ptc.com
+Subject=UAT_Test results from batch run.
+Message=Precision UAT scripts Batch will run everyday twice on Automation Machine at 04:00pm IST(6:30am EST) & at 3:00am IST(5:30pm EST).E-mail is sent to fusion-qa@ptc.com with attachments of the batch results.Total Batch Run time-1hr.Refer to Wiki site for more details on how to viewresults. http://sspwiki.ptc.com/confluence/display/pjx/QA+Documentation.

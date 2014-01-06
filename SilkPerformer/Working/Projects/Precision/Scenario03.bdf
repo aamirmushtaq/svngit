@@ -1,0 +1,427 @@
+//----------------------------------------------------------------------
+// Recorded 2009-06-10 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+@codepage(1252)
+
+benchmark SilkPerformerRecorder
+
+use "WebAPI.bdh"
+
+dcluser
+  user
+    VUser
+  transactions
+    TInit           : begin;
+    TMain           : 1;
+
+var
+
+dclrand
+
+dcltrans
+  transaction TInit
+  begin
+    WebSetBrowser(WEB_BROWSER_MSIE6);
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    //WebSetUserBehavior(WEB_USERBEHAVIOR_FIRST_TIME);
+    //WebSetDocumentCache(true, WEB_CACHE_CHECK_SESSION);
+  end TInit;
+
+  transaction TMain
+  var
+    hWebStoredCtx_Precision_LMS_Find_Trainin : number;
+  begin
+    // Redirecting -> (redirection) https://fusion-lb2.ptc.com/plms/
+    WebCookieSet("lang=en; domain=.ptc.com; path=/; expires=Sat, 23 Oct 2010 11:16:57 GMT", "https://fusion-lb2.ptc.com/plms");
+    WebCookieSet("Apache=132.253.104.16.1244456216955970; domain=.ptc.com; path=/; expires=Mon, 10 Jun 2019 11:16:09 GMT", 
+      "https://fusion-lb2.ptc.com/plms");
+    WebCookieSet("firstname=Alexander; domain=.ptc.com; path=/; expires=Mon, 10 Jun 2019 11:16:09 GMT", 
+      "https://fusion-lb2.ptc.com/plms");
+    WebCookieSet("uid=anowak; domain=.ptc.com; path=/; expires=Mon, 10 Jun 2019 11:16:09 GMT", "https://fusion-lb2.ptc.com/plms"
+      );
+    WebPageParseUrl("HTTP meta refresh tag in page plms", "0; url=", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl("https://fusion-lb2.ptc.com/plms", "plms");
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageAddUrl("/static/images/login/login-top.jpg");
+    WebPageAddUrl("/static/images/login/login-bottom.jpg");
+    WebPageAddUrl("/static/images/login/arrow.gif");
+    WebPageAddUrl("/static/images/login/login-box-top.gif");
+    WebPageAddUrl("/static/images/login/login-box-bottom.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    // Redirecting https://fusion-lb2.ptc.com/plms/app
+    // -> (redirection) https://fusion-lb2.ptc.com/plms/app/
+    // -> (redirection) https://fusion-lb2.ptc.com/plms/app/pages/Landing/
+    // -> (redirection) https://fusion-lb2.ptc.com/plms/app/pages/Login/;jsessionid=D0D088F6546F32D9E72B39E09170B8A8.jvm2
+    WebPageLink("HTTP meta refresh tag in page plms", "Precision LMS : Login");
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://fusion-lb2.ptc.com/web/notifications/fusion_maint_msg.html?0.9686211664592549
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    ThinkTime(5.4);
+    WebPageUrl("https://fusion-lb2.ptc.com/web/notifications/fusion_maint_msg.html", "404 Not Found", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M001);
+ 
+    ThinkTime(8.7);
+    WebUrl("https://fusion-lb2.ptc.com/static/images/indicator.gif", 32.13);
+    // Login
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/javascript/firebug/firebug.html", "Firebug");
+ 
+    WebPageBack(2);
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_003);
+    WebPageSubmit(NULL, PLMS_APP_002, "/plms/app/"); // Form 1
+ 
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/header_banner.jpg");
+    WebPageAddUrl("/static/images/nav_nubbin.gif");
+    WebPageAddUrl("/static/images/tabs/orange_left.gif");
+    WebPageAddUrl("/static/images/tabs/orange_right.gif");
+    WebPageAddUrl("/static/images/tabs/blue_left.gif");
+    WebPageAddUrl("/static/images/tabs/blue_right.gif");
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/pages/Landing/", "Welcome to Precision LMS");
+ 
+    ThinkTime(6.0);
+    WebUrl("https://fusion-lb2.ptc.com/static/images/table/wicket_orderUp.gif", 1.83);
+    WebUrl("https://fusion-lb2.ptc.com/static/images/drop_shadow_footer.jpg", 12.92);
+    // find training
+ 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    WebPageAddUrl("/static/images/close_box.gif");
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+    WebPageStoreContext(hWebStoredCtx_Precision_LMS_Find_Trainin);
+    // Search tab
+ 
+    ThinkTime(19.5);
+    WebPageUrl("https://fusion-lb2.ptc.com/static/javascript/firebug/firebug.html", "Firebug (#1)");
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/search", PLMS_APP_SEARCH005);
+    WebPageSubmit(NULL, PLMS_APP_SEARCH004, "search"); // Form 1
+    // Search for course
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/expand.gif", FORM_NULL, 4);
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/search", PLMS_APP_SEARCH007);
+    ThinkTime(37.5);
+    WebPageSubmit(NULL, PLMS_APP_SEARCH006, "search (#1)"); // Form 1
+    // Launch course
+ 
+    ThinkTime(46.3);
+    MeasureStart("Launch Course");
+ 
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/e-learning_icon_sm-active.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/optimize_mode.gif");
+    WebPageAddUrl("/static/images/excercise_mode.gif");
+    WebPageAddUrl("/static/images/add_bookmark.gif");
+    WebPageAddUrl("/static/images/email.gif");
+    WebPageAddUrl("/static/images/viewer/selected_arrow.gif");
+    WebPageAddUrl("/static/images/online_test_icon_sup_sm.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    // Redirecting -> (redirection) https://fusion-lb2.ptc.com/plms/app/?wicket:interface=viewerPageMap:0::::
+    WebPageParseUrl("Custom Frame in page Course Viewer : Advanced Assembly Management", "content\" src=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/search", "Course Viewer : Advanced Assembly Management", PLMS_APP_SEARCH008)
+      ;
+ 
+    ThinkTime(8.9);
+    WebPageUrl("https://fusion-lb2.ptc.com/static/javascript/firebug/firebug.html", "Firebug (#2)");
+    MeasureStop("Launch Course");
+ 
+    // Click on first topic
+ 
+    ThinkTime(62.5);
+    WebUrl("https://fusion-lb2.ptc.com/static/images/indicator.gif", 0.05);
+    WebCookieSet(
+      "fusion.viewstate.ieFudge=12%2C31%2C4%2C37; domain=.ptc.com; path=/plms/app; expires=Mon, 10 Jun 2019 11:20:34 GMT", 
+      "https://fusion-lb2.ptc.com/plms/app/");
+    WebCookieSet(
+      "fusion.viewstate.currentSessionId=5069e3fb-d311-48b6-aa89-0bec202ee206; domain=.ptc.com; path=/plms/app; expires=Mon, 10"
+      " Jun 2019 11:20:34 GMT", "https://fusion-lb2.ptc.com/plms/app/");
+    WebCookieSet("fusion.viewstate.width=227; domain=.ptc.com; path=/plms/app; expires=Mon, 10 Jun 2019 11:20:34 GMT", 
+      "https://fusion-lb2.ptc.com/plms/app/");
+    WebCookieSet("fusion.viewstate.minimized=; domain=.ptc.com; path=/plms/app; expires=Mon, 10 Jun 2019 11:20:34 GMT", 
+      "https://fusion-lb2.ptc.com/plms/app/");
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_009, 0.28);
+ 
+    WebPageBack();
+ 
+    WebPageLink("Custom Frame in page Course Viewer : Advanced Assembly Management", "Pro/ENGINEER Courseware Introduction");
+ 
+    SetEncoding("ISO-8859-1");
+ 
+    ThinkTime(37.1);
+    MeasureStart("next page1");
+ 
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_010, 0.39);
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/legal_agreement.html"
+      , "legal_agreement.html");
+    MeasureStop("next page1");
+ 
+    ThinkTime(17.5);
+    MeasureStart("TMainTimer3");
+ 
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_011, 1.73);
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/overview.html", 
+      "overview.html");
+    MeasureStop("TMainTimer3");
+ 
+    ThinkTime(14.1);
+    MeasureStart("TMainTimer4");
+ 
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_012, 1.49);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player_media
+    // /images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl("player_media/images/background_darker.gif");
+    WebPageAddUrl("player_media/images/bg_table_light.gif");
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player_media
+    // /images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/launcher.ht"
+      "ml", "PTC University");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", "en-US");
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player_medi"
+      "a/player_config.xml", "player_config.xml"); // Ajax identified
+    MeasureStop("TMainTimer4");
+ 
+    ThinkTime(107.7);
+    MeasureStart("TMainTimer5");
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_013, 1.59);
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/demo1/launcher.html"
+      , "Created by Camtasia Studio 3");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", "en-US");
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/demo1/player_config"
+      ".xml", "player_config.xml (#1)"); // Ajax identified
+    MeasureStop("TMainTimer5");
+ 
+    ThinkTime(54.0);
+    MeasureStart("TMainTimer6");
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_014, 0.81);
+ 
+    SetEncoding("ISO-8859-1");
+ 
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/tb_output/index.htm"
+      , "Module 01: Introduction");
+    MeasureStop("TMainTimer6");
+ 
+    ThinkTime(18.3);
+    MeasureStart("TMainTimer7");
+ 
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_015, 0.69);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/lecture/player_media
+    // /images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl("player_media/images/background_darker.gif");
+    WebPageAddUrl("player_media/images/bg_table_light.gif");
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/lecture/player_media
+    // /images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/lecture/launcher.ht"
+      "ml", "PTC University (#1)");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", "en-US");
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/lecture/player_medi"
+      "a/player_config.xml", "player_config.xml (#2)"); // Ajax identified
+    MeasureStop("TMainTimer7");
+ 
+    ThinkTime(37.3);
+    MeasureStart("TMainTimer8");
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_016, 1.75);
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/demo1/launcher.html"
+      , "Created by Camtasia Studio 3 (#1)");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", "en-US");
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/demo1/player_config"
+      ".xml", "player_config.xml (#3)"); // Ajax identified
+    MeasureStop("TMainTimer8");
+ 
+    ThinkTime(12.2);
+    MeasureStart("TMainTimer9");
+    MeasureStop("TMainTimer9");
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_017, 0.91);
+ 
+    SetEncoding("ISO-8859-1");
+ 
+    WebPageUrl(
+      "https://fusion-lb2.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/tb_output/index.htm"
+      , "Module 02: Creating Design Frameworks");
+ 
+    ThinkTime(7.0);
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/search", PLMS_APP_SEARCH018, 8.89);
+    // Logout
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageAddUrl("/static/images/login/login-top.jpg");
+    WebPageAddUrl("/static/images/login/login-bottom.jpg");
+    WebPageAddUrl("/static/images/login/arrow.gif");
+    WebPageAddUrl("/static/images/login/login-box-bottom.gif");
+    WebPageAddUrl("/static/images/login/login-box-top.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    // Redirecting https://fusion-lb2.ptc.com/plms/app/search?wicket:interface=:2:logoutLink::ILinkListener::
+    // -> (redirection) https://fusion-lb2.ptc.com/plms/app/pages/Login/
+    WebPageLink("Log Out", "Precision LMS : Login (#1)", 1, NULL, hWebStoredCtx_Precision_LMS_Find_Trainin); // Link 7
+    WebPageDeleteContext(hWebStoredCtx_Precision_LMS_Find_Trainin);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://fusion-lb2.ptc.com/web/notifications/fusion_maint_msg.html?0.18139585485490833
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    ThinkTime(6.2);
+    WebPageUrl("https://fusion-lb2.ptc.com/web/notifications/fusion_maint_msg.html", "404 Not Found (#1)", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M019);
+  end TMain;
+
+dclform
+  WEB_NOTIFICATIONS_FUSION_MAINT_M001:
+    ""                          := "0.9686211664592549";
+
+  PLMS_APP_002:
+    "loginForm2_hf_0"           := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppName"          := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppVersion"       := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppCodeName"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorCookieEnabled"    := "" <USE_HTML_VAL> , // hidden, unchanged, value: "false"
+    "navigatorJavaEnabled"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: "false"
+    "navigatorLanguage"         := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorPlatform"         := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorUserAgent"        := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenWidth"               := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenHeight"              := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenColorDepth"          := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "utcOffset"                 := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "userId"                    := "anowak", // changed
+    "password"                  := Decrypt("5Ex7DZ79WMM="), // changed
+    "languages"                 := "0", // added
+    "loginButton"               := "1"; // added
+
+  PLMS_APP_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":0:loginForm:loginButton::IActivePageBehaviorListener:0:2",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.720903818826833";
+
+  PLMS_APP_SEARCH004:
+    "findTrainingForm32_hf_0"   := "", // hidden, unchanged, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:contentType" := "0", // added
+    "tabs:panel:filterPanel:version" := "0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:tabs-container:tabs:0:link" := "1"; // added
+
+  PLMS_APP_SEARCH005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:tabs:tabs-container:tabs:0:link::IActivePageBehaviorListener:0:",                                    
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.41811342640922416";
+
+  PLMS_APP_SEARCH006 <ENCODE_ESCAPE> :
+    "findTrainingForm32_hf_0"   := "", // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "\"Advanced Assembly Management\"", // added
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:contentType" := "0", // added
+    "tabs:panel:filterPanel:version" := "0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:panel:searchButton"   := "1"; // added
+
+  PLMS_APP_SEARCH007 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:tabs:panel:searchButton::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.021588022457357803";
+
+  PLMS_APP_SEARCH008 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:resultTable:learningItemRow:1:result:titleRow:titleLink:1:ILinkListener::";                                   
+                                  
+
+  PLMS_APP_009 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:learningItemTree:i:1:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.940777381044305";
+
+  PLMS_APP_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.1369360542525802";
+
+  PLMS_APP_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.16703274030907272";
+
+  PLMS_APP_012 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.21053366198162715";
+
+  PLMS_APP_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6369101606397958";
+
+  PLMS_APP_014 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.38139500855034525";
+
+  PLMS_APP_015 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6822545786250098";
+
+  PLMS_APP_016 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.40293068479520233";
+
+  PLMS_APP_017 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6337076230196758";
+
+  PLMS_APP_SEARCH018 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0::IBehaviorListener:9:";
+
+  WEB_NOTIFICATIONS_FUSION_MAINT_M019:
+    ""                          := "0.18139585485490833";
+

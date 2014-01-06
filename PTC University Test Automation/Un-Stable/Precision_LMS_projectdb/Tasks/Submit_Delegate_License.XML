@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Submit Delegate License Action" Desc="Submit the Delegate License to Admin User" TaskID="119" Path="Submit_Delegate_License.XML">
+  <Step StepId="140" stepSeq="1" ObjectId="209" ObjectName="Add Selected" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="137" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="141" stepSeq="3" ObjectId="323" ObjectName="Submit Delegate Link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="116" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="wait to Submit Delegate User" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

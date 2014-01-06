@@ -1,0 +1,876 @@
+//-----------------------------------------------------------------------------
+// Benchmark Include Template
+//-----------------------------------------------------------------------------
+// Author :   Star Quality
+// Date   :   Februray 2006
+// History:   BDF libary of common utilities 
+//     Date         Who                     Why
+//   --------   ---------------     -------------------------------------------
+//-----------------------------------------------------------------------------
+// Benchmark Description:
+// Supporting variables, functions and forms for Staples.com performance tests.
+//------------------------------------------------------------------------------
+
+dclfunc
+
+
+  function fUpdateXMLFromDataFile (sDataFileName : string; nGlobalDataFileHandle : number; sXMLFileName : string optional; sInXml : string optional): string
+    var
+    aColumnNames        : array [500] of string;
+    hLocalFileHandle    : number;
+    hXmlFile            : number;
+    iLoop               : number;  
+    iNumVars            : number;
+    nPos                : number;
+    sColumn             : string;
+    sColumnList         : string;
+    sColumnListDest     : string;
+    sNameSpace          : string;
+    sFirstPart          : string(50000);
+    sLastPart           : string(50000);
+    sTempValue          : string; 
+    nCount              : number;
+    nCurrentRow         : number;
+    sXml                : string(50000);
+    nSize               : number;
+    sColumnIncr         : string;
+    nColumnIncr         : number;
+    iLoop2              : number;
+    nTokenLen           : number;
+    sIterationCounter   : string;
+    nIterationCounter   : number;
+    sRepeatedItems      : string;
+    bIterationNode      : boolean;
+    bNameSpaceNode      : boolean; 
+    bSkipIterationNode  : boolean;
+    sXmlLastPart        : string;
+    nLoop3              : number;
+    sRepeatedItemsRollup  : string;
+    begin
+    
+    if sXMLFileName <> "" then
+      FOpen (hXmlFile,sXMLFileName);
+      FSizeGet (hXmlFile,nSize);
+      FRead (hXmlFile,sXml,nSize); 
+    else
+      sXml := sInXml;
+    end;    
+    
+    //Print (sXml); 
+//    Writeln ("starting XML");
+//    Write (sXml); writeln;
+    
+    //Get the first row of the data file 
+    FileCSVLoad(hLocalFileHandle, sDataFileName, ",");
+    FileGetRow(hLocalFileHandle,1); 
+    
+    
+    //Create an array of column names
+    sColumnList := FileGetCol (hLocalFileHandle, 0, STRING_COMPLETE); 
+    //Write ("here are the columns");writeln;
+    //Write (sColumnList); writeln; //debugging only
+
+    //Substr(sColumnList, sColumnList, 1, (Strlen( sColumnList )));
+    //Substr(sColumnList, sColumnList, 1, (Strlen( sColumnList )-1));
+    //Substr(sColumnList, sColumnListDest, 1, Strlen (sColumnList )-1);
+    //Write ("here are the columns after removing the linefeed");writeln;
+    //Write (sColumnListDest); writeln; //debugging only
+     
+    //sColumnList := sColumnListDest + ","; 
+    sColumnList := sColumnList + ","; 
+    
+    //Write ("here are the columns after adding the comma");writeln;
+    //Write (sColumnList); writeln; //debugging only
+
+    //Assign the array with the names of the column headings  
+    
+    //Get the first column name
+    StrSearchDelimited(sColumn, STRING_COMPLETE, sColumnList, NULL, 1, ",", 1,STR_SEARCH_FIRST);
+    
+    //Assign the value of the first column name to the first element of the array
+    aColumnNames[1] := sColumn;
+    iLoop := 2;
+    //Get the rest of the column names
+    while StrSearchDelimited(sColumn, STRING_COMPLETE, sColumnList, ",", 1, ",", 1, STR_SEARCH_NEXT) do
+      aColumnNames[iLoop] := sColumn;
+      iLoop := iLoop + 1;
+    end;  
+
+////moving this code out to the transaction
+//    //Get the next row of data    
+//    //set a global variable so that only the first access skips the first row which contains the column names
+//    GlobalVarInc("global_counter", 1, nCount);
+//    
+//    if nCount = 1 then
+//      FileGetNextRow(nGlobalDataFileHandle);//skips the first row which has the names of the columns);
+//      //Write ("got there first"); Writeln;
+//    end;  
+//
+//    //if at the end of the file
+//    nCurrentRow := FileGetNextRow(nGlobalDataFileHandle);
+//    if nCurrentRow = 1 then
+//      FileGetNextRow(nGlobalDataFileHandle);
+//    end;
+    
+    //For each column name read the data file and update the xml node with data from the data file
+    //this is the number of columns
+    iNumVars := iLoop -1;
+    
+    //Write ("iNumVars: ");
+    //Writeln(iNumVars);
+    //find the soap node that matches the column name and update its value with sTempValue
+    for iLoop := 1 to iNumVars do
+      nIterationCounter := 1;
+      nColumnIncr := 1;
+      bIterationNode := FALSE;
+      bNameSpaceNode := FALSE;
+      bSkipIterationNode := FALSE; 
+
+      //Write ("iColumnLoop :");writeln(iLoop);
+      //this is the value to insert into the string
+      sTempValue := FileGetCol(nGlobalDataFileHandle, iLoop, STRING_COMPLETE); 
+      //this is the name of the node to insert the data into
+      sColumn := aColumnNames[iLoop];
+      
+      //Write ("this is the column name: ");Write (sColumn);writeln; //for debugging only
+      //Write ("this is the value to put into the xml: ");Write (sTempValue);writeln; //for debugging only
+      
+      //get the occurrence of the column and any column instructions
+      //parse the column type indicators from the column name
+      nPos := StrSearch(sColumn,"-",STR_SEARCH_FIRST);
+      if nPos <> 0 then
+        StrSearchDelimited(sColumnIncr,STRING_COMPLETE,sColumn,NULL,1,"-",1, STR_SEARCH_FIRST);
+//        Write ("Column incrementor: "); Write (sColumnIncr); Writeln;
+        StrSearchDelimited(sColumn,STRING_COMPLETE,sColumn,"-",1,NULL,1,STR_SEARCH_FIRST);
+//        Write ("Column :"); Write (sColumn); Writeln;       
+        
+        //Determine if the column used to cause xml section iteration
+        nPos := StrSearch(sColumnIncr, "I", STR_SEARCH_FIRST);
+        if (nPos <> 0) AND (sTempValue <> "1") then
+          //Get the second character
+          //Substr (sColumnIncr, sIterationCounter, 2, StrLen (sColumnIncr) -1);
+          nIterationCounter := number(sTempValue);
+          //Write ("Iteration Counter: ");Writeln(sIterationCounter); 
+          bIterationNode := TRUE;
+          nColumnIncr := 1;//only search for the first occurrence of a node used to create iteration is supported
+          
+          //Determine if the column will include a namespace
+          nPos := StrSearch(sColumnIncr, "N", STR_SEARCH_FIRST);
+          if nPos <> 0 then
+              bNameSpaceNode := TRUE; 
+          end;         
+        else
+          if (nPos <> 0) AND (sTempValue = "1") then
+            nPos := 0;
+            bSkipIterationNode := TRUE;
+          else
+            //Determine if the column will include a namespace
+            nPos := StrSearch(sColumnIncr, "N", STR_SEARCH_FIRST);
+            if nPos <> 0 then
+              //Get the second character
+              bNameSpaceNode := TRUE;
+              if StrLen(sColumnIncr) > 1 then
+                Substr (sColumnIncr, sColumnIncr, 2, StrLen (sColumnIncr) -1);
+                if sColumnIncr = "" then
+                  sColumnIncr := "1";
+                end;
+              else
+                sColumnIncr := "1";
+              end;    
+              //Write ("Column Incrementor: ");Writeln(sColumnIncr); 
+              nColumnIncr := number(sColumnIncr);
+            else
+              //Write("should get to this statement if no N or I"); Writeln;
+              nColumnIncr := number(sColumnIncr);
+            end;
+          end;  
+        end;  
+      else
+        //there is no '-', therefore the column incrementor is 1
+        nColumnIncr := 1;
+      end;  
+           
+      //get the position of the node       
+//      nPos := StrSearch(sXml,"<"+sColumn+">",STR_SEARCH_FIRST); //this does not allow a namespace
+//      nPos := StrSearch(sXml,"<"+sColumn+" ",STR_SEARCH_FIRST); //this breaks if there is no namespace
+              
+      if bSkipIterationNode <> TRUE then
+        if bNameSpaceNode then
+          nPos := StrSearch(sXml,"<"+sColumn+" ",STR_SEARCH_FIRST);  
+        else   
+          nPos := StrSearch(sXml,"<"+sColumn+">",STR_SEARCH_FIRST);  
+        end;
+      end;  
+       
+      if bSkipIterationNode <> TRUE then           
+        if nColumnIncr <> 1 then
+          for iLoop2 := 2 to nColumnIncr do
+//            Write ("iLoop2 :");writeln(iLoop2);
+//            nPos := StrSearch(sXml,"<"+sColumn+" ",STR_SEARCH_NEXT); 
+            if bNameSpaceNode then
+              nPos := StrSearch(sXml,"<"+sColumn+" ",STR_SEARCH_NEXT); 
+            else
+              nPos := StrSearch(sXml,"<"+sColumn+">",STR_SEARCH_NEXT);  
+            end; 
+          end;//for         
+        end;    
+      end;
+      
+//      Write ("this is the position of the node in the xml :");Write (string(nPos)); writeln; //for debugging only
+
+      if nPos <> 0 then
+        sFirstPart := "";
+        sLastPart := "";
+        sNameSpace := "";
+
+
+        if bIterationNode = TRUE then
+          //this branch is for iterating xml sections
+        
+          //nIterationCounter := number(sTempValue);
+          //Write ("Iteration Counter: ");Writeln(sIterationCounter); 
+
+           //copy the string prior to the node to sFirstPart
+           Strncpy(sFirstPart,sXml,(nPos-1)); 
+           //Writeln ("first part of the xml :");
+           //Write (sFirstPart); writeln; //for debugging only
+            
+           //copy the string after the node to sLastPart
+           //sLastPart := Strstr(sXml,"</"+sColumn+">");  //this is a problem for occurrence > 1
+           if bNameSpaceNode then
+             SubStr(sXml,sXmlLastPart,nPos,Strlen(sXml));
+             StrSearchDelimited(sLastPart, STRING_COMPLETE, sXmlLastPart, "</"+sColumn+">", 1, NULL, 1,STR_SEARCH_FIRST+STR_SEARCH_MATCH_CASE);           
+             //StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sColumn+" ", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);
+           else  
+             StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sColumn+">", nColumnIncr, NULL, 1,STR_SEARCH_FIRST+STR_SEARCH_MATCH_CASE);
+           //Writeln ("last part of the xml :");
+           //Write (sLastPart); writeln; //for debugging only
+           end; 
+
+
+           //get the repeated items
+           if bNameSpaceNode then
+             StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sXml, "<"+sColumn+" ", nColumnIncr, "</"+sColumn+" ", 1,STR_SEARCH_FIRST+STR_SEARCH_MATCH_CASE);
+             StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sRepeatedItems, "\n", 1, null, 1,STR_SEARCH_FIRST+STR_SEARCH_MATCH_CASE);
+           else
+             //Write("value of the column before getting repeated items: "); Writeln(sColumn);
+             //Write ("value of the column incr: "); Writeln(string(nColumnIncr));
+             StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sXml, "<"+sColumn+">", nColumnIncr, "</"+sColumn+">", 1,STR_SEARCH_FIRST+STR_SEARCH_MATCH_CASE);
+             StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sRepeatedItems, "\n", 1, null, 1,STR_SEARCH_FIRST+STR_SEARCH_MATCH_CASE);
+           end;
+
+           //Writeln ("this is the sRepeatedItems");
+    //       Write (sRepeatedItems); writeln;
+    //       nLen := Strlen(sRepeatedItems);
+    //       Substr(sRepeatedItems, sRepeatedItems2, 2, nLen - 5);
+           //Write (sRepeatedItems); writeln;
+       
+      
+           //re-assemble the string, replacing the value of the node with the value from the csv file      
+           //this part one work with name spaces yet
+           if nIterationCounter = 0 then
+             //delete the iteration nodes entirely
+             //sXml := sFirstPart + "<"+sColumn+">"+ "\n"+"</"+sColumn+">" + sLastPart;
+             sXml := sFirstPart + "<"+sColumn+">"+"</"+sColumn+">" + sLastPart;
+             
+           else
+             sRepeatedItemsRollup := "";
+             for nLoop3 := 1 to nIterationCounter do
+               sRepeatedItemsRollup := sRepeatedItemsRollup + sRepeatedItems;
+             end;    
+
+             sXml := sFirstPart + "<"+sColumn+">" +sRepeatedItemsRollup+ "</"+sColumn+">" + sLastPart;
+             
+           end; 
+         //Write ("here is the xml as returned by the data inserter:"); writeln;
+         //Write (sXml);writeln;
+
+        else
+          //Write ("in the data inserting branch"); Writeln;
+          //this branch is for data inserting
+          if nPos <> 0 then
+            //copy the string prior to the node to sFirstPart
+            Strncpy(sFirstPart,sXml,(nPos-1)); 
+            //Writeln ("first part of the xml :");
+            //Write (sFirstPart); writeln; //for debugging only
+            
+            //copy the string after the node to sLastPart
+            //sLastPart := Strstr(sXml,"</"+sColumn+">");  
+            if bNameSpaceNode = true then
+              SubStr(sXml,sXmlLastPart,nPos,Strlen(sXml));
+              StrSearchDelimited(sLastPart, STRING_COMPLETE, sXmlLastPart, "</"+sColumn+">", 1, NULL, 1,STR_SEARCH_FIRST);           
+            else 
+              StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sColumn+">", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);           
+            end;
+             
+            //get the namespace
+            StrSearchDelimited(sNameSpace, STRING_COMPLETE, sXml, "<"+sColumn+" ", nColumnIncr, ">", 1,STR_SEARCH_FIRST);
+            //Writeln ("this is the name space");
+            //Write (sNameSpace); writeln;
+      
+            //re-assemble the string, replacing the value of the node with the value from the csv file      
+            if bNameSpaceNode = true then
+              sXml := sFirstPart + "<"+sColumn+" "+sNameSpace+">" + sTempValue + "</"+sColumn+">" + sLastPart;
+            else
+//              sXml := sFirstPart + "<"+sColumn+ sNameSpace+">" + sTempValue + "</"+sColumn+">" + sLastPart;
+              sXml := sFirstPart + "<"+sColumn+">" + sTempValue + "</"+sColumn+">" + sLastPart;
+            end;
+           //Write ("here is the xml as returned by the data inserter:"); writeln;
+           //Write (sXml);writeln;
+          end;  //if nPos <> 0 then
+        end; //if bIterationNode = TRUE then
+      end;  //if nPos <> 0 then
+    end;
+    
+    //UnloadFileHandle
+    FileUnload(hLocalFileHandle);
+    
+//    Write ("returned by fUpdateXMLFromDataFile: ");
+//    Write (sXml); writeln;   //for debugging only
+
+    fUpdateXMLFromDataFile := sXml;
+     
+  end fUpdateXMLFromDataFile;
+
+
+  function fUpdateXMLFromDataPair (sItemName : string; sItemValue : string ; bNameSpace : boolean ;sXml : string (50000)): string
+    var
+    iLoop               : number;  
+    nPos                : number;
+    sNameSpace          : string;
+    sFirstPart          : string(50000);
+    sLastPart           : string(50000);
+    nCount              : number;
+    nCurrentRow         : number;
+    nSize               : number;
+    sColumnIncr         : string;
+    nColumnIncr         : number;
+    sXmlLastPart        : string;
+    begin
+    
+//    Print (sXml); 
+    //Writeln ("starting XML");
+    //Write (sXml); writeln;
+   
+    //Write ("here is the value to change");writeln;
+    //Write (sItemName); writeln; //debugging only
+    //Write (sItemValue); writeln; //debugging only
+ 
+    
+    //find the soap node that matches the column name and update its value with sTempValue
+    //this is the value to insert into the string
+      
+    //get the occurrence of the item
+     nPos := StrSearch(sItemName,"-",STR_SEARCH_FIRST);
+     if nPos <> 0 then
+       StrSearchDelimited(sColumnIncr,STRING_COMPLETE,sItemName,NULL,1,"-",1, STR_SEARCH_FIRST);
+       //Write ("Item incrementor: "); Write (sColumnIncr); Writeln;
+       StrSearchDelimited(sItemName,STRING_COMPLETE,sItemName,"-",1,NULL,1,STR_SEARCH_FIRST);
+       //Write ("Item :"); Write (sItemName); Writeln;
+       nColumnIncr := number(sColumnIncr);
+     else
+       nColumnIncr := 1;
+     end;  
+           
+     //get the position of the node       
+//     nPos := StrSearch(sXml,"<"+sItemName+">",STR_SEARCH_FIRST); //this does not allow a namespace
+     if bNameSpace then
+       nPos := StrSearch(sXml,"<"+sItemName+" ",STR_SEARCH_FIRST);
+     else
+       nPos := StrSearch(sXml,"<"+sItemName+">",STR_SEARCH_FIRST);
+     end;  
+     
+     if nColumnIncr <> 1 then
+       for iLoop := 2 to nColumnIncr do
+         //Write ("iLoop :");writeln(iLoop);
+         if bNameSpace then
+           nPos := StrSearch(sXml,"<"+sItemName+" ",STR_SEARCH_NEXT);  
+         else
+           nPos := StrSearch(sXml,"<"+sItemName+">",STR_SEARCH_NEXT);  
+         end;  
+       end;
+     end;    
+      
+      
+     //Write ("this is the position of the node in the xml :");Write (string(nPos)); writeln; //for debugging only
+     sFirstPart := "";
+     sLastPart := "";
+     sNameSpace := "";
+     //Write ("here is nPos: " + string(nPos));
+     if nPos <> 0 then
+       //copy the string prior to the node to sFirstPart
+       Strncpy(sFirstPart,sXml,(nPos-1)); 
+       //Writeln ("first part of the xml :");
+       //Write (sFirstPart); writeln; //for debugging only
+            
+       //copy the string after the node to sLastPart
+       //orig replaced on 9/13/06 with code from fUpdateXMLFromDataFile
+       //StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sItemName+">", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);
+
+
+       if bNameSpace = true then
+         SubStr(sXml,sXmlLastPart,nPos,Strlen(sXml));
+         StrSearchDelimited(sLastPart, STRING_COMPLETE, sXmlLastPart, "</"+sItemName+">", 1, NULL, 1,STR_SEARCH_FIRST);           
+       else 
+         StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sItemName+">", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);           
+       end;
+
+       //Writeln ("last part of the xml :");
+       //Write (sLastPart); writeln; //for debugging only
+      
+       //get the namespace
+       StrSearchDelimited(sNameSpace, STRING_COMPLETE, sXml, "<"+sItemName+" ", nColumnIncr, ">", 1,STR_SEARCH_FIRST);
+       //Writeln ("this is the name space");
+       //Write (sNameSpace); writeln;
+      
+       //re-assemble the string, replacing the value of the node with the value from the csv file      
+       if bNameSpace then
+         sXml := sFirstPart + "<"+sItemName+" "+sNameSpace+">" + sItemValue + "</"+sItemName+">" + sLastPart;
+       else
+         sXml := sFirstPart + "<"+sItemName+">" + sItemValue + "</"+sItemName+">" + sLastPart;
+       end;  
+       //Write ("here is the xml as returned by the data inserter:"); writeln;
+       //Write (sXml);writeln;
+     end;    
+    
+//    Write ("returned: from Data Pair");
+//    Write (sXml); writeln;   //for debugging only
+
+    fUpdateXMLFromDataPair := sXml;
+     
+  end fUpdateXMLFromDataPair;
+
+
+  function fUpdateXMLIterationsFromDataPair (sItemName : string; sItemValue : string ; bNameSpace : boolean ;sXml : string; iIterations : number): string
+    var
+    iLoop               : number;  
+    nPos                : number;
+    sRepeatedItems      : string;
+    sRepeatedItems2      : string;
+    sFirstPart          : string(10000);
+    sLastPart           : string(10000);
+    nCount              : number;
+    nCurrentRow         : number;
+    nSize               : number;
+    sColumnIncr         : string;
+    nColumnIncr         : number;
+    nLen                : number;
+    sXmlLastPart        : string;
+    begin
+    
+//    Print (sXml); 
+    //Writeln ("starting XML");
+    //Write (sXml); writeln;
+   
+    //Write ("here is the value to change");writeln;
+    //Write (sItemName); writeln; //debugging only
+    //Write (sItemValue); writeln; //debugging only
+ 
+    
+    //find the soap node that matches the column name and update its value with sTempValue
+    //this is the value to insert into the string
+      
+    //get the occurrence of the item
+     nPos := StrSearch(sItemName,"-",STR_SEARCH_FIRST);
+     if nPos <> 0 then
+       StrSearchDelimited(sColumnIncr,STRING_COMPLETE,sItemName,NULL,1,"-",1, STR_SEARCH_FIRST);
+       Write ("Item incrementor: "); Write (sColumnIncr); Writeln;
+       StrSearchDelimited(sItemName,STRING_COMPLETE,sItemName,"-",1,NULL,1,STR_SEARCH_FIRST);
+       Write ("Item :"); Write (sItemName); Writeln;
+       nColumnIncr := number(sColumnIncr);
+     else
+       nColumnIncr := 1;
+     end;  
+           
+     //get the position of the node       
+//     nPos := StrSearch(sXml,"<"+sItemName+">",STR_SEARCH_FIRST); //this does not allow a namespace
+     if bNameSpace then
+       nPos := StrSearch(sXml,"<"+sItemName+" ",STR_SEARCH_FIRST);
+     else
+       nPos := StrSearch(sXml,"<"+sItemName+">",STR_SEARCH_FIRST);
+     end;  
+     
+     if nColumnIncr <> 1 then
+       for iLoop := 2 to nColumnIncr do
+         //Write ("iLoop :");writeln(iLoop);
+         if bNameSpace then
+           nPos := StrSearch(sXml,"<"+sItemName+" ",STR_SEARCH_NEXT);  
+         else
+           nPos := StrSearch(sXml,"<"+sItemName+">",STR_SEARCH_NEXT);  
+         end;  
+       end;
+     end;    
+      
+      
+     //Write ("this is the position of the node in the xml :");Write (string(nPos)); writeln; //for debugging only
+     sFirstPart := "";
+     sLastPart := "";
+     sRepeatedItems := "";
+     if nPos <> 0 then
+       //copy the string prior to the node to sFirstPart
+       Strncpy(sFirstPart,sXml,(nPos-1)); 
+       //Writeln ("first part of the xml :");
+       //Write (sFirstPart); writeln; //for debugging only
+            
+       //copy the string after the node to sLastPart
+       //sLastPart := Strstr(sXml,"</"+sColumn+">");  //this is a problem for occurrence > 1
+       StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sItemName+">", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);
+
+       if bNameSpace = true then
+         SubStr(sXml,sXmlLastPart,nPos,Strlen(sXml));
+         StrSearchDelimited(sLastPart, STRING_COMPLETE, sXmlLastPart, "</"+sItemName+">", 1, NULL, 1,STR_SEARCH_FIRST);           
+       else 
+         StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sItemName+">", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);           
+       end;
+
+
+       //Writeln ("last part of the xml :");
+       //Write (sLastPart); writeln; //for debugging only
+      
+       //get the repeated items
+       StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sXml, "<"+sItemName+">", nColumnIncr, "</"+sItemName+">", 1,STR_SEARCH_FIRST);
+       StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sRepeatedItems, "\n", 1, null, 1,STR_SEARCH_FIRST);
+       Writeln ("this is the sRepeatedItems");
+//       Write (sRepeatedItems); writeln;
+//       nLen := Strlen(sRepeatedItems);
+//       Substr(sRepeatedItems, sRepeatedItems2, 2, nLen - 5);
+       Write (sRepeatedItems); writeln;
+       
+      
+       //re-assemble the string, replacing the value of the node with the value from the csv file      
+       //if bNameSpace then
+         if iIterations = 1 then
+           sXml := sFirstPart + "<"+sItemName+">" +sRepeatedItems+ "</"+sItemName+">" + sLastPart;
+         end;
+         
+         if iIterations = 2 then  
+           sXml := sFirstPart + "<"+sItemName+">"+sRepeatedItems + sRepeatedItems+"</"+sItemName+">" + sLastPart;
+         end;
+       //else
+         //sXml := sFirstPart + "<"+sItemName+">" + sItemValue + "</"+sItemName+">" + sLastPart;
+       //end;  
+       //Write ("here is the xml as returned by the data inserter:"); writeln;
+       //Write (sXml);writeln;
+     end;  
+
+    
+    
+    Write ("returned from iterations: ");
+    Write (sXml); writeln;   //for debugging only
+
+    fUpdateXMLIterationsFromDataPair := sXml;
+     
+  end fUpdateXMLIterationsFromDataPair;
+
+
+
+function fUpdateXMLFromDataFileIncr (sDataFileName : string; nGlobalDataFileHandle : number; nLoopIndex : number; sInXml : string): string
+    var
+    aColumnNames        : array [500] of string;
+    hLocalFileHandle    : number;
+    hXmlFile            : number;
+    iLoop               : number;  
+    iNumVars            : number;
+    nPos                : number;
+    sColumn             : string;
+    sColumnList         : string;
+    sColumnListDest     : string;
+    sNameSpace          : string;
+    sFirstPart          : string(50000);
+    sLastPart           : string(50000);
+    sTempValue          : string; 
+    nCount              : number;
+    nCurrentRow         : number;
+    sXml                : string(50000);
+    nSize               : number;
+    sColumnIncr         : string;
+    nColumnIncr         : number;
+    iLoop2              : number;
+    nTokenLen           : number;
+    sIterationCounter   : string;
+    nIterationCounter   : number;
+    sRepeatedItems      : string;
+    bIterationNode      : boolean;
+    bNameSpaceNode      : boolean; 
+    bSkipIterationNode  : boolean;
+    sXmlLastPart        : string;
+    nLoop3              : number;
+    sRepeatedItemsRollup  : string;
+    begin
+    
+    sXml := sInXml;
+    
+    //Print (sXml); 
+//    Writeln ("starting XML");
+//    Write (sXml); writeln;
+    
+    //Get the first row of the data file 
+    FileCSVLoad(hLocalFileHandle, sDataFileName, ",");
+    FileGetRow(hLocalFileHandle,1); 
+    
+    
+    //Create an array of column names
+    sColumnList := FileGetCol (hLocalFileHandle, 0, STRING_COMPLETE); 
+    //Write ("here are the columns");writeln;
+    //Write (sColumnList); writeln; //debugging only
+
+    //Substr(sColumnList, sColumnList, 1, (Strlen( sColumnList )));
+    //Substr(sColumnList, sColumnList, 1, (Strlen( sColumnList )-1));
+    //Substr(sColumnList, sColumnListDest, 1, Strlen (sColumnList )-1);
+    //Write ("here are the columns after removing the linefeed");writeln;
+    //Write (sColumnListDest); writeln; //debugging only
+     
+    //sColumnList := sColumnListDest + ","; 
+    sColumnList := sColumnList + ","; 
+    
+    //Write ("here are the columns after adding the comma");writeln;
+    //Write (sColumnList); writeln; //debugging only
+
+    //Assign the array with the names of the column headings  
+    
+    //Get the first column name
+    StrSearchDelimited(sColumn, STRING_COMPLETE, sColumnList, NULL, 1, ",", 1,STR_SEARCH_FIRST);
+    
+    //Assign the value of the first column name to the first element of the array
+    aColumnNames[1] := sColumn;
+    iLoop := 2;
+    //Get the rest of the column names
+    while StrSearchDelimited(sColumn, STRING_COMPLETE, sColumnList, ",", 1, ",", 1, STR_SEARCH_NEXT) do
+      aColumnNames[iLoop] := sColumn;
+      iLoop := iLoop + 1;
+    end;  
+ 
+    //For each column name read the data file and update the xml node with data from the data file
+    //this is the number of columns
+    iNumVars := iLoop -1;
+    
+    //Write ("iNumVars: ");
+    //Writeln(iNumVars);
+    //find the soap node that matches the column name and update its value with sTempValue
+    for iLoop := 1 to iNumVars do
+      nIterationCounter := 1;
+      nColumnIncr := 1;
+      bIterationNode := FALSE;
+      bNameSpaceNode := FALSE;
+      bSkipIterationNode := FALSE; 
+
+      //Write ("iColumnLoop :");writeln(iLoop);
+      //this is the value to insert into the string
+      sTempValue := FileGetCol(nGlobalDataFileHandle, iLoop, STRING_COMPLETE); 
+      //this is the name of the node to insert the data into
+      sColumn := aColumnNames[iLoop];
+      
+      //Write ("this is the column name: ");Write (sColumn);writeln; //for debugging only
+      //Write ("this is the value to put into the xml: ");Write (sTempValue);writeln; //for debugging only
+      
+      //get the occurrence of the column and any column instructions
+      //parse the column type indicators from the column name
+      nPos := StrSearch(sColumn,"-",STR_SEARCH_FIRST);
+      if nPos <> 0 then
+        StrSearchDelimited(sColumnIncr,STRING_COMPLETE,sColumn,NULL,1,"-",1, STR_SEARCH_FIRST);
+//        Write ("Column incrementor: "); Write (sColumnIncr); Writeln;
+        StrSearchDelimited(sColumn,STRING_COMPLETE,sColumn,"-",1,NULL,1,STR_SEARCH_FIRST);
+//        Write ("Column :"); Write (sColumn); Writeln;       
+        
+        //Determine if the column used to cause xml section iteration
+        nPos := StrSearch(sColumnIncr, "I", STR_SEARCH_FIRST);
+        if (nPos <> 0) AND (sTempValue <> "1") then
+          //this is an iteration node
+          //Get the second character
+          //Substr (sColumnIncr, sIterationCounter, 2, StrLen (sColumnIncr) -1);
+          nIterationCounter := number(sTempValue);
+          //Write ("Iteration Counter: ");Writeln(sIterationCounter); 
+          bIterationNode := TRUE;
+          nColumnIncr := 0;//only search for the first occurrence of a node used to create iteration is supported
+          
+          //Determine if the column will include a namespace
+          nPos := StrSearch(sColumnIncr, "N", STR_SEARCH_FIRST);
+          if nPos <> 0 then
+              bNameSpaceNode := TRUE; 
+          end;         
+        else
+          //this is an iteration node but the value is set to 1 so do not iterate
+          if (nPos <> 0) AND (sTempValue = "1") then
+            nPos := 0;
+            bSkipIterationNode := TRUE;
+          else
+            //the node is not an iteration node
+            //Determine if the column will include a namespace
+            nPos := StrSearch(sColumnIncr, "N", STR_SEARCH_FIRST);
+            if nPos <> 0 then
+              //this is a namespace node
+              bNameSpaceNode := TRUE;
+              if StrLen(sColumnIncr) > 1 then
+                //Get the second character
+                Substr (sColumnIncr, sColumnIncr, 2, StrLen (sColumnIncr) -1);
+                if sColumnIncr = "" then
+                  sColumnIncr := "0";
+                end;
+              else
+                sColumnIncr := "0";
+              end;    
+              //Write ("Column Incrementor: ");Writeln(sColumnIncr); 
+              nColumnIncr := number(sColumnIncr);
+            else
+              //this is not a namespace node
+              Write("should get to this statement if no N or I"); Writeln;
+              nColumnIncr := number(sColumnIncr);
+            end;
+          end;  
+        end;  
+      else
+        //there is no '-', therefore the column incrementor is 0
+        nColumnIncr := 0;
+      end;  
+           
+      //calculate the real incrementor
+      if nColumnIncr = 0 then
+        nColumnIncr := nLoopIndex;
+      else
+        if nColumnIncr = 1 then
+          nColumnIncr := (2 * nLoopIndex) - 1;
+        else
+          nColumnIncr := 2 * nLoopIndex;
+        end;
+      end;       
+
+              
+      if bSkipIterationNode <> TRUE then
+        if bNameSpaceNode then
+          nPos := StrSearch(sXml,"<"+sColumn+" ",STR_SEARCH_FIRST);  
+        else   
+          nPos := StrSearch(sXml,"<"+sColumn+">",STR_SEARCH_FIRST);  
+        end;
+      end;  
+       
+      if bSkipIterationNode <> TRUE then           
+        if nColumnIncr <> 1 then
+          for iLoop2 := 2 to nColumnIncr do
+//            Write ("iLoop2 :");writeln(iLoop2);
+//            nPos := StrSearch(sXml,"<"+sColumn+" ",STR_SEARCH_NEXT); 
+            if bNameSpaceNode then
+              nPos := StrSearch(sXml,"<"+sColumn+" ",STR_SEARCH_NEXT); 
+            else
+              nPos := StrSearch(sXml,"<"+sColumn+">",STR_SEARCH_NEXT);  
+            end; 
+          end;//for         
+        end;    
+      end;
+      
+//      Write ("this is the position of the node in the xml :");Write (string(nPos)); writeln; //for debugging only
+
+      if nPos <> 0 then
+        sFirstPart := "";
+        sLastPart := "";
+        sNameSpace := "";
+
+
+        if bIterationNode = TRUE then
+          //this branch is for iterating xml sections
+        
+          //nIterationCounter := number(sTempValue);
+          //Write ("Iteration Counter: ");Writeln(sIterationCounter); 
+
+           //copy the string prior to the node to sFirstPart
+           Strncpy(sFirstPart,sXml,(nPos-1)); 
+           //Writeln ("first part of the xml :");
+           //Write (sFirstPart); writeln; //for debugging only
+            
+           //copy the string after the node to sLastPart
+           //sLastPart := Strstr(sXml,"</"+sColumn+">");  //this is a problem for occurrence > 1
+           if bNameSpaceNode then
+             SubStr(sXml,sXmlLastPart,nPos,Strlen(sXml));
+             StrSearchDelimited(sLastPart, STRING_COMPLETE, sXmlLastPart, "</"+sColumn+">", 1, NULL, 1,STR_SEARCH_FIRST);           
+             //StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sColumn+" ", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);
+           else  
+             StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sColumn+">", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);
+           //Writeln ("last part of the xml :");
+           //Write (sLastPart); writeln; //for debugging only
+           end; 
+
+
+           //get the repeated items
+           if bNameSpaceNode then
+             StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sXml, "<"+sColumn+" ", nColumnIncr, "</"+sColumn+" ", 1,STR_SEARCH_FIRST);
+             StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sRepeatedItems, "\n", 1, null, 1,STR_SEARCH_FIRST);
+           else
+             //Write("value of the column before getting repeated items: "); Writeln(sColumn);
+             //Write ("value of the column incr: "); Writeln(string(nColumnIncr));
+             StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sXml, "<"+sColumn+">", nColumnIncr, "</"+sColumn+">", 1,STR_SEARCH_FIRST);
+             StrSearchDelimited(sRepeatedItems, STRING_COMPLETE, sRepeatedItems, "\n", 1, null, 1,STR_SEARCH_FIRST);
+           end;
+
+           //Writeln ("this is the sRepeatedItems");
+    //       Write (sRepeatedItems); writeln;
+    //       nLen := Strlen(sRepeatedItems);
+    //       Substr(sRepeatedItems, sRepeatedItems2, 2, nLen - 5);
+           //Write (sRepeatedItems); writeln;
+       
+      
+           //re-assemble the string, replacing the value of the node with the value from the csv file      
+           //this part one work with name spaces yet
+           if nIterationCounter = 0 then
+             //delete the iteration nodes entirely
+             //sXml := sFirstPart + "<"+sColumn+">"+ "\n"+"</"+sColumn+">" + sLastPart;
+             sXml := sFirstPart + "<"+sColumn+">"+"</"+sColumn+">" + sLastPart;
+             
+           else
+             sRepeatedItemsRollup := "";
+             for nLoop3 := 1 to nIterationCounter do
+               sRepeatedItemsRollup := sRepeatedItemsRollup + sRepeatedItems;
+             end;    
+
+             sXml := sFirstPart + "<"+sColumn+">" +sRepeatedItemsRollup+ "</"+sColumn+">" + sLastPart;
+             
+           end; 
+         //Write ("here is the xml as returned by the data inserter:"); writeln;
+         //Write (sXml);writeln;
+
+        else
+          //Write ("in the data inserting branch"); Writeln;
+          //this branch is for data inserting
+          if nPos <> 0 then
+            //copy the string prior to the node to sFirstPart
+            Strncpy(sFirstPart,sXml,(nPos-1)); 
+            //Writeln ("first part of the xml :");
+            //Write (sFirstPart); writeln; //for debugging only
+            
+            //copy the string after the node to sLastPart
+            //sLastPart := Strstr(sXml,"</"+sColumn+">");  
+            if bNameSpaceNode = true then
+              SubStr(sXml,sXmlLastPart,nPos,Strlen(sXml));
+              StrSearchDelimited(sLastPart, STRING_COMPLETE, sXmlLastPart, "</"+sColumn+">", 1, NULL, 1,STR_SEARCH_FIRST);           
+            else 
+              StrSearchDelimited(sLastPart, STRING_COMPLETE, sXml, "</"+sColumn+">", nColumnIncr, NULL, 1,STR_SEARCH_FIRST);           
+            end;
+             
+            //get the namespace
+            StrSearchDelimited(sNameSpace, STRING_COMPLETE, sXml, "<"+sColumn+" ", nColumnIncr, ">", 1,STR_SEARCH_FIRST);
+            //Writeln ("this is the name space");
+            //Write (sNameSpace); writeln;
+      
+            //re-assemble the string, replacing the value of the node with the value from the csv file      
+            if bNameSpaceNode = true then
+              sXml := sFirstPart + "<"+sColumn+" "+sNameSpace+">" + sTempValue + "</"+sColumn+">" + sLastPart;
+            else
+//              sXml := sFirstPart + "<"+sColumn+ sNameSpace+">" + sTempValue + "</"+sColumn+">" + sLastPart;
+              sXml := sFirstPart + "<"+sColumn+">" + sTempValue + "</"+sColumn+">" + sLastPart;
+            end;
+           //Write ("here is the xml as returned by the data inserter:"); writeln;
+           //Write (sXml);writeln;
+          end;  //if nPos <> 0 then
+        end; //if bIterationNode = TRUE then
+      end;  //if nPos <> 0 then
+    end;
+    
+    //UnloadFileHandle
+    FileUnload(hLocalFileHandle);
+    
+//    Write ("returned by fUpdateXMLFromDataFile: ");
+//    Write (sXml); writeln;   //for debugging only
+
+    fUpdateXMLFromDataFileIncr := sXml;
+     
+  end fUpdateXMLFromDataFileIncr;
+
+

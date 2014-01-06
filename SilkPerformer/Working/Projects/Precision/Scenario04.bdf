@@ -1,0 +1,181 @@
+//----------------------------------------------------------------------
+// Recorded 6/17/2009 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+@codepage(1252)
+
+benchmark SilkPerformerRecorder
+
+use "WebAPI.bdh"
+
+dcluser
+  user
+    VUser
+  transactions
+    TInit           : begin;
+    TMain           : 1;
+
+const
+    NUM_SEARCHES             := 5;
+
+
+var
+
+dclrand
+
+  sSearchTerm1            : RndInd("sketch" =0.05, "drawing"=0.05, "assemble"=0.05, "dimension"=0.05, "mass property"=0.05, "toolkit"=0.05, "animate"=0.05, "template"=0.05, "annotation"=0.05, "sheetmetal"=0.05,  "family table"=0.05, "constraint"=0.05, "csys"=0.05, "datum plane"=0.05, "line"=0.05, "arc"=0.05, "round"=0.05, "sweept"=0.05, "feature creation"=0.05,  "feature tree"=0.05);
+  sSearchTerm2            : RndInd("mold" =0.05, "part"=0.05,"assembly"=0.05, "wildfire"=0.05, "pro/engineer"=0.05, "wildfire 3.0"=0.05, "wildfire 2.0"=0.05, "update"=0.05, "config.pro"=0.05, "manufacturing"=0.05,"warp"=0.05, "hole"=0.05, "cosmetic"=0.05, "layout"=0.05, "cavity"=0.05, "imm"=0.05, "surface"=0.05, "draft"=0.05, "exploded"=0.05, "instance"=0.05);
+  //other terms in case we need more
+  //generic, mold base, , pocket, curve, format, point, edge, cut, interchange
+
+
+dcltrans
+  transaction TInit
+  begin
+    WebSetBrowser(WEB_BROWSER_MSIE7);
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    //WebSetUserBehavior(WEB_USERBEHAVIOR_FIRST_TIME);
+    //WebSetDocumentCache(true, WEB_CACHE_CHECK_SESSION);
+  end TInit;
+
+  transaction TMain
+  var
+      iLoop         : number;
+  begin
+    WebCookieSet("NSC_qsfdjtjpomntuftu-bqq-wjq1=caae5e4b2520; domain=.ptc.com; path=/; expires=Wed, 17 Jun 2009 17:55:00 GMT", 
+      "https://precisionlmstest.ptc.com/");
+    WebCookieSet(
+      "__utma=132614863.752287354317614500.1245171698.1245254102.1245256703.6; domain=.ptc.com; path=/; expires=Mon, 17 Jun 201"
+      "9 17:19:11 GMT", "https://precisionlmstest.ptc.com/");
+    WebCookieSet(
+      "__utmz=132614863.1245171698.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); domain=.ptc.com; path=/; expires=Mon, 17 "
+      "Jun 2019 17:19:11 GMT", "https://precisionlmstest.ptc.com/");
+    WebCookieSet("lang=en; domain=.ptc.com; path=/; expires=Sat, 30 Oct 2010 17:12:49 GMT", "https://precisionlmstest.ptc.com/")
+      ;
+    WebCookieSet("__utmb=132614863.13.10.1245256703; domain=.ptc.com; path=/; expires=Mon, 17 Jun 2019 17:19:11 GMT", 
+      "https://precisionlmstest.ptc.com/");
+    WebPageParseUrl("HTTP meta refresh tag in page Unnamed page", "0; url=", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl("https://precisionlmstest.ptc.com/", "Unnamed page");
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageAddUrl("/static/images/login/login-top.jpg");
+    WebPageAddUrl("/static/images/login/login-bottom.jpg");
+    WebPageAddUrl("/static/images/login/arrow.gif");
+    WebPageAddUrl("/static/images/login/login-box-bottom.gif");
+    WebPageAddUrl("/static/images/login/login-box-top.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    WebPageAddUrl("/static/images/indicator.gif");
+    // Redirecting https://precisionlmstest.ptc.com/app
+    // -> (redirection) https://precisionlmstest.ptc.com/app/
+    // -> (redirection) https://precisionlmstest.ptc.com/app/pages/Landing/
+    // -> (redirection) https://precisionlmstest.ptc.com/app/pages/Login/;jsessionid=36E6A8DDA356BDE7AA0959C4C1DCD615
+    WebPageLink("HTTP meta refresh tag in page Unnamed page", "Precision LMS : Login");
+ 
+    ThinkTime(4.9);
+    WebPageUrl("https://precisionlmstest.ptc.com/web/notifications/fusion_maint_msg.html", "Precision LMS Maintenance", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M001);
+    // logon
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", APP_003);
+    ThinkTime(17.3);
+    WebPageSubmit(NULL, APP_002, "/app/"); // Form 1
+ 
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/header_banner.jpg");
+    WebPageAddUrl("/static/images/nav_nubbin.gif");
+    WebPageAddUrl("/static/images/drop_shadow_footer.jpg");
+    WebPageAddUrl("/static/images/tabs/orange_left.gif");
+    WebPageAddUrl("/static/images/tabs/orange_right.gif");
+    WebPageAddUrl("/static/images/tabs/blue_left.gif");
+    WebPageAddUrl("/static/images/tabs/blue_right.gif");
+    WebPageUrl("https://precisionlmstest.ptc.com/app/pages/Landing/", "Welcome to Precision LMS");
+ 
+    ThinkTime(13.1);
+    WebUrl("https://precisionlmstest.ptc.com/static/images/mark_complete-active.gif", 0.13);
+    WebUrl("https://precisionlmstest.ptc.com/static/images/mark_complete-active.gif", 0.09);
+    WebUrl("https://precisionlmstest.ptc.com/static/images/resume-active.gif", 17.00);
+    // goto completed learning
+    // correction  
+    // go to find training
+ 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    WebPageAddUrl("/static/images/close_box.gif");
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+
+
+    WebPageAddUrl("/static/images/expand.gif");
+
+
+    for iLoop := 1 to NUM_SEARCHES do
+      //ThinkTime(rShortTime);
+      MeasureStart ("Search");
+      WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/search", APP_SEARCH005);
+      //ThinkTime(rShortTime);
+      WebPageSubmit(NULL, APP_SEARCH004, "search"); // Form 1
+      MeasureStop ("Search"); 
+      WebPageBack();
+    end;
+
+
+//    // logout
+ 
+    // Redirecting https://precisionlmstest.ptc.com/app/search?wicket:interface=:2:logoutLink::ILinkListener::
+    // -> (redirection) https://precisionlmstest.ptc.com/app/pages/Login/
+    ThinkTime(35.0);
+    WebPageLink("Log Out", "Precision LMS : Login (#1)"); // Link 7
+ 
+    WebPageUrl("https://precisionlmstest.ptc.com/web/notifications/fusion_maint_msg.html", "Precision LMS Maintenance (#1)", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M010);
+  end TMain;
+
+dclform
+  WEB_NOTIFICATIONS_FUSION_MAINT_M001:
+    ""                          := "0.36362145133850826";
+
+  APP_002 <ENCODE_URICOMPONENT> :
+    "id2_hf_0"                  := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppName"          := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppVersion"       := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppCodeName"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorCookieEnabled"    := "" <USE_HTML_VAL> , // hidden, unchanged, value: "false"
+    "navigatorJavaEnabled"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: "false"
+    "navigatorLanguage"         := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorPlatform"         := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorUserAgent"        := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenWidth"               := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenHeight"              := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenColorDepth"          := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "utcOffset"                 := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "userId"                    := "prof_pt_co3_mgr_0001@ptcunoemail.com", // changed
+    "password"                  := Decrypt("9VJxE5/6X8E="), // changed
+    "languages"                 := "0", // added
+    "loginButton"               := "1"; // added
+
+  APP_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":0:loginForm:loginButton::IActivePageBehaviorListener:0:2",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.18022949673881988";
+
+  APP_SEARCH004:
+    "id15_hf_0"                 := "",//"" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := sSearchTerm1 +" "+sSearchTerm2, // changed
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:contentType" := "0", // added
+    "tabs:panel:filterPanel:version" := "0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:panel:searchButton"   := "1"; // added
+
+  APP_SEARCH005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:tabs:panel:searchButton::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.9439586136357634";
+
+
+  WEB_NOTIFICATIONS_FUSION_MAINT_M010:
+    ""                          := "0.8095127670495608";
+

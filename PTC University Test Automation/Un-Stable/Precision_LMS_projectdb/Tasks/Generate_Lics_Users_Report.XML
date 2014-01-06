@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Generate Licenses and Users Report" Desc="Generate Licenses and Users Report" TaskID="100" Path="Generate_Lics_Users_Report.XML">
+  <Step StepId="214" stepSeq="1" ObjectId="114" ObjectName="Welcome to Precision LMS" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Add Selected" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="213" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="1" stepSeq="3" ObjectId="114" ObjectName="Welcome to Precision LMS" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Generate Report" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="215" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;15&quot;" ParamSeq="1" Parameterized="0" Data="15" />
+  </Step>
+  <Step StepId="220" stepSeq="5" ObjectId="283" ObjectName="License and Users Report TABLE" ObjectTypeId="3009" ActionId="60904" ActionName="StoreRowCount">
+    <Param Name="&quot;LicUserRowCount&quot;" ParamSeq="1" Parameterized="0" Data="LicUserRowCount" />
+  </Step>
+  <Step StepId="219" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{LicUserRowCount}&quot;" ParamSeq="1" Parameterized="0" Data="{LicUserRowCount}" />
+    <Param Name="Expected Row Count" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;False&quot;" ParamSeq="3" Parameterized="0" Data="False" />
+  </Step>
+  <Step StepId="218" stepSeq="7" ObjectId="283" ObjectName="License and Users Report TABLE" ObjectTypeId="3009" ActionId="60903" ActionName="StoreColumnCount">
+    <Param Name="&quot;LicUserColCount&quot;" ParamSeq="1" Parameterized="0" Data="LicUserColCount" />
+    <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="217" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{LicUserColCount}&quot;" ParamSeq="1" Parameterized="0" Data="{LicUserColCount}" />
+    <Param Name="Expected Col Count" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;False&quot;" ParamSeq="3" Parameterized="0" Data="False" />
+  </Step>
+</Task>

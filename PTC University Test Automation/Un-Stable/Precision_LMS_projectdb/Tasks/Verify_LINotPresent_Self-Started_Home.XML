@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify LI NOT Present in self-started in Home Page" Desc="Verify LI NOT present in self-started in Home Page" TaskID="142" Path="Verify_LINotPresent_Self-Started_Home.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="188" stepSeq="2" ObjectId="121" ObjectName="Home" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="189" stepSeq="3" ObjectId="117" ObjectName="Current Learning" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="190" stepSeq="4" ObjectId="115" ObjectName="SelfStartedLearning" ObjectTypeId="3009" ActionId="60915" ActionName="VerifyDataNotExistInColumn">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+    <Param Name="Learning Item" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Reload Import File" Desc="Reload Import File" TaskID="28" Path="Reload Import File.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="28" ObjectName="PC_Pro/FICIENCY" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="2" stepSeq="2" ObjectId="173" ObjectName="Reload Import File" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="39" stepSeq="3" ObjectId="212" ObjectName="Package Language Tags" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+</Task>

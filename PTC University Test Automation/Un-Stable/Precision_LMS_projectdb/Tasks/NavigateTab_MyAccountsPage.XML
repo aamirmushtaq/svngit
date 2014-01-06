@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Navigate tabs in My Accounts Page" Desc="Navigate tabs in My Accounts Page" TaskID="78" Path="NavigateTab_MyAccountsPage.XML">
+  <Step StepId="151" stepSeq="1" ObjectId="114" ObjectName="Welcome to Precision LMS" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="My Account LinkText" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="150" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="1" stepSeq="3" ObjectId="278" ObjectName="My Accounts Page" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Tab Link" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="152" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+</Task>

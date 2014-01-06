@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Finish USU" Desc="Finish USU" TaskID="66" Path="Finish USU.XML">
+  <Step StepId="158" stepSeq="1" ObjectId="209" ObjectName="Add Selected" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="1" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="159" stepSeq="3" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+</Task>

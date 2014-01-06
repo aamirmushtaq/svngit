@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Assessment Title in Assessment Viewer" Desc="Verify Assessment Title in Assessment Viewer" TaskID="153" Path="Verify_Title_in_Assmt_Viewer.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="272" ObjectName="Assessment title" ObjectTypeId="3012" ActionId="61204" ActionName="StorePropertyValue">
+    <Param Name="&quot;Assessment title&quot;" ParamSeq="1" Parameterized="0" Data="Assessment title" />
+    <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text" />
+  </Step>
+  <Step StepId="289" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{Assessment title}&quot;" ParamSeq="1" Parameterized="0" Data="{Assessment title}" />
+    <Param Name="Exp Assessment title" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True" />
+  </Step>
+</Task>

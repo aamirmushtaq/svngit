@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Learning Path Created" Desc="Verify Learning Path Created Successfully" TaskID="52" Path="Verify_Create_LearningPath.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="230" ObjectName="Learning Path table" ObjectTypeId="3009" ActionId="60918" ActionName="VerifyDataExistInColumn">
+    <Param Name="&quot;1&quot;" ParamSeq="1" Parameterized="0" Data="1" />
+    <Param Name="Learning Path" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

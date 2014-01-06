@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="VerifExistenceOfPrivileges" Desc="VerifExistenceOfPrivileges" TaskID="33" Path="VerifExistenceOfPrivileges.XML">
+  <Step StepId="52" stepSeq="1" ObjectId="121" ObjectName="Home" ObjectTypeId="3007" ActionId="60701" ActionName="VerifyExistence">
+    <Param Name="&quot;TRUE&quot;" ParamSeq="1" Parameterized="0" Data="TRUE" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="120" ObjectName="Find Training" ObjectTypeId="3007" ActionId="60701" ActionName="VerifyExistence">
+    <Param Name="&quot;TRUE&quot;" ParamSeq="1" Parameterized="0" Data="TRUE" />
+  </Step>
+  <Step StepId="53" stepSeq="3" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60701" ActionName="VerifyExistence">
+    <Param Name="Admin existence" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="LaunchCourseFromBookMark" Desc="LaunchCourseFromBookMark" TaskID="107" Path="LaunchCourseFromBookMark.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="309" ObjectName="My Bookmarks Link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="228" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="wait" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="235" stepSeq="3" ObjectId="297" ObjectName="Course Viewer" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="BookMarkName" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="241" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="231" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap" />
+  </Step>
+  <Step StepId="232" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+</Task>

@@ -1,0 +1,664 @@
+//----------------------------------------------------------------------
+// Recorded 03/08/2008 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+dclparam
+  sS20Radiobutton   : string;
+
+
+dclfunc
+  function fScenario20
+  var
+  begin
+    // Administration
+ 
+    WebPageAddUrl("/static/images/admin_top.gif");
+    WebPageAddUrl("/static/images/admin_bottom.gif");
+    ThinkTime(10.7);
+    WebPageLink("Administration", "Precision LMS : Administration"); // Link 4
+    // Assign Learning
+ 
+    WebPageAddUrl("/static/images/wizard/wizard_bottom.gif");
+    WebPageAddUrl("/static/images/wizard/step_now.gif");
+    WebPageAddUrl("/static/images/wizard/step_future.gif");
+    WebPageAddUrl("/static/images/wizard/inner_bottom.gif");
+    WebPageAddUrl("/static/images/wizard/info_panel/bottom_curve.gif");
+    WebPageAddUrl("/static/images/wizard/wizard_top.gif");
+    WebPageAddUrl("/static/images/wizard/inner_top.gif");
+    WebPageAddUrl("/static/images/wizard/info_panel/top_curve.gif");
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=:2:manageLearningContainer:assignmentLearningItemsWizard::ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=:3::::
+    ThinkTime(10.5);
+    WebPageLink("Assign Learning", "Assign Learning Wizard"); // Link 8
+    // Learning Paths
+ 
+    WebPageAddUrl("/static/images/wizard/step_past.gif");
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=:3:assignLearningWizard:form::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=:3:1:::
+    ThinkTime(13.2);
+    WebPageSubmit(NULL, SCENARIO20_002, "Assign Learning Wizard (#1)"); // Form 1
+    // Check Path
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=:3:assignLearningWizard:form:1:IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=:3:2:::
+    ThinkTime(10.4);
+    WebPageSubmit(NULL, SCENARIO20_003, "Assign Learning Wizard (#2)"); // Form 1
+    // add users  
+ 
+    ThinkTime(7.1);
+    WebFormGet("https://fusion-lb.ptc.com/app/", SCENARIO20_004, 0.14);
+ 
+    // Info: HTTP status "404 /app/://0" for URL: https://fusion-lb.ptc.com/app/://0
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl("https://fusion-lb.ptc.com/app/://0", "Apache Tomcat/6.0-snapshot - Error report");
+ 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/close_box.gif");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    WebPageUrl("https://fusion-lb.ptc.com/app/", "[Warning: String resource for 'com.ptc.fusion.web.pages.user.SelectUsers", 
+      SCENARIO20_005);
+    // ok after checking users
+ 
+    WebPageAddUrl("", SCENARIO20_008);
+    WebPageSetActionUrlAbs("https://fusion-lb.ptc.com/app/", SCENARIO20_007);
+    ThinkTime(17.1);
+    WebPageSubmit(NULL, SCENARIO20_006, "/app/"); // Form 1
+    // next with users showing
+ 
+    // Redirecting -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=:3:3:::
+    ThinkTime(22.7);
+    WebParseDataBoundEx(sS20Radiobutton, STRING_COMPLETE, "value=\"", 2, "\"",
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageForm("https://fusion-lb.ptc.com/app/", SCENARIO20_009, "Assign Learning Wizard (#3)", SCENARIO20_010);
+    Print("sS20Radiobutton: " + sS20Radiobutton);
+    // do not send
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=:3:assignLearningWizard:form:3:IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=:4::::
+    ThinkTime(29.9);
+    WebPageSubmit(NULL, SCENARIO20_011, "Assign Learning Wizard (#4)"); // Form 1
+    // Done
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=:4:assignmentConfirmation::ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=:5::::
+    ThinkTime(220.6);
+    WebPageLink("Done", "Precision LMS : Administration (#1)"); // Link 8
+    // logout
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=:5:logoutLink::ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/pages/Login/
+    ThinkTime(10.2);
+    WebPageLink("Logout", "Precision LMS (#1)"); // Link 7  end fScenario20;
+  end fScenario20;
+    
+
+dclform
+  SCENARIO20_001:
+    "loginForm11_hf_0"          := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "loginButton"               := "x", // added
+    "userId"                    := "prof_pt_co3_mgr_0001@ptcunoemail.com", // changed
+    "password"                  := Decrypt("9VJxE5/6X8E="), // changed
+    "languages"                 := "0"; // added
+
+  SCENARIO20_002:
+    "form30_hf_0"               := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "buttons:next"              := "x", // added
+    "view:choice"               := "radio37"; // changed
+
+  SCENARIO20_003:
+    "form30_hf_0"               := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "buttons:next"              := "x", // added
+    "view:learningItemsForm:learningItemCheckGroup" := "" <USE_HTML_VAL> ; // unchanged, value: "check104"
+
+  SCENARIO20_004 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:assignLearningWizard:form:view:usergroup:modalSelect:2:IBehaviorListener:0:",
+    "random"                    := "0.8964637941048528";
+
+  SCENARIO20_005 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMapCreate:0::::";
+
+  SCENARIO20_006:
+    "usersForm10_hf_0"          := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "search"                    := "" <USE_HTML_VAL> , // unchanged, value: ""
+    "selectuserspage.dropDown.groups" := "", // added
+    "selectuserspage.dropDown.managers" := "1", // added
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check43"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check44"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check45"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check46"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check47"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check48"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check49"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check50"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check51"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check52"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check53"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check54"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check55"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check56"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check57"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check58"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check59"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check60"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check61"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check62"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check63"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check64"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check65"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check66"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check67"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check68"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check69"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check70"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check71"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check72"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check73"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check74"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check75"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check76"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check77"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check78"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check79"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check80"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check81"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check82"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check83"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check84"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check85"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check86"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check87"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check88"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check89"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check90"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check91"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check92"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check93"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check94"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check95"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check96"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check97"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check98"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check99"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check100"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check101"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check102"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check103"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check104"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check105"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check106"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check107"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check108"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check109"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check110"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check111"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check112"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check113"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check114"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check115"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check116"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check117"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check118"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check119"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check120"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check121"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check122"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check123"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check124"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check125"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check126"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check127"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check128"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check129"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check130"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check131"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check132"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check133"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check134"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check135"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check136"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check137"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check138"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check139"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check140"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check141"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check142"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check143"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check144"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check145"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check146"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check147"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check148"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check149"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check150"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check151"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check152"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check153"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check154"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check155"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check156"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check157"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check158"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check159"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check160"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check161"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check162"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check163"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check164"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check165"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check166"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check167"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check168"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check169"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check170"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check171"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check172"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check173"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check174"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check175"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check176"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check177"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check178"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check179"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check180"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check181"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check182"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check183"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check184"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check185"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check186"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check187"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check188"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check189"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check190"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check191"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check192"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check193"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check194"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check195"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check196"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check197"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check198"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check199"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check200"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check201"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check202"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check203"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check204"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check205"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check206"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check207"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check208"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check209"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check210"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check211"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check212"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check213"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check214"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check215"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check216"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check217"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check218"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check219"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check220"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check221"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check222"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check223"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check224"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check225"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check226"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check227"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check228"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check229"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check230"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check231"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check232"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check233"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check234"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check235"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check236"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check237"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check238"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check239"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check240"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check241"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check242"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check243"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check244"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check245"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check246"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check247"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check248"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check249"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check250"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check251"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check252"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check253"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check254"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check255"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check256"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check257"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check258"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check259"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check260"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check261"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check262"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check263"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check264"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check265"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check266"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check267"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check268"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check269"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check270"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check271"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check272"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check273"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check274"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check275"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check276"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check277"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check278"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check279"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check280"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check281"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check282"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check283"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check284"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check285"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check286"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check287"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check288"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check289"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check290"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check291"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check292"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check293"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check294"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check295"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check296"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check297"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check298"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check299"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check300"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check301"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check302"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check303"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check304"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check305"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check306"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check307"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check308"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check309"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check310"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check311"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check312"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check313"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check314"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check315"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check316"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check317"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check318"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check319"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check320"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check321"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check322"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check323"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check324"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check325"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check326"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check327"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check328"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check329"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check330"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check331"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check332"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check333"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check334"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check335"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check336"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check337"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check338"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check339"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check340"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check341"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check342"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check343"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check344"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check345"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check346"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check347"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check348"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check349"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check350"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check351"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check352"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check353"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check354"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check355"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check356"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check357"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check358"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check359"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check360"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check361"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check362"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check363"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check364"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check365"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check366"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check367"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check368"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check369"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check370"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check371"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check372"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check373"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check374"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check375"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check376"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check377"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check378"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check379"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check380"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check381"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check382"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check383"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check384"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check385"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check386"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check387"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check388"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check389"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check390"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check391"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check392"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check393"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check394"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check395"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check396"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check397"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check398"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check399"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check400"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check401"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check402"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check403"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check404"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check405"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check406"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check407"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check408"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check409"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check410"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check411"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check412"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check413"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check414"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check415"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check416"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check417"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check418"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check419"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check420"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check421"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check422"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check423"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check424"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check425"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check426"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check427"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check428"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check429"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check430"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check431"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check432"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check433"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check434"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check435"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check436"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check437"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check438"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check439"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check440"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check441"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check442"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check443"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check444"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check445"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check446"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check447"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check448"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check449"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check450"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check451"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check452"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check453"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check454"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check455"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check456"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check457"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check458"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check459"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check460"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check461"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check462"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check463"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check464"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check465"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check466"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check467"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check468"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check469"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check470"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check471"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check472"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check473"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check474"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check475"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check476"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check477"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check478"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check479"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check480"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check481"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check482"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check483"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check484"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check485"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check486"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check487"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check488"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check489"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check490"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check491"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check492"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check493"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check494"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check495"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check496"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check497"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check498"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check499"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check500"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check501"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check502"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check503"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check504"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check505"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check506"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check507"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check508"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check509"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check510"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check511"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check512"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check513"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check514"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check515"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check516"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check517"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check518"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check519"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check520"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check521"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check522"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check523"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check524"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check525"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check526"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check527"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check528"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check529"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check530"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check531"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check532"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check533"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check534"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check535"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check536"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check537"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check538"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check539"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check540"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check541"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check542"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check543"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check544"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check545"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check546"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check547"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check548"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check549"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check550"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check551"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check552"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check553"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check554"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check555"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check556"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check557"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check558"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check559"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check560"
+    "saveButton"                := "1"; // added
+
+  SCENARIO20_007 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMapCreate:0:usersForm:saveButton::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.18695191996777988";
+
+  SCENARIO20_008 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:assignLearningWizard:form:view:usergroup:seluser_lightBox:2:IBehaviorListener:1:-1",
+    "random"                    := "0.6994150135361425";
+
+  SCENARIO20_009:
+    "buttons:next"              := "x";
+
+  SCENARIO20_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:assignLearningWizard:form:2:IFormSubmitListener::";
+
+  SCENARIO20_011:
+    "form30_hf_0"               := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "buttons:finish"            := "x", // added
+    "view:sendNotificationForm:group" := sS20Radiobutton;//"radio771"; // changed
+

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Submit Assessment" Desc="Submit Assessment from Viewer" TaskID="129" Path="Submit_Assessment.XML">
+  <Step StepId="166" stepSeq="1" ObjectId="346" ObjectName="Submit Entire Assessment link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="167" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="165" stepSeq="3" ObjectId="347" ObjectName="Ok - Submit Assessment" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="1" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="wait after submit" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

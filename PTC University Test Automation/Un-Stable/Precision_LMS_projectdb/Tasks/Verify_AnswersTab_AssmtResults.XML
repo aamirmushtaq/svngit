@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Answers Tab in Assessment Results Page" Desc="Verify Answers Tab in Assessment Results Page along with any Question" TaskID="131" Path="Verify_AnswersTab_AssmtResults.XML">
+  <Step StepId="258" stepSeq="1" ObjectId="353" ObjectName="Answers Tab" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="283" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="259" stepSeq="3" ObjectId="354" ObjectName="Answer Details Table" ObjectTypeId="3009" ActionId="60921" ActionName="VerifyTableRowCount">
+    <Param Name="Total Question Rowcount" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="260" stepSeq="4" ObjectId="349" ObjectName="Assessment Results Page" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Question Number" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="261" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="262" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap" />
+  </Step>
+  <Step StepId="286" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="253" stepSeq="8" ObjectId="352" ObjectName="Question Results table" ObjectTypeId="3009" ActionId="60921" ActionName="VerifyTableRowCount">
+    <Param Name="Question Options Rowcount" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="257" stepSeq="9" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60105" ActionName="ClosePopUpBrowser" />
+  <Step StepId="263" stepSeq="10" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="256" stepSeq="11" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;null&quot;" ParamSeq="1" Parameterized="0" Data="null" />
+  </Step>
+</Task>

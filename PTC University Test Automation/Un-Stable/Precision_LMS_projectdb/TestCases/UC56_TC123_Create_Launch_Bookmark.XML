@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="95" ManualTCId="UC56-TC123" TCName="TC123 - Create and launch bookmark topic from list">
+  <WF>
+    <Task Name="Login to LMS" Desc="Performs login of a valid user into LMS" TaskSeq="1" ID="1">Login.XML</Task>
+    <Task Name="FindandLaunchTraining" Desc="FindandLaunchTraining" TaskSeq="2" ID="103">FindandLaunchTraining.XML</Task>
+    <Task Name="Add Multiple Bookmarks" Desc="Add multiple bookmarks" TaskSeq="3" ID="156">Add_multiple_bookmarks.XML</Task>
+    <Task Name="CloseTraining" Desc="CloseTraining" TaskSeq="4" ID="104">CloseTraining.XML</Task>
+    <Task Name="LaunchCourseFromBookMark" Desc="LaunchCourseFromBookMark" TaskSeq="5" ID="107">LaunchCourseFromBookMark.XML</Task>
+    <Task Name="CloseTraining" Desc="CloseTraining" TaskSeq="6" ID="104">CloseTraining.XML</Task>
+    <Task Name="Remove Bookmarks from My Bookmarks List" Desc="Remove Bookmarks from My Bookmarks List" TaskSeq="7" ID="157">Remove_Bookmarks_FromList.XML</Task>
+    <Task Name="LMS_LogOut" Desc="LMS_LogOut" TaskSeq="8" ID="35">LMS_LogOut.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="1" Name="Login to LMS" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;{LMS_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{LMS_URL}">
+            </Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precisionuser82@plms.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precision</Param>
+          </Step>
+          <Step StepId="4" ActionID="60800" ActionName="SelectItem" ObjectName="languages">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="103" Name="FindandLaunchTraining" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="177" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="61" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Precision LMS : Find Training">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Behavioral Modeling using Pro/ENGINEER Wildfire 4.0</Param>
+          </Step>
+          <Step StepId="162" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap">
+            </Param>
+          </Step>
+          <Step StepId="170" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="288" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="60" ActionID="60200" ActionName="Set" ObjectName="FT_searchKeyword">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">"Behavioral Modeling using Pro/ENGINEER Wildfire 4.0"</Param>
+          </Step>
+          <Step StepId="59" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">All</Param>
+          </Step>
+          <Step StepId="58" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Format">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Online Course</Param>
+          </Step>
+          <Step StepId="57" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">All Languages</Param>
+          </Step>
+          <Step StepId="56" ActionID="60800" ActionName="SelectItem" ObjectName="FT_CreatedBy">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Anyone</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="156" Name="Add Multiple Bookmarks" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="238" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Course Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Introduction</Param>
+          </Step>
+          <Step StepId="239" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="237" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">5</Param>
+          </Step>
+          <Step StepId="225" ActionID="60200" ActionName="Set" ObjectName="Bookmark name">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC123 01 Bookmark</Param>
+          </Step>
+          <Step StepId="236" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="2">
+          <Step StepId="238" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Course Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Project Introduction</Param>
+          </Step>
+          <Step StepId="239" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="237" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">5</Param>
+          </Step>
+          <Step StepId="225" ActionID="60200" ActionName="Set" ObjectName="Bookmark name">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC123 02 Bookmark</Param>
+          </Step>
+          <Step StepId="236" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="3">
+          <Step StepId="238" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Course Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Creating Measurement Features on Pro/ENGINEER Models</Param>
+          </Step>
+          <Step StepId="239" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="237" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">5</Param>
+          </Step>
+          <Step StepId="225" ActionID="60200" ActionName="Set" ObjectName="Bookmark name">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">TC123 03 Bookmark</Param>
+          </Step>
+          <Step StepId="236" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="104" Name="CloseTraining" TaskSeq="4">
+        <TaskDataSet Iteration="1">
+          <Step StepId="169" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="PageTitle" ParamSeq="1" Parameterized="1" Data="">null</Param>
+          </Step>
+          <Step StepId="187" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="107" Name="LaunchCourseFromBookMark" TaskSeq="5">
+        <TaskDataSet Iteration="1">
+          <Step StepId="228" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">3</Param>
+          </Step>
+          <Step StepId="235" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Course Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">TC123 02 Bookmark</Param>
+          </Step>
+          <Step StepId="241" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="231" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap">
+            </Param>
+          </Step>
+          <Step StepId="232" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="104" Name="CloseTraining" TaskSeq="6">
+        <TaskDataSet Iteration="1">
+          <Step StepId="169" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="PageTitle" ParamSeq="1" Parameterized="1" Data="">null</Param>
+          </Step>
+          <Step StepId="187" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="157" Name="Remove Bookmarks from My Bookmarks List" TaskSeq="7">
+        <TaskDataSet Iteration="1">
+          <Step StepId="228" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">5</Param>
+          </Step>
+          <Step StepId="229" ActionID="60912" ActionName="StoreRowNoContainingCellText" ObjectName="My Bookmarks Table">
+            <Param Name="&quot;RowNo_BookmarkName&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_BookmarkName">
+            </Param>
+            <Param Name="cellText" ParamSeq="2" Parameterized="1" Data="">TC123 03 Bookmark</Param>
+            <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+          <Step StepId="230" ActionID="99994" ActionName="ClickLinkTitleAtCell" ObjectName="My Bookmarks Table">
+            <Param Name="link" ParamSeq="1" Parameterized="1" Data="">Remove</Param>
+            <Param Name="&quot;{RowNo_BookmarkName}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_BookmarkName}">
+            </Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="231" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;8&quot;" ParamSeq="1" Parameterized="0" Data="8">
+            </Param>
+          </Step>
+          <Step StepId="232" ActionID="60904" ActionName="StoreRowCount" ObjectName="My Bookmarks Table">
+            <Param Name="&quot;My Bookmark Rows&quot;" ParamSeq="1" Parameterized="0" Data="My Bookmark Rows">
+            </Param>
+          </Step>
+          <Step StepId="233" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{My Bookmark Rows}&quot;" ParamSeq="1" Parameterized="0" Data="{My Bookmark Rows}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">3</Param>
+            <Param Name="&quot;FALSE&quot;" ParamSeq="3" Parameterized="0" Data="FALSE">
+            </Param>
+          </Step>
+          <Step StepId="290" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="35" Name="LMS_LogOut" TaskSeq="8">
+        <TaskDataSet Iteration="1">
+          <Step StepId="92" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">3</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

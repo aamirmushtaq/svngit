@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Course Details popup" Desc="Verify Course Details popup" TaskID="145" Path="Verify_CourseDetails_popup.XML">
+  <Step StepId="156" stepSeq="1" ObjectId="330" ObjectName="Details table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;1&quot;" ParamSeq="1" Parameterized="0" Data="1" />
+    <Param Name="Course Detail Row 1" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="155" stepSeq="2" ObjectId="330" ObjectName="Details table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+    <Param Name="Course Detail Row 2" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="160" stepSeq="3" ObjectId="330" ObjectName="Details table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+    <Param Name="Course Detail Row 3" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="161" stepSeq="4" ObjectId="330" ObjectName="Details table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+    <Param Name="Course Detail Row 4" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

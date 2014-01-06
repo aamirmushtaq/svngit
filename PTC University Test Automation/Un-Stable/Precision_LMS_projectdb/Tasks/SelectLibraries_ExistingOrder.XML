@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Libraries selection in Existing Order page" Desc="Libraries selection in Existing Order page" TaskID="70" Path="SelectLibraries_ExistingOrder.XML">
+  <Step StepId="100" stepSeq="1" ObjectId="268" ObjectName="Libraries List table" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="KeyRowNoOfLibrary" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="Library Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="268" ObjectName="Libraries List table" ObjectTypeId="3009" ActionId="60924" ActionName="ClickCheckboxInCell">
+    <Param Name="RowNoOfLibraryKey" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1" />
+  </Step>
+</Task>

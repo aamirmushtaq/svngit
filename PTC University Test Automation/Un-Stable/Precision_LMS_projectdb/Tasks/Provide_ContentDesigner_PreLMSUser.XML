@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Provide Content Designer Privileges" Desc="Provide Content Designer Privileges to Precision-LMS Student user" TaskID="155" Path="Provide_ContentDesigner_PreLMSUser.XML">
+  <Step StepId="256" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="1" stepSeq="2" ObjectId="145" ObjectName="Manage Users" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="260" stepSeq="3" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;UserRow&quot;" ParamSeq="1" Parameterized="0" Data="UserRow" />
+    <Param Name="userEmail" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;3&quot;" ParamSeq="3" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="259" stepSeq="4" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99994" ActionName="ClickLinkTitleAtCell">
+    <Param Name="&quot;Edit&quot;" ParamSeq="1" Parameterized="0" Data="Edit" />
+    <Param Name="&quot;{UserRow}&quot;" ParamSeq="2" Parameterized="0" Data="{UserRow}" />
+    <Param Name="&quot;6&quot;" ParamSeq="3" Parameterized="0" Data="6" />
+  </Step>
+  <Step StepId="258" stepSeq="5" ObjectId="184" ObjectName="CreateUser_Content Design" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="257" stepSeq="6" ObjectId="214" ObjectName="SaveLink" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="262" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="261" stepSeq="8" ObjectId="229" ObjectName="SLI_OkBtn" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+</Task>

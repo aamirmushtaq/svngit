@@ -1,0 +1,1305 @@
+//----------------------------------------------------------------------
+// Recorded 10/02/2007 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+
+
+dclfunc
+
+  function fScenario2
+    var
+      hWebStoredCtx_All_Learning_Temp : number;
+    begin      
+
+    WebPageStoreContext(hWebStoredCtx_All_Learning_Temp);
+
+    WebPageLink("Mold Design", ""+SITE_NODE+"/app/"); // Link 19
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_003, 0.08);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s1con.html", 
+      "y1s1con.html");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_004, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s1app.html", 
+      "y1s1app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_005, 0.05);
+ 
+    WebPageAddUrl("../core_graphics/dnarrow.gif");
+    WebPageAddUrl("../core_graphics/note_1.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s1demo.html", 
+      "y1s1demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_006, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s2con.html", 
+      "y1s2con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_007, 0.05);
+ 
+    WebPageAddUrl("graphics/000wf2_06.gif");
+    WebPageAddUrl("../core_graphics/clip1.jpg");
+    WebPageAddUrl("../core_graphics/clip2_light.jpg");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s2app.html", 
+      "y1s2app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_008, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s2demo.html", 
+      "y1s2demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_009, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s3con.html", 
+      "y1s3con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_010, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s3app.html", 
+      "y1s3app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_011, 0.05);
+ 
+    WebPageAddUrl("graphics/wp002.gif");
+    WebPageAddUrl("graphics/wp003.gif");
+    WebPageAddUrl("graphics/wp004.gif");
+    WebPageAddUrl("graphics/wp005.gif");
+    WebPageAddUrl("graphics/wp006.gif");
+    WebPageAddUrl("graphics/wp007.gif");
+    WebPageAddUrl("graphics/wp008.gif");
+    WebPageAddUrl("graphics/wp009.gif");
+    WebPageAddUrl("graphics/wp010.gif");
+    WebPageAddUrl("graphics/wp011.gif");
+    WebPageAddUrl("graphics/wp012.gif");
+    WebPageAddUrl("graphics/wp013.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s3demo.html", 
+      "y1s3demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_012, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s4con.html", 
+      "y1s4con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_013, 0.05);
+ 
+    WebPageAddUrl("graphics/sil002.jpg");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s4app.html", 
+      "y1s4app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_014, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s4demo.html", 
+      "y1s4demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_015, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s5con.html", 
+      "y1s5con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_016, 0.03);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s5app.html", 
+      "y1s5app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_017, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d/ymold/y1inst/y1s5demo.html", 
+      "y1s5demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_018, 0.05);
+ 
+    WebPageParseUrl("Javascript Redirection in page y1xq.html", "openBrWindow('", "'", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_ab4605db-1b16-430f-aa4e-95fe6b19585d//ymold/y1inst/y1xq.html", 
+      "y1xq.html");
+    MeasureStop ("NextPage");
+    // show answers
+ 
+//    ThinkTime(rNextQuestion);
+//    WebPageLink("Javascript Redirection in page y1xq.html", "Mold Mode Feedback Answers");
+    // skip to section 3
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NavTree");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_019, 0.08);
+ 
+    WebPageAddUrl(""+SITE_NODE+"/images/viewer/selected_arrow.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3intro.html",
+       "y3intro.html");
+    MeasureStop ("NavTree");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_020, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s1con.html",
+       "y3s1con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_021, 0.05);
+ 
+    WebPageAddUrl("../core_graphics/note_1.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s1app.html",
+       "y3s1app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_022, 0.05);
+ 
+    WebPageAddUrl("../core_graphics/dnarrow.gif");
+    WebPageAddUrl("graphics/loop3.gif");
+    WebPageAddUrl("graphics/loop_win3.gif");
+    WebPageAddUrl("../core_graphics/clip1.jpg");
+    WebPageAddUrl("../core_graphics/clip2_light.jpg");
+    WebPageAddUrl("graphics/loop4.gif");
+    WebPageAddUrl("graphics/loop_win4.gif");
+    WebPageAddUrl("../core_graphics/clip3_light.jpg");
+    WebPageAddUrl("graphics/saddle33.jpg");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s1demo.html"
+      , "y3s1demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_023, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s2con.html",
+       "y3s2con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_024, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s2app.html",
+       "y3s2app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_025, 0.03);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s2demo.html"
+      , "y3s2demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_026, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s3con.html",
+       "y3s3con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_027, 0.03);
+ 
+    WebPageAddUrl("graphics/menu2_up.gif");
+    WebPageAddUrl("graphics/island2.gif");
+    WebPageAddUrl("graphics/menu3_up.gif");
+    WebPageAddUrl("graphics/island3.gif");
+    WebPageAddUrl("graphics/menu4_up.gif");
+    WebPageAddUrl("graphics/island4.gif");
+    WebPageAddUrl("graphics/menu5_up.gif");
+    WebPageAddUrl("graphics/island5.gif");
+    WebPageAddUrl("graphics/menu6_up.gif");
+    WebPageAddUrl("graphics/island6.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s3app.html",
+       "y3s3app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_028, 0.05);
+ 
+    WebPageAddUrl("graphics/foot002.jpg");
+    WebPageAddUrl("graphics/foot003.jpg");
+    WebPageAddUrl("graphics/foot004.jpg");
+    WebPageAddUrl("graphics/foot005.jpg");
+    WebPageAddUrl("graphics/foot006.jpg");
+    WebPageAddUrl("graphics/foot007.jpg");
+    WebPageAddUrl("graphics/foot008.jpg");
+    WebPageAddUrl("graphics/foot009.jpg");
+    WebPageAddUrl("graphics/foot010.jpg");
+    WebPageAddUrl("graphics/foot011.jpg");
+    WebPageAddUrl("graphics/foot012.jpg");
+    WebPageAddUrl("graphics/foot013.jpg");
+    WebPageAddUrl("graphics/foot014.jpg");
+    WebPageAddUrl("graphics/foot015.jpg");
+    WebPageAddUrl("graphics/foot016.jpg");
+    WebPageAddUrl("graphics/foot017.jpg");
+    WebPageAddUrl("graphics/foot018.jpg");
+    WebPageAddUrl("graphics/foot019.jpg");
+    WebPageAddUrl("graphics/aslide004.jpg");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s3demo.html"
+      , "y3s3demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_029, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s4con.html",
+       "y3s4con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_030, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s4app.html",
+       "y3s4app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_031, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s4demo.html"
+      , "y3s4demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_032, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s5con.html",
+       "y3s5con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_033, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s5app.html",
+       "y3s5app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_034, 0.05);
+ 
+    WebPageAddUrl("graphics/askirt8.jpg");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403/ymold/y3parting/y3s5demo.html"
+      , "y3s5demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_035, 0.03);
+ 
+    WebPageParseUrl("Javascript Redirection in page y3xq.html", "openBrWindow('", "'", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_8ec56026-e30a-4a19-ab40-045699d8b403//ymold/y3parting/y3xq.html", 
+      "y3xq.html");
+    MeasureStop ("NextPage");
+    // show answers
+ 
+//    ThinkTime(rNextQuestion);
+//    WebPageLink("Javascript Redirection in page y3xq.html", "Parting Line Applications Feedback Answers");
+    // skip back to section 2
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_036, 0.08);
+ 
+    WebPageAddUrl(""+SITE_NODE+"/images/viewer/selected_arrow.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2intro.html", 
+      "y2intro.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_037, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s1con.html", 
+      "y2s1con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_038, 0.05);
+ 
+    WebPageAddUrl("graphics/pattern_circ.gif");
+    WebPageAddUrl("../core_graphics/clip1.jpg");
+    WebPageAddUrl("../core_graphics/clip2_light.jpg");
+    WebPageAddUrl("graphics/pattern_vari.gif");
+    WebPageAddUrl("../core_graphics/clip3_light.jpg");
+    WebPageAddUrl("graphics/2001_rewrite31.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s1app.html", 
+      "y2s1app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_039, 0.05);
+ 
+    WebPageAddUrl("../core_graphics/dnarrow.gif");
+    WebPageAddUrl("../core_graphics/note_1.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s1demo.html",
+       "y2s1demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_040, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s2con.html", 
+      "y2s2con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_041, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s2app.html", 
+      "y2s2app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_042, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s2demo.html",
+       "y2s2demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_043, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s3con.html", 
+      "y2s3con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_044, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s3app.html", 
+      "y2s3app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_045, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s3demo.html",
+       "y2s3demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_046, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s4con.html", 
+      "y2s4con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_047, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s4app.html", 
+      "y2s4app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_048, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s4demo.html",
+       "y2s4demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_049, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s5con.html", 
+      "y2s5con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_050, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s5app.html", 
+      "y2s5app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_051, 0.06);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s5demo.html",
+       "y2s5demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_052, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s6con.html", 
+      "y2s6con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_053, 0.03);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s6app.html", 
+      "y2s6app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_054, 0.05);
+ 
+    WebPageAddUrl("graphics/water_fast.gif");
+    WebPageAddUrl("graphics/water_slow.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051/ymold/y2layout/y2s6demo.html",
+       "y2s6demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_055, 0.06);
+ 
+    WebPageParseUrl("Javascript Redirection in page y2xq.html", "openBrWindow('", "'", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_03892799-2770-4736-9fb8-efc9f958f051//ymold/y2layout/y2xq.html", 
+      "y2xq.html");
+    MeasureStop ("NextPage");
+    // show answers
+ 
+//    ThinkTime(rNextQuestion);
+//    WebPageLink("Javascript Redirection in page y2xq.html", "Mold Layout Mode Feedback Answers");
+    // skip to section 4
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NavTree");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/selected_arrow.gif", 1.78);
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_056, 0.08);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4intro.html", 
+      "y4intro.html");
+    MeasureStop ("NavTree");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_057, 0.06);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s1con.html", 
+      "y4s1con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_058, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s1app.html", 
+      "y4s1app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_059, 0.05);
+ 
+    WebPageAddUrl("../core_graphics/dnarrow.gif");
+    WebPageAddUrl("../core_graphics/note_1.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s1demo.html", 
+      "y4s1demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_060, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s2con.html", 
+      "y4s2con.html");
+     MeasureStop ("NextPage");
+   // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_061, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s2app.html", 
+      "y4s2app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_062, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s2demo.html", 
+      "y4s2demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_063, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s3con.html", 
+      "y4s3con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_064, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s3app.html", 
+      "y4s3app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_065, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s3demo.html", 
+      "y4s3demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_066, 0.05);
+ 
+    WebPageAddUrl("graphics/rewrite005.jpg");
+    WebPageAddUrl("graphics/zoom_in_up.gif");
+    WebPageAddUrl("graphics/zoom_out.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s4con.html", 
+      "y4s4con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_067, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s4app.html", 
+      "y4s4app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_068, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74/ymold/y4comp/y4s4demo.html", 
+      "y4s4demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_069, 0.03);
+ 
+    WebPageParseUrl("Javascript Redirection in page y4xq.html", "openBrWindow('", "'", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_bae9879d-2296-44ad-9851-d63f1b923a74//ymold/y4comp/y4xq.html", 
+      "y4xq.html");
+    MeasureStop ("NextPage");
+    // show answers
+ 
+//    ThinkTime(rNextQuestion);
+//    WebPageLink("Javascript Redirection in page y4xq.html", "Custom Components Feedback Answers");
+    // go to next section 
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NavTree");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/selected_arrow.gif", 0.69);
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_070, 0.08);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5intro.html", 
+      "y5intro.html");
+    MeasureStop ("NavTree");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_071, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s1con.html", 
+      "y5s1con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_072, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s1app.html", 
+      "y5s1app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_073, 0.05);
+ 
+    WebPageAddUrl("../core_graphics/dnarrow.gif");
+    WebPageAddUrl("../core_graphics/note_1.gif");
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s1demo.html", 
+      "y5s1demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_074, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s2con.html", 
+      "y5s2con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_075, 0.03);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s2app.html", 
+      "y5s2app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_076, 0.03);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s2demo.html", 
+      "y5s2demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_077, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s3con.html", 
+      "y5s3con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_078, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s3app.html", 
+      "y5s3app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_079, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s3demo.html", 
+      "y5s3demo.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_080, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s4con.html", 
+      "y5s4con.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_081, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s4app.html", 
+      "y5s4app.html");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_082, 0.05);
+ 
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104/ymold/y5anal/y5s4demo.html", 
+      "Untitled Document");
+    MeasureStop ("NextPage");
+    // next
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_083, 0.03);
+ 
+    WebPageParseUrl("Javascript Redirection in page y5xq.html", "openBrWindow('", "'", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_341f9a0e-a176-4405-a204-cc18be18b104//ymold/y5anal/y5xq.html", 
+      "y5xq.html");
+    MeasureStop ("NextPage");
+    // show answers
+ 
+//    ThinkTime(rNextQuestion);
+//    WebPageLink("Javascript Redirection in page y5xq.html", "Part and Mold Analysis Feedback Answers");
+    // go to project
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/selected_arrow.gif", 0.50);
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_084, 0.05);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // "+SITE+"/"+SITE_CONTENT+"/coach_cp_c90bd1e2-8b63-4d72-b4dd-2156226719a2//ymold/y6proj/y6s1con.html
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_c90bd1e2-8b63-4d72-b4dd-2156226719a2//ymold/y6proj/y6s1con.html", 
+      "Object not found!");
+    MeasureStop ("NextPage");
+ 
+    ThinkTime(rNextQuestion);
+    MeasureStart ("NextPage");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", STABLELOCAL_APP_085, 0.05);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // "+SITE+"/"+SITE_CONTENT+"/coach_cp_c90bd1e2-8b63-4d72-b4dd-2156226719a2//ymold/y6proj/y6s1con.html
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/coach_cp_c90bd1e2-8b63-4d72-b4dd-2156226719a2//ymold/y6proj/y6s1con.html", 
+      "Object not found! (#1)");
+    MeasureStop ("NextPage");
+    // there was an object not found
+    // close course
+    // logout
+ 
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/main_background_fade.jpg");
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/field_bg.jpg");
+    // Redirecting "+SITE+""+SITE_NODE+"/app/?wicket:interface=:3:logoutLink::ILinkListener::
+    // -> (redirection) "+SITE+""+SITE_NODE+"/app/pages/Login/
+    ThinkTime(rShortTime);
+    WebPageLink("Logout", "Login (#1)", 1, NULL, hWebStoredCtx_All_Learning_Temp); // Link 3
+    WebPageDeleteContext(hWebStoredCtx_All_Learning_Temp);
+  end fScenario2;
+
+dclform
+
+  STABLELOCAL_APP_002 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:allLearningTemp::ILinkListener::";
+
+  STABLELOCAL_APP_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.19729846817183755";
+
+  STABLELOCAL_APP_004 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.11586190661974371";
+
+  STABLELOCAL_APP_005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.4967633480196886";
+
+  STABLELOCAL_APP_006 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.3341813336211331";
+
+  STABLELOCAL_APP_007 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.9009950485762844";
+
+  STABLELOCAL_APP_008 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.3769934731303381";
+
+  STABLELOCAL_APP_009 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.39448912669210684";
+
+  STABLELOCAL_APP_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.10929333742160585";
+
+  STABLELOCAL_APP_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.08709726939835993";
+
+  STABLELOCAL_APP_012 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.24527287779288936";
+
+  STABLELOCAL_APP_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5159695903382435";
+
+  STABLELOCAL_APP_014 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.08426757553452574";
+
+  STABLELOCAL_APP_015 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.619315627117181";
+
+  STABLELOCAL_APP_016 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.04921324248675413";
+
+  STABLELOCAL_APP_017 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.15240028506788244";
+
+  STABLELOCAL_APP_018 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6481270179478786";
+
+  STABLELOCAL_APP_019 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:learningItemTree:i:18:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.9929489289734917";
+
+  STABLELOCAL_APP_020 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7340093111435724";
+
+  STABLELOCAL_APP_021 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8661433652023958";
+
+  STABLELOCAL_APP_022 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.09969615458320602";
+
+  STABLELOCAL_APP_023 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5086484989029799";
+
+  STABLELOCAL_APP_024 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5115743343791763";
+
+  STABLELOCAL_APP_025 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.18661710776660484";
+
+  STABLELOCAL_APP_026 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.25970452547257905";
+
+  STABLELOCAL_APP_027 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.784378190450415";
+
+  STABLELOCAL_APP_028 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.18178040073684393";
+
+  STABLELOCAL_APP_029 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.3885218001862744";
+
+  STABLELOCAL_APP_030 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.9044843850764953";
+
+  STABLELOCAL_APP_031 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.40635154074557183";
+
+  STABLELOCAL_APP_032 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7381838210347138";
+
+  STABLELOCAL_APP_033 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7781833213023709";
+
+  STABLELOCAL_APP_034 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.25954389210000406";
+
+  STABLELOCAL_APP_035 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7697270587578464";
+
+  STABLELOCAL_APP_036 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:learningItemTree:i:9:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.12151645891709162";
+
+  STABLELOCAL_APP_037 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.16379561846656532";
+
+  STABLELOCAL_APP_038 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.041297039213074704";
+
+  STABLELOCAL_APP_039 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.40984322405439655";
+
+  STABLELOCAL_APP_040 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.23422452842078806";
+
+  STABLELOCAL_APP_041 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.43534340455440057";
+
+  STABLELOCAL_APP_042 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7852315761967717";
+
+  STABLELOCAL_APP_043 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.3747741855534235";
+
+  STABLELOCAL_APP_044 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5793359490966025";
+
+  STABLELOCAL_APP_045 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.4299862664847341";
+
+  STABLELOCAL_APP_046 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.44879616699828434";
+
+  STABLELOCAL_APP_047 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.43998756140878453";
+
+  STABLELOCAL_APP_048 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.13693761185903097";
+
+  STABLELOCAL_APP_049 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5086854084990368";
+
+  STABLELOCAL_APP_050 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5272879857875994";
+
+  STABLELOCAL_APP_051 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.21588550460619443";
+
+  STABLELOCAL_APP_052 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.34154373923656894";
+
+  STABLELOCAL_APP_053 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5198543968778033";
+
+  STABLELOCAL_APP_054 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.17102218993925178";
+
+  STABLELOCAL_APP_055 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.4490103720772729";
+
+  STABLELOCAL_APP_056 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:learningItemTree:i:26:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.2736365628105273";
+
+  STABLELOCAL_APP_057 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.07581502131423662";
+
+  STABLELOCAL_APP_058 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.04206418073400814";
+
+  STABLELOCAL_APP_059 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.06769611348292104";
+
+  STABLELOCAL_APP_060 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.428660691504537";
+
+  STABLELOCAL_APP_061 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.31783958374310567";
+
+  STABLELOCAL_APP_062 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8988062945948825";
+
+  STABLELOCAL_APP_063 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7729468106045408";
+
+  STABLELOCAL_APP_064 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6767523078309847";
+
+  STABLELOCAL_APP_065 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5955608900324243";
+
+  STABLELOCAL_APP_066 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.14666984682821243";
+
+  STABLELOCAL_APP_067 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.22532341271406664";
+
+  STABLELOCAL_APP_068 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.2764844502725552";
+
+  STABLELOCAL_APP_069 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7365311920059143";
+
+  STABLELOCAL_APP_070 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:learningItemTree:i:33:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.8432140030461311";
+
+  STABLELOCAL_APP_071 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.12862013238893344";
+
+  STABLELOCAL_APP_072 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.05590968654318479";
+
+  STABLELOCAL_APP_073 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.831711209917577";
+
+  STABLELOCAL_APP_074 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8959325678792251";
+
+  STABLELOCAL_APP_075 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7611114987141783";
+
+  STABLELOCAL_APP_076 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.12418143218131466";
+
+  STABLELOCAL_APP_077 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7126706802867255";
+
+  STABLELOCAL_APP_078 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.44102005067171634";
+
+  STABLELOCAL_APP_079 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7551516627229601";
+
+  STABLELOCAL_APP_080 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7270350515816822";
+
+  STABLELOCAL_APP_081 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5462815182366076";
+
+  STABLELOCAL_APP_082 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6413882430542779";
+
+  STABLELOCAL_APP_083 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.17590678437963003";
+
+  STABLELOCAL_APP_084 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:learningItemTree:i:40:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.10941016355660238";
+
+  STABLELOCAL_APP_085 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:learningItemTree:i:291:nodeComponent::IBehaviorListener:0:-1",
+    "random"                    := "0.22268496101387225";
+

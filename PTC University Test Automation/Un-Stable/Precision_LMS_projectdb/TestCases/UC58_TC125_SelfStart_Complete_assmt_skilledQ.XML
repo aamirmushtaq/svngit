@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="98" ManualTCId="UC58-TC125" TCName="TC125 - Self-start, complete an assessment(skill)">
+  <WF>
+    <Task Name="Login to LMS" Desc="Performs login of a valid user into LMS" TaskSeq="1" ID="1">Login.XML</Task>
+    <Task Name="Launch Assessment from Search tab in Find Training" Desc="Launch Assessment from Find Training (Search tab)" TaskSeq="2" ID="148">LaunchAssmt_FromSearchTab_FindTrning.XML</Task>
+    <Task Name="Verify Assessment Title in Assessment Viewer" Desc="Verify Assessment Title in Assessment Viewer" TaskSeq="3" ID="153">Verify_Title_in_Assmt_Viewer.XML</Task>
+    <Task Name="Verify Links in Assessment Viewer" Desc="Verify Links in Assessment Viewer.&#xD;&#xA;Links - Expand, Collapse, Hide Map, Show Map" TaskSeq="4" ID="150">VerifyLinks_AssmtViewer.XML</Task>
+    <Task Name="Attempt multiple Option Question in Assessment" Desc="Attempt Questions having Multiple Options (check boxes) in Assessment" TaskSeq="5" ID="160">Attempt_MultipleOption_Questions_Assmt.XML</Task>
+    <Task Name="Attempt Questions in Assessment" Desc="Attempt Questions in Assessment and Perform Available Action" TaskSeq="6" ID="138">Attempt_Questions_Assessment.XML</Task>
+    <Task Name="Attempt Skilled Questions in Assessment" Desc="Attempt Skilled Questions in Assessment" TaskSeq="7" ID="161">Attempt_SkillQuestions_Assmt.XML</Task>
+    <Task Name="Confirm the Assessment Submission" Desc="Confirm the Submit Assessment Confirmation frame" TaskSeq="8" ID="139">Confirm_Submit_Assessment_Frame.XML</Task>
+    <Task Name="Verify Summary Tab in Assessment Results Page" Desc="Verify Summary Tab in Assessment Results Page after assessment is completed" TaskSeq="9" ID="130">Verify_SummaryTab_AssmtResults.XML</Task>
+    <Task Name="Verify Answers Tab in Assessment Results Page" Desc="Verify Answers Tab in Assessment Results Page along with any Question" TaskSeq="10" ID="131">Verify_AnswersTab_AssmtResults.XML</Task>
+    <Task Name="Verify Details tab(table header) in Assmt Results" Desc="Verify table header in Details tab within Assmt Results Page after submitting Assessment" TaskSeq="11" ID="158">VerifytableHeader_DetailsTab_AssmtResultPg.XML</Task>
+    <Task Name="Verify Details tab in Assessment Results Page" Desc="Verify Details tab in Assessment Results Page after assessment submission" TaskSeq="12" ID="146">VerifyDetailsTab_AssmtResultsPage.XML</Task>
+    <Task Name="Verify buttons on Assessment Results Page" Desc="Verify Home and Export to excel feature in Assessment Results Page" TaskSeq="13" ID="132">Verify_HomeExport_AssmtResults.XML</Task>
+    <Task Name="Verify Completed Learnings Section in Home Page" Desc="Verify Completed Learnings Tab in Home Page" TaskSeq="14" ID="133">Verify_CompletedLearningSection_HomePg.XML</Task>
+    <Task Name="LMS_LogOut" Desc="LMS_LogOut" TaskSeq="15" ID="35">LMS_LogOut.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="1" Name="Login to LMS" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;{LMS_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{LMS_URL}">
+            </Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precisionuser83@plms.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precision</Param>
+          </Step>
+          <Step StepId="4" ActionID="60800" ActionName="SelectItem" ObjectName="languages">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="131" Name="Verify Answers Tab in Assessment Results Page" TaskSeq="10">
+        <TaskDataSet Iteration="1">
+          <Step StepId="263" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="256" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;null&quot;" ParamSeq="1" Parameterized="0" Data="null">
+            </Param>
+          </Step>
+          <Step StepId="283" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="259" ActionID="60921" ActionName="VerifyTableRowCount" ObjectName="Answer Details Table">
+            <Param Name="expRow" ParamSeq="1" Parameterized="1" Data="">8</Param>
+          </Step>
+          <Step StepId="260" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Results Page">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 2</Param>
+          </Step>
+          <Step StepId="261" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="262" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap">
+            </Param>
+          </Step>
+          <Step StepId="286" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="253" ActionID="60921" ActionName="VerifyTableRowCount" ObjectName="Question Results table">
+            <Param Name="expRow" ParamSeq="1" Parameterized="1" Data="">5</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="158" Name="Verify Details tab(table header) in Assmt Results" TaskSeq="11">
+        <TaskDataSet Iteration="1">
+          <Step StepId="289" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{Percentage value}&quot;" ParamSeq="1" Parameterized="0" Data="{Percentage value}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">Percentage</Param>
+            <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True">
+            </Param>
+          </Step>
+          <Step StepId="283" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="288" ActionID="61204" ActionName="StorePropertyValue" ObjectName="Question Group Column title">
+            <Param Name="&quot;Question Group value&quot;" ParamSeq="1" Parameterized="0" Data="Question Group value">
+            </Param>
+            <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text">
+            </Param>
+          </Step>
+          <Step StepId="287" ActionID="61204" ActionName="StorePropertyValue" ObjectName="Total Questions Column title">
+            <Param Name="&quot;Total Questions value&quot;" ParamSeq="1" Parameterized="0" Data="Total Questions value">
+            </Param>
+            <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text">
+            </Param>
+          </Step>
+          <Step StepId="286" ActionID="61204" ActionName="StorePropertyValue" ObjectName="Answered Column title">
+            <Param Name="&quot;Answered value&quot;" ParamSeq="1" Parameterized="0" Data="Answered value">
+            </Param>
+            <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text">
+            </Param>
+          </Step>
+          <Step StepId="285" ActionID="61204" ActionName="StorePropertyValue" ObjectName="Percentage Column title">
+            <Param Name="&quot;Percentage value&quot;" ParamSeq="1" Parameterized="0" Data="Percentage value">
+            </Param>
+            <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text">
+            </Param>
+          </Step>
+          <Step StepId="284" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{Question Group value}&quot;" ParamSeq="1" Parameterized="0" Data="{Question Group value}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">Question Group</Param>
+            <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True">
+            </Param>
+          </Step>
+          <Step StepId="291" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{Total Questions value}&quot;" ParamSeq="1" Parameterized="0" Data="{Total Questions value}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">Total Questions</Param>
+            <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True">
+            </Param>
+          </Step>
+          <Step StepId="290" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{Answered value}&quot;" ParamSeq="1" Parameterized="0" Data="{Answered value}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">Answered</Param>
+            <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="146" Name="Verify Details tab in Assessment Results Page" TaskSeq="12">
+        <TaskDataSet Iteration="1">
+          <Step StepId="283" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="259" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Results Page">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Show All Subgroups</Param>
+          </Step>
+          <Step StepId="261" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="260" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Results Page">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Hide All Subgroups</Param>
+          </Step>
+          <Step StepId="286" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="132" Name="Verify buttons on Assessment Results Page" TaskSeq="13">
+        <TaskDataSet Iteration="1">
+          <Step StepId="266" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">2</Param>
+          </Step>
+          <Step StepId="284" ActionID="60106" ActionName="PressKeys" ObjectName="">
+            <Param Name="&quot;~{ESC~}&quot;" ParamSeq="1" Parameterized="0" Data="~{ESC~}">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">3</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="133" Name="Verify Completed Learnings Section in Home Page" TaskSeq="14">
+        <TaskDataSet Iteration="1">
+          <Step StepId="285" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="60912" ActionName="StoreRowNoContainingCellText" ObjectName="Completed Learning Table">
+            <Param Name="&quot;RowNo_CompleteLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_CompleteLI">
+            </Param>
+            <Param Name="cellText" ParamSeq="2" Parameterized="1" Data="">Different Question Types</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="268" ActionID="60906" ActionName="VerifyCellText" ObjectName="Completed Learning Table">
+            <Param Name="data" ParamSeq="1" Parameterized="1" Data="">100%</Param>
+            <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_CompleteLI}">
+            </Param>
+            <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="269" ActionID="60906" ActionName="VerifyCellText" ObjectName="Completed Learning Table">
+            <Param Name="data" ParamSeq="1" Parameterized="1" Data="">-</Param>
+            <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_CompleteLI}">
+            </Param>
+            <Param Name="&quot;5&quot;" ParamSeq="3" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="281" ActionID="60925" ActionName="VerifyImageInCell" ObjectName="Completed Learning Table">
+            <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="1" Parameterized="0" Data="{RowNo_CompleteLI}">
+            </Param>
+            <Param Name="&quot;6&quot;" ParamSeq="2" Parameterized="0" Data="6">
+            </Param>
+            <Param Name="ScrOrTitle" ParamSeq="3" Parameterized="1" Data="">Results</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="35" Name="LMS_LogOut" TaskSeq="15">
+        <TaskDataSet Iteration="1">
+          <Step StepId="92" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">3</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="148" Name="Launch Assessment from Search tab in Find Training" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="61" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Precision LMS : Find Training">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Different Question Types</Param>
+          </Step>
+          <Step StepId="179" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="180" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">5</Param>
+          </Step>
+          <Step StepId="182" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap">
+            </Param>
+          </Step>
+          <Step StepId="186" ActionID="61202" ActionName="VerifyVisibility" ObjectName="Assessment title">
+            <Param Name="&quot;True&quot;" ParamSeq="1" Parameterized="0" Data="True">
+            </Param>
+          </Step>
+          <Step StepId="185" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="295" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="60" ActionID="60200" ActionName="Set" ObjectName="FT_searchKeyword">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">"Different Question Types"</Param>
+          </Step>
+          <Step StepId="59" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Pro/ENGINEER</Param>
+          </Step>
+          <Step StepId="58" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Format">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Assessment</Param>
+          </Step>
+          <Step StepId="57" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+          <Step StepId="56" ActionID="60800" ActionName="SelectItem" ObjectName="FT_CreatedBy">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Anyone</Param>
+          </Step>
+          <Step StepId="177" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="153" Name="Verify Assessment Title in Assessment Viewer" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="61204" ActionName="StorePropertyValue" ObjectName="Assessment title">
+            <Param Name="&quot;Assessment title&quot;" ParamSeq="1" Parameterized="0" Data="Assessment title">
+            </Param>
+            <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text">
+            </Param>
+          </Step>
+          <Step StepId="289" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{Assessment title}&quot;" ParamSeq="1" Parameterized="0" Data="{Assessment title}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">Different Question Types</Param>
+            <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="150" Name="Verify Links in Assessment Viewer" TaskSeq="4">
+        <TaskDataSet Iteration="1">
+          <Step StepId="217" ActionID="60701" ActionName="VerifyExistence" ObjectName="Show Course Map">
+            <Param Name="existence" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+          <Step StepId="240" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="241" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="244" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="160" Name="Attempt multiple Option Question in Assessment" TaskSeq="5">
+        <TaskDataSet Iteration="1">
+          <Step StepId="274" ActionID="60409" ActionName="SelectByIndex" ObjectName="Multiple Choice Answer">
+            <Param Name="&quot;response:checkGroup&quot;" ParamSeq="1" Parameterized="0" Data="response:checkGroup">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">1</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 1</Param>
+          </Step>
+          <Step StepId="276" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="2">
+          <Step StepId="274" ActionID="60409" ActionName="SelectByIndex" ObjectName="Multiple Choice Answer">
+            <Param Name="&quot;response:checkGroup&quot;" ParamSeq="1" Parameterized="0" Data="response:checkGroup">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">3</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 1</Param>
+          </Step>
+          <Step StepId="276" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="3">
+          <Step StepId="274" ActionID="60409" ActionName="SelectByIndex" ObjectName="Multiple Choice Answer">
+            <Param Name="&quot;response:checkGroup&quot;" ParamSeq="1" Parameterized="0" Data="response:checkGroup">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">5</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 5</Param>
+          </Step>
+          <Step StepId="276" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="4">
+          <Step StepId="274" ActionID="60409" ActionName="SelectByIndex" ObjectName="Multiple Choice Answer">
+            <Param Name="&quot;response:checkGroup&quot;" ParamSeq="1" Parameterized="0" Data="response:checkGroup">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">2</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 5</Param>
+          </Step>
+          <Step StepId="276" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="5">
+          <Step StepId="274" ActionID="60409" ActionName="SelectByIndex" ObjectName="Multiple Choice Answer">
+            <Param Name="&quot;response:checkGroup&quot;" ParamSeq="1" Parameterized="0" Data="response:checkGroup">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">3</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 5</Param>
+          </Step>
+          <Step StepId="276" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="6">
+          <Step StepId="274" ActionID="60409" ActionName="SelectByIndex" ObjectName="Multiple Choice Answer">
+            <Param Name="&quot;response:checkGroup&quot;" ParamSeq="1" Parameterized="0" Data="response:checkGroup">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">5</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 2</Param>
+          </Step>
+          <Step StepId="276" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="138" Name="Attempt Questions in Assessment" TaskSeq="6">
+        <TaskDataSet Iteration="1">
+          <Step StepId="274" ActionID="60508" ActionName="SelectByIndex" ObjectName="Answer Options">
+            <Param Name="&quot;response:group&quot;" ParamSeq="1" Parameterized="0" Data="response:group">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">5</Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Next Question</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="2">
+          <Step StepId="274" ActionID="60508" ActionName="SelectByIndex" ObjectName="Answer Options">
+            <Param Name="&quot;response:group&quot;" ParamSeq="1" Parameterized="0" Data="response:group">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">1</Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 6</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="3">
+          <Step StepId="274" ActionID="60508" ActionName="SelectByIndex" ObjectName="Answer Options">
+            <Param Name="&quot;response:group&quot;" ParamSeq="1" Parameterized="0" Data="response:group">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">2</Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Next Question</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="4">
+          <Step StepId="274" ActionID="60508" ActionName="SelectByIndex" ObjectName="Answer Options">
+            <Param Name="&quot;response:group&quot;" ParamSeq="1" Parameterized="0" Data="response:group">
+            </Param>
+            <Param Name="Index" ParamSeq="2" Parameterized="1" Data="">2</Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Question 4</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="161" Name="Attempt Skilled Questions in Assessment" TaskSeq="7">
+        <TaskDataSet Iteration="1">
+          <Step StepId="274" ActionID="60200" ActionName="Set" ObjectName="Skill Questions - File 1">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">{GRADING_FILE_PATH}q4193_test.prt.2</Param>
+          </Step>
+          <Step StepId="275" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="61003" ActionName="ClickLinkByText" ObjectName="Assessment Viewer">
+            <Param Name="link text" ParamSeq="1" Parameterized="1" Data="">Submit entire assessment</Param>
+          </Step>
+          <Step StepId="276" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="139" Name="Confirm the Assessment Submission" TaskSeq="8">
+        <TaskDataSet Iteration="1">
+          <Step StepId="276" ActionID="60117" ActionName="SelectFrame" ObjectName="">
+            <Param Name="&quot;relative=top&quot;" ParamSeq="1" Parameterized="0" Data="relative=top">
+            </Param>
+          </Step>
+          <Step StepId="291" ActionID="61204" ActionName="StorePropertyValue" ObjectName="Title in Submit Assessment">
+            <Param Name="&quot;Assessment Confirm title&quot;" ParamSeq="1" Parameterized="0" Data="Assessment Confirm title">
+            </Param>
+            <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text">
+            </Param>
+          </Step>
+          <Step StepId="293" ActionID="60110" ActionName="CompareString" ObjectName="">
+            <Param Name="&quot;{Assessment Confirm title}&quot;" ParamSeq="1" Parameterized="0" Data="{Assessment Confirm title}">
+            </Param>
+            <Param Name="strExpData" ParamSeq="2" Parameterized="1" Data="">Congratulations!</Param>
+            <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True">
+            </Param>
+          </Step>
+          <Step StepId="277" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">660</Param>
+          </Step>
+          <Step StepId="278" ActionID="60103" ActionName="SelectPage" ObjectName="">
+            <Param Name="&quot;null&quot;" ParamSeq="1" Parameterized="0" Data="null">
+            </Param>
+          </Step>
+          <Step StepId="282" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="130" Name="Verify Summary Tab in Assessment Results Page" TaskSeq="9">
+        <TaskDataSet Iteration="1">
+          <Step StepId="248" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Results Summary table">
+            <Param Name="&quot;1&quot;" ParamSeq="1" Parameterized="0" Data="1">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Your Score :^100%</Param>
+          </Step>
+          <Step StepId="247" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Results Summary table">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Passing Score :^Not Defined</Param>
+          </Step>
+          <Step StepId="1" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Results Summary table">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Rating :^Not Defined</Param>
+          </Step>
+          <Step StepId="251" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Results Summary table">
+            <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Total Questions :^7</Param>
+          </Step>
+          <Step StepId="250" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Results Summary table">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Questions Answered :^7</Param>
+          </Step>
+          <Step StepId="249" ActionID="60916" ActionName="CompareTableRowData" ObjectName="Results Summary table">
+            <Param Name="&quot;6&quot;" ParamSeq="1" Parameterized="0" Data="6">
+            </Param>
+            <Param Name="rowData" ParamSeq="2" Parameterized="1" Data="">Questions Correct :^7</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

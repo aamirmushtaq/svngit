@@ -1,0 +1,93 @@
+//----------------------------------------------------------------------
+// Recorded 6/15/2009 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+var
+
+
+dclparam
+
+
+dclfunc
+
+  function fScenario08
+  var
+    hWebStoredCtx_Precision_LMS_Find_Trainin : number;
+    hWeb0                                    : number;
+  begin
+
+
+WebPageAddUrl("/static/images/find-training/go-arrow.png");
+    WebPageAddUrl("/static/images/global/icons/content/topic_lg.png");
+    WebPageAddUrl("/static/images/e-learning_icon_sm.gif");
+    WebPageAddUrl("/static/images/online_test_icon_sm.gif");
+    WebPageAddUrl("/static/images/remove.gif");
+    ThinkTime(8.8);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 7
+ 
+    ThinkTime(3.1);
+    WebPageUrl("https://fusion-lb.ptc.com/plms/app/search", "search", S08_APP_SEARCH003); // Ajax identified
+ 
+    ThinkTime(11.8);
+    WebFormGet("https://fusion-lb.ptc.com/plms/app/search", S08_APP_SEARCH004, 4.28);
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/table/wicket-order-up-arrow.png");
+    // Redirecting 
+    // https://fusion-lb.ptc.com/plms/app/search?wicket:interface=:2:navigationLinkContainer:UserPref::ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/plms/app/?wicket:interface=:3::::
+    WebPageLink("My Account", "My Account"); // Link 2
+ 
+    ThinkTime(27.0);
+    WebPageLink("Precision LMS", "Welcome to Precision LMS (#1)"); // Link 5
+ 
+    ThinkTime(10.4);
+    WebFormGet("https://fusion-lb.ptc.com/plms/app/", S08_APP_005, 3.14);
+    WebFormGet("https://fusion-lb.ptc.com/plms/app/", S08_APP_006, 3.83);
+    WebUrl("https://fusion-lb.ptc.com/static/images/resume.gif", 0.02);
+    WebUrl("https://fusion-lb.ptc.com/static/images/mark_complete.gif", 1.86);
+    WebFormGet("https://fusion-lb.ptc.com/plms/app/", S08_APP_007, 3.67);
+    WebUrl("https://fusion-lb.ptc.com/static/images/results.gif", 0.05);
+    WebUrl("https://fusion-lb.ptc.com/static/images/resume_retest.gif", 0.00);
+    WebUrl("https://fusion-lb.ptc.com/static/images/retest.gif", 0.01);
+    WebUrl("https://fusion-lb.ptc.com/static/images/review.gif", 34.05);
+    // Redirecting https://fusion-lb.ptc.com/plms/app/?wicket:interface=:4:logoutLink::ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/plms/app/pages/Login/
+    WebPageLink("Log Out", "Precision LMS : Login (#1)"); // Link 4
+ 
+    // Info: HTTP status "403 Forbidden" for URL: 
+    // https://fusion-lb.ptc.com/web/notifications/fusion_maint_msg.html?0.3013712536659453
+    WebIgnoreServerError(403, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl("https://fusion-lb.ptc.com/web/notifications/fusion_maint_msg.html", "403 Forbidden (#1)", 
+      S08_FUSION_MAINT_M008);
+  end fScenario08;
+
+dclform
+  S08_FUSION_MAINT_M001:
+    ""                          := "0.4768915415409385";
+
+
+  S08_APP_SEARCH003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:navigationLinkContainer:MyBookmarks::IBehaviorListener:0:",
+    "random"                    := "0.24783100030496863";
+
+  S08_APP_SEARCH004 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:bookmarkLightBox:content:footer:closeLink::IBehaviorListener:0:-1",
+    "random"                    := "0.17347672903163863";
+
+  S08_APP_005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:tabs:tabs-container:tabs:1:link::IBehaviorListener:0:2",
+    "random"                    := "0.20852982561103223";
+
+  S08_APP_006 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:tabs:tabs-container:tabs:2:link::IBehaviorListener:0:2",
+    "random"                    := "0.003134159860550989";
+
+  S08_APP_007 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:tabs:tabs-container:tabs:3:link::IBehaviorListener:0:2",
+    "random"                    := "0.5582325807258226";
+
+  S08_FUSION_MAINT_M008:
+    ""                          := "0.3013712536659453";
+
+ 

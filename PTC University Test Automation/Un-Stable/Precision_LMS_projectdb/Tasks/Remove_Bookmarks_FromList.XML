@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Remove Bookmarks from My Bookmarks List" Desc="Remove Bookmarks from My Bookmarks List" TaskID="157" Path="Remove_Bookmarks_FromList.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="309" ObjectName="My Bookmarks Link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="228" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Wait for My Bookmarks popup" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="229" stepSeq="3" ObjectId="370" ObjectName="My Bookmarks Table" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;RowNo_BookmarkName&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_BookmarkName" />
+    <Param Name="Bookmark Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="230" stepSeq="4" ObjectId="370" ObjectName="My Bookmarks Table" ObjectTypeId="3009" ActionId="99994" ActionName="ClickLinkTitleAtCell">
+    <Param Name="Link Title" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowNo_BookmarkName}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_BookmarkName}" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="231" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;8&quot;" ParamSeq="1" Parameterized="0" Data="8" />
+  </Step>
+  <Step StepId="232" stepSeq="6" ObjectId="370" ObjectName="My Bookmarks Table" ObjectTypeId="3009" ActionId="60904" ActionName="StoreRowCount">
+    <Param Name="&quot;My Bookmark Rows&quot;" ParamSeq="1" Parameterized="0" Data="My Bookmark Rows" />
+  </Step>
+  <Step StepId="233" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{My Bookmark Rows}&quot;" ParamSeq="1" Parameterized="0" Data="{My Bookmark Rows}" />
+    <Param Name="Expected Bookmark Rows" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;FALSE&quot;" ParamSeq="3" Parameterized="0" Data="FALSE" />
+  </Step>
+  <Step StepId="289" stepSeq="8" ObjectId="371" ObjectName="Cancel Button" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="290" stepSeq="9" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

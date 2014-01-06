@@ -1,0 +1,32 @@
+cd /d00/scripts
+
+./ipa_stop.sh
+
+echo "Fetching latest war file ..."
+
+wget -O ipa_2.4_stable.war http://hq-fusdev04.ptcnet.ptc.com/builds/ipa_2.4_stable.war
+
+echo "Fetched latest Unstable war file ..."
+
+rm -rf /d00/apps/ipa/tomcat/webapps/ipa
+
+mkdir /d00/apps/ipa/tomcat/webapps/ipa
+
+cd /d00/apps/ipa/tomcat/webapps/ipa
+
+echo "Extracting latest war file ..."
+
+/d00/apps/JDK/jdk/bin/jar -xf /d00/scripts/ipa_2.4_stable.war
+
+cd /d00/scripts
+
+del ipa_2.4_stable.war
+
+./ipa_clean.sh
+
+./ipa_start.sh
+
+./ipa_tail.sh
+
+echo "done ..."
+

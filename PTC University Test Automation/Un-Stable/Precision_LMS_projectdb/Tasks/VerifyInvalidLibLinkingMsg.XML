@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="VerifyInvalidLibLinkingMsg" Desc="VerifyInvalidLibLinkingMsg" TaskID="92" Path="VerifyInvalidLibLinkingMsg.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="286" ObjectName="ValidationErrMsgLinkLic" ObjectTypeId="3012" ActionId="61202" ActionName="VerifyVisibility">
+    <Param Name="visibility" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Summary Tab in Assessment Results Page" Desc="Verify Summary Tab in Assessment Results Page after assessment is completed" TaskID="130" Path="Verify_SummaryTab_AssmtResults.XML">
+  <Step StepId="248" stepSeq="1" ObjectId="350" ObjectName="Results Summary table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;1&quot;" ParamSeq="1" Parameterized="0" Data="1" />
+    <Param Name="Record 1 Assmt Summary" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="247" stepSeq="2" ObjectId="350" ObjectName="Results Summary table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+    <Param Name="Record 2 Assmt Summary" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="1" stepSeq="3" ObjectId="350" ObjectName="Results Summary table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+    <Param Name="Record 3 Assmt Summary" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="251" stepSeq="4" ObjectId="350" ObjectName="Results Summary table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+    <Param Name="Record 4 Assmt Summary" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="250" stepSeq="5" ObjectId="350" ObjectName="Results Summary table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+    <Param Name="Record 5 Assmt Summary" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="249" stepSeq="6" ObjectId="350" ObjectName="Results Summary table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;6&quot;" ParamSeq="1" Parameterized="0" Data="6" />
+    <Param Name="Record 6 Assmt Summary" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

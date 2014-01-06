@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="LibraryAction" Desc="Take an actio on Library Like push/Download/Edit" TaskID="13" Path="LibraryAction.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="23" ObjectName="OC_Libraries" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="142" stepSeq="2" ObjectId="263" ObjectName="Show All Including Custom  CheckBox" ObjectTypeId="3004" ActionId="60406" ActionName="Click" />
+  <Step StepId="189" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="28" stepSeq="4" ObjectId="46" ObjectName="listLibraryPanel" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;RowofLib&quot;" ParamSeq="1" Parameterized="0" Data="RowofLib" />
+    <Param Name="LibraryName" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="27" stepSeq="5" ObjectId="46" ObjectName="listLibraryPanel" ObjectTypeId="3009" ActionId="60907" ActionName="ClickLinkAtCell">
+    <Param Name="LibAction" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowofLib}&quot;" ParamSeq="2" Parameterized="0" Data="{RowofLib}" />
+    <Param Name="&quot;5&quot;" ParamSeq="3" Parameterized="0" Data="5" />
+  </Step>
+</Task>

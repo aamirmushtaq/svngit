@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="AssignLibraries" Desc="AssignLibraries" TaskID="19" Path="AssignLibraries.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="8" stepSeq="2" ObjectId="148" ObjectName="Assign Learning" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+</Task>

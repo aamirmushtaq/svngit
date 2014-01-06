@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Actions for Assmt in Completed Learning" Desc="Verify Images in Actions for Assmt in Completed Learning tab in Home Page" TaskID="140" Path="Verify_ActionsColumn_CompletedAssmtLI_Home.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="357" ObjectName="Completed Learning Table" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;RowNo_ActionsInCompleteLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_ActionsInCompleteLI" />
+    <Param Name="Completed LI Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="282" stepSeq="2" ObjectId="357" ObjectName="Completed Learning Table" ObjectTypeId="3009" ActionId="60925" ActionName="VerifyImageInCell">
+    <Param Name="&quot;{RowNo_ActionsInCompleteLI}&quot;" ParamSeq="1" Parameterized="0" Data="{RowNo_ActionsInCompleteLI}" />
+    <Param Name="&quot;6&quot;" ParamSeq="2" Parameterized="0" Data="6" />
+    <Param Name="Actions Title" ParamSeq="3" Parameterized="1" Data="" />
+  </Step>
+</Task>

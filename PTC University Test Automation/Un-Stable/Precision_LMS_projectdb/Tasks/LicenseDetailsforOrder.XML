@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="LicenseDetailsforOrder" Desc="LicenseDetailsforOrder" TaskID="17" Path="LicenseDetailsforOrder.XML">
+  <Step StepId="10" stepSeq="1" ObjectId="107" ObjectName="NextBtn" ObjectTypeId="3003" ActionId="60303" ActionName="Click" />
+  <Step StepId="22" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="15" stepSeq="3" ObjectId="108" ObjectName="CountOfUsers" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="CountOfUsers" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="14" stepSeq="4" ObjectId="109" ObjectName="License Type" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="LicType" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="19" stepSeq="5" ObjectId="111" ObjectName="termExpirationDate" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="TermExpiryDate" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="13" stepSeq="6" ObjectId="110" ObjectName="support" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Support" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="12" stepSeq="7" ObjectId="113" ObjectName="LicanseDetails_SubmitBtn" ObjectTypeId="3003" ActionId="60303" ActionName="Click" />
+  <Step StepId="17" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="23" stepSeq="9" ObjectId="81" ObjectName="Create/Edit Order" ObjectTypeId="3010" ActionId="61004" ActionName="Click" />
+  <Step StepId="16" stepSeq="10" ObjectId="82" ObjectName="CreateEditOrderSubmit" ObjectTypeId="3003" ActionId="60300" ActionName="ClickAndWait" />
+</Task>

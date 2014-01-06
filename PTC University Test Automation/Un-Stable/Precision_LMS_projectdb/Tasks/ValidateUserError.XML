@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="ValidateUserError" Desc="ValidateUserError" TaskID="84" Path="ValidateUserError.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="209" ObjectName="Add Selected" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="205" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="206" stepSeq="3" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="213" stepSeq="4" ObjectId="277" ObjectName="Assignment Validation TBL" ObjectTypeId="3009" ActionId="60905" ActionName="StoreCellText">
+    <Param Name="&quot;Err Msg&quot;" ParamSeq="1" Parameterized="0" Data="Err Msg" />
+    <Param Name="&quot;2&quot;" ParamSeq="2" Parameterized="0" Data="2" />
+    <Param Name="&quot;3&quot;" ParamSeq="3" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="216" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60111" ActionName="VerifyStringContainsValue">
+    <Param Name="&quot;{Err Msg}&quot;" ParamSeq="1" Parameterized="0" Data="{Err Msg}" />
+    <Param Name="&quot;User does not have access to one or more of the following library&quot;" ParamSeq="2" Parameterized="0" Data="User does not have access to one or more of the following library" />
+    <Param Name="&quot;FALSE&quot;" ParamSeq="3" Parameterized="0" Data="FALSE" />
+  </Step>
+  <Step StepId="212" stepSeq="6" ObjectId="285" ObjectName="ALW_Cancel Link" ObjectTypeId="3007" ActionId="99991" ActionName="ClickandchooseOkOnNextConfirmation" />
+</Task>

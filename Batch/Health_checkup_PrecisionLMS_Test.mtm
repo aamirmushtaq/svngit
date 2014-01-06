@@ -1,0 +1,17 @@
+[Files]
+NumberOfFiles=1
+File1=D:\Fusion_QA\Automation\Scripts\SC02_Health_checkup_of_PrecisionLMS_Test;1
+[Report]
+CreateReport=Yes
+OverwriteReport=Yes
+DefaultLocation=Yes
+ReportHeader=Yes
+RunStartedHeader=Yes
+RunEndedHeader=Yes
+ReportLocation=Yes
+IterationsHeader=Yes
+[Mail]
+SendMail=2
+To=melefebvre@ptc.com;rkishore@ptc.com
+Subject=Health checkup of PrecisionLMS Test
+Message=Scheduled to run Test Script in an unattended manner everyday .E-mail is sent to QA Team with attachments of the batch results when test run fails.Any questions , E-mail to rkishore@ptc.com.

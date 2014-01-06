@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Link Libraries during Oder Creation" Desc="Link the libraries selected during order creation" TaskID="69" Path="LinkLibraries_OrderCreation.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="106" ObjectName="LinkLibraries" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="2" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

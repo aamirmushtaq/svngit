@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Licenses and Users Report" Desc="Verify Licenses and Users Report" TaskID="87" Path="VerifyLic_Users_Report.XML">
+  <Step StepId="221" stepSeq="1" ObjectId="283" ObjectName="License and Users Report TABLE" ObjectTypeId="3009" ActionId="60918" ActionName="VerifyDataExistInColumn">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+    <Param Name="Verify Licenses Name" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="208" stepSeq="2" ObjectId="283" ObjectName="License and Users Report TABLE" ObjectTypeId="3009" ActionId="60923" ActionName="StoreRowNumWithRowData">
+    <Param Name="Lic User Row Search" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;RowNoLicUserReport&quot;" ParamSeq="2" Parameterized="0" Data="RowNoLicUserReport" />
+  </Step>
+  <Step StepId="216" stepSeq="3" ObjectId="283" ObjectName="License and Users Report TABLE" ObjectTypeId="3009" ActionId="60906" ActionName="VerifyCellText">
+    <Param Name="Cell Data" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowNoLicUserReport}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNoLicUserReport}" />
+    <Param Name="column" ParamSeq="3" Parameterized="1" Data="" />
+  </Step>
+</Task>

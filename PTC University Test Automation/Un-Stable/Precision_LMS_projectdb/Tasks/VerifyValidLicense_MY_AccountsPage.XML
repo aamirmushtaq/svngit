@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify valid License in My Accounts" Desc="Verify Valid License listed under My Accounts Page" TaskID="77" Path="VerifyValidLicense_MY_AccountsPage.XML">
+  <Step StepId="203" stepSeq="1" ObjectId="279" ObjectName="License details Table" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;RowNoLicName&quot;" ParamSeq="1" Parameterized="0" Data="RowNoLicName" />
+    <Param Name="License Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="199" stepSeq="2" ObjectId="279" ObjectName="License details Table" ObjectTypeId="3009" ActionId="60906" ActionName="VerifyCellText">
+    <Param Name="Expiration Date" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowNoLicName}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNoLicName}" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+</Task>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Logout From IPA" Desc="Perform logout of the user from IPA" TaskID="4" Path="IPA Logout.XML">
+  <Step StepId="35" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="33" ObjectName="WelCome_Logout" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+</Task>

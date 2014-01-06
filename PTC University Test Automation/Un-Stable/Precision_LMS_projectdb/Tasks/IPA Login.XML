@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Login to IPA" Desc="Performs login of a valid user into IPA" TaskID="2" Path="IPA Login.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60100" ActionName="OpenURL">
+    <Param Name="&quot;{IPA_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{IPA_URL}" />
+  </Step>
+  <Step StepId="14" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60115" ActionName="MaximizeBrowser" />
+  <Step StepId="2" stepSeq="3" ObjectId="37" ObjectName="IPA_userId" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="user" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="3" stepSeq="4" ObjectId="36" ObjectName="IPA_password" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="pwd" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="4" stepSeq="5" ObjectId="38" ObjectName="IPA_LoginBtn" ObjectTypeId="3003" ActionId="60300" ActionName="ClickAndWait" />
+</Task>

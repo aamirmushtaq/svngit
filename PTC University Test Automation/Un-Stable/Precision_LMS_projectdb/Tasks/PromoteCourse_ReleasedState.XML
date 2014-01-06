@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Promote Course from Dev to Released State" Desc="Promote Course from development to Released State" TaskID="59" Path="PromoteCourse_ReleasedState.XML">
+  <Step StepId="74" stepSeq="1" ObjectId="244" ObjectName="Custom Contents table" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;ExpRowNo&quot;" ParamSeq="1" Parameterized="0" Data="ExpRowNo" />
+    <Param Name="Title" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="70" stepSeq="2" ObjectId="244" ObjectName="Custom Contents table" ObjectTypeId="3009" ActionId="60911" ActionName="ClickImageInCell">
+    <Param Name="&quot;Promote&quot;" ParamSeq="1" Parameterized="0" Data="Promote" />
+    <Param Name="&quot;{ExpRowNo}&quot;" ParamSeq="2" Parameterized="0" Data="{ExpRowNo}" />
+    <Param Name="&quot;7&quot;" ParamSeq="3" Parameterized="0" Data="7" />
+  </Step>
+  <Step StepId="75" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="76" stepSeq="4" ObjectId="245" ObjectName="Released State Radio button" ObjectTypeId="3005" ActionId="60505" ActionName="Click" />
+  <Step StepId="118" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;120&quot;" ParamSeq="1" Parameterized="0" Data="120" />
+  </Step>
+  <Step StepId="115" stepSeq="6" ObjectId="246" ObjectName="Save link" ObjectTypeId="3007" ActionId="99991" ActionName="ClickandchooseOkOnNextConfirmation" />
+  <Step StepId="87" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7" />
+  </Step>
+  <Step StepId="79" stepSeq="8" ObjectId="247" ObjectName="Released tab link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="80" stepSeq="9" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="78" stepSeq="10" ObjectId="244" ObjectName="Custom Contents table" ObjectTypeId="3009" ActionId="60918" ActionName="VerifyDataExistInColumn">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+    <Param Name="Title Released" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="86" stepSeq="11" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+</Task>

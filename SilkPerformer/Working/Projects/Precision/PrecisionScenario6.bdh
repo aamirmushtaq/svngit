@@ -1,0 +1,1457 @@
+//----------------------------------------------------------------------
+// Recorded 03/25/2008 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+dclparam
+  sRadioButton1     : string;
+  sRadioButton2     : string;
+  sExamID           : string;
+  sAssignmentID     : string;
+
+dclfunc
+
+  function fScenario6
+  var
+    hWebStoredCtx_Assessment_Viewer     : number;
+    hWebStoredCtx_Assessment_Viewer_001 : number;
+    hWebStoredCtx_Assessment_Viewer_002 : number;
+    hWebStoredCtx_Assessment_Viewer_003 : number;
+    hWebStoredCtx_Assessment_Viewer_004 : number;
+    hWebStoredCtx_Assessment_Viewer_005 : number;
+    hWebStoredCtx_Assessment_Viewer_006 : number;
+    hWebStoredCtx_Assessment_Viewer_007 : number;
+    hWebStoredCtx_Assessment_Viewer_008 : number;
+    hWebStoredCtx_Assessment_Viewer_009 : number;
+    hWebStoredCtx_Assessment_Viewer_010 : number;
+    hWebStoredCtx_Assessment_Viewer_011 : number;
+    hWebStoredCtx_Assessment_Viewer_012 : number;
+    hWebStoredCtx_Assessment_Viewer_013 : number;
+    hWebStoredCtx_Assessment_Viewer_014 : number;
+    hWebStoredCtx_Assessment_Viewer_015 : number;
+    hWebStoredCtx_Assessment_Viewer_016 : number;
+    hWebStoredCtx_Assessment_Viewer_017 : number;
+    hWebStoredCtx_Assessment_Viewer_018 : number;
+    hWebStoredCtx_Assessment_Viewer_019 : number;
+    hWebStoredCtx_Assessment_Viewer_020 : number;
+    hWebStoredCtx_Assessment_Viewer_021 : number;
+    hWebStoredCtx_Assessment_Viewer_022 : number;
+    hWebStoredCtx_Assessment_Viewer_023 : number;
+    hWebStoredCtx_Assessment_Viewer_024 : number;
+    hWebStoredCtx_Assessment_Viewer_025 : number;
+    hWebStoredCtx_Assessment_Viewer_026 : number;
+    hWebStoredCtx_Assessment_Viewer_027 : number;
+    hWebStoredCtx_Assessment_Viewer_028 : number;
+    hWebStoredCtx_Assessment_Viewer_029 : number;
+    hWebStoredCtx_Assessment_Viewer_030 : number;
+    hWebStoredCtx_Assessment_Viewer_031 : number;
+    hWebStoredCtx_Assessment_Viewer_032 : number;
+    hWebStoredCtx_Assessment_Viewer_033 : number;
+    hWebStoredCtx_Assessment_Viewer_034 : number;
+    hWebStoredCtx_Assessment_Viewer_035 : number;
+    hWebStoredCtx_Assessment_Viewer_036 : number;
+    hWebStoredCtx_Assessment_Viewer_037 : number;
+    hWebStoredCtx_Assessment_Viewer_038 : number;
+    hWebStoredCtx_Assessment_Viewer_039 : number;
+    hWebStoredCtx_Assessment_Viewer_040 : number;
+    hWebStoredCtx_Assessment_Viewer_041 : number;
+    hWebStoredCtx_Assessment_Viewer_042 : number;
+    hWebStoredCtx_Assessment_Viewer_043 : number;
+    hWebStoredCtx_Assessment_Viewer_044 : number;
+    hWebStoredCtx_Assessment_Viewer_045 : number;
+    hWebStoredCtx_Assessment_Viewer_046 : number;
+    hWebStoredCtx_Assessment_Viewer_047 : number;
+    hWebStoredCtx_Assessment_Viewer_048 : number;
+    hWebStoredCtx_Assessment_Viewer_049 : number;
+    hWebStoredCtx_Assessment_Viewer_050 : number;
+    hWebStoredCtx_Assessment_Viewer_051 : number;
+    hWebStoredCtx_Assessment_Viewer_052 : number;
+    hWebStoredCtx_Assessment_Viewer_053 : number;
+    hWebStoredCtx_Assessment_Viewer_054 : number;
+    hWebStoredCtx_Assessment_Viewer_055 : number;
+  begin
+
+    // find training
+ 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    ThinkTime(rShortTime);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+    // browse
+ 
+    WebPageSetActionUrlAbs(SITE + "/app/", SCENARIO6_003);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, SCENARIO6_002, "/app/"); // Form 1
+    // update
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/online_test_icon_sm.gif", FORM_NULL, 2);
+    WebPageSetActionUrlAbs(SITE + "/app/", SCENARIO6_005);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, SCENARIO6_004, "/app/ (#1)"); // Form 1
+    // benchmark control baseline
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCENARIO6_006a,2.28);
+    WebUrl(SITE + "/static/images/close_box.gif", 0.14);
+    WebUrl(SITE + "/static/images/close_box.gif", 0.02);
+    WebUrl(SITE + "/static/images/online_test_icon.gif", 20.20);
+    // start
+ 
+    WebPageAddUrl("/static/images/online_test_icon_sm-active.gif");
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/viewer/selected_arrow.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    WebPageAddUrl("/static/images/viewer/assessment/knowledge_lg.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    WebPageAddUrl("/static/images/indicator.gif");
+    // Redirecting -> (redirection) https://precisionlms.ptc.com/app/?wicket:interface=viewerPageMap:0::::
+    WebPageParseUrl("Javascript Redirection in page Assessment Viewer", "href=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl(SITE + "/app/", "Assessment Viewer", SCENARIO6_007a);
+ 
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/header_banner.png");
+    WebPageAddUrl("/static/images/nav_nubbin.gif");
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/tabs/blue_left.gif");
+    WebPageAddUrl("/static/images/tabs/blue_right.gif");
+    WebPageAddUrl("/static/images/tabs/orange_left.gif");
+    WebPageAddUrl("/static/images/tabs/orange_right.gif");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    WebPageAddUrl("/static/images/drop_shadow_footer.jpg");
+    ThinkTime(rShortTime);
+    WebPageLink("Javascript Redirection in page Assessment Viewer", "Precision LMS : Find Training (#1)", 7);
+    // first question
+ 
+    // Redirecting -> (redirection) https://precisionlms.ptc.com/app/?wicket:interface=viewerPageMap:1::::
+    WebCookieSet("fusion.viewstate.ieFudge=12%2C83%2C4%2C8; domain=.ptc.com; path=/app; expires=Sun, 15 Apr 2018 21:19:09 GMT", 
+      SITE + "/app/");
+    WebCookieSet(
+      "fusion.viewstate.currentSessionId=b25889fc-51af-4529-a945-60ba0f85fbe3; domain=.ptc.com; path=/app; expires=Sun, 15 Apr "
+      "2018 21:19:09 GMT", SITE + "/app/");
+    WebCookieSet("fusion.viewstate.width=225; domain=.ptc.com; path=/app; expires=Sun, 15 Apr 2018 21:19:09 GMT", 
+      SITE + "/app/");
+    WebCookieSet("fusion.viewstate.minimized=; domain=.ptc.com; path=/app; expires=Sun, 15 Apr 2018 21:19:09 GMT", 
+      SITE + "/app/");
+    ThinkTime(rShortTime);
+ 
+
+
+
+
+
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageForm(SITE + "/app/", SCENARIO6_006, "Assessment Viewer (#1)", SCENARIO6_007);
+Print("sRadioButton1: " + sRadioButton1);
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:1:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:2::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#2)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_008, "Assessment Viewer (#2)"); // Form 1
+Print("sRadioButton2: " + sRadioButton2);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer);
+ 
+    WebPageBack();
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:2:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:3::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#3)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#2)", 1, NULL, hWebStoredCtx_Assessment_Viewer);
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_009, "Assessment Viewer (#3)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_001);
+ 
+    WebPageBack();
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:3:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:4::::
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#3)", 1, NULL, hWebStoredCtx_Assessment_Viewer_001)
+      ;
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_010, "Assessment Viewer (#4)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_001);
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:4:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:5::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#5)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_011, "Assessment Viewer (#5)"); // Form 1
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_002);
+ 
+    WebPageBack();
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:5:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:6::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#6)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#5)", 1, NULL, hWebStoredCtx_Assessment_Viewer_002)
+      ;
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_012, "Assessment Viewer (#6)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_002);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_003);
+ 
+    WebPageBack();
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:6:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:7::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#7)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#6)", 1, NULL, hWebStoredCtx_Assessment_Viewer_003)
+      ;
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_013, "Assessment Viewer (#7)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_003);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_004);
+ 
+    WebPageBack();
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:7:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:8::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#8)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#7)", 1, NULL, hWebStoredCtx_Assessment_Viewer_004)
+      ;
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_014, "Assessment Viewer (#8)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_004);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_005);
+ 
+    WebPageBack();
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:8:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:9::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#9)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#8)", 1, NULL, hWebStoredCtx_Assessment_Viewer_005)
+      ;
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_015, "Assessment Viewer (#9)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_005);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_006);
+ 
+    WebPageBack();
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:9:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:10::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#10)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#9)", 1, NULL, hWebStoredCtx_Assessment_Viewer_006)
+      ;
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_016, "Assessment Viewer (#10)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_006);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_007);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:10:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:11::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#11)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#10)", 1, NULL, hWebStoredCtx_Assessment_Viewer_007
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_017, "Assessment Viewer (#11)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_007);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_008);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:11:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:12::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#12)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#11)", 1, NULL, hWebStoredCtx_Assessment_Viewer_008
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_018, "Assessment Viewer (#12)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_008);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_009);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:12:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:13::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#13)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#12)", 1, NULL, hWebStoredCtx_Assessment_Viewer_009
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_019, "Assessment Viewer (#13)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_009);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_010);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:13:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:14::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#14)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#13)", 1, NULL, hWebStoredCtx_Assessment_Viewer_010
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_020, "Assessment Viewer (#14)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_010);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_011);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:14:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:15::::
+    // Info: HTTP status "404 /Evaluator/quizzes/9344/q9344.jpg" for URL: 
+    // https://fusion-lb.ptc.com/Evaluator/quizzes/9344/q9344.jpg
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#15)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#14)", 1, NULL, hWebStoredCtx_Assessment_Viewer_011
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_021, "Assessment Viewer (#15)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_011);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_012);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:15:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:16::::
+    // Info: HTTP status "404 /Evaluator/quizzes/9346/q9346.jpg" for URL: 
+    // https://fusion-lb.ptc.com/Evaluator/quizzes/9346/q9346.jpg
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#16)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#15)", 1, NULL, hWebStoredCtx_Assessment_Viewer_012
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_022, "Assessment Viewer (#16)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_012);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_013);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:16:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:17::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#17)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#16)", 1, NULL, hWebStoredCtx_Assessment_Viewer_013
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_023, "Assessment Viewer (#17)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_013);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_014);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:17:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:18::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#18)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#17)", 1, NULL, hWebStoredCtx_Assessment_Viewer_014
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_024, "Assessment Viewer (#18)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_014);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_015);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:18:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:19::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#19)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#18)", 1, NULL, hWebStoredCtx_Assessment_Viewer_015
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_025, "Assessment Viewer (#19)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_015);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_016);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:19:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:20::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#20)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#19)", 1, NULL, hWebStoredCtx_Assessment_Viewer_016
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_026, "Assessment Viewer (#20)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_016);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_017);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:20:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:21::::
+    // Info: HTTP status "404 /Evaluator/quizzes/9316/q9316.jpg" for URL: 
+    // https://fusion-lb.ptc.com/Evaluator/quizzes/9316/q9316.jpg
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#21)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#20)", 1, NULL, hWebStoredCtx_Assessment_Viewer_017
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_027, "Assessment Viewer (#21)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_017);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_018);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:21:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:22::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#22)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#21)", 1, NULL, hWebStoredCtx_Assessment_Viewer_018
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_028, "Assessment Viewer (#22)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_018);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_019);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:22:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:23::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#23)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#22)", 1, NULL, hWebStoredCtx_Assessment_Viewer_019
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_029, "Assessment Viewer (#23)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_019);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_020);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:23:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:24::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#24)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#23)", 1, NULL, hWebStoredCtx_Assessment_Viewer_020
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_030, "Assessment Viewer (#24)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_020);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_021);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:24:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:25::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#25)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#24)", 1, NULL, hWebStoredCtx_Assessment_Viewer_021
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_031, "Assessment Viewer (#25)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_021);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_022);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:25:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:26::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#26)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#25)", 1, NULL, hWebStoredCtx_Assessment_Viewer_022
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_032, "Assessment Viewer (#26)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_022);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_023);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:26:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:27::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#27)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#26)", 1, NULL, hWebStoredCtx_Assessment_Viewer_023
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_033, "Assessment Viewer (#27)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_023);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_024);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:27:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:28::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#28)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#27)", 1, NULL, hWebStoredCtx_Assessment_Viewer_024
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_034, "Assessment Viewer (#28)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_024);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_025);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:28:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:29::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#29)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#28)", 1, NULL, hWebStoredCtx_Assessment_Viewer_025
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_035, "Assessment Viewer (#29)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_025);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_026);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:29:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:30::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#30)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#29)", 1, NULL, hWebStoredCtx_Assessment_Viewer_026
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_036, "Assessment Viewer (#30)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_026);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_027);
+ 
+    WebPageBack();
+ 
+    WebCookieSet(
+      "WT_FPC=id=71.232.169.51-2518156768.29799592:lv=1194956197250:ss=1194956196968; domain=.microsoft.com; path=/_0sfdata/1; "
+      "expires=Sun, 25 Mar 2018 12:32:51 GMT", "http://g.microsoft.com/_0sfdata/1", 2);
+    WebCookieSet(
+      "MC1=GUID=49360e99cd09f3438d5c6adf8ea4a79e&HASH=990e&LV=20072&V=3; domain=.microsoft.com; path=/_0sfdata/1; expires=Sun, "
+      "25 Mar 2018 12:32:51 GMT", "http://g.microsoft.com/_0sfdata/1", 2);
+    WebPageAddUrl("http://g.microsoft.com/_0sfdata/1", SFDATA_1038);
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:30:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:31::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#31)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#30)", 1, NULL, hWebStoredCtx_Assessment_Viewer_027
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_037, "Assessment Viewer (#31)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_027);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_028);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:31:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:32::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#32)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#31)", 1, NULL, hWebStoredCtx_Assessment_Viewer_028
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_039, "Assessment Viewer (#32)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_028);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_029);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:32:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:33::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#33)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#32)", 1, NULL, hWebStoredCtx_Assessment_Viewer_029
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_040, "Assessment Viewer (#33)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_029);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_030);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:33:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:34::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#34)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#33)", 1, NULL, hWebStoredCtx_Assessment_Viewer_030
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_041, "Assessment Viewer (#34)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_030);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_031);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:34:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:35::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#35)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#34)", 1, NULL, hWebStoredCtx_Assessment_Viewer_031
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_042, "Assessment Viewer (#35)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_031);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_032);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:35:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:36::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#36)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#35)", 1, NULL, hWebStoredCtx_Assessment_Viewer_032
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_043, "Assessment Viewer (#36)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_032);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_033);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:36:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:37::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#37)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#36)", 1, NULL, hWebStoredCtx_Assessment_Viewer_033
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_044, "Assessment Viewer (#37)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_033);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_034);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:37:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:38::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#38)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#37)", 1, NULL, hWebStoredCtx_Assessment_Viewer_034
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_045, "Assessment Viewer (#38)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_034);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_035);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:38:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:39::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#39)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#38)", 1, NULL, hWebStoredCtx_Assessment_Viewer_035
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_046, "Assessment Viewer (#39)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_035);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_036);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:39:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:40::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#40)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#39)", 1, NULL, hWebStoredCtx_Assessment_Viewer_036
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_047, "Assessment Viewer (#40)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_036);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_037);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:40:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:41::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#41)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#40)", 1, NULL, hWebStoredCtx_Assessment_Viewer_037
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_048, "Assessment Viewer (#41)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_037);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_038);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:41:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:42::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#42)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#41)", 1, NULL, hWebStoredCtx_Assessment_Viewer_038
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_049, "Assessment Viewer (#42)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_038);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_039);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:42:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:43::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#43)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#42)", 1, NULL, hWebStoredCtx_Assessment_Viewer_039
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_050, "Assessment Viewer (#43)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_039);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_040);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:43:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:44::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#44)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#43)", 1, NULL, hWebStoredCtx_Assessment_Viewer_040
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_051, "Assessment Viewer (#44)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_040);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_041);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:44:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:45::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#45)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#44)", 1, NULL, hWebStoredCtx_Assessment_Viewer_041
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_052, "Assessment Viewer (#45)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_041);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_042);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:45:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:46::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#46)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#45)", 1, NULL, hWebStoredCtx_Assessment_Viewer_042
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_053, "Assessment Viewer (#46)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_042);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_043);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:46:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:47::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#47)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#46)", 1, NULL, hWebStoredCtx_Assessment_Viewer_043
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_054, "Assessment Viewer (#47)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_043);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_044);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:47:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:48::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#48)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#47)", 1, NULL, hWebStoredCtx_Assessment_Viewer_044
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_055, "Assessment Viewer (#48)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_044);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_045);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:48:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:49::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#49)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#48)", 1, NULL, hWebStoredCtx_Assessment_Viewer_045
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_056, "Assessment Viewer (#49)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_045);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_046);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:49:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:50::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#50)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#49)", 1, NULL, hWebStoredCtx_Assessment_Viewer_046
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_057, "Assessment Viewer (#50)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_046);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_047);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:50:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:51::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#51)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#50)", 1, NULL, hWebStoredCtx_Assessment_Viewer_047
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_058, "Assessment Viewer (#51)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_047);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_048);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:51:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:52::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#52)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#51)", 1, NULL, hWebStoredCtx_Assessment_Viewer_048
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_059, "Assessment Viewer (#52)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_048);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_049);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:52:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:53::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#53)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#52)", 1, NULL, hWebStoredCtx_Assessment_Viewer_049
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_060, "Assessment Viewer (#53)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_049);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_050);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:53:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:54::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#54)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#53)", 1, NULL, hWebStoredCtx_Assessment_Viewer_050
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_061, "Assessment Viewer (#54)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_050);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_051);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:54:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:55::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#55)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#54)", 1, NULL, hWebStoredCtx_Assessment_Viewer_051
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_062, "Assessment Viewer (#55)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_051);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_052);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:55:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:56::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#56)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#55)", 1, NULL, hWebStoredCtx_Assessment_Viewer_052
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_063, "Assessment Viewer (#56)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_052);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_053);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:56:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:57::::
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#56)", 1, NULL, hWebStoredCtx_Assessment_Viewer_053
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_064, "Assessment Viewer (#57)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_053);
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:57:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:58::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#58)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_065, "Assessment Viewer (#58)"); // Form 1
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_054);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:58:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:59::::
+    WebPageParseUrl("Modified form action URL in page Assessment Viewer (#59)", "action=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#58)", 1, NULL, hWebStoredCtx_Assessment_Viewer_054
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, "value=\"", 2, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_066, "Assessment Viewer (#59)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_054);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Viewer_055);
+ 
+    WebPageBack();
+ 
+    // Redirecting 
+    // https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:59:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:60::::
+    WebPageSetActionUrl("Modified form action URL in page Assessment Viewer (#59)", 1, NULL, hWebStoredCtx_Assessment_Viewer_055
+      );
+    ThinkTime(rNextQuestion);
+WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, "value=\"", 1, "\"", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebPageSubmit(NULL, SCENARIO6_067, "Assessment Viewer (#60)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Viewer_055);
+    // submit entire
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs(SITE + "/app/", SCENARIO6_069);
+    ThinkTime(rNextQuestion);
+    WebPageSubmit(NULL, SCENARIO6_068, "/app/ (#1)"); // Form 1
+ 
+    ThinkTime(rNextQuestion);
+    WebPageUrl(SITE + "/app/", "[Warning: String resource for 'com.ptc.fusion.web.pages.components.Modal", 
+      SCENARIO6_070);
+    // ok congrats  
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCENARIO6_071, 0.14);
+
+    WebParseDataBoundEx(sExamID, STRING_COMPLETE, "examID=", 1, "&", WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE,1);
+    WebParseDataBoundEx(sAssignmentID, STRING_COMPLETE, "assignmentId=", 1, "'",WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebFormGet(SITE + "/app/", SCENARIO6_072, 2.67);
+    Print("sAssignmentID: " + sAssignmentID);
+    Print("sExamID: " + sExamID);
+ 
+    WebPageAddUrl("", SCENARIO6_074);
+    WebPageAddUrl("/static/images/random/nubbin_score.gif");
+    WebPageAddUrl("/static/images/random/your_score.jpg");
+    WebPageUrl(SITE + "/app/", "Assessment Result", SCENARIO6_073);
+    // answers
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCENARIO6_075, 1.25);
+    WebUrl(SITE + "/static/images/knowledge_question_unanswered.gif", 0.03);
+    WebUrl(SITE + "/static/images/viewer/assessment/incorrect2.gif", 0.03);
+    WebUrl(SITE + "/static/images/viewer/assessment/correct2.gif", 7.16);
+    // details
+    WebFormGet(SITE + "/app/", SCENARIO6_076, 0.33);
+    WebUrl(
+      SITE + "/app/resources/org.apache.wicket.extensions.markup.html.tree.DefaultAbstractTree/res/tree-table"
+      ".css", 0.47);
+    WebUrl(
+      SITE + "/app/resources/org.apache.wicket.extensions.markup.html.tree.DefaultAbstractTree/res/dotted-lin"
+      "e.png", 0.01);
+    WebUrl(
+      SITE + "/app/resources/org.apache.wicket.extensions.markup.html.tree.DefaultAbstractTree/res/tree-image"
+      "s.png", 7.66);
+    // export
+ 
+//    WebPageLink("Export...", "/app/ (#2)"); // Link 8
+    // logout
+ 
+//    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/banner.jpg");
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=viewerPageMap:61:logoutLink::ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/pages/Login/wicket:pageMapName/viewerPageMap/
+    ThinkTime(rShortTime);
+    WebPageLink("Log Out", "Precision LMS (#1)"); // Link 6
+  end fScenario6;
+
+dclform
+  SCENARIO6_001:
+    "loginForm13_hf_0"          := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "loginButton"               := "x", // added
+    "userId"                    := "prof_pt_co3_usr_0125@ptcunoemail.com", // changed
+    "password"                  := Decrypt("9VJxE5/6X8E="), // changed
+    "languages"                 := "0"; // added
+
+//  SCENARIO6_002:
+//    "findTrainingForm30_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+//    "tabs:panel:filterPanel:library" := "0", // added
+//    "tabs:panel:filterPanel:type" := "2", // added
+//    "tabs:panel:filterPanel:version" := "0_0", // added
+//    "tabs:panel:filterPanel:language" := "en", // added
+//    "tabs:panel:displayDesc"    := "on", // changed
+//    "tabs:panel:searchButton"   := "1"; // added
+
+//  SCENARIO6_003 <ENCODE_BLANKS> :
+//    "wicket:interface"          := ":2:findTrainingForm:tabs:panel:searchButton::IActivePageBehaviorListener:0:",
+//    "wicket:ignoreIfNotActive"  := "true",
+//    "random"                    := "0.6171346110539815";
+
+
+//  SCENARIO6_004 <ENCODE_BLANKS> :
+////    "wicket:interface"          := ":2:findTrainingForm:resultTable:learningItemRow:48:result:titleRow:titleLink::IBehaviorListener:0:-1",
+//    "wicket:interface"          := ":2:findTrainingForm:resultTable:learningItemRow:48:result:titleRow:titleLink:1:IBehaviorListener:0:-1",
+//    "random"                    := "0.3828601122110501";
+
+
+  SCENARIO6_002:
+    "findTrainingForm30_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <USE_HTML_VAL> , // unchanged, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:tabs-container:tabs:1:link" := "1"; // added
+
+  SCENARIO6_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTrainingForm:tabs:tabs-container:tabs:1:link::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.19539373093679468";
+
+
+
+  SCENARIO6_004:
+    "findTrainingForm30_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <SUPPRESS> , // suppressed, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "2", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:panel:searchButton"   := "1"; // added
+
+
+  SCENARIO6_005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTrainingForm:tabs:panel:searchButton::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.9518096574905696";
+
+
+
+  SCENARIO6_006a <ENCODE_BLANKS> :
+//    "wicket:interface"          := ":2:findTrainingForm:resultTable:learningItemRow:2:result:titleRow:titleLink:1:IBehaviorListener:0:-1",
+    "wicket:interface"          := ":2:findTrainingForm:resultTable:learningItemRow:4:result:titleRow:titleLink:1:IBehaviorListener:0:-1",
+    "random"                    := "0.7422012031603855";
+
+  SCENARIO6_007a <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTrainingForm:LightBox:content:startAssessment:1:ILinkListener::";
+
+//    "wicket:interface"          := ":2:findTrainingForm:resultTable:learningItemRow:2:result:titleRow:titleLink:1:IBehaviorListener:0:",
+
+
+//  SCENARIO6_005 <ENCODE_BLANKS> :
+////    "wicket:interface"          := ":2:findTrainingForm:LightBox:content:startAssessment::ILinkListener::";
+//    "wicket:interface"          := ":2:findTrainingForm:LightBox:content:startAssessment:1:ILinkListener::";
+
+  SCENARIO6_006:
+    "LNB:tree:i:2:nodeComponent:link" := "x";
+
+  SCENARIO6_007 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm::IFormSubmitListener::";
+
+
+  SCENARIO6_008:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_009:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_010:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_011:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_012:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_013:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_014:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_015:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_016:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_017:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_018:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_019:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_020:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_021:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_022:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_023:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_024:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_025:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_026:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_027:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_028:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_029:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_030:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_031:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_032:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_033:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_034:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_035:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_036:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_037:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SFDATA_1038:
+    "aa"                        := "0:10:02:11" <ENCODE_BLANKS> ,
+    "ab"                        := "1812",
+    "ac"                        := "244",
+    "ad"                        := "0",
+    "ae"                        := "0",
+    "af"                        := "244",
+    "ag"                        := "99",
+    "ah"                        := "0",
+    "ai"                        := "0",
+    "aj"                        := "100",
+    "ak"                        := "0",
+    "al"                        := "0",
+    "nr"                        := "21",
+    "cg"                        := "{b3bb5bba-e7d5-40ab-a041-a5b1c0b26c8f}";
+
+  SCENARIO6_039:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_040:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_041:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_042:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_043:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_044:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_045:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_046:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_047:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_048:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_049:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_050:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_051:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_052:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_053:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_054:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_055:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_056:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_057:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_058:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_059:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_060:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_061:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_062:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_063:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_064:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_065:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_066:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton2; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_067:
+    "assessmentForm20_hf_0"     := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "proceed"                   := "x", // added
+    "response:group"            := sRadioButton1; //"" <USE_HTML_VAL> ; // unchanged, value: "radio27"
+
+  SCENARIO6_068:
+    "assessmentForm20_hf_0"     := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "submitAssessment"          := "1"; // added
+
+  SCENARIO6_069 <ENCODE_BLANKS> :
+//    "wicket:interface"          := "viewerPageMap:60:content:assessmentForm:submitAssessment::IActivePageBehaviorListener:0:",
+    "wicket:interface"          := "viewerPageMap:57:content:assessmentForm:submitAssessment::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.9940910360862849";
+
+  SCENARIO6_070 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0::::";
+
+  SCENARIO6_071 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0:ok::IBehaviorListener:0:",
+    "random"                    := "0.6028281435694331";
+
+  SCENARIO6_072 <ENCODE_BLANKS> :
+//    "wicket:interface"          := "viewerPageMap:60:content:assessmentForm:confirmationBox::IBehaviorListener:1:-1",
+    "wicket:interface"          := "viewerPageMap:57:content:assessmentForm:confirmationBox::IBehaviorListener:1:-1",
+    "random"                    := "0.3332304505094713";
+
+  SCENARIO6_073:
+    "wicket:bookmarkablePage"   := "viewerPageMap%3Acom.ptc.fusion.web.pages.assessment.AssessmentResultPage" <ENCODE_NONE> ,
+//    "examID"                    := "1015810",
+//    "assignmentId"              := "3742445";
+    "examID"                    := sExamID,
+    "assignmentId"              := sAssignmentID;
+
+  SCENARIO6_074 <ENCODE_BLANKS> :
+//    "wicket:interface"          := "viewerPageMap:60:content:tracker::IBehaviorListener:0:",
+    "wicket:interface"          := "viewerPageMap:57:content:tracker::IBehaviorListener:0:",
+    "random"                    := "0.39884305842485135";
+
+  SCENARIO6_075 <ENCODE_BLANKS> :
+//    "wicket:interface"          := "viewerPageMap:61:resultsTabs:tabs-container:tabs:1:link::IBehaviorListener:0:",
+    "wicket:interface"          := "viewerPageMap:58:resultsTabs:tabs-container:tabs:1:link::IBehaviorListener:0:",
+    "random"                    := "0.42771651691580586";
+
+  SCENARIO6_076 <ENCODE_BLANKS> :
+//    "wicket:interface"          := "viewerPageMap:61:resultsTabs:tabs-container:tabs:2:link::IBehaviorListener:0:-1",
+    "wicket:interface"          := "viewerPageMap:58:resultsTabs:tabs-container:tabs:2:link::IBehaviorListener:0:-1",
+    "random"                    := "0.8548019133008773";
+

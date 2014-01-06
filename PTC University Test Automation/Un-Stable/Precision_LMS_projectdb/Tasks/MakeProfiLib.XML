@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Create a Pro/FICIENCY library" Desc="Create a Pro/FICIENCY library with assessments only" TaskID="24" Path="MakeProfiLib.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="64" ObjectName="isProfLibCheckBox" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="36" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="waitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="testCustom" Desc="testCustom" TaskID="30" Path="testCustom.XML">
+  <Step StepId="11" stepSeq="1" ObjectId="23" ObjectName="OC_Libraries" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="12" stepSeq="2" ObjectId="48" ObjectName="Create New Library" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="1" stepSeq="3" ObjectId="62" ObjectName="isCustomLibCheckBox" ObjectTypeId="3004" ActionId="60406" ActionName="Click" />
+  <Step StepId="2" stepSeq="4" ObjectId="157" ObjectName="Select Org" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="3" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="4" stepSeq="6" ObjectId="158" ObjectName="OrgSearch" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="CustomerNum" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="5" stepSeq="7" ObjectId="159" ObjectName="SearchBtn" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="6" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="8" stepSeq="9" ObjectId="160" ObjectName="listOrganization" ObjectTypeId="3009" ActionId="99999" ActionName="ClickRadioInCell">
+    <Param Name="&quot;{orgRowNum}&quot;" ParamSeq="1" Parameterized="0" Data="{orgRowNum}" />
+    <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="9" stepSeq="10" ObjectId="161" ObjectName="SelectBtn" ObjectTypeId="3003" ActionId="60303" ActionName="Click" />
+  <Step StepId="10" stepSeq="11" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

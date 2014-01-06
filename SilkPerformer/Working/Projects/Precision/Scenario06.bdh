@@ -1,0 +1,802 @@
+//----------------------------------------------------------------------
+// Recorded 6/18/2009 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+
+var
+ 
+dclparam
+  sRadioButton1      : string;
+  sRadioButton2      : string;
+  sRadioButton3      : string;
+  sRadioButton4      : string;
+  sRadioButton5      : string;
+  sRadioButton6      : string;
+  sRadioButton7      : string;
+  sRadioButton8      : string;
+  sRadioButton9      : string;
+  sRadioButton10     : string;
+  sRadioButton11     : string;
+  sRadioButton12     : string;
+  sRadioButton13     : string;
+  sRadioButton14     : string;
+  sRadioButton15     : string;
+  sRadioButton16     : string;
+  sRadioButton17     : string;
+  sRadioButton18     : string;
+  sRadioButton19     : string;
+  sRadioButton20     : string;
+  sRadioButton21     : string;
+  sRadioButton22     : string;
+  sRadioButton23     : string;
+  sRadioButton24     : string;
+  sRadioButton25     : string;
+  sRadioButton26     : string;
+  sRadioButton27     : string;
+  sRadioButton28     : string;
+  sRadioButton29     : string;
+  sRadioButton30     : string;
+  sRadioButton31     : string;
+  sRadioButton32     : string;
+  sExamID            : string;
+  sAssignmentID      : string; 
+  sExamID2           : string;
+  sAssignmentID2     : string;
+ 
+dclfunc
+  function fScenario06
+  var
+  begin
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+    // search  
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/search", S06_005);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, S06_004, "search"); // Form 1
+    // select assessment
+ 
+    ThinkTime(rShortTime);
+    WebFormGet("https://precisionlmstest.ptc.com/app/search", S06_006, 0.13);
+    WebUrl("https://precisionlmstest.ptc.com/static/images/online_test_icon.gif", 0.06);
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/app/resources/com.ptc.fusion.web.pages.components.modalwindow.ModalWindow/res/transparen
+    // t2.png
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(
+      "https://precisionlmstest.ptc.com/app/resources/com.ptc.fusion.web.pages.components.modalwindow.ModalWindow/res/transpare"
+      "nt2.png", 18.34);
+    // resme
+ 
+    WebPageAddUrl("/static/images/online_test_icon_sm-active.gif");
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/viewer/selected_arrow.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    WebPageAddUrl("/static/images/viewer/assessment/knowledge_lg.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    WebPageAddUrl("/static/images/indicator.gif");
+    // Redirecting -> (redirection) https://precisionlmstest.ptc.com/app/?wicket:interface=viewerPageMap:0::::
+    WebPageUrl("https://precisionlmstest.ptc.com/app/search", 
+      "Assessment Viewer : Benchmark - Control Baseline (Windchill PDMLink 8.0)", S06_007);
+    // select q1
+ 
+    WebCookieSet("fusion.viewstate.ieFudge=12%2C104%2C4%2C13; domain=.ptc.com; path=/app; expires=Tue, 18 Jun 2019 16:40:57 GMT"
+      , "https://precisionlmstest.ptc.com/app/");
+    WebCookieSet(
+      "fusion.viewstate.currentSessionId=2c776760-91bc-40da-8644-46e899735402; domain=.ptc.com; path=/app; expires=Tue, 18 Jun "
+      "2019 16:40:57 GMT", "https://precisionlmstest.ptc.com/app/");
+    WebCookieSet("fusion.viewstate.width=225; domain=.ptc.com; path=/app; expires=Tue, 18 Jun 2019 16:40:57 GMT", 
+      "https://precisionlmstest.ptc.com/app/");
+    WebCookieSet("fusion.viewstate.minimized=; domain=.ptc.com; path=/app; expires=Tue, 18 Jun 2019 16:40:57 GMT", 
+      "https://precisionlmstest.ptc.com/app/");
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_009);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton1, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_008, "/app/ (#1)"); // Form 1
+    Print("sRadioButton1: " + FromEncoding(sRadioButton1));
+    // answer q1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_011);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton2, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_010, "/app/ (#2)"); // Form 1
+    Print("sRadioButton2: " + FromEncoding(sRadioButton2));
+    // answer q2
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_013);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton3, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_012, "/app/ (#3)"); // Form 1
+    // answer q3
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_015);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton4, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_014, "/app/ (#4)"); // Form 1
+    // answer q4
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_017);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton5, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_016, "/app/ (#5)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_019);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton6, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_018, "/app/ (#6)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_021);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton7, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_020, "/app/ (#7)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_023);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton8, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_022, "/app/ (#8)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_025);
+    WebParseDataBoundEx(sRadioButton9, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_024, "/app/ (#9)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_027);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton10, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_026, "/app/ (#10)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_029);
+    WebParseDataBoundEx(sRadioButton11, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_028, "/app/ (#11)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_031);
+    WebParseDataBoundEx(sRadioButton12, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_030, "/app/ (#12)"); // Form 1
+    Print("sRadioButton12: " + FromEncoding(sRadioButton12));
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_033);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton13, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_032, "/app/ (#13)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_035);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton14, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_034, "/app/ (#14)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_037);
+    WebParseDataBoundEx(sRadioButton15, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_036, "/app/ (#15)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_039);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton16, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_038, "/app/ (#16)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_041);
+    WebParseDataBoundEx(sRadioButton17, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_040, "/app/ (#17)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_043);
+    WebParseDataBoundEx(sRadioButton18, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_042, "/app/ (#18)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_045);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton19, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_044, "/app/ (#19)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_047);
+    WebParseDataBoundEx(sRadioButton20, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_046, "/app/ (#20)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_049);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton21, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_048, "/app/ (#21)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_051);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton22, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_050, "/app/ (#22)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_053);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton23, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_052, "/app/ (#23)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_055);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton24, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_054, "/app/ (#24)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_057);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton25, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_056, "/app/ (#25)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_059);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton26, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_058, "/app/ (#26)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_061);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton27, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_060, "/app/ (#27)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_063);
+    WebParseDataBoundEx(sRadioButton28, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_062, "/app/ (#28)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_065);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton29, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_064, "/app/ (#29)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_067);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton30, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_066, "/app/ (#30)"); // Form 1
+    Print("sRadioButton30: " + FromEncoding(sRadioButton30));
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_069);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton31, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_068, "/app/ (#31)"); // Form 1
+    // answer q31
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/", S06_071);
+    ThinkTime(rShortTime);
+    WebParseDataBoundEx(sRadioButton32, STRING_COMPLETE, ToEncoding("value=\""), 2, ToEncoding("\""),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebPageSubmit(NULL, S06_070, "/app/ (#32)"); // Form 1
+    Print("sRadioButton32: " + FromEncoding(sRadioButton32));
+    // submit entire
+ 
+    ThinkTime(rShortTime);
+    WebFormPostEx("https://precisionlmstest.ptc.com/app/", S06_072, S06_073, 0.78);
+ 
+    WebPageUrl("https://precisionlmstest.ptc.com/app/", 
+      "[Warning: String resource for 'com.ptc.fusion.web.pages.viewer.assessmen", S06_074);
+    // wait ok
+ 
+    ThinkTime(rShortTime);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", S06_075, 0.11);
+    WebParseDataBoundEx(sExamID2, STRING_COMPLETE, ToEncoding("examID="), 1, ToEncoding("&"),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebParseDataBoundEx(sAssignmentID2, STRING_COMPLETE, ToEncoding("signmentId="), 1, ToEncoding("'"),
+      WEB_FLAG_IGNORE_WHITE_SPACE | WEB_FLAG_CASE_SENSITIVE, 1);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", S06_076, 1.11);
+    Print("sAssignmentID2: " + FromEncoding(sAssignmentID2));
+    Print("sExamID2: " + FromEncoding(sExamID2));
+ 
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/header_banner.jpg");
+    WebPageAddUrl("/static/images/nav_nubbin.gif");
+    WebPageAddUrl("/static/images/drop_shadow_footer.jpg");
+    WebPageAddUrl("/static/images/tabs/orange_left.gif");
+    WebPageAddUrl("/static/images/tabs/orange_right.gif");
+    WebPageAddUrl("/static/images/tabs/blue_left.gif");
+    WebPageAddUrl("/static/images/tabs/blue_right.gif");
+    WebPageAddUrl("/static/images/random/nubbin_score.gif");
+    WebPageAddUrl("/static/images/random/your_score.jpg");
+    WebPageUrl("https://precisionlmstest.ptc.com/app/", "Assessment Result", S06_077);
+ 
+    WebPageUrl("https://precisionlmstest.ptc.com/app/search", "search (#1)", S06_078); // Ajax identified
+    // logout
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/login/login-top.jpg");
+    WebPageAddUrl("/static/images/login/login-bottom.jpg");
+    WebPageAddUrl("/static/images/login/arrow.gif");
+    WebPageAddUrl("/static/images/login/login-box-bottom.gif");
+    WebPageAddUrl("/static/images/login/login-box-top.gif");
+    // Redirecting https://precisionlmstest.ptc.com/app/?wicket:interface=viewerPageMap:2:logoutLink::ILinkListener::
+    // -> (redirection) https://precisionlmstest.ptc.com/app/pages/Login/wicket:pageMapName/viewerPageMap/
+    ThinkTime(rShortTime);
+    WebPageLink("Log Out", "Precision LMS : Login (#1)"); // Link 7
+ 
+//    WebPageUrl("https://precisionlmstest.ptc.com/web/notifications/fusion_maint_msg.html", "Precision LMS Maintenance (#1)", 
+//      WEB_NOTIFICATIONS_FUSION_MAINT_M079);
+  end fScenario06;
+
+dclform
+  S06_004 <ENCODE_ESCAPE> :
+    "id1f_hf_0"                 := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "Benchmark Control Baseline Windchill PDMLink 8.0", // changed
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "2", // added
+    "tabs:panel:filterPanel:contentType" := "0", // added
+    "tabs:panel:filterPanel:version" := "0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:panel:searchButton"   := "1"; // added
+
+  S06_005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:tabs:panel:searchButton::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.40590797599845646";
+
+  S06_006 <ENCODE_BLANKS> :
+//    "wicket:interface"          := ":3:findTrainingForm:resultTable:learningItemRow:1:result:titleRow:titleLink::IBehaviorListe"
+    "wicket:interface"          := ":3:findTrainingForm:resultTable:learningItemRow:1:result:titleRow:titleLink:1:IBehaviorListe"
+                                   "ner:0:-1",
+    "random"                    := "0.9036227318273482";
+
+  S06_007 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:LightBox:content:startAssessment:1:ILinkListener::";
+
+  S06_008:
+    "id15d_hf_0"                := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "LNB:tree:i:2:nodeComponent:link" := "1"; // added
+
+  S06_009 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:LNB:tree:i:2:nodeComponent:link::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.18479835004715112";
+
+  S06_010:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id1e1_hf_0"                := "", // added
+    "response:group"            := sRadioButton1, // changed
+    "proceed"                   := "1"; // added
+
+  S06_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:1:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.022657104318015653";
+
+  S06_012:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id267_hf_0"                := "", // added
+    "response:group"            := sRadioButton2, // changed
+    "proceed"                   := "1"; // added
+
+  S06_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:2:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.4517694591017133";
+
+  S06_014:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id2eb_hf_0"                := "", // added
+    "response:group"            := sRadioButton3, // changed
+    "proceed"                   := "1"; // added
+
+  S06_015 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:3:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.5708774743418983";
+
+  S06_016:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id36f_hf_0"                := "", // added
+    "response:group"            := sRadioButton4, // changed
+    "proceed"                   := "1"; // added
+
+  S06_017 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:4:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.05502170280471308";
+
+  S06_018:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id3f6_hf_0"                := "", // added
+    "response:group"            := sRadioButton5, // changed
+    "proceed"                   := "1"; // added
+
+  S06_019 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:5:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.8667208838472042";
+
+  S06_020:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id47a_hf_0"                := "", // added
+    "response:group"            := sRadioButton6, // changed
+    "proceed"                   := "1"; // added
+
+  S06_021 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:6:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.047556784779944905";
+
+  S06_022:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id4ff_hf_0"                := "", // added
+    "response:group"            := sRadioButton7, // changed
+    "proceed"                   := "1"; // added
+
+  S06_023 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:7:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.8553248547985678";
+
+  S06_024:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id583_hf_0"                := "", // added
+    "response:group"            := sRadioButton8, // changed
+    "proceed"                   := "1"; // added
+
+  S06_025 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:8:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.9026166908813051";
+
+  S06_026:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id608_hf_0"                := "", // added
+    "response:group"            := sRadioButton9, // changed
+    "proceed"                   := "1"; // added
+
+  S06_027 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:9:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.5429292378675719";
+
+  S06_028:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id68d_hf_0"                := "", // added
+    "response:group"            := sRadioButton10, // changed
+    "proceed"                   := "1"; // added
+
+  S06_029 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:10:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.1544063594596337";
+
+  S06_030:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id712_hf_0"                := "", // added
+    "response:group"            := sRadioButton11, // changed
+    "proceed"                   := "1"; // added
+
+  S06_031 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:11:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.38149394774146333";
+
+  S06_032:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id798_hf_0"                := "", // added
+    "response:group"            := sRadioButton12, // changed
+    "proceed"                   := "1"; // added
+
+  S06_033 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:12:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.8316372110607932";
+
+  S06_034:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id81d_hf_0"                := "", // added
+    "response:group"            := sRadioButton13, // changed
+    "proceed"                   := "1"; // added
+
+  S06_035 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:13:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.2863017532001292";
+
+  S06_036:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id8a2_hf_0"                := "", // added
+    "response:group"            := sRadioButton14, // changed
+    "proceed"                   := "1"; // added
+
+  S06_037 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:14:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.5998158292036946";
+
+  S06_038:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id928_hf_0"                := "", // added
+    "response:group"            := sRadioButton15, // changed
+    "proceed"                   := "1"; // added
+
+  S06_039 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:15:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.1306930097060635";
+
+  S06_040:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id9ae_hf_0"                := "", // added
+    "response:group"            := sRadioButton16, // changed
+    "proceed"                   := "1"; // added
+
+  S06_041 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:16:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.6112093863787256";
+
+  S06_042:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "ida33_hf_0"                := "", // added
+    "response:group"            := sRadioButton17, // changed
+    "proceed"                   := "1"; // added
+
+  S06_043 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:17:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.7232116626959599";
+
+  S06_044:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "idab7_hf_0"                := "", // added
+    "response:group"            := sRadioButton18, // changed
+    "proceed"                   := "1"; // added
+
+  S06_045 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:18:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.5506777496249717";
+
+  S06_046:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "idb3d_hf_0"                := "", // added
+    "response:group"            := sRadioButton19, // changed
+    "proceed"                   := "1"; // added
+
+  S06_047 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:19:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.33982511559110373";
+
+  S06_048:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "idbc1_hf_0"                := "", // added
+    "response:group"            := sRadioButton20, // changed
+    "proceed"                   := "1"; // added
+
+  S06_049 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:20:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.2610695812331257";
+
+  S06_050:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "idc46_hf_0"                := "", // added
+    "response:group"            := sRadioButton21, // changed
+    "proceed"                   := "1"; // added
+
+  S06_051 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:21:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.8575128298152437";
+
+  S06_052:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "idcca_hf_0"                := "", // added
+    "response:group"            := sRadioButton22, // changed
+    "proceed"                   := "1"; // added
+
+  S06_053 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:22:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.6336379976723166";
+
+  S06_054:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "idd4f_hf_0"                := "", // added
+    "response:group"            := sRadioButton23, // changed
+    "proceed"                   := "1"; // added
+
+  S06_055 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:23:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.41540200274436994";
+
+  S06_056:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "iddd4_hf_0"                := "", // added
+    "response:group"            := sRadioButton24, // changed
+    "proceed"                   := "1"; // added
+
+  S06_057 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:24:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.15693863836100075";
+
+  S06_058:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "ide57_hf_0"                := "", // added
+    "response:group"            := sRadioButton25, // changed
+    "proceed"                   := "1"; // added
+
+  S06_059 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:25:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.3157607905130903";
+
+  S06_060:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "ideda_hf_0"                := "", // added
+    "response:group"            := sRadioButton26, // changed
+    "proceed"                   := "1"; // added
+
+  S06_061 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:26:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.6319313296007287";
+
+  S06_062:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "idf5f_hf_0"                := "", // added
+    "response:group"            := sRadioButton27, // changed
+    "proceed"                   := "1"; // added
+
+  S06_063 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:27:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.5695428093621566";
+
+  S06_064:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "idfe4_hf_0"                := "", // added
+    "response:group"            := sRadioButton28, // changed
+    "proceed"                   := "1"; // added
+
+  S06_065 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:28:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.08151396326549992";
+
+  S06_066:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id106a_hf_0"               := "", // added
+    "response:group"            := sRadioButton29, // changed
+    "proceed"                   := "1"; // added
+
+  S06_067 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:29:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.08980943750458531";
+
+  S06_068:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id10ed_hf_0"               := "", // added
+    "response:group"            := sRadioButton30, // changed
+    "proceed"                   := "1"; // added
+
+  S06_069 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:30:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.8094751975517482";
+
+  S06_070:
+    "id15d_hf_0"                := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "id1172_hf_0"               := "", // added
+    "response:group"            := sRadioButton31, // changed
+    "proceed"                   := "1"; // added
+
+  S06_071 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:proceed:31:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.04123889087475907";
+
+  S06_072 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:submitAssessment::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.896860420439624";
+
+  S06_073:
+    "id11f7_hf_0"               := "",
+    "submitAssessment"          := "1";
+
+  S06_074 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0::::";
+
+  S06_075 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0:ok::IBehaviorListener:0:",
+    "random"                    := "0.2650643899517076";
+
+  S06_076 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:assessmentForm:confirmationBox::IBehaviorListener:1:-1",
+    "random"                    := "0.16300308059397506";
+
+  S06_077 <ENCODE_BLANKS> :
+    "wicket:bookmarkablePage"   := "viewerPageMap:com.ptc.fusion.web.pages.assessment.AssessmentResultPage",
+    "examID"                    := sExamID2,//"2719747",
+    "assignmentId"              := sAssignmentID2;//"2779829";
+
+  S06_078 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:content:tracker::IBehaviorListener:0:";
+
+//  WEB_NOTIFICATIONS_FUSION_MAINT_M079:
+//    ""                          := "0.34173876885370185";
+

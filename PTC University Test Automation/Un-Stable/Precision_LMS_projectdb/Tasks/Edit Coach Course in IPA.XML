@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Edit Coach Course in IPA" Desc="Edit Coach Course in IPA" TaskID="154" Path="Edit Coach Course in IPA.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="366" ObjectName="Pro/FICIENCY Assessment Id" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="profile id" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="3" stepSeq="2" ObjectId="367" ObjectName="Save" ObjectTypeId="3003" ActionId="60300" ActionName="ClickAndWait" />
+  <Step StepId="2" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

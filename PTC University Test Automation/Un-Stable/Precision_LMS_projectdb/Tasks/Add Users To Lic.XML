@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Add Users To Lic" Desc="Add Users To Lic" TaskID="39" Path="Add Users To Lic.XML">
+  <Step StepId="151" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60101" ActionName="StoreVariable">
+    <Param Name="&quot;Email&quot;" ParamSeq="1" Parameterized="0" Data="Email" />
+    <Param Name="UserEmail" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="156" stepSeq="2" ObjectId="152" ObjectName="search_General" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="&quot;{Email}&quot;" ParamSeq="1" Parameterized="0" Data="{Email}" />
+  </Step>
+  <Step StepId="157" stepSeq="3" ObjectId="7" ObjectName="Search" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="155" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="150" stepSeq="5" ObjectId="225" ObjectName="SelectUserCheckBox" ObjectTypeId="3004" ActionId="60406" ActionName="Click" />
+</Task>

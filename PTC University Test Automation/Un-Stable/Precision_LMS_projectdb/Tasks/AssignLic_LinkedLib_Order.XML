@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Assign License for linked Lib Order" Desc="Assign License for orders with linked Libraries" TaskID="82" Path="AssignLic_LinkedLib_Order.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="78" stepSeq="2" ObjectId="143" ObjectName="Manage Licenses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="149" stepSeq="3" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;LibAssignRowNum&quot;" ParamSeq="1" Parameterized="0" Data="LibAssignRowNum" />
+    <Param Name="User Count" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="82" stepSeq="4" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99994" ActionName="ClickLinkTitleAtCell">
+    <Param Name="&quot;Assign&quot;" ParamSeq="1" Parameterized="0" Data="Assign" />
+    <Param Name="&quot;{LibAssignRowNum}&quot;" ParamSeq="2" Parameterized="0" Data="{LibAssignRowNum}" />
+    <Param Name="&quot;6&quot;" ParamSeq="3" Parameterized="0" Data="6" />
+  </Step>
+  <Step StepId="92" stepSeq="5" ObjectId="208" ObjectName="Select User" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="95" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

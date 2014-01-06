@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Launch Course from Course Details popup" Desc="Launch Course from Course Details popup" TaskID="136" Path="LaunchCourse_CourseDetails_popup.XML">
+  <Step StepId="273" stepSeq="1" ObjectId="331" ObjectName="Start/Resume link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="271" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap" />
+  </Step>
+  <Step StepId="270" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Wait for Launch Course" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Details tab in Assessment Results Page" Desc="Verify Details tab in Assessment Results Page after assessment submission" TaskID="146" Path="VerifyDetailsTab_AssmtResultsPage.XML">
+  <Step StepId="258" stepSeq="1" ObjectId="361" ObjectName="Details Tab" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="283" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="259" stepSeq="3" ObjectId="349" ObjectName="Assessment Results Page" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name=" Show All Subgroups" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="261" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="260" stepSeq="5" ObjectId="349" ObjectName="Assessment Results Page" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name=" Hide All Subgroups" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="286" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+</Task>

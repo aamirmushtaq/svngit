@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Resume LI from Assigned Learning-Home page" Desc="Resume LI from Assigned Learning section in Home page (Current Learning tab)" TaskID="112" Path="ResumeAssessment_AssignedLI_HomePg.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="2" stepSeq="2" ObjectId="121" ObjectName="Home" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="3" stepSeq="3" ObjectId="117" ObjectName="Current Learning" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="4" stepSeq="4" ObjectId="270" ObjectName="Assigned Learning TBL" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="KeyRowNo_ResumeLI" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="Resume LI Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="5" stepSeq="5" ObjectId="270" ObjectName="Assigned Learning TBL" ObjectTypeId="3009" ActionId="60907" ActionName="ClickLinkAtCell">
+    <Param Name="Resume LI Name" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="RowNo_ResumeLI" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="237" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="238" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap" />
+  </Step>
+  <Step StepId="241" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+</Task>

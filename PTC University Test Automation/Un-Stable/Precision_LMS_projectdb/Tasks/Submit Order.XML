@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Submit Order" Desc="Clicks on submit button to submit the order" TaskID="98" Path="Submit Order.XML">
+  <Step StepId="2" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="269" ObjectName="Submit Order button" ObjectTypeId="3003" ActionId="99990" ActionName="ClickandchooseOkOnNextConfirmation" />
+</Task>

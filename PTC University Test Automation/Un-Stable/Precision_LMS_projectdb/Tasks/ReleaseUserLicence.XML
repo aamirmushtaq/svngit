@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Release License from a User" Desc="Release License from a User to validate licensing after cancellation" TaskID="116" Path="ReleaseUserLicence.XML">
+  <Step StepId="51" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="50" stepSeq="2" ObjectId="134" ObjectName="Release License(s) from a User" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="63" stepSeq="3" ObjectId="319" ObjectName="User Email ID textbox" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="User email Id to release Lic" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="65" stepSeq="4" ObjectId="318" ObjectName="Add To List" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="66" stepSeq="5" ObjectId="317" ObjectName="Select All Licences" ObjectTypeId="3004" ActionId="60406" ActionName="Click" />
+  <Step StepId="109" stepSeq="6" ObjectId="316" ObjectName="Release Selected Licenses link" ObjectTypeId="3007" ActionId="99991" ActionName="ClickandchooseOkOnNextConfirmation" />
+  <Step StepId="250" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+</Task>

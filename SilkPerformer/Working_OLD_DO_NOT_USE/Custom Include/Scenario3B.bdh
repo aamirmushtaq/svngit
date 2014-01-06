@@ -1,0 +1,673 @@
+//----------------------------------------------------------------------
+// Recorded 10/02/2007 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+
+
+dclfunc
+  function fScenario3B
+  var
+  begin
+    WebUrlBeginPage(""+SITE_NODE+"/app/");
+    // Redirecting -> (redirection) "+SITE+""+SITE_NODE+"/app/?wicket:interface=:4::::
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_004);   
+    WebUrl(""+SITE+""+SITE_NODE+"/styles/viewer/viewer.css");
+    WebUrl(""+SITE+""+SITE_NODE+"/javascript/x_core.js");
+    WebUrl(""+SITE+""+SITE_NODE+"/app/resources/org.apache.wicket.markup.html.tree.AbstractTree/res/tree.js");
+    WebUrl(
+      ""+SITE+""+SITE_NODE+"/app/resources/com.ptc.fusion.web.pages.viewer.ViewerMapExpansionImage/images/level_"
+      "1_expanded_inactive.gif");
+    WebUrl(
+      ""+SITE+""+SITE_NODE+"/app/resources/com.ptc.fusion.web.pages.viewer.ViewerMapExpansionImage/images/level_"
+      "1_expanded.gif");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/course/back_icon_lg.gif");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/course/forward_icon_lg.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/index.htm");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/selected_arrow.gif");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/header_fill.jpg");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/header_left_2.gif");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/viewer/header_right_3.png");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/ptcu_logo_s.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/next.gif");
+    WebUrlEndPage(); // "+SITE_NODE+"/app/
+    // intro
+ 
+    ThinkTime(rShortTime);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Pro/ENGINEER Wildfire 3.0 Courseware Introduction");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/index3348.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/back.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/home.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/PTCU2.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/toc.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/image_enlarge_icon.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/note_1.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/prof.gif");
+    WebUrlEndPage(); // Pro/ENGINEER Wildfire 3.0 Courseware Introduction
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Pro/ENGINEER Wildfire 3.0 Courseware Introduction (#1)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/index3349.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/winzip.gif");
+    WebUrlEndPage(); // Pro/ENGINEER Wildfire 3.0 Courseware Introduction (#1)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Pro/ENGINEER Wildfire 3.0 Courseware Introduction (#2)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/index3350.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/Tutorial_layout_1.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/icon_next.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/icon_back.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/introwildfire3.0/EN/images/icon_home.gif");
+    WebUrlEndPage(); // Pro/ENGINEER Wildfire 3.0 Courseware Introduction (#2)
+    MeasureStop ("NextExercise");
+
+    // next nav 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_005, 0.05);
+ 
+    WebUrlBeginPage("Training Material - User Agreement");
+    WebFormGet(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/main_commercial.html", 
+      STABLELOCAL_CONTENT_WBT_INTRODUC006);
+
+
+
+    // Info: HTTP status "404 Not Found" for URL: "+SITE+"/"+SITE_CONTENT+"/wbt_introduction/global.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/global.css");
+    // Info: HTTP status "404 Not Found" for URL: "+SITE+"/"+SITE_CONTENT+"/wbt_introduction/main.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/main.css");
+    // Info: HTTP status "404 Not Found" for URL: "+SITE+"/"+SITE_CONTENT+"/wbt_introduction/global.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/global.css");
+    // Info: HTTP status "404 Not Found" for URL: "+SITE+"/"+SITE_CONTENT+"/wbt_introduction/main.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/main.css");
+    WebUrlEndPage(); // Training Material - User Agreement
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_007, 0.03);
+ 
+    WebUrlBeginPage("Training Material - User Agreement (#1)");
+    WebFormGet(""+SITE+"/"+SITE_CONTENT+"/wbt_introduction/main_student.html", 
+      STABLELOCAL_CONTENT_WBT_INTRODUC008);
+    // Info: HTTP status "404 Not Found" for URL: "+SITE+"/"+SITE_CONTENT+"/global/global.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/global/global.css");
+    // Info: HTTP status "404 Not Found" for URL: "+SITE+"/"+SITE_CONTENT+"/global/main.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/global/main.css");
+    // Info: HTTP status "404 Not Found" for URL: "+SITE+"/"+SITE_CONTENT+"/global/global.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/global/global.css");
+    // Info: HTTP status "404 Not Found" for URL: "+SITE+"/"+SITE_CONTENT+"/global/main.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/global/main.css");
+    WebUrlEndPage(); // Training Material - User Agreement (#1)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextDemo");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_009, 0.06);
+ 
+    WebUrlBeginPage("PTC/University");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/launcher.html");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/swfobject.js");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/launcher.js");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/FlashTemplate.css");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/ptcu_logo2.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/header_spacer.gif");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/launcher_controller.swf");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/launcher_preload.swf");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/launcher_config.xml");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/lecture/launcher.swf");
+    WebUrlEndPage(); // PTC/University
+    MeasureStop ("NextDemo");
+    // watch lecture 12:55
+    Wait (775.0);
+ 
+    MeasureStart ("NextDemo");
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_010, 0.05);
+ 
+    WebUrlBeginPage("PTC/University (#1)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo1/launcher.html");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo1/swfobject.js");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo1/launcher.js");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo1/FlashTemplate.css");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo1/launcher_controller.swf");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo1/launcher_preload.swf");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo1/launcher_config.xml");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo1/launcher.swf");
+    WebUrlEndPage(); // PTC/University (#1)
+    MeasureStop ("NextDemo");
+    // demo 11:09
+    Wait (669.0);
+ 
+    MeasureStart ("NextDemo");
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_011, 0.05);
+ 
+    WebUrlBeginPage("PTC/University (#2)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo2/launcher.html");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo2/swfobject.js");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo2/launcher.js");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo2/FlashTemplate.css");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo2/launcher_controller.swf");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo2/launcher_preload.swf");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo2/launcher_config.xml");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/EN/module_01/demo2/launcher.swf");
+    WebUrlEndPage(); // PTC/University (#2)
+    MeasureStop ("NextDemo");
+    // second demo 8:02
+    Wait(482.0);
+ 
+    MeasureStart ("NextExercise");
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_012, 0.06);
+ 
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/click_here_to_begin.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/ptcu_logo_s.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/next.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves
+    MeasureStop ("NextExercise");
+    // lab exercises
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#1)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22941.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/back.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/home.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#1)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#2)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22944.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/slide3.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/image_enlarge_icon.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#2)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#3)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22945.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/slide4.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#3)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#4)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22947.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/slide5.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#4)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#5)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22950.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/slide6.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#5)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#6)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22951.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/slide7.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#6)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#7)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22952.htm");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#7)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#8)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22953.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/note_1.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_Navigator_Folder-Browser.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_datum-planes.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_datum-axes.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_datum-points.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_coordinate-systems.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_01.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_02.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_03.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_copy.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_paste.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_dashboard_complete-feature.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_edit_mirror-tool.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_04.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_05.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_no-hidden.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_shading.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_view-manager.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_dashboard_solid.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_06.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_save.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#8)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#9)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22954.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_open.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_07.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_08.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_saved-view-list.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_09.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_10a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_edit_merge-tool.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_10b.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_10c.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_11.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_12.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_feature_round-tool.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_13a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_13b.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#9)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#10)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22955.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_14.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_15.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_17.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_18.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_16.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_19.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_20a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_20.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_22a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_20b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_21.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_22.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#10)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#11)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22956.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_23.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_paste-special.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_24a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_24b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_25.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_26.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_27a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_27b.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#11)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#12)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22957.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_28.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_dashboard_remove-material.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_29a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_29b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_30a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_30b.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#12)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#13)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22958.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_31.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_32a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_32b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_33a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_33b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_34a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_34b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_34c.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_34d.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_34e.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#13)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#14)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22959.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_52.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_53.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_54c.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_54b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_dashboard_create-section.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_sketcher_circle.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_55.gif");
+    WebUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_feature_variable-section-sweep-tool.gif"
+      );
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_56.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_sketcher_complete-sketch.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_57.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_dashboard_rotate.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_58.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_58b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_59a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_59b.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#14)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#15)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22960.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_feature_sketch-tool.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_sketcher_text.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_60.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_61.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_62a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_62b.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#15)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#16)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22961.htm");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#16)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#17)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22962.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_63.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_model-tree_insert-indicator.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_64.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#17)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#18)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22963.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_65a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_feature_boundary-blend-tool.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_65b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_65c.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66c.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66d.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66e.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66f.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66g.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66h.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_66i.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_67.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#18)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#19)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22964.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_main_layer-tree.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_68.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_69.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#19)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#20)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22965.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_35.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_36.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_37.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_38.gif");
+    WebUrl(
+      ""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_dashboard_extend-surface-to-plane.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_39.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#20)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#21)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22966.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_40.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_41.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_43.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_42.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_44.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_45.jpg");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_46.jpg");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#21)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#22)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22967.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_47.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/icon_edit_trim-tool.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_48b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_48a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_49a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_49b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_50a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_50b.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_51a.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/images/mod5_51b.gif");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#22)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Creating Geometry from Surfaces and Curves (#23)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/1762/index22968.htm");
+    WebUrlEndPage(); // Module 01: Creating Geometry from Surfaces and Curves (#23)
+    MeasureStop ("NextExercise");
+    // nav to check knowledge
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_013, 0.05);
+ 
+    WebUrlBeginPage("Module 01: Check Your Knowledge");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/click_here_to_begin.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/images/ptc_logo.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/images/striped_bg.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/images/pro-ficiency_logo_top.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/images/next.gif");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#1)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58814.htm");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/images/back.gif");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/images/home.gif");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#1)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#2)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58815.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#2)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#3)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58816.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#3)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#4)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58817.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#4)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#5)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58818.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#5)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#6)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58819.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#6)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#7)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58820.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#7)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#8)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58821.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#8)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#9)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58822.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#9)
+    MeasureStop ("NextExercise");
+    // next
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart ("NextExercise");
+    WebUrlBeginPage("Module 01: Check Your Knowledge (#10)");
+    WebUrl(""+SITE+"/"+SITE_CONTENT+"/TRN-1862/exercises/3347/index58823.htm");
+    WebUrlEndPage(); // Module 01: Check Your Knowledge (#10)
+    MeasureStop ("NextExercise");
+
+    // logout 
+    ThinkTime(rShortTime);
+    WebUrlBeginPage("Login (#1)");
+    // Redirecting -> (redirection) "+SITE+""+SITE_NODE+"/app/pages/Login/
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO3_014);
+    WebUrl(""+SITE+""+SITE_NODE+"/styles/screen.css");
+    WebUrl(""+SITE+""+SITE_NODE+"/styles/forms.css");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/header_top.jpg");
+    WebUrl(""+SITE+""+SITE_NODE+"/images/to_be_deleted/main_background_fade.jpg");
+    WebUrlEndPage(); // Login (#1)
+  end fScenario3B;
+
+dclform
+
+  SCENARIO3_004 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:learningItems:18:viewerLink::ILinkListener::";
+
+
+  SCENARIO3_005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:learningItemTree:i:3:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.4853627662991993";
+
+  STABLELOCAL_CONTENT_WBT_INTRODUC006:
+    "course_id"                 := "TRN-1862",
+    "file_name"                 := "creating_geometry_from_surfaces_and_curves.zip";
+
+  SCENARIO3_007 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.9704966220210207";
+
+  STABLELOCAL_CONTENT_WBT_INTRODUC008:
+    "course_id"                 := "TRN-1862",
+    "file_name"                 := "creating_geometry_from_surfaces_and_curves_StudentEdition.zip";
+
+  SCENARIO3_009 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.4633676727329791";
+
+  SCENARIO3_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.08433130624761081";
+
+  SCENARIO3_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6219299813066773";
+
+  SCENARIO3_012 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.9608269394873784";
+
+  SCENARIO3_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:learningItemTree:i:38:nodeComponent::IBehaviorListener:0:-1",
+    "random"                    := "0.7645071165681614";
+
+  SCENARIO3_014 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:logoutLink::ILinkListener::";
+

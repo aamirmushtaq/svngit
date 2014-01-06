@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Attempt Skilled Questions in Assessment" Desc="Attempt Skilled Questions in Assessment" TaskID="161" Path="Attempt_SkillQuestions_Assmt.XML">
+  <Step StepId="274" stepSeq="1" ObjectId="378" ObjectName="Skill Questions - File 1" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="File Path" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="275" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="1" stepSeq="3" ObjectId="271" ObjectName="Assessment Viewer" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Next, Ignore or Submit Assmt" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="276" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+</Task>

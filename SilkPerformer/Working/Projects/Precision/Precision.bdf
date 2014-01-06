@@ -1,0 +1,459 @@
+//----------------------------------------------------------------------
+// Recorded 2009-06-08 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+@codepage(1252)
+
+benchmark SilkPerformerRecorder
+
+use "WebAPI.bdh"
+
+//this bdh file contains the consts and random variables shared by the various scenarios
+use "common.bdh"
+
+
+
+//these bdh files contain the functions for each scenario
+use "Scenario02.bdh"
+
+//these bdh files contain the functions for each scenario
+// use "Scenario03.bdh"
+use "Scenario04.bdh"
+// use "Scenario06.bdh"
+use "Scenario07.bdh"
+// use "Scenario07b.bdh" 
+use "Scenario08.bdh"
+
+
+
+
+var
+  hUserData                : number;   
+  hMgrData                 : number;   
+  sUserId                  : string;
+  sPassword                : string; 
+  nRowPointer              : number;
+
+dclrand
+   rBrowserType            : RndUniI(6..6=0.5, 23..23=0.5);
+
+
+dcluser
+  user
+    uScenario01
+  transactions
+    tInit       : begin;
+    tScenario01  : 1;  
+    tEnd        : end;
+
+  user
+    uScenario02
+  transactions
+    tInit       : begin;
+    tScenario02  : 1;
+    tEnd        : end;
+
+//  user
+//    uScenario03
+//  transactions
+//    tInit       : begin;
+//    tScenario03  : 1;
+//    tEnd        : end;
+    
+  user
+    uScenario04
+  transactions
+    tInit       : begin;
+    tScenario04  : 1;
+    tEnd        : end;
+    
+    
+//  user
+//    uScenario06
+//  transactions
+//    tInit       : begin;
+//    tScenario06  : 1;
+//    tEnd        : end;
+    
+  user
+    uScenario07
+  transactions
+    tInit       : begin;
+    tScenario07  : 1;
+    tEnd        : end;
+    
+    
+//  user
+//    uScenario07b
+//  transactions
+//    tInit       : begin;
+//    tScenario07b  : 1;
+//    tEnd        : end;
+  
+  
+  user
+    uScenario08
+  transactions
+    tInit       : begin;
+    tScenario08  : 1;
+    tEnd        : end;  
+  
+   
+    
+
+dclfunc
+  function fLogin
+  var
+    hWeb0 : number;
+  begin
+    WebTcpipConnect(hWeb0, "127.0.0.1", 5152);
+    WebTcpipSendBin(hWeb0, "\h4A51534D0000000300000000");
+    WebTcpipShutdown(hWeb0);
+ 
+    // Redirecting -> (redirection) https://fusion-test.ptc.com/plms/
+    WebCookieSet(
+      "NSC_gvtjpo-mc-bqq-wjq1=ffffffff87f50b5545525d5f4f58455e445a4a422520; domain=.ptc.com; path=/; expires=Thu, 28 Jul 2011 1"
+      "1:48:58 GMT", "https://fusion-test.ptc.com/plms");
+    WebPageParseUrl("HTTP meta refresh tag in page plms", "0; url=", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl("https://fusion-test.ptc.com/plms", "plms");
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageAddUrl("/static/images/global/arrow-list.png");
+    WebPageAddUrl("/static/images/global/dots.png");
+    WebPageAddUrl("/static/images/global/ptcu-logo.png");
+    WebPageAddUrl("/static/images/global/gradient-strip.png");
+    WebPageAddUrl("/static/images/global/precision-lms-logo.png");
+    WebPageAddUrl("/static/images/global/ptcu-logo-small.png");
+    WebPageAddUrl("/static/images/indicator.gif");
+    // Redirecting https://fusion-test.ptc.com/plms/app
+    // -> (redirection) https://fusion-test.ptc.com/plms/app/
+    // -> (redirection) https://fusion-test.ptc.com/plms/app/pages/LandingPage/;jsessionid=6774661E821A3B16D7286CBE48B5AACD
+    // -> (redirection) https://fusion-test.ptc.com/plms/app/pages/Login/
+    WebPageLink("HTTP meta refresh tag in page plms", "Precision LMS : Login");
+ 
+    WebPageUrl("https://fusion-test.ptc.com/web/notifications/fusion_maint_msg.html", "fusion_maint_msg.html", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M001);
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/global/header-shadow.png");
+    WebPageAddUrl("/static/images/global/account-search-gradient.png");
+    WebPageAddUrl("/static/images/global/accent-gradient.png");
+    WebPageAddUrl("/static/images/global/current-arrow.png");
+    // Redirecting https://fusion-test.ptc.com/plms/app/?wicket:interface=:1:loginForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-test.ptc.com/plms/app/pages/LandingPage/
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, PLMS_APP_002, "Precision LMS : My Learning"); // Form 1
+    // Login End
+
+
+
+  
+  end fLogin;
+
+
+  function fLogout
+    var
+    begin
+     // Redirecting https://fusion-test.ptc.com/plms/app/?wicket:interface=:3:logoutLink::ILinkListener::
+    // -> (redirection) https://fusion-test.ptc.com/plms/app/pages/Login/
+    ThinkTime(13.7);
+    WebPageLink("Log Out", "Precision LMS : Login (#1)"); // Link 4
+ 
+    WebPageUrl("https://fusion-test.ptc.com/web/notifications/fusion_maint_msg.html", "fusion_maint_msg.html (#1)", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M003);
+      
+    end fLogout;
+
+
+
+
+
+dcltrans
+  transaction TInit
+  begin
+    WebSetBrowser(WEB_BROWSER_MSIE6);
+
+    WebSetBrowser(WEB_BROWSER_MSIE6);
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    //WebSetUserBehavior(WEB_USERBEHAVIOR_FIRST_TIME);
+    //WebSetDocumentCache(true, WEB_CACHE_CHECK_SESSION);
+
+
+    //open the files with USER user ids
+    FileCSVLoadGlobal(hUserData,  USER_CSV_FILE, ",");
+
+    //open the files with MANAGER user ids
+    FileCSVLoadGlobal(hMgrData,  MANAGER_CSV_FILE, ",");
+    
+    //this will stop users once they get a 500    
+    ErrorAdd(FACILITY_HTTP, 500, SEVERITY_TRANS_EXIT);
+
+
+    // Ignore 403,404 error so that we can just stress the app wo/ content    
+    ErrorAdd(FACILITY_HTTP, 403, SEVERITY_SUCCESS);
+    ErrorAdd(FACILITY_HTTP, 404, SEVERITY_SUCCESS);
+
+
+//    bSetBrowser := WebSetBrowser(WEB_BROWSER_MSIE6);
+    // uses the random variable rBrowserType
+//    bSetBrowser := WebSetBrowser(rBrowserType);
+//// for debugging only      
+//    print (string(bSetBrowser));
+//     WebDumpSettings();
+
+//  WebSetTimeout(WEB_TIMEOUT_SEND, 3000000);
+//  WebSetTimeout(WEB_TIMEOUT_RECV, 2000000);
+//  WebSetTimeout(WEB_TIMEOUT_CONNECT, 300000);
+   
+
+//    print("WEB_TIMEOUT_SEND   : "+string(WebGetTimeout(WEB_TIMEOUT_SEND)));
+//    print("WEB_TIMEOUT_RECV   : "+string(WebGetTimeout(WEB_TIMEOUT_RECV)));
+//    print("WEB_TIMEOUT_CONNECT: "+string(WebGetTimeout(WEB_TIMEOUT_CONNECT)));    
+  
+  end TInit;
+
+
+  transaction tEnd
+  begin
+    //Close files that hold user ids
+    FileUnload(hUserData);   
+    FileUnload(hMgrData);   
+  end tEnd;
+
+
+
+  transaction tScenario01
+  var  
+    nRowCheck : number;
+  begin     
+    FileGetRow (hUserData,GetUserId());
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    Print (sUserId,TEXT_BLUE );
+    Writeln (sUserId);
+    Print (sPassword,TEXT_BLUE );
+    Writeln (sPassword);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fLogout ();
+  end tScenario01;
+
+
+
+  transaction tScenario02
+  var  
+    nRowCheck : number;
+  begin     
+    FileGetRow (hUserData,GetUserId());
+
+
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fScenario02 ();
+    
+  end tScenario02;
+
+
+//  transaction tScenario03
+//  var  
+//    nRowCheck : number;
+//  begin     
+//    FileGetRow (hUserData,GetUserId());
+//
+//
+//    //set the sUserId and sPassword - used in the login form
+//    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+//    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+//
+//
+//    Print (sUserId);
+//    Writeln (sUserId);
+//
+//    //insures that all of the users don't login at exactly the same time
+//    ThinkTime (rLoginStagger);
+//
+//    //call each of the functions to complete the scenario
+//    fLogin (); 
+////    fScenario03 ();
+//    
+//  end tScenario03;
+
+
+
+  transaction tScenario04
+  var  
+    nRowCheck : number;
+  begin     
+    FileGetRow (hUserData,GetUserId());
+
+
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fScenario04 ();
+    
+  end tScenario04;
+
+
+//  transaction tScenario06
+//  var  
+//    nRowCheck : number;
+//  begin     
+//    FileGetRow (hUserData,GetUserId());
+//
+//
+//    //set the sUserId and sPassword - used in the login form
+//    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+//    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+//
+//
+//    Print (sUserId);
+//    Writeln (sUserId);
+//
+//    //insures that all of the users don't login at exactly the same time
+//    ThinkTime (rLoginStagger);
+//
+//    //call each of the functions to complete the scenario
+//    fLogin (); 
+// //   fScenario06 ();
+//    
+//  end tScenario06;
+
+
+  transaction tScenario07
+  var  
+    nRowCheck : number;
+  begin     
+    FileGetRow (hUserData,GetUserId());
+
+
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fScenario07 ();
+    
+  end tScenario07;
+
+
+//
+//  transaction tScenario07b
+//  var  
+//    nRowCheck : number;
+//  begin     
+//    FileGetRow (hUserData,GetUserId());
+//
+//
+//    //set the sUserId and sPassword - used in the login form
+//    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+//    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+//
+//
+//    Print (sUserId);
+//    Writeln (sUserId);
+//
+//    //insures that all of the users don't login at exactly the same time
+//    ThinkTime (rLoginStagger);
+//
+//    //call each of the functions to complete the scenario
+//    fLogin (); 
+//    //    fScenario07b ();
+//    
+//    end tScenario07b;
+//
+
+   transaction tScenario08
+  var  
+    nRowCheck : number;
+  begin     
+    FileGetRow (hUserData,GetUserId());
+
+
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fScenario08 ();
+    
+  end tScenario08;
+  
+  
+  
+
+
+
+dclform
+
+
+  WEB_NOTIFICATIONS_FUSION_MAINT_M001:
+    ""                          := "0.15891717592268156";
+
+  PLMS_APP_002:
+    "id3_hf_0"                  := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "loginButton"               := "x", // changed
+    "navigatorAppName"          := "Microsoft Internet Explorer", // hidden, changed(!)
+    "navigatorAppVersion"       := "4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET4.0C; .NET4.0E)", // hidden, changed(!)
+    "navigatorAppCodeName"      := "Mozilla", // hidden, changed(!)
+    "navigatorCookieEnabled"    := "true", // hidden, changed(!)
+    "navigatorJavaEnabled"      := "true", // hidden, changed(!)
+    "navigatorLanguage"         := "en-us", // hidden, changed(!)
+    "navigatorPlatform"         := "Win32", // hidden, changed(!)
+    "navigatorUserAgent"        := "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET4.0C; .NET4.0E)", // hidden, changed(
+                                                                                                             // !)
+    "screenWidth"               := "1680", // hidden, changed(!)
+    "screenHeight"              := "1050", // hidden, changed(!)
+    "screenColorDepth"          := "16", // hidden, changed(!)
+    "utcOffset"                 := "-4", // hidden, changed(!)
+    "userId"                    := sUserId, // changed
+    "password"                  := sPassword, // changed
+    "languages"                 := "0"; // added
+
+  WEB_NOTIFICATIONS_FUSION_MAINT_M003:
+    ""                          := "0.07358469764750525";

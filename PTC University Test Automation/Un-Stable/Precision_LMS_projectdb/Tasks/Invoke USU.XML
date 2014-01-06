@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Invoke USU" Desc="Invoke USU" TaskID="62" Path="Invoke USU.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="208" ObjectName="Select User" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="136" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Send Email from Course Details Popup" Desc="Send Email operation from Course Details Popup" TaskID="135" Path="SendEmail_Course_Details_Popup.XML">
+  <Step StepId="272" stepSeq="1" ObjectId="333" ObjectName="Email link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="271" stepSeq="2" ObjectId="307" ObjectName="Email To" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Email ID" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="270" stepSeq="3" ObjectId="345" ObjectName="Send Email Button" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="1" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+</Task>

@@ -1,0 +1,530 @@
+//----------------------------------------------------------------------
+// Recorded 04/03/2008 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+var
+
+dclrand
+
+
+dclfunc
+  function fScenario3b
+  var
+    hWebStoredCtx_Precision_LMS_Find_Trainin : number;
+  begin
+    // find
+ 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    ThinkTime(rShortTime);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+    WebPageStoreContext(hWebStoredCtx_Precision_LMS_Find_Trainin);
+    // browse
+ 
+    WebPageSetActionUrlAbs(SITE + "/app/", SCEN3B_003);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, SCEN3B_002, "/app/"); // Form 1
+    // select course
+ 
+    WebPageAddUrl("/static/images/e-learning_icon_sm-active.gif");
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/optimize_mode.gif");
+    WebPageAddUrl("/static/images/excercise_mode.gif");
+    WebPageAddUrl("/static/images/add_bookmark.gif");
+    WebPageAddUrl("/static/images/email.gif");
+    WebPageAddUrl("/static/images/viewer/selected_arrow.gif");
+    WebPageAddUrl("/static/images/online_test_icon_sup_sm.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    WebPageAddUrl("/static/images/indicator.gif");
+    // Redirecting -> (redirection) https://precisionlms.ptc.com/app/?wicket:interface=viewerPageMap:0::::
+    WebPageParseUrl("Custom Frame in page Course Viewer", "content\" src=\"", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    ThinkTime(rShortTime);
+    WebPageUrl(SITE + "/app/", "Course Viewer", SCEN3B_004);
+    // intro
+ 
+    WebCookieSet("fusion.viewstate.ieFudge=12%2C83%2C4%2C8; domain=.ptc.com; path=/app; expires=Sun, 15 Apr 2018 16:51:09 GMT", 
+      SITE + "/app/");
+    WebCookieSet(
+      "fusion.viewstate.currentSessionId=fc2826dc-3e88-4dad-98d7-0a36d92f480a; domain=.ptc.com; path=/app; expires=Sun, 15 Apr "
+      "2018 16:51:09 GMT", SITE + "/app/");
+    WebCookieSet("fusion.viewstate.width=225; domain=.ptc.com; path=/app; expires=Sun, 15 Apr 2018 16:51:09 GMT", 
+      SITE + "/app/");
+    WebCookieSet("fusion.viewstate.minimized=; domain=.ptc.com; path=/app; expires=Sun, 15 Apr 2018 16:51:09 GMT", 
+      SITE + "/app/");
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_005, 0.09);
+ 
+    WebPageLink("Custom Frame in page Course Viewer", "Pro/ENGINEER Courseware Introduction");
+    // next
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_006, 0.13);
+ 
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/legal_agreement.htm", 
+      "legal_agreement.htm");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_007, 0.11);
+ 
+    WebPageAddUrl("launcher_media/images/background_darker.gif");
+    WebPageAddUrl("launcher_media/images/bg_table_light.gif");
+    WebPageAddUrl("launcher_media/launcher_config.xml");
+    WebPageAddUrl("launcher_media/launcher_preload.swf");
+    WebPageAddUrl("launcher_media/launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_00/lecture/launcher."
+      "html", "PTC University");
+ 
+    Wait rVideoLecture;
+    WebFormGet(SITE + "/app/", SCEN3B_008, 0.13);
+ 
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/course_overview.html", 
+      "course_overview.html");
+ 
+    Wait rVideoDemo;
+    WebFormGet(SITE + "/app/", SCEN3B_009, 0.11);
+ 
+    WebPageAddUrl("launcher_media/images/background_darker.gif");
+    WebPageAddUrl("launcher_media/images/bg_table_light.gif");
+    WebPageAddUrl("launcher_media/launcher_config.xml");
+    WebPageAddUrl("launcher_media/launcher_preload.swf");
+    WebPageAddUrl("launcher_media/launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_01/lecture/launcher."
+      "html", "PTC University (#1)");
+ 
+    Wait rVideoDemo;
+    WebFormGet(SITE + "/app/", SCEN3B_010, 0.14);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_01/demo1/launcher.ht"
+      "ml", "Created by Camtasia Studio 3");
+ 
+    Wait rVideoDemo;
+    WebFormGet(SITE + "/app/", SCEN3B_011, 0.13);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_01/demo2/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#1)");
+ 
+    WebFormGet(SITE + "/app/", SCEN3B_012, 0.13);
+ 
+    WebPageAddUrl("/app/", SCEN3B_013);
+    Wait rVideoLecture;
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_01/tb_output/index.h"
+      "tm", "Module 01: Advanced Sketch-based Features");
+ 
+    Wait rVideoDemo;
+    WebPageAddUrl("/app/", SCEN3B_014);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_01/knowledge_check/i"
+      "ndex.htm", "Module 01: Check Your Knowledge");
+ 
+    WebPageAddUrl("launcher_media/images/background_darker.gif");
+    WebPageAddUrl("launcher_media/images/bg_table_light.gif");
+    WebPageAddUrl("launcher_media/launcher_config.xml");
+    WebPageAddUrl("launcher_media/launcher_preload.swf");
+    WebPageAddUrl("launcher_media/launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_02/lecture/launcher."
+      "html", "PTC University (#2)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_015, 0.13);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_02/demo1/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#2)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_016, 0.11);
+ 
+    Wait rVideoDemo;
+    WebPageAddUrl("/app/", SCEN3B_017);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_02/tb_output/index.h"
+      "tm", "Module 02: Advanced Drafts and Shells");
+ 
+    Wait rVideoDemo;
+    WebPageAddUrl("/app/", SCEN3B_018);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_02/knowledge_check/i"
+      "ndex.htm", "Module 02: Check Your Knowledge");
+ 
+    WebPageAddUrl("launcher_media/images/background_darker.gif");
+    WebPageAddUrl("launcher_media/images/bg_table_light.gif");
+    WebPageAddUrl("launcher_media/launcher_config.xml");
+    WebPageAddUrl("launcher_media/launcher_preload.swf");
+    WebPageAddUrl("launcher_media/launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_03/lecture/launcher."
+      "html", "PTC University (#3)");
+ 
+    ThinkTime(rShortTime);
+    Wait rVideoLecture;
+    WebFormGet(SITE + "/app/", SCEN3B_019, 0.11);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageAddUrl("/app/", SCEN3B_020);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_03/demo1/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#3)");
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    ThinkTime(rShortTime);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_03/demo2/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#4)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_021, 0.09);
+ 
+    Wait rVideoDemo;
+    WebPageAddUrl("/app/", SCEN3B_022);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_03/tb_output/index.h"
+      "tm", "Module 03: Advanced Rounds and Chamfers");
+ 
+    Wait rVideoDemo;
+    WebPageAddUrl("/app/", SCEN3B_023);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_03/knowledge_check/i"
+      "ndex.htm", "Module 03: Check Your Knowledge");
+ 
+    WebPageAddUrl("launcher_media/images/background_darker.gif");
+    WebPageAddUrl("launcher_media/images/bg_table_light.gif");
+    WebPageAddUrl("launcher_media/launcher_config.xml");
+    WebPageAddUrl("launcher_media/launcher_preload.swf");
+    WebPageAddUrl("launcher_media/launcher.swf");
+    ThinkTime(rShortTime);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_04/lecture/launcher."
+      "html", "PTC University (#4)");
+ 
+    Wait rVideoDemo;
+    WebFormGet(SITE + "/app/", SCEN3B_024, 0.13);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_04/demo1/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#5)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_025, 0.11);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_04/demo2/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#6)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_026, 0.14);
+ 
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_04/tb_output/index.h"
+      "tm", "Module 04: Advanced Sweeps and Blends");
+ 
+    Wait rVideoLecture;
+    WebFormGet(SITE + "/app/", SCEN3B_027, 0.36);
+ 
+    Wait rVideoDemo;
+    WebPageAddUrl("/app/", SCEN3B_028);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_04/knowledge_check/i"
+      "ndex.htm", "Module 04: Check Your Knowledge");
+ 
+    WebPageAddUrl("launcher_media/images/background_darker.gif");
+    WebPageAddUrl("launcher_media/images/bg_table_light.gif");
+    WebPageAddUrl("launcher_media/launcher_config.xml");
+    WebPageAddUrl("launcher_media/launcher_preload.swf");
+    WebPageAddUrl("launcher_media/launcher.swf");
+    ThinkTime(rShortTime);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_05/lecture/launcher."
+      "html", "PTC University (#5)");
+ 
+    ThinkTime(rShortTime);
+    Wait rVideoDemo;
+    WebFormGet(SITE + "/app/", SCEN3B_029, 0.11);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_05/demo1/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#7)");
+ 
+    ThinkTime(rShortTime);
+    Wait rVideoDemo;
+    WebFormGet(SITE + "/app/", SCEN3B_030, 0.09);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_05/demo2/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#8)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_031, 0.13);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_05/demo3/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#9)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_032, 0.13);
+ 
+    Wait rVideoLecture;
+    WebPageAddUrl("/app/", SCEN3B_033);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_05/tb_output/index.h"
+      "tm", "Module 05: Advanced Patterns and Copies");
+ 
+    Wait rVideoDemo;
+    WebPageAddUrl("/app/", SCEN3B_034);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_05/knowledge_check/i"
+      "ndex.htm", "Module 05: Check Your Knowledge");
+ 
+    WebPageAddUrl("launcher_media/images/background_darker.gif");
+    WebPageAddUrl("launcher_media/images/bg_table_light.gif");
+    WebPageAddUrl("launcher_media/launcher_config.xml");
+    WebPageAddUrl("launcher_media/launcher_preload.swf");
+    WebPageAddUrl("launcher_media/launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_06/lecture/launcher."
+      "html", "PTC University (#6)");
+ 
+    Wait rVideoDemo;
+    WebFormGet(SITE + "/app/", SCEN3B_035, 0.11);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_06/demo1/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#10)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_036, 0.11);
+ 
+    WebPageAddUrl("launcher_config.xml");
+    WebPageAddUrl("launcher_preload.swf");
+    WebPageAddUrl("launcher.swf");
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_06/demo2/launcher.ht"
+      "ml", "Created by Camtasia Studio 3 (#11)");
+ 
+    ThinkTime(rShortTime);
+    WebFormGet(SITE + "/app/", SCEN3B_037, 0.13);
+ 
+    WebPageAddUrl("/app/", SCEN3B_038);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_06/tb_output/index.h"
+      "tm", "Module 06: Reusing Product Designs");
+ 
+    ThinkTime(rShortTime);
+    WebPageUrl(
+      SITE + "/content/coach_cp_8d82550e-055a-4072-8164-76ff28a9b84c//TRN-1831/module_06/knowledge_check/i"
+      "ndex.htm", "Module 06: Check Your Knowledge");
+    // logout
+ 
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/header_banner.png");
+    WebPageAddUrl("/static/images/banner.jpg");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    WebPageAddUrl("/static/images/drop_shadow_footer.jpg");
+    // Redirecting https://precisionlms.ptc.com/app/?wicket:interface=:2:logoutLink::ILinkListener::
+    // -> (redirection) https://precisionlms.ptc.com/app/pages/Login/
+    ThinkTime(rShortTime);
+    WebPageLink("Log Out", "Precision LMS (#1)", 1, NULL, hWebStoredCtx_Precision_LMS_Find_Trainin); // Link 6
+    WebPageDeleteContext(hWebStoredCtx_Precision_LMS_Find_Trainin);
+  end fScenario3b;
+
+dclform
+  SCEN3B_001:
+    "loginForm13_hf_0"          := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "loginButton"               := "x", // added
+    "userId"                    := "precisionlmsuser@ptcunoemail.com", // changed
+    "password"                  := Decrypt("8UVtAZn/"), // changed
+    "languages"                 := "0"; // added
+
+  SCEN3B_002:
+    "findTrainingForm30_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <USE_HTML_VAL> , // unchanged, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:tabs-container:tabs:1:link" := "1"; // added
+
+  SCEN3B_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTrainingForm:tabs:tabs-container:tabs:1:link::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.5117861495924716";
+
+  SCEN3B_004 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTrainingForm:resultTable:learningItemRow:13:result:titleRow:titleLink:1:ILinkListener"
+                                   "::";
+
+  SCEN3B_005 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:learningItemTree:i:1:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.857087231873409";
+
+  SCEN3B_006 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.49296405764215195";
+
+  SCEN3B_007 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.791838267420407";
+
+  SCEN3B_008 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5545608811343248";
+
+  SCEN3B_009 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5027384984897723";
+
+  SCEN3B_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7377505305876806";
+
+  SCEN3B_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8213086027240284";
+
+  SCEN3B_012 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.3097422523225087";
+
+  SCEN3B_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.2933761571912585";
+
+  SCEN3B_014 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.2018402896092945";
+
+  SCEN3B_015 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6650283026191868";
+
+  SCEN3B_016 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.41241592477852273";
+
+  SCEN3B_017 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.16092372424518197";
+
+  SCEN3B_018 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8094318214803943";
+
+  SCEN3B_019 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.41803163208669536";
+
+  SCEN3B_020 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8093558934489755";
+
+  SCEN3B_021 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8607169195580856";
+
+  SCEN3B_022 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.847778401408395";
+
+  SCEN3B_023 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5071921952718232";
+
+  SCEN3B_024 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7767724934588558";
+
+  SCEN3B_025 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6827091420821363";
+
+  SCEN3B_026 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.32501523206891897";
+
+  SCEN3B_027 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8814628552945423";
+
+  SCEN3B_028 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.538912242145883";
+
+  SCEN3B_029 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.06703485663514574";
+
+  SCEN3B_030 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.6864461608399148";
+
+  SCEN3B_031 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.030301621162626857";
+
+  SCEN3B_032 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.4501953720275178";
+
+  SCEN3B_033 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.03408716602846307";
+
+  SCEN3B_034 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.3619460130396766";
+
+  SCEN3B_035 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8654399517018191";
+
+  SCEN3B_036 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.3385471344141253";
+
+  SCEN3B_037 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5892657325009194";
+
+  SCEN3B_038 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8671349682655686";

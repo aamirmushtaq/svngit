@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Perform Actions in Self-Sarted section in Home Pg" Desc="Perform Actions in Self-Sarted section in Home Page" TaskID="141" Path="PerformAction_SelfStart_HomePage.XML">
+  <Step StepId="281" stepSeq="1" ObjectId="115" ObjectName="SelfStartedLearning" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;RowNo_SelfLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_SelfLI" />
+    <Param Name="LI Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="282" stepSeq="2" ObjectId="115" ObjectName="SelfStartedLearning" ObjectTypeId="3009" ActionId="100015" ActionName="ClickImageAtCellandchooseOkOnConfirmation">
+    <Param Name="Action to Perform" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowNo_SelfLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_SelfLI}" />
+    <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="151" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+</Task>

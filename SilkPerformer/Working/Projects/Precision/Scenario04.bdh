@@ -1,0 +1,103 @@
+//----------------------------------------------------------------------
+// Recorded 6/17/2009 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+
+
+dclparam
+
+
+const
+    NUM_SEARCHES             := 10;
+
+
+var
+
+dclrand
+
+  sSearchTerm1            : RndInd("sketch" =0.05, "drawing"=0.05, "assemble"=0.05, "dimension"=0.05, "mass property"=0.05, "toolkit"=0.05, "animate"=0.05, "template"=0.05, "annotation"=0.05, "sheetmetal"=0.05,  "family table"=0.05, "constraint"=0.05, "csys"=0.05, "datum plane"=0.05, "line"=0.05, "arc"=0.05, "round"=0.05, "sweept"=0.05, "feature creation"=0.05,  "feature tree"=0.05);
+  sSearchTerm2            : RndInd("mold" =0.05, "part"=0.05,"assembly"=0.05, "wildfire"=0.05, "pro/engineer"=0.05, "wildfire 3.0"=0.05, "wildfire 2.0"=0.05, "update"=0.05, "config.pro"=0.05, "manufacturing"=0.05,"warp"=0.05, "hole"=0.05, "cosmetic"=0.05, "layout"=0.05, "cavity"=0.05, "imm"=0.05, "surface"=0.05, "draft"=0.05, "exploded"=0.05, "instance"=0.05);
+  //other terms in case we need more
+  //generic, mold base, , pocket, curve, format, point, edge, cut, interchange
+
+
+dclfunc
+
+  function fScenario04
+  var
+      iLoop         : number;
+  begin
+
+    // go to find training
+
+   
+ 
+    WebPageAddUrl("/static/images/find-training/go-arrow.png");
+    WebPageAddUrl("/static/images/e-learning_icon_sm.gif");
+    WebPageAddUrl("/static/images/online_test_icon_sm.gif");
+    WebPageAddUrl("/static/images/global/icons/content/topic_lg.png");
+    ThinkTime(rShortTime);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 7
+ 
+    ThinkTime(rShortTime);
+    WebFormPostEx("https://fusion-lb.ptc.com/plms/app/search", PLMS_APP_SEARCH003, PLMS_APP_SEARCH004, 0.14);
+    WebFormPostEx("https://fusion-lb.ptc.com/plms/app/search", PLMS_APP_SEARCH005, PLMS_APP_SEARCH006, 45.80);
+ 
+    WebPageAddUrl("/static/images/global/icons/show-more.png");
+    // Redirecting 
+    // https://fusion-lb.ptc.com/plms/app/search?wicket:interface=:2:findTraining:ftSearchForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-lb.ptc.com/plms/app/?wicket:interface=:2:1:::
+    
+    
+    for iLoop := 1 to NUM_SEARCHES do
+      ThinkTime(rShortTime);
+      
+      MeasureStart ("Search");
+
+      WebPageSubmit(NULL, PLMS_APP_SEARCH007, "Precision LMS : Find Training (#1)"); // Form 1
+
+      MeasureStop ("Search"); 
+    end;
+
+ 
+    // Redirecting https://fusion-lb.ptc.com/plms/app/?wicket:interface=:2:logoutLink:1:ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/plms/app/pages/Login/
+    ThinkTime(rShortTime);
+    WebPageLink("Log Out", "Precision LMS : Login (#1)"); // Link 4
+ 
+    // Info: HTTP status "403 Forbidden" for URL: 
+    // https://fusion-lb.ptc.com/web/notifications/fusion_maint_msg.html?0.6445786354422223
+    WebIgnoreServerError(403, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl("https://fusion-lb.ptc.com/web/notifications/fusion_maint_msg.html", "403 Forbidden (#1)", 
+      SEARCH_NOTIFICATIONS_FUSION_MAINT_M008);
+  end fScenario04;
+
+dclform
+  SEARCH_NOTIFICATIONS_FUSION_MAINT_M001:
+    ""                          := "0.11627091802745648";
+
+  PLMS_APP_SEARCH003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTraining:ftSearchForm:categories::IBehaviorListener:0:",
+    "random"                    := "0.12161044754504219";
+
+  PLMS_APP_SEARCH004:
+    "categories"                := "cat_id_all_creo",
+    ""                          := "";
+
+  PLMS_APP_SEARCH005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTraining:ftSearchForm:categories::IBehaviorListener:0:",
+    "random"                    := "0.014375164397628925";
+
+  PLMS_APP_SEARCH006:
+    "categories"                := "cat_id_all_creo",
+    ""                          := "";
+
+  PLMS_APP_SEARCH007:
+    "ftSearchForm_hf_0"         := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "ftSearchType"              := "1", // added
+    "searchField"               := sSearchTerm1 + " " + sSearchTerm2, // changed
+    "categories"                := "cat_id_all_creo", // added
+    "version"                   := "cat_id_all_versions", // added
+    "search"                    := "" <USE_HTML_VAL> ; // unchanged, value: ""
+
+  SEARCH_NOTIFICATIONS_FUSION_MAINT_M008:
+    ""                          := "0.6445786354422223";

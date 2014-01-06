@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="LMS_LogOut" Desc="LMS_LogOut" TaskID="35" Path="LMS_LogOut.XML">
+  <Step StepId="92" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="94" stepSeq="2" ObjectId="205" ObjectName="Log Out" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+</Task>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="testLibadd" Desc="testLibadd" TaskID="31" Path="testLibadd.XML">
+  <Step StepId="10" stepSeq="1" ObjectId="68" ObjectName="SelectLearningItems" ObjectTypeId="3011" ActionId="61103" ActionName="Click" />
+  <Step StepId="11" stepSeq="2" ObjectId="69" ObjectName="Language" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="12" stepSeq="3" ObjectId="70" ObjectName="Type" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Type" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="13" stepSeq="4" ObjectId="71" ObjectName="Category" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Category" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="20" stepSeq="5" ObjectId="75" ObjectName="GoBtn" ObjectTypeId="3012" ActionId="61203" ActionName="Click" />
+  <Step StepId="16" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;30&quot;" ParamSeq="1" Parameterized="0" Data="30" />
+  </Step>
+  <Step StepId="15" stepSeq="7" ObjectId="175" ObjectName="checkALL" ObjectTypeId="3004" ActionId="60406" ActionName="Click" />
+  <Step StepId="21" stepSeq="8" ObjectId="73" ObjectName="SubmitBtn" ObjectTypeId="3003" ActionId="60303" ActionName="Click" />
+</Task>

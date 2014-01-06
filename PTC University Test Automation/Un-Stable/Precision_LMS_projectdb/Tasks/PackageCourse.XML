@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="PackageCourse" Desc="PackageCourse" TaskID="9" Path="PackageCourse.XML">
+  <Step StepId="2" stepSeq="1" ObjectId="78" ObjectName="CLP_courselist_Expanded" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;RowofCourse&quot;" ParamSeq="1" Parameterized="0" Data="RowofCourse" />
+    <Param Name="CourseTitle" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="78" ObjectName="CLP_courselist_Expanded" ObjectTypeId="3009" ActionId="60907" ActionName="ClickLinkAtCell">
+    <Param Name="PackageAction" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowofCourse}&quot;" ParamSeq="2" Parameterized="0" Data="{RowofCourse}" />
+    <Param Name="&quot;15&quot;" ParamSeq="3" Parameterized="0" Data="15" />
+  </Step>
+</Task>

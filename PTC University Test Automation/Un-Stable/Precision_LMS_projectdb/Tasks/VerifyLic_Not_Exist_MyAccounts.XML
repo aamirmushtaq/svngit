@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify License Not Exist in My Accounts Page" Desc="Verify License does not exist in Licesnses tab in My Accounts Page" TaskID="79" Path="VerifyLic_Not_Exist_MyAccounts.XML">
+  <Step StepId="199" stepSeq="1" ObjectId="279" ObjectName="License details Table" ObjectTypeId="3009" ActionId="60906" ActionName="VerifyCellText">
+    <Param Name="No License Message Text" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="2" Parameterized="0" Data="2" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+</Task>

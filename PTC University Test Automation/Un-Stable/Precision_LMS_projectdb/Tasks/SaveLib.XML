@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="SaveLib" Desc="SaveLib" TaskID="26" Path="SaveLib.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="56" ObjectName="Save" ObjectTypeId="3003" ActionId="99990" ActionName="ClickandchooseOkOnNextConfirmation" />
+  <Step StepId="4" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="2" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60106" ActionName="PressKeys">
+    <Param Name="&quot;~{ENTER~}&quot;" ParamSeq="1" Parameterized="0" Data="~{ENTER~}" />
+  </Step>
+  <Step StepId="3" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

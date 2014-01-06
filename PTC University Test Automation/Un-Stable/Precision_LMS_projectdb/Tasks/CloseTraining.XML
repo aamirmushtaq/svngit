@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="CloseTraining" Desc="CloseTraining" TaskID="104" Path="CloseTraining.XML">
+  <Step StepId="104" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60105" ActionName="ClosePopUpBrowser" />
+  <Step StepId="169" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="Select Page after Closing Course" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="187" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+</Task>

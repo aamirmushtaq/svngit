@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Create Asesmnt not allowed for cancel order" Desc="Verify Create Assessment is not allowed post order cancellation" TaskID="110" Path="Verify_CreateAssessment_CancelOrder.XML">
+  <Step StepId="230" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="229" stepSeq="2" ObjectId="140" ObjectName="Manage Courses &amp; Assessments" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="228" stepSeq="3" ObjectId="250" ObjectName="Create Assessment link" ObjectTypeId="3007" ActionId="99991" ActionName="ClickandchooseOkOnNextConfirmation" />
+  <Step StepId="254" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="1" stepSeq="5" ObjectId="250" ObjectName="Create Assessment link" ObjectTypeId="3007" ActionId="60702" ActionName="VerifyVisibility">
+    <Param Name="visibility" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="231" stepSeq="6" ObjectId="313" ObjectName="Cancel link" ObjectTypeId="3007" ActionId="99987" ActionName="ClickIfExists" />
+</Task>

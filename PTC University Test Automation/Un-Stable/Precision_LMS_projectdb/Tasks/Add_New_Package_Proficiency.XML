@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Add New Package in Proficiency" Desc="Add New Package in Proficiency" TaskID="124" Path="Add_New_Package_Proficiency.XML">
+  <Step StepId="7" stepSeq="1" ObjectId="28" ObjectName="PC_Pro/FICIENCY" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="190" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;8&quot;" ParamSeq="1" Parameterized="0" Data="8" />
+  </Step>
+  <Step StepId="9" stepSeq="3" ObjectId="79" ObjectName="ProPack_AddNewPackage" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="236" stepSeq="4" ObjectId="326" ObjectName="Profile ID Editbox" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="value" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="238" stepSeq="5" ObjectId="327" ObjectName="Language dropdown" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="item" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="237" stepSeq="6" ObjectId="328" ObjectName="Submit button" ObjectTypeId="3003" ActionId="60303" ActionName="Click" />
+  <Step StepId="239" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Define Global Environment Variables" Desc="Define Global Environment Variables" TaskID="159" Path="Define_Global_Variables.XML">
+  <Step StepId="2" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60101" ActionName="StoreVariable">
+    <Param Name="&quot;LMS_URL&quot;" ParamSeq="1" Parameterized="0" Data="LMS_URL" />
+    <Param Name="&quot;http://profqalab1.ptcnet.ptc.com/plms&quot;" ParamSeq="2" Parameterized="0" Data="http://profqalab1.ptcnet.ptc.com/plms" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60101" ActionName="StoreVariable">
+    <Param Name="&quot;IPA_URL&quot;" ParamSeq="1" Parameterized="0" Data="IPA_URL" />
+    <Param Name="&quot;http://profqalab1.ptcnet.ptc.com:1010/ipa&quot;" ParamSeq="2" Parameterized="0" Data="http://profqalab1.ptcnet.ptc.com:1010/ipa" />
+  </Step>
+  <Step StepId="3" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60101" ActionName="StoreVariable">
+    <Param Name="&quot;IMPORT_USERS_PATH&quot;" ParamSeq="1" Parameterized="0" Data="IMPORT_USERS_PATH" />
+    <Param Name="&quot;D:\Fusion_QA\Automation\PTC University Test Automation\Un-Stable\Precision_LMS_projectdb\UsersUploadfFiles\&quot;" ParamSeq="2" Parameterized="0" Data="D:\Fusion_QA\Automation\PTC University Test Automation\Un-Stable\Precision_LMS_projectdb\UsersUploadfFiles\" />
+  </Step>
+  <Step StepId="4" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60101" ActionName="StoreVariable">
+    <Param Name="&quot;GRADING_FILE_PATH&quot;" ParamSeq="1" Parameterized="0" Data="GRADING_FILE_PATH" />
+    <Param Name="&quot;D:\Fusion_QA\Automation\PTC University Test Automation\Un-Stable\Precision_LMS_projectdb\GradingFiles\&quot;" ParamSeq="2" Parameterized="0" Data="D:\Fusion_QA\Automation\PTC University Test Automation\Un-Stable\Precision_LMS_projectdb\GradingFiles\" />
+  </Step>
+</Task>

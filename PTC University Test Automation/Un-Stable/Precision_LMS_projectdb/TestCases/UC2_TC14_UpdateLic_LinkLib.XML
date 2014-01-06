@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="69" ManualTCId="UC2-TC14" TCName="TC14 - Update existing order to link Libraries">
+  <WF>
+    <Task Name="Login to IPA" Desc="Performs login of a valid user into IPA" TaskSeq="1" ID="2">IPA Login.XML</Task>
+    <Task Name="OrderAction" Desc="OrderAction" TaskSeq="2" ID="37">OrderAction.XML</Task>
+    <Task Name="Libraries selection in Existing Order page" Desc="Libraries selection in Existing Order page" TaskSeq="3" ID="70">SelectLibraries_ExistingOrder.XML</Task>
+    <Task Name="Link Libraries for existing Order" Desc="Link Libraries for existing Order" TaskSeq="4" ID="71">LinkLIbraries_ExistingOrder.XML</Task>
+    <Task Name="Submit Order" Desc="Clicks on submit button to submit the order" TaskSeq="5" ID="98">Submit Order.XML</Task>
+    <Task Name="OrderAction" Desc="OrderAction" TaskSeq="6" ID="37">OrderAction.XML</Task>
+    <Task Name="VerifyInvalidLibLinkingMsg" Desc="VerifyInvalidLibLinkingMsg" TaskSeq="7" ID="92">VerifyInvalidLibLinkingMsg.XML</Task>
+    <Task Name="Logout From IPA" Desc="Perform logout of the user from IPA" TaskSeq="8" ID="4">IPA Logout.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="2" Name="Login to IPA" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;{IPA_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{IPA_URL}">
+            </Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="IPA_userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof_verify_manager@ptcunoemail.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="IPA_password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof7763</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="37" Name="OrderAction" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="75" ActionID="60800" ActionName="SelectItem" ObjectName="OrdStatusListBox">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">All</Param>
+          </Step>
+          <Step StepId="146" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="116" ActionID="60908" ActionName="StoreRowNoOfCellText" ObjectName="listOrders">
+            <Param Name="&quot;OrdRowNum&quot;" ParamSeq="1" Parameterized="0" Data="OrdRowNum">
+            </Param>
+            <Param Name="cell text" ParamSeq="2" Parameterized="1" Data="">212</Param>
+            <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="99989" ActionName="ClickLinkAtCellandchooseOkOnConfirmation" ObjectName="listOrders">
+            <Param Name="link" ParamSeq="1" Parameterized="1" Data="">Edit</Param>
+            <Param Name="&quot;{OrdRowNum}&quot;" ParamSeq="2" Parameterized="0" Data="{OrdRowNum}">
+            </Param>
+            <Param Name="&quot;9&quot;" ParamSeq="3" Parameterized="0" Data="9">
+            </Param>
+          </Step>
+          <Step StepId="76" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="70" Name="Libraries selection in Existing Order page" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="100" ActionID="60912" ActionName="StoreRowNoContainingCellText" ObjectName="Libraries List table">
+            <Param Name="key" ParamSeq="1" Parameterized="1" Data="">customRow</Param>
+            <Param Name="cellText" ParamSeq="2" Parameterized="1" Data="">PTC Library with Custom/Standard Content</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="60924" ActionName="ClickCheckboxInCell" ObjectName="Libraries List table">
+            <Param Name="row" ParamSeq="1" Parameterized="1" Data="">{customRow}</Param>
+            <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+        </TaskDataSet>
+        <TaskDataSet Iteration="2">
+          <Step StepId="100" ActionID="60912" ActionName="StoreRowNoContainingCellText" ObjectName="Libraries List table">
+            <Param Name="key" ParamSeq="1" Parameterized="1" Data="">stdRow</Param>
+            <Param Name="cellText" ParamSeq="2" Parameterized="1" Data="">PTC Library with Standard Content</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="60924" ActionName="ClickCheckboxInCell" ObjectName="Libraries List table">
+            <Param Name="row" ParamSeq="1" Parameterized="1" Data="">{stdRow}</Param>
+            <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="71" Name="Link Libraries for existing Order" TaskSeq="4">
+        <TaskDataSet Iteration="1">
+          <Step StepId="2" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">3</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="98" Name="Submit Order" TaskSeq="5">
+        <TaskDataSet Iteration="1">
+          <Step StepId="2" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">3</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="37" Name="OrderAction" TaskSeq="6">
+        <TaskDataSet Iteration="1">
+          <Step StepId="75" ActionID="60800" ActionName="SelectItem" ObjectName="OrdStatusListBox">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Pending</Param>
+          </Step>
+          <Step StepId="146" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="116" ActionID="60908" ActionName="StoreRowNoOfCellText" ObjectName="listOrders">
+            <Param Name="&quot;OrdRowNum&quot;" ParamSeq="1" Parameterized="0" Data="OrdRowNum">
+            </Param>
+            <Param Name="cell text" ParamSeq="2" Parameterized="1" Data="">212</Param>
+            <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="99989" ActionName="ClickLinkAtCellandchooseOkOnConfirmation" ObjectName="listOrders">
+            <Param Name="link" ParamSeq="1" Parameterized="1" Data="">Push</Param>
+            <Param Name="&quot;{OrdRowNum}&quot;" ParamSeq="2" Parameterized="0" Data="{OrdRowNum}">
+            </Param>
+            <Param Name="&quot;9&quot;" ParamSeq="3" Parameterized="0" Data="9">
+            </Param>
+          </Step>
+          <Step StepId="76" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="92" Name="VerifyInvalidLibLinkingMsg" TaskSeq="7">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="61202" ActionName="VerifyVisibility" ObjectName="ValidationErrMsgLinkLic">
+            <Param Name="visibility" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="4" Name="Logout From IPA" TaskSeq="8">
+        <TaskDataSet Iteration="1">
+          <Step StepId="35" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">4</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

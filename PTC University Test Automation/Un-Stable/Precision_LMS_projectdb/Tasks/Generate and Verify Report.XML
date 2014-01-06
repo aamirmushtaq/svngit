@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Generate and Verify Report" Desc="Generate and Verify Report" TaskID="61" Path="Generate and Verify Report.XML">
+  <Step StepId="161" stepSeq="1" ObjectId="114" ObjectName="Welcome to Precision LMS" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Generate Report" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="204" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;15&quot;" ParamSeq="1" Parameterized="0" Data="15" />
+  </Step>
+  <Step StepId="135" stepSeq="3" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60918" ActionName="VerifyDataExistInColumn">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+    <Param Name="Course Name" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

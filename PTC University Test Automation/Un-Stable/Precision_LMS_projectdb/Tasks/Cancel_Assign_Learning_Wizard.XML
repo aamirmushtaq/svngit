@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Cancel Assign Learning Wizard" Desc="Cancel Assign Learning Wizard operation" TaskID="96" Path="Cancel_Assign_Learning_Wizard.XML">
+  <Step StepId="213" stepSeq="1" ObjectId="285" ObjectName="ALW_Cancel Link" ObjectTypeId="3007" ActionId="99991" ActionName="ClickandchooseOkOnNextConfirmation" />
+  <Step StepId="212" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Wait to Cancel Assign LI" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

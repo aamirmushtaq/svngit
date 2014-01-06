@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Refresh Available Courses" Desc="Refresh Available Courses" TaskID="29" Path="Refresh Available Courses.XML">
+  <Step StepId="2" stepSeq="1" ObjectId="29" ObjectName="PC_Coach" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="1" stepSeq="2" ObjectId="174" ObjectName="Refresh Available Courses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="40" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;300&quot;" ParamSeq="1" Parameterized="0" Data="300" />
+  </Step>
+  <Step StepId="254" stepSeq="4" ObjectId="41" ObjectName="CLP_Find Courses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+</Task>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Add BookMark" Desc="Add BookMark" TaskID="106" Path="Add BookMark.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="301" ObjectName="Add Bookmark Link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="225" stepSeq="2" ObjectId="305" ObjectName="Bookmark name" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="BookMark Name" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="226" stepSeq="3" ObjectId="306" ObjectName="SaveBtn_Add BookMark" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="236" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

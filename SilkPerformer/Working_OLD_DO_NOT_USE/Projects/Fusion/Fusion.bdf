@@ -1,0 +1,661 @@
+//-------------------------------------------------------------------
+// Web Benchmark Script Template
+//-------------------------------------------------------------------
+// Author : Brian Le Suer, Star Quality
+// Date   : September, 2007
+// History: Initial Script
+//-------------------------------------------------------------------
+// Benchmark Description
+//-------------------------------------------------------------------
+
+
+//to do
+//add measures to ConsumeCourse and ConsumeCourse1b
+//modify ConsumeMediaCourse and TakeAssessment1
+//modify for fusion.com
+
+
+
+
+benchmark WebBenchmarkName
+  
+use "XmlAPI.bdh"
+use "WebAPI.bdh"  
+
+//this bdh file contains the consts and random variables shared by the various scenarios
+use "common.bdh"
+
+//these bdh files contain the functions for each scenario
+use "Scenario2.bdh"
+use "Scenario3.bdh"
+use "Scenario4.bdh"
+use "Scenario5.bdh"
+use "Scenario6.bdh"
+use "Scenario7.bdh"
+use "Scenario8.bdh"  
+
+//use "Scenario3B.bdh" //will be obolete
+
+
+var      
+  //handles to files with user ids
+  hUserData                : number;  
+//  hAdminUserData           : number;  
+  
+  //global variables
+  sUserId                  : string;
+  sPassword                : string;
+  
+  nRowPointer              : number;
+//  nAdminRowPointer         : number;
+  
+
+dclrand
+         
+   //distributes the browser type between Internet Explorer 6.0 (6) and FireFox (23)   
+   rBrowserType            : RndUniI(6..6=0.5, 23..23=0.5);
+   //this could be used to randomize the browser type amongst all supported browsers
+//   rBrowserType            : RndUniN(0..23);
+
+  
+// there is a separate user defined for each scenario 
+dcluser  
+  user
+    uScenario1
+  transactions
+    tInit       : begin;
+    tScenario1  : 1;  
+    tEnd        : end;
+
+  user
+    uScenario2
+  transactions
+    tInit       : begin;
+    tScenario2  : 1;
+    tEnd        : end;
+
+  user
+    uScenario3
+  transactions
+    tInit       : begin;
+    tScenario3  : 1;
+    tEnd        : end;
+
+  user
+    uScenario4
+  transactions
+    tInit       : begin;
+    tScenario4  : 1;
+    tEnd        : end;
+
+  user
+    uScenario5
+  transactions
+    tInit       : begin;
+    tScenario5  : 1;
+    tEnd        : end;
+
+  user
+    uScenario6
+  transactions
+    tInit       : begin;
+    tScenario6  : 1;
+    tEnd        : end;
+
+  user
+    uScenario7
+  transactions
+    tInit       : begin;
+    tScenario7  : 1;    
+    tEnd        : end;
+
+  user
+    uScenario8
+  transactions
+    tInit       : begin;
+    tScenario8  : 1;
+    tEnd        : end;
+
+//  user
+//    uScenario3B
+//  transactions
+//    tInit       : begin;
+//    tScenario3B  : 1;
+//    tEnd        : end;
+ 
+//this section contains only the functions that are shared amongst scenarios
+//there is a dclfunc section in each of the scenario bdh files
+dclfunc
+  function fLogin              
+    var
+    begin      
+
+    //launch the application
+    // Redirecting -> (redirection) http://fusion-test/stablelocal/
+
+    WebCookieSet("lang=en; path=/; expires=Sat, 07 Feb 2009 17:40:10 GMT", ""+SITE+""+SITE_NODE+"");
+
+//this was a newer version of the cookieset
+//    WebCookieSet("cookietest=on; domain=.ptc.com; path=/stablelocal; expires=Mon, 02 Oct 2017 18:31:14 GMT", 
+//      "http://fusion-qa.ptc.com/stablelocal");
+
+    WebPageParseUrl("HTTP meta refresh tag in page "+SITE_NODE_NAME+"", "0; url=", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+
+    WebPageUrl(""+SITE+""+SITE_NODE+"", ""+SITE_NODE_NAME+"");
+ 
+    WebPageAddUrl("/images/drop_shadow.jpg");
+    WebPageAddUrl("/images/header_banner.jpg");
+    // Redirecting https://fusion-test.ptc.com/app
+    // -> (redirection) https://fusion-test.ptc.com/app/
+    // -> (redirection) https://fusion-test.ptc.com/app/pages/Landing/
+    // -> (redirection) https://fusion-test.ptc.com/app/pages/Login/;jsessionid=46A1B59D61D053B2FD757590797E0862
+    WebPageLink("HTTP meta refresh tag in page Unnamed page", "Login");
+ 
+    // Info: HTTP status "404 /styles/"stickybottom.css"%20all" for URL: 
+    // https://fusion-test.ptc.com/styles/"stickybottom.css"%20all
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    ThinkTime(6.8);
+    WebPageUrl("https://fusion-test.ptc.com/styles/\"stickybottom.css\"%20all", "Apache Tomcat/6.0.14 - Error report");
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/images/table_th.gif");
+    WebPageAddUrl("/images/nav_li.gif");
+    WebPageAddUrl("/images/tab_arrow.gif");
+
+
+    ThinkTime(rShortTime);
+
+    // login
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/persistent_tools_fade.jpg");
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/nav_tab_background_2.jpg");
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/table_topbar.gif");
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/tableft.gif");
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/tabright.gif");
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:0:loginForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/pages/Landing/
+    // Info: HTTP status "404 /stablelocal/images/sort_arrow_white_transp.gif" for URL: 
+    // http://fusion-test/stablelocal/images/sort_arrow_white_transp.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+
+    MeasureStart ("Login");
+    WebPageSubmit("Login", LOGIN001, "Landing"); // Form 1
+    MeasureStop ("Login");  
+
+  end fLogin;
+
+  //this function will change once the browse feature is added
+  //the steps in this function are temporary
+  function fNavigateToLearning
+    var
+      
+    begin
+    // select admin tab
+
+
+    // Info: HTTP status "404 /styles/scrolling.css" for URL: https://fusion-test.ptc.com/styles/scrolling.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    ThinkTime(35.1);
+    WebPageLink("FIND TRAINING", "Find Training"); // Link 2
+ 
+    // Redirecting https://fusion-test.ptc.com/app/?wicket:interface=:2:findTrainingForm::IFormSubmitListener::
+    // -> (redirection) https://fusion-test.ptc.com/app/?wicket:interface=:2:1:::
+    // Info: HTTP status "404 /styles/scrolling.css" for URL: https://fusion-test.ptc.com/styles/scrolling.css
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    ThinkTime(12.1);
+    WebPageSubmit("Go", FORM002, "Find Training (#1)"); // Form 1
+ 
+    WebPageAddUrl("/images/viewer/selected_arrow.gif");
+
+  end fNavigateToLearning;          
+
+
+  function fLogout
+    var
+    begin      
+    ThinkTime(rShortTime);
+
+    // logout from Home
+    MeasureStart ("Logout");
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:1:logoutLink::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/pages/Login/
+    WebPageLink("Logout", "Login (#1)"); // Link 3
+    MeasureStop ("Logout");
+  end fLogout;
+
+// Web Transactions Section - there is a transaction defined for each scenario
+dcltrans
+
+  transaction tInit
+  var
+    bSetBrowser : boolean;
+  begin    
+    //open the files with user ids
+    FileCSVLoadGlobal(hUserData,  "FusionUsers.csv", ",");
+    
+//    bSetBrowser := WebSetBrowser(WEB_BROWSER_MSIE6);
+    // uses the random variable rBrowserType
+    bSetBrowser := WebSetBrowser(rBrowserType);
+// for debugging only      
+//    print (string(bSetBrowser));
+//    WebDumpSettings();
+  end tInit;
+
+  transaction tEnd
+  begin
+    //Close files that hold user ids
+    FileUnload(hUserData);   
+  end tEnd;
+
+  transaction tScenario1
+  var  
+    nRowCheck : number;
+  begin     
+    //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+    GlobalResourceEnter ("GetUser_Index");
+    GlobalVarInc ("UserRow", 1, nRowPointer);
+
+//    nRowCheck := FileGetRow(hUserData,nRowPointer);
+//    if nRowCheck = 0 then
+//      GlobalVarSet ("UserRow",1);
+//      nRowPointer := 1;
+//      FileGetRow(hUserData,nRowPointer);
+//    end;  
+
+    if FileGetNumRows(hUserData) < nRowPointer then                                                             
+      GlobalVarSet ("UserRow",1);
+      nRowPointer := 1;
+      FileGetRow(hUserData,nRowPointer);
+    else
+      FileGetRow(hUserData,nRowPointer);  
+    end;  
+
+    //this is only good if running a single agent - replaced with code above
+    //get the next user id
+    //FileGetNextRow(hUserData);
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    GlobalResourceRelease ("GetUser_Index");
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fLogout ();
+     
+  end tScenario1;
+  
+  transaction tScenario2
+  var  
+    nRowCheck : number;
+  begin     
+   //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+    GlobalResourceEnter ("GetUser_Index");
+    GlobalVarInc ("UserRow", 1, nRowPointer);
+
+//    nRowCheck := FileGetRow(hUserData,nRowPointer);
+//    if nRowCheck = 0 then
+//      GlobalVarSet ("UserRow",1);
+//      nRowPointer := 1;
+//      FileGetRow(hUserData,nRowPointer);
+//    end;  
+
+///
+    //nRowCheck := FileGetRow(hAdminUserData,nAdminRowPointer);//According to the doc, silkperf should return a 0 if the row specified is invalid
+                                                               //this is not what occurred. Got an error during run
+    if FileGetNumRows(hUserData) < nRowPointer then                                                             
+      GlobalVarSet ("UserRow",1);
+      nRowPointer := 1;
+      FileGetRow(hUserData,nRowPointer);
+    else
+      FileGetRow(hUserData,nRowPointer);  
+    end;  
+
+
+///
+    //this is only good if running a single agent - replaced with code above
+    //get the next user id
+    //FileGetNextRow(hUserData);
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    GlobalResourceRelease ("GetUser_Index");
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fNavigateToLearning (); 
+    fScenario2 ();
+    //previous function has built-in logout
+     
+  end tScenario2;
+
+
+  transaction tScenario3
+  var  
+    nRowCheck : number;
+  begin     
+
+   //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+    GlobalResourceEnter ("GetUser_Index");
+    GlobalVarInc ("UserRow", 1, nRowPointer);
+
+//    nRowCheck := FileGetRow(hUserData,nRowPointer);
+//    if nRowCheck = 0 then
+//      GlobalVarSet ("UserRow",1);
+//      nRowPointer := 1;
+//      FileGetRow(hUserData,nRowPointer);
+//    end;  
+
+    if FileGetNumRows(hUserData) < nRowPointer then                                                             
+      GlobalVarSet ("UserRow",1);
+      nRowPointer := 1;
+      FileGetRow(hUserData,nRowPointer);
+    else
+      FileGetRow(hUserData,nRowPointer);  
+    end;  
+
+    //this is only good if running a single agent - replaced with code above
+    //get the next user id
+    //FileGetNextRow(hUserData);
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    GlobalResourceRelease ("GetUser_Index");
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    fLogin (); 
+    fScenario3 ();
+    //previous function has built-in logout
+     
+  end tScenario3;
+
+  transaction tScenario4
+  var  
+    nRowCheck : number;
+  begin     
+   //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+    GlobalResourceEnter ("GetUser_Index");
+    GlobalVarInc ("UserRow", 1, nRowPointer);
+
+//    nRowCheck := FileGetRow(hUserData,nRowPointer);
+//    if nRowCheck = 0 then
+//      GlobalVarSet ("UserRow",1);
+//      nRowPointer := 1;
+//      FileGetRow(hUserData,nRowPointer);
+//    end;  
+
+    if FileGetNumRows(hUserData) < nRowPointer then                                                             
+      GlobalVarSet ("UserRow",1);
+      nRowPointer := 1;
+      FileGetRow(hUserData,nRowPointer);
+    else
+      FileGetRow(hUserData,nRowPointer);  
+    end;  
+
+    //this is only good if running a single agent - replaced with code above
+    //get the next user id
+    //FileGetNextRow(hUserData);
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    GlobalResourceRelease ("GetUser_Index");
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fScenario4 ();
+    fLogout ();
+     
+  end tScenario4;  
+  
+  transaction tScenario5
+  var  
+    nRowCheck : number;
+  begin     
+
+   //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+    GlobalResourceEnter ("GetUser_Index");
+    GlobalVarInc ("UserRow", 1, nRowPointer);
+
+    nRowCheck := FileGetRow(hUserData,nRowPointer);
+    if nRowCheck = 0 then
+      GlobalVarSet ("UserRow",1);
+      nRowPointer := 1;
+      FileGetRow(hUserData,nRowPointer);
+    end;  
+
+
+    //this is only good if running a single agent - replaced with code above
+    //get the next user id
+    //FileGetNextRow(hUserData);
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    GlobalResourceRelease ("GetUser_Index");
+
+    Print (sUserId);
+    Writeln (sUserId);
+  
+
+    //call each of the functions to complete the scenario
+     
+  end tScenario5;
+
+
+  transaction tScenario6
+  var  
+    nRowCheck : number;
+  begin     
+
+   //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+    GlobalResourceEnter ("GetUser_Index");
+    GlobalVarInc ("UserRow", 1, nRowPointer);
+
+    nRowCheck := FileGetRow(hUserData,nRowPointer);
+    if nRowCheck = 0 then
+      GlobalVarSet ("UserRow",1);
+      nRowPointer := 1;
+      FileGetRow(hUserData,nRowPointer);
+    end;  
+
+
+    //this is only good if running a single agent - replaced with code above
+    //get the next user id
+    //FileGetNextRow(hUserData);
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    GlobalResourceRelease ("GetUser_Index");
+
+    Print (sUserId);
+    Writeln (sUserId);
+  
+
+    //call each of the functions to complete the scenario
+    fLogin (); 
+    fNavigateToLearning (); 
+    fScenario6 ();
+ 
+  end tScenario6;
+
+  transaction tScenario7
+  var  
+    nRowCheck : number;
+  begin     
+   //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+    GlobalResourceEnter ("GetUser_Index");
+    GlobalVarInc ("UserRow", 1, nRowPointer);
+
+//    nRowCheck := FileGetRow(hUserData,nRowPointer);
+//    if nRowCheck = 0 then
+//      GlobalVarSet ("UserRow",1);
+//      nRowPointer := 1;
+//      FileGetRow(hUserData,nRowPointer);
+//    end;  
+
+    if FileGetNumRows(hUserData) < nRowPointer then                                                             
+      GlobalVarSet ("UserRow",1);
+      nRowPointer := 1;
+      FileGetRow(hUserData,nRowPointer);
+    else
+      FileGetRow(hUserData,nRowPointer);  
+    end;  
+
+    //this is only good if running a single agent - replaced with code above
+    //get the next user id
+    //FileGetNextRow(hUserData);
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    GlobalResourceRelease ("GetUser_Index");
+
+    Print (sUserId);
+    Writeln (sUserId);
+
+    //insures that all of the users don't login at exactly the same time
+    ThinkTime (rLoginStagger);
+
+    //call each of the functions to complete the scenario
+    fLogin ();
+    fNavigateToLearning (); 
+    fScenario7 ();
+     
+  end tScenario7;  
+
+  transaction tScenario8
+  var  
+    nRowCheck : number;
+  begin     
+
+   //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+    GlobalResourceEnter ("GetUser_Index");
+    GlobalVarInc ("UserRow", 1, nRowPointer);
+
+    nRowCheck := FileGetRow(hUserData,nRowPointer);
+    if nRowCheck = 0 then
+      GlobalVarSet ("UserRow",1);
+      nRowPointer := 1;
+      FileGetRow(hUserData,nRowPointer);
+    end;  
+
+
+    //this is only good if running a single agent - replaced with code above
+    //get the next user id
+    //FileGetNextRow(hUserData);
+    
+    //set the sUserId and sPassword - used in the login form
+    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+
+    GlobalResourceRelease ("GetUser_Index");
+
+    Print (sUserId);
+    Writeln (sUserId); 
+
+    //call each of the functions to complete the scenario
+    fLogin ();
+    fScenario8 ();
+     
+  end tScenario8;
+
+
+//  transaction tScenario3B
+//  var  
+//    nRowCheck : number;
+//  begin     
+//
+//   //this code ensures that SilkPerformer allow to users to get the same id (this can happend when running multiple agents)
+//    GlobalResourceEnter ("GetUser_Index");
+//    GlobalVarInc ("UserRow", 1, nRowPointer);
+//
+////    nRowCheck := FileGetRow(hUserData,nRowPointer);
+////    if nRowCheck = 0 then
+////      GlobalVarSet ("UserRow",1);
+////      nRowPointer := 1;
+////      FileGetRow(hUserData,nRowPointer);
+////    end;  
+//
+//    if FileGetNumRows(hUserData) < nRowPointer then                                                             
+//      GlobalVarSet ("UserRow",1);
+//      nRowPointer := 1;
+//      FileGetRow(hUserData,nRowPointer);
+//    else
+//      FileGetRow(hUserData,nRowPointer);  
+//    end;  
+//
+//    //this is only good if running a single agent - replaced with code above
+//    //get the next user id
+//    //FileGetNextRow(hUserData);
+//    
+//    //set the sUserId and sPassword - used in the login form
+//    sUserId       := FileGetCol(hUserData, 1, STRING_COMPLETE);
+//    sPassword     := FileGetCol(hUserData, 2, STRING_COMPLETE); 
+//
+//    GlobalResourceRelease ("GetUser_Index");
+//
+//    Print (sUserId);
+//    Writeln (sUserId);
+//
+//    //insures that all of the users don't login at exactly the same time
+//    ThinkTime (rLoginStagger);
+//
+//    fLogin (); 
+//    fNavigateToLearning (); 
+//    fScenario3B ();
+//    //previous function has built-in logout
+//     
+//  end tScenario3B;
+
+dclform
+
+  LOGIN001:
+    "loginForm4_hf_0"           := "",// <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "userId"                    := sUserId,//"admin", // changed
+    "password"                  := sPassword,//Decrypt("5ERzHMY="), // changed
+    "languages"                 := "en"; // added
+
+
+  FORM002:
+    "findTrainingForm24_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "radioGroup"                := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "searchKeyword"             := "" <SUPPRESS> , // suppressed, value: ""
+    "library"                   := "0", // added
+    "version"                   := "0", // added
+    "language"                  := "en", // added
+    "type"                      := "0"; // added
+

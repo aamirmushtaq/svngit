@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="FindandLaunchTraining" Desc="FindandLaunchTraining" TaskID="103" Path="FindandLaunchTraining.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="120" ObjectName="Find Training" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="286" stepSeq="2" ObjectId="203" ObjectName="FT_SearchTab" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="288" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="60" stepSeq="4" ObjectId="201" ObjectName="FT_searchKeyword" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Library" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="59" stepSeq="5" ObjectId="197" ObjectName="FT_Category" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Category" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="58" stepSeq="6" ObjectId="195" ObjectName="FT_Format" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Format" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="57" stepSeq="7" ObjectId="193" ObjectName="FT_Language" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="56" stepSeq="8" ObjectId="194" ObjectName="FT_CreatedBy" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="CreatedBy" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="55" stepSeq="9" ObjectId="190" ObjectName="ALW_SearchBtn" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="177" stepSeq="10" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="61" stepSeq="11" ObjectId="192" ObjectName="Precision LMS : Find Training" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="CourseAssessment" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="162" stepSeq="12" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap" />
+  </Step>
+  <Step StepId="170" stepSeq="13" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+</Task>

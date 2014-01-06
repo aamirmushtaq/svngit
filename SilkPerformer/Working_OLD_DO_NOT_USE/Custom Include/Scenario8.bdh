@@ -1,0 +1,243 @@
+//----------------------------------------------------------------------
+// Recorded 10/02/2007 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+//note: this script is not ready to run on http://fusion-qa.ptc.com. In order to do so 
+//the SITE_NODE const needs to be added before /app and /images
+
+dclfunc
+  function fScenario8
+    var
+    begin
+    // Administration
+ 
+    WebPageAddUrl("/images/admin_top.gif");
+    WebPageAddUrl("/images/admin_bottom.gif");
+    ThinkTime(rShortTime);
+    WebPageLink("Administration", "Adminstration"); // Link 6
+
+    // Assign Learning 
+    // Redirecting -> (redirection) "+SITE+"/app/?wicket:interface=:3::::
+    MeasureStart ("ManageLearn");
+    WebPageUrl(""+SITE+"/app/", "Assign Learning Items", SCENARIO8_002);
+    MeasureStop ("ManageLearn");
+
+    // Add Learning 
+    ThinkTime(rShortTime);
+    MeasureStart ("AddLearning");
+    WebFormGet(""+SITE+"/app/", SCENARIO8_003, 0.16);
+    // Info: HTTP status "404 Unable to find package resource [path = 
+    // com/ptc/fusion/web/pages/components/modalwindow/res/frame-gray-1-alpha.png, style = null, locale = null]" for URL: 
+    // "+SITE+"/app/resources/com.ptc.fusion.web.pages.components.modalwindow.ModalWindow/res/frame-gray-1-al
+    // pha.png
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(
+      ""+SITE+"/app/resources/com.ptc.fusion.web.pages.components.modalwindow.ModalWindow/res/frame-gray-1-a"
+      "lpha.png", 0.02);
+    // Info: HTTP status "404 Unable to find package resource [path = 
+    // com/ptc/fusion/web/pages/components/modalwindow/res/frame-gray-2-alpha.png, style = null, locale = null]" for URL: 
+    // "+SITE+"/app/resources/com.ptc.fusion.web.pages.components.modalwindow.ModalWindow/res/frame-gray-2-al
+    // pha.png
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebUrl(
+      ""+SITE+"/app/resources/com.ptc.fusion.web.pages.components.modalwindow.ModalWindow/res/frame-gray-2-a"
+      "lpha.png", 0.05);
+ 
+    WebPageUrl(""+SITE+"/app/", "/app/", SCENARIO8_004);
+    MeasureStop ("AddLearning");
+
+    // check titles 
+    ThinkTime(rShortTime);
+    MeasureStart ("SelectLearnItem");
+    WebPageAddUrl("", SCENARIO8_007);
+    WebPageAddUrl("/images/calendar-icon.gif", FORM_NULL, 2);
+    WebPageSetActionUrlAbs(""+SITE+"/app/", SCENARIO8_006);
+    WebPageSubmit("Search", SEARCH005, "/app/ (#1)"); // Form 1
+    MeasureStop ("SelectLearnItem");
+
+    // select dates 
+    ThinkTime(rShortTime);
+    MeasureStart ("DatePicker");
+    WebFormGet(""+SITE+"/app/", SCENARIO8_008, 14.95);
+    MeasureStop ("DatePicker");
+
+    // remove geometry 
+    ThinkTime(rShortTime);
+
+    WebPageBack(2);
+    WebPageSetActionUrlAbs(""+SITE+"/app/", SCENARIO8_010);
+    WebPageSubmit("Assign", ASSIGN009, "/app/ (#2)"); // Form 1
+
+    // Add Users 
+    ThinkTime(rShortTime);
+    MeasureStart ("AddUsers");
+
+    WebFormGet(""+SITE+"/app/", SCENARIO8_011, 0.44);
+ 
+    WebPageUrl(""+SITE+"/app/", "/app/ (#3)", SCENARIO8_012);
+
+    // ok to users 
+    WebPageAddUrl("", SCENARIO8_015);
+    WebPageSetActionUrlAbs(""+SITE+"/app/", SCENARIO8_014);
+    MeasureStop ("AddUsers");
+
+    // remove all users except admin
+    ThinkTime(rShortTime);
+    MeasureStart ("RemoveUsers");
+    WebPageSubmit("Go", SCENARIO8_FORM, "/app/ (#4)"); // Form 1
+ 
+    WebFormGet(""+SITE+"/app/", SCENARIO8_016, 0.36);
+    WebFormGet(""+SITE+"/app/", SCENARIO8_017, 0.44);
+    WebFormGet(""+SITE+"/app/", SCENARIO8_018, 2.44);
+ 
+    WebPageBack(3);
+ 
+    WebPageSetActionUrlAbs(""+SITE+"/app/", SCENARIO8_020);
+    WebPageSubmit("Assign", ASSIGN019, "/app/ (#5)"); // Form 1
+    MeasureStop ("RemoveUsers");
+
+    // Assign
+    MeasureStart ("SubmitAssignLearn");
+    WebPageBack();
+ 
+    // Redirecting "+SITE+"/app/?wicket:interface=:3:createAssignmentsForm::IFormSubmitListener::
+    // -> (redirection) 
+    // "+SITE+"/app/?wicket:bookmarkablePage=%3Acom.ptc.fusion.web.pages.admin.managelearning.TempAssignLearn
+    // ingItems
+    ThinkTime(rShortTime);
+    WebPageSubmit("Assign", ASSIGN021, "Assign Learning Items (#1)"); // Form 1
+    MeasureStop ("SubmitAssignLearn");
+
+    // logout 
+    // Redirecting "+SITE+"/app/?wicket:interface=:4:logoutLink::ILinkListener::
+    // -> (redirection) "+SITE+"/app/pages/Login/
+    ThinkTime(rShortTime);
+    WebPageLink("Logout", "Login (#1)"); // Link 3
+
+  end fScenario8;    
+
+
+dclform
+  SCENARIO8_002 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:assignLearningItems::ILinkListener::";
+
+  SCENARIO8_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:learningItemsPanel:learningItemCheckGroup:selectLearningItems::IBe"
+                                   "haviorListener:0:",
+    "random"                    := "0.006865647317292778";
+
+  SCENARIO8_004 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0::::";
+
+  SEARCH005:
+    "selectLearningItemForm4_hf_0" := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "search"                    := "" <USE_HTML_VAL> , // unchanged, value: ""
+    "learninggroup"             := "" <USE_HTML_VAL> , // unchanged, value: "check24"
+    "learninggroup"             := "" <USE_HTML_VAL> , // unchanged, value: "check25"
+    "learninggroup"             := "check32", // changed
+    "learninggroup"             := "check34", // changed
+    "saveButton"                := "1"; // changed
+
+  SCENARIO8_006 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0:selectLearningItemForm:saveButton::IBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.13452071486764328";
+
+  SCENARIO8_007 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:learningItemsPanel:learningItemCheckGroup:learningItemsModalWindow"
+                                   "::IBehaviorListener:1:-1",
+    "random"                    := "0.6061518127135883";
+
+  SCENARIO8_008 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:lea"
+                                   "rningItemListView:2:addLearningItem::IBehaviorListener:0:-1",
+    "random"                    := "0.8227287507820246";
+
+  ASSIGN009:
+    "createAssignmentsForm17_hf_0" := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:1:dateT"
+                                   "extField" := "8/31/09", // added
+    "learningItemsPanel:learningItemCheckGroup" := "check78", // added
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:2:dateT"
+                                   "extField" := "8/31/09", // added
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:3:dateT"
+                                   "extField" := "10/31/09", // added
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:4:dateT"
+                                   "extField" := "10/31/09", // added
+    "learningItemsPanel:learningItemCheckGroup:removeLearningItems" := "1"; // added
+
+  SCENARIO8_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:learningItemsPanel:learningItemCheckGroup:removeLearningItems::IBe"
+                                   "haviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.41879381083756545";
+
+  SCENARIO8_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:usersPanel:userCheckGroup:modalSelect::IBehaviorListener:0:",
+    "random"                    := "0.7691978569337059";
+
+  SCENARIO8_012 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0::::";
+
+  SCENARIO8_FORM:
+    "usersForm4_hf_0"           := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "search"                    := "" <USE_HTML_VAL> , // unchanged, value: ""
+    "filteredGroup"             := "0", // added
+    "filteredManager"           := "0", // added
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check31"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check32"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check33"
+    "usergroup"                 := "" <USE_HTML_VAL> , // unchanged, value: "check34"
+    "saveButton"                := "1"; // changed
+
+  SCENARIO8_014 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0:usersForm:saveButton::IBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.30793721232576193";
+
+  SCENARIO8_015 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:usersPanel:userCheckGroup:modal1::IBehaviorListener:1:-1",
+    "random"                    := "0.5421838584745569";
+
+  SCENARIO8_016 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:usersPanel:userCheckGroup:webmark:users:6:addUser::IBehaviorListen"
+                                   "er:0:-1",
+    "random"                    := "0.5122639244266509";
+
+  SCENARIO8_017 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:usersPanel:userCheckGroup:webmark:users:7:addUser::IBehaviorListen"
+                                   "er:0:-1",
+    "random"                    := "0.09579264329458137";
+
+  SCENARIO8_018 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:usersPanel:userCheckGroup:webmark:users:8:addUser::IBehaviorListen"
+                                   "er:0:-1",
+    "random"                    := "0.009493748059224371";
+
+  ASSIGN019:
+    "createAssignmentsForm17_hf_0" := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:5:dateT"
+                                   "extField" := "", // added
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:6:dateT"
+                                   "extField" := "", // added
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:7:dateT"
+                                   "extField" := "", // added
+    "usersPanel:userCheckGroup" := "check138", // added
+    "usersPanel:userCheckGroup" := "check140", // added
+    "usersPanel:userCheckGroup" := "check142", // added
+    "usersPanel:userCheckGroup:removeUsers" := "1"; // added
+
+  SCENARIO8_020 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:createAssignmentsForm:usersPanel:userCheckGroup:removeUsers::IBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.2634960930052113";
+
+  ASSIGN021:
+    "createAssignmentsForm17_hf_0" := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:5:dateT"
+                                   "extField" := "", // added
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:6:dateT"
+                                   "extField" := "", // added
+    "learningItemsPanel:learningItemCheckGroup:webmarkLearningItems:learningItemListView:7:dateT"
+                                   "extField" := "", // added
+    "assign"                    := "" <USE_HTML_VAL> ; // 

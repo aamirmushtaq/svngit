@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Attempt multiple Option Question in Assessment" Desc="Attempt Questions having Multiple Options (check boxes) in Assessment" TaskID="160" Path="Attempt_MultipleOption_Questions_Assmt.XML">
+  <Step StepId="274" stepSeq="1" ObjectId="377" ObjectName="Multiple Choice Answer" ObjectTypeId="3004" ActionId="60409" ActionName="SelectByIndex">
+    <Param Name="&quot;response:checkGroup&quot;" ParamSeq="1" Parameterized="0" Data="response:checkGroup" />
+    <Param Name="Select Option" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="275" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="1" stepSeq="3" ObjectId="271" ObjectName="Assessment Viewer" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Next, Ignore or Submit Assmt" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="276" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7" />
+  </Step>
+</Task>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verifydifference" Desc="Verifydifference" TaskID="7" Path="Verifydifference.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60113" ActionName="VerifyDifference">
+    <Param Name="int1" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="int2" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+</Task>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Links in Assessment Viewer" Desc="Verify Links in Assessment Viewer.&#xD;&#xA;Links - Expand, Collapse, Hide Map, Show Map" TaskID="150" Path="VerifyLinks_AssmtViewer.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="298" ObjectName="Hide Course Map Link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="217" stepSeq="2" ObjectId="303" ObjectName="Show Course Map" ObjectTypeId="3007" ActionId="60701" ActionName="VerifyExistence">
+    <Param Name="Show Map Exist" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="218" stepSeq="3" ObjectId="303" ObjectName="Show Course Map" ObjectTypeId="3007" ActionId="99987" ActionName="ClickIfExists" />
+  <Step StepId="240" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="242" stepSeq="5" ObjectId="363" ObjectName="Expand and Collapse link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="241" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="243" stepSeq="7" ObjectId="363" ObjectName="Expand and Collapse link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="244" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+</Task>

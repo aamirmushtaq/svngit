@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="AssignUnLinkedLic" Desc="AssignUnLinkedLic" TaskID="85" Path="AssignUnLinkedLic.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="78" stepSeq="2" ObjectId="143" ObjectName="Manage Licenses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="150" stepSeq="3" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99986" ActionName="StoreRowNoContainingTextInArray">
+    <Param Name="&quot;LibAssignRowNum&quot;" ParamSeq="1" Parameterized="0" Data="LibAssignRowNum" />
+    <Param Name="Lib Name to Assign" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="82" stepSeq="4" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99994" ActionName="ClickLinkTitleAtCell">
+    <Param Name="&quot;Assign&quot;" ParamSeq="1" Parameterized="0" Data="Assign" />
+    <Param Name="&quot;{LibAssignRowNum}&quot;" ParamSeq="2" Parameterized="0" Data="{LibAssignRowNum}" />
+    <Param Name="&quot;6&quot;" ParamSeq="3" Parameterized="0" Data="6" />
+  </Step>
+  <Step StepId="92" stepSeq="5" ObjectId="208" ObjectName="Select User" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="95" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

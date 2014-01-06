@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Search and Select Learning Items" Desc="Search and Select Learning Items" TaskID="50" Path="Search_Select_LearningItems.XML">
+  <Step StepId="70" stepSeq="1" ObjectId="191" ObjectName="ALW_SearchLibName" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Course Name" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="69" stepSeq="2" ObjectId="197" ObjectName="FT_Category" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Course Category" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="68" stepSeq="3" ObjectId="195" ObjectName="FT_Format" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Course Format" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="67" stepSeq="4" ObjectId="193" ObjectName="FT_Language" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="73" stepSeq="5" ObjectId="194" ObjectName="FT_CreatedBy" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="CreatedBy" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="72" stepSeq="6" ObjectId="190" ObjectName="ALW_SearchBtn" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="94" stepSeq="7" ObjectId="215" ObjectName="SLI_coursetoSelect" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="100" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="91" stepSeq="9" ObjectId="229" ObjectName="SLI_OkBtn" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="99" stepSeq="10" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

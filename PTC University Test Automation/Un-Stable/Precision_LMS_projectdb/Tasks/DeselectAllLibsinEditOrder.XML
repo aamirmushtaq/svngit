@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="DeselectAllLibsinEditOrder" Desc="DeselectAllLibsinEditOrder" TaskID="93" Path="DeselectAllLibsinEditOrder.XML">
+  <Step StepId="219" stepSeq="1" ObjectId="287" ObjectName="SelectAllLibInOrderEdit" ObjectTypeId="3004" ActionId="60406" ActionName="Click" />
+  <Step StepId="1" stepSeq="2" ObjectId="287" ObjectName="SelectAllLibInOrderEdit" ObjectTypeId="3004" ActionId="60406" ActionName="Click" />
+  <Step StepId="220" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Time" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="70" ManualTCId="Pre_FE2" TCName="FE2 - eLearnings with Assmt and WBTs PreConditions">
+  <WF>
+    <Task Name="Login to IPA" Desc="Performs login of a valid user into IPA" TaskSeq="1" ID="2">IPA Login.XML</Task>
+    <Task Name="Create IPA User" Desc="Creates a new IPA User with the selected privilges" TaskSeq="2" ID="27">CreateUser.XML</Task>
+    <Task Name="Logout From IPA" Desc="Perform logout of the user from IPA" TaskSeq="3" ID="4">IPA Logout.XML</Task>
+    <Task Name="Login to IPA" Desc="Performs login of a valid user into IPA" TaskSeq="4" ID="2">IPA Login.XML</Task>
+    <Task Name="Reload Import File" Desc="Reload Import File" TaskSeq="5" ID="28">Reload Import File.XML</Task>
+    <Task Name="Refresh Available Courses" Desc="Refresh Available Courses" TaskSeq="6" ID="29">Refresh Available Courses.XML</Task>
+    <Task Name="SearchOrg" Desc="SearchOrg" TaskSeq="7" ID="6">SearchOrg.XML</Task>
+    <Task Name="CreateOrg" Desc="CreateOrg" TaskSeq="8" ID="5">CreateOrg.XML</Task>
+    <Task Name="SearchOrg" Desc="SearchOrg" TaskSeq="9" ID="6">SearchOrg.XML</Task>
+    <Task Name="Verifydifference" Desc="Verifydifference" TaskSeq="10" ID="7">Verifydifference.XML</Task>
+    <Task Name="CreateOrg" Desc="CreateOrg" TaskSeq="11" ID="5">CreateOrg.XML</Task>
+    <Task Name="Logout From IPA" Desc="Perform logout of the user from IPA" TaskSeq="12" ID="4">IPA Logout.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="2" Name="Login to IPA" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;{IPA_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{IPA_URL}">http://profqalab1.ptcnet.ptc.com:1010/ipa</Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="IPA_userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">admin</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="IPA_password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">n10suf</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="7" Name="Verifydifference" TaskSeq="10">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60113" ActionName="VerifyDifference" ObjectName="">
+            <Param Name="int1" ParamSeq="1" Parameterized="1" Data="">{prevRows}</Param>
+            <Param Name="int2" ParamSeq="2" Parameterized="1" Data="">{updatedRows}</Param>
+            <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="5" Name="CreateOrg" TaskSeq="11">
+        <TaskDataSet Iteration="1">
+          <Step StepId="12" ActionID="60200" ActionName="Set" ObjectName="CEO_organizationName">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">PTC</Param>
+          </Step>
+          <Step StepId="11" ActionID="60200" ActionName="Set" ObjectName="CEO_customerNumber">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">341</Param>
+          </Step>
+          <Step StepId="38" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="4" Name="Logout From IPA" TaskSeq="12">
+        <TaskDataSet Iteration="1">
+          <Step StepId="35" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">2</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="27" Name="Create IPA User" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="6" ActionID="60200" ActionName="Set" ObjectName="email address">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof_verify_manager@ptcunoemail.com</Param>
+          </Step>
+          <Step StepId="37" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="4" Name="Logout From IPA" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="35" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">2</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="2" Name="Login to IPA" TaskSeq="4">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;{IPA_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{IPA_URL}">http://profqalab1.ptcnet.ptc.com:1010/ipa</Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="IPA_userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof_verify_manager@ptcunoemail.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="IPA_password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof7763</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="29" Name="Refresh Available Courses" TaskSeq="6">
+        <TaskDataSet Iteration="1">
+          <Step StepId="40" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;300&quot;" ParamSeq="1" Parameterized="0" Data="300">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="6" Name="SearchOrg" TaskSeq="7">
+        <TaskDataSet Iteration="1">
+          <Step StepId="6" ActionID="60200" ActionName="Set" ObjectName="ORG_keyword">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">100162</Param>
+          </Step>
+          <Step StepId="8" ActionID="60904" ActionName="StoreRowCount" ObjectName="ORG_listOrganization">
+            <Param Name="key" ParamSeq="1" Parameterized="1" Data="">prevRows</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="5" Name="CreateOrg" TaskSeq="8">
+        <TaskDataSet Iteration="1">
+          <Step StepId="12" ActionID="60200" ActionName="Set" ObjectName="CEO_organizationName">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">PTC Test Org</Param>
+          </Step>
+          <Step StepId="11" ActionID="60200" ActionName="Set" ObjectName="CEO_customerNumber">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">100162</Param>
+          </Step>
+          <Step StepId="38" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="6" Name="SearchOrg" TaskSeq="9">
+        <TaskDataSet Iteration="1">
+          <Step StepId="6" ActionID="60200" ActionName="Set" ObjectName="ORG_keyword">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">100162</Param>
+          </Step>
+          <Step StepId="8" ActionID="60904" ActionName="StoreRowCount" ObjectName="ORG_listOrganization">
+            <Param Name="key" ParamSeq="1" Parameterized="1" Data="">updatedRows</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

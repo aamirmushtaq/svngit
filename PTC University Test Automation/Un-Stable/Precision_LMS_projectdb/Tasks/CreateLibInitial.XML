@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="CreateLibInitial" Desc="CreateLibInitial" TaskID="20" Path="CreateLibInitial.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="23" ObjectName="OC_Libraries" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="6" stepSeq="2" ObjectId="48" ObjectName="Create New Library" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="7" stepSeq="3" ObjectId="66" ObjectName="name" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="LibraryName" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="8" stepSeq="4" ObjectId="60" ObjectName="description" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="LibDesc" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

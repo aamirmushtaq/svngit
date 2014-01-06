@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Create IPA User" Desc="Creates a new IPA User with the selected privilges" TaskID="27" Path="CreateUser.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="22" ObjectName="GA_Manage Users" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="5" stepSeq="2" ObjectId="172" ObjectName="Add New User" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="6" stepSeq="3" ObjectId="171" ObjectName="email address" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="UserEmail" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="37" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="7" stepSeq="5" ObjectId="170" ObjectName="Account Administrator" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="8" stepSeq="6" ObjectId="169" ObjectName="Content Administrator" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="9" stepSeq="7" ObjectId="168" ObjectName="Order Administrator" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="10" stepSeq="8" ObjectId="167" ObjectName="Content Distributor" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="12" stepSeq="9" ObjectId="166" ObjectName="Part Mapping Administrator" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="13" stepSeq="10" ObjectId="163" ObjectName="AddNewUserSubmit" ObjectTypeId="3003" ActionId="60300" ActionName="ClickAndWait" />
+</Task>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="SelectLibsToLicense" Desc="SelectLibsToLicense" TaskID="44" Path="SelectLibsToLicense.XML">
+  <Step StepId="208" stepSeq="1" ObjectId="105" ObjectName="ListLibraries" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;RowNumofTitle&quot;" ParamSeq="1" Parameterized="0" Data="RowNumofTitle" />
+    <Param Name="title" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;3&quot;" ParamSeq="3" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="105" ObjectName="ListLibraries" ObjectTypeId="3009" ActionId="60924" ActionName="ClickCheckboxInCell">
+    <Param Name="&quot;{RowNumofTitle}&quot;" ParamSeq="1" Parameterized="0" Data="{RowNumofTitle}" />
+    <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1" />
+  </Step>
+</Task>

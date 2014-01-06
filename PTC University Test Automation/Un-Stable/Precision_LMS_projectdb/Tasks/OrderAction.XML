@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="OrderAction" Desc="OrderAction" TaskID="37" Path="OrderAction.XML">
+  <Step StepId="74" stepSeq="1" ObjectId="32" ObjectName="OA_Orders" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="75" stepSeq="2" ObjectId="206" ObjectName="OrdStatusListBox" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="OrdStatus" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="145" stepSeq="3" ObjectId="7" ObjectName="Search" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="146" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="116" stepSeq="5" ObjectId="95" ObjectName="listOrders" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;OrdRowNum&quot;" ParamSeq="1" Parameterized="0" Data="OrdRowNum" />
+    <Param Name="SalesNum" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="1" stepSeq="6" ObjectId="95" ObjectName="listOrders" ObjectTypeId="3009" ActionId="99989" ActionName="ClickLinkAtCellandchooseOkOnConfirmation">
+    <Param Name="OrdAction" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{OrdRowNum}&quot;" ParamSeq="2" Parameterized="0" Data="{OrdRowNum}" />
+    <Param Name="&quot;9&quot;" ParamSeq="3" Parameterized="0" Data="9" />
+  </Step>
+  <Step StepId="76" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+</Task>

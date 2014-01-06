@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="CreateLibrary" Desc="CreateLibrary" TaskID="11" Path="CreateLibrary.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="23" ObjectName="OC_Libraries" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="6" stepSeq="2" ObjectId="48" ObjectName="Create New Library" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="7" stepSeq="3" ObjectId="66" ObjectName="name" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="LibraryName" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="8" stepSeq="4" ObjectId="60" ObjectName="description" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="LibDesc" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="9" stepSeq="5" ObjectId="58" ObjectName="Add Learning Items" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="17" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="10" stepSeq="7" ObjectId="68" ObjectName="SelectLearningItems" ObjectTypeId="3011" ActionId="61103" ActionName="Click" />
+  <Step StepId="11" stepSeq="8" ObjectId="69" ObjectName="Language" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="12" stepSeq="9" ObjectId="70" ObjectName="Type" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Type" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="13" stepSeq="10" ObjectId="71" ObjectName="Category" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Category" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="20" stepSeq="11" ObjectId="75" ObjectName="GoBtn" ObjectTypeId="3012" ActionId="61203" ActionName="Click" />
+  <Step StepId="16" stepSeq="12" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;30&quot;" ParamSeq="1" Parameterized="0" Data="30" />
+  </Step>
+  <Step StepId="29" stepSeq="13" ObjectId="72" ObjectName="ListOfLearningItems" ObjectTypeId="3009" ActionId="60923" ActionName="StoreRowNumWithRowData">
+    <Param Name="rowdata" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;rowNumTitle&quot;" ParamSeq="2" Parameterized="0" Data="rowNumTitle" />
+  </Step>
+  <Step StepId="15" stepSeq="14" ObjectId="72" ObjectName="ListOfLearningItems" ObjectTypeId="3009" ActionId="60924" ActionName="ClickCheckboxInCell">
+    <Param Name="&quot;{rowNumTitle}&quot;" ParamSeq="1" Parameterized="0" Data="{rowNumTitle}" />
+    <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="21" stepSeq="15" ObjectId="73" ObjectName="SubmitBtn" ObjectTypeId="3003" ActionId="60303" ActionName="Click" />
+  <Step StepId="22" stepSeq="16" ObjectId="56" ObjectName="Save" ObjectTypeId="3003" ActionId="60300" ActionName="ClickAndWait" />
+  <Step StepId="23" stepSeq="17" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="24" stepSeq="18" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60106" ActionName="PressKeys">
+    <Param Name="&quot;~{ENTER~}&quot;" ParamSeq="1" Parameterized="0" Data="~{ENTER~}" />
+  </Step>
+  <Step StepId="25" stepSeq="19" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;8&quot;" ParamSeq="1" Parameterized="0" Data="8" />
+  </Step>
+</Task>

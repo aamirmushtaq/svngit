@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="SearchCourses" Desc="SearchCourses" TaskID="8" Path="SearchCourses.XML">
+  <Step StepId="2" stepSeq="1" ObjectId="29" ObjectName="PC_Coach" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="5" stepSeq="2" ObjectId="76" ObjectName="CLP_Expanded View" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="1" stepSeq="3" ObjectId="43" ObjectName="CLP_topicfilter" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="topic" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="3" stepSeq="4" ObjectId="42" ObjectName="CLP_languagefilter" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="4" stepSeq="5" ObjectId="41" ObjectName="CLP_Find Courses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="15" stepSeq="6" ObjectId="78" ObjectName="CLP_courselist_Expanded" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;RowofCourse&quot;" ParamSeq="1" Parameterized="0" Data="RowofCourse" />
+    <Param Name="CourseTitle" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="16" stepSeq="7" ObjectId="78" ObjectName="CLP_courselist_Expanded" ObjectTypeId="3009" ActionId="60907" ActionName="ClickLinkAtCell">
+    <Param Name="PackageAction" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowofCourse}&quot;" ParamSeq="2" Parameterized="0" Data="{RowofCourse}" />
+    <Param Name="&quot;15&quot;" ParamSeq="3" Parameterized="0" Data="15" />
+  </Step>
+</Task>

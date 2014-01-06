@@ -1,0 +1,1426 @@
+//----------------------------------------------------------------------
+// Recorded 10/02/2007 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+
+
+dclfunc
+  function fScenario6
+    var
+      hWebStoredCtx_PTC_University_Assessment     : number;
+      hWebStoredCtx_PTC_University_Assessment_001 : number;
+      hWebStoredCtx_PTC_University_Assessment_002 : number;
+      hWebStoredCtx_PTC_University_Assessment_003 : number;
+      hWebStoredCtx_PTC_University_Assessment_004 : number;
+      hWebStoredCtx_PTC_University_Assessment_005 : number;
+      hWebStoredCtx_PTC_University_Assessment_006 : number;
+      hWebStoredCtx_PTC_University_Assessment_007 : number;
+      hWebStoredCtx_PTC_University_Assessment_008 : number;
+      hWebStoredCtx_PTC_University_Assessment_009 : number;
+      hWebStoredCtx_PTC_University_Assessment_010 : number;
+      hWebStoredCtx_PTC_University_Assessment_011 : number;
+      hWebStoredCtx_PTC_University_Assessment_012 : number;
+      hWebStoredCtx_PTC_University_Assessment_013 : number;
+      hWebStoredCtx_PTC_University_Assessment_014 : number;
+      hWebStoredCtx_PTC_University_Assessment_015 : number;
+      hWebStoredCtx_PTC_University_Assessment_016 : number;
+      hWebStoredCtx_PTC_University_Assessment_017 : number;
+      hWebStoredCtx_PTC_University_Assessment_018 : number;
+      hWebStoredCtx_PTC_University_Assessment_019 : number;
+      hWebStoredCtx_PTC_University_Assessment_020 : number;
+      hWebStoredCtx_PTC_University_Assessment_021 : number;
+      hWebStoredCtx_PTC_University_Assessment_022 : number;
+      hWebStoredCtx_PTC_University_Assessment_023 : number;
+      hWebStoredCtx_PTC_University_Assessment_024 : number;
+      hWebStoredCtx_PTC_University_Assessment_025 : number;
+      hWebStoredCtx_PTC_University_Assessment_026 : number;
+      hWebStoredCtx_PTC_University_Assessment_027 : number;
+      hWebStoredCtx_PTC_University_Assessment_028 : number;
+      hWebStoredCtx_PTC_University_Assessment_029 : number;
+      hWebStoredCtx_PTC_University_Assessment_030 : number;
+      hWebStoredCtx_PTC_University_Assessment_031 : number;
+      hWebStoredCtx_PTC_University_Assessment_032 : number;
+      hWebStoredCtx_PTC_University_Assessment_033 : number;
+      hWebStoredCtx_PTC_University_Assessment_034 : number;
+      hWebStoredCtx_PTC_University_Assessment_035 : number;
+      hWebStoredCtx_PTC_University_Assessment_036 : number;
+      hWebStoredCtx_PTC_University_Assessment_037 : number;
+      hWebStoredCtx_PTC_University_Assessment_038 : number;
+      hWebStoredCtx_PTC_University_Assessment_039 : number;
+      hWebStoredCtx_PTC_University_Assessment_040 : number;
+      hWebStoredCtx_PTC_University_Assessment_041 : number;
+      hWebStoredCtx_PTC_University_Assessment_042 : number;
+      hWebStoredCtx_PTC_University_Assessment_043 : number;
+    begin      
+    // go to checkpoint training
+ 
+    WebPageAddUrl("../images/to_be_deleted/main_background_fade.jpg");
+    // Redirecting 
+    // http://fusion-test/stablelocal/app/?wicket:interface=:1:tabs:panel:learningItems:10:viewerLink::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:2::::
+    ThinkTime(rShortTime);
+    WebPageLink("CheckPoint - Pro/INTRALINK Administrator Training (3.2)", ""+SITE_NODE+"/app/"); // Link 19
+    // start assessment
+ 
+    WebPageAddUrl("../images/viewer/selected_arrow.gif");
+    WebPageAddUrl("../images/viewer/header_fill.jpg");
+    WebPageAddUrl("../images/viewer/header_left_2.gif");
+    WebPageAddUrl("../images/viewer/header_right_3.png");
+    WebPageAddUrl("../images/viewer/assessment/field_blend_x.jpg");
+    WebPageAddUrl("../images/viewer/assessment/knowledge_lg.gif");
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:2:startAssessment::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:3::::
+    ThinkTime(rShortTime);
+    MeasureStart("StartAssessment");
+    WebPageLink("Start Assessment", "PTC University :: Assessment Viewer"); // Link 1
+
+    // question 1
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:3:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:4::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#1)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("StartAssessment");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION002, "PTC University :: Assessment Viewer (#1)"); // Form 1
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment);
+
+    // question 2
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:4:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:5::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#2)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#1)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION003, "PTC University :: Assessment Viewer (#2)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_001);
+    // quset 3
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:5:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:6::::
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#2)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_001);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION004, "PTC University :: Assessment Viewer (#3)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_001);
+    // quest 4
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:6:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:7::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#4)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION005, "PTC University :: Assessment Viewer (#4)"); // Form 1
+    // quest 5
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:7:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:8::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#5)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#4)", 
+      "PTC University :: Assessment Viewer (#5)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_002);
+    // quest 6
+ 
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:8:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:9::::
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#5)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_002);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION006, "PTC University :: Assessment Viewer (#6)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_002);
+    // quest 7
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:9:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:10::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#7)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION007, "PTC University :: Assessment Viewer (#7)"); // Form 1
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_003);
+    // quest 8
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:10:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:11::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#8)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#7)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_003);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION008, "PTC University :: Assessment Viewer (#8)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_003);
+    // quest 9
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:11:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:12::::
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("AssessmentNavTree");
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#8)", 
+      "PTC University :: Assessment Viewer (#9)");
+    // skip to quest 15
+ 
+    // Redirecting -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:13::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#10)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+
+    WebPageForm(""+SITE+""+SITE_NODE+"/app/", TAKE_ASSESSMENT1_009, "PTC University :: Assessment Viewer (#10)", 
+      TAKE_ASSESSMENT1_010);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_004);
+    MeasureStop("AssessmentNavTree");
+    // quest 15
+ 
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:13:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:14::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#11)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#10)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_004);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION011, "PTC University :: Assessment Viewer (#11)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_004);
+    // quset 16
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:14:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:15::::
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#11)", 
+      "PTC University :: Assessment Viewer (#12)");
+    MeasureStop("NextAssessmentQuestion");
+
+    // skip back to quest 10
+    // Redirecting -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:16::::
+    ThinkTime(rQuestionHeading);
+    MeasureStart("AssessmentNavTree");
+
+    WebPageForm(""+SITE+""+SITE_NODE+"/app/", TAKE_ASSESSMENT1_012, "PTC University :: Assessment Viewer (#13)", 
+      TAKE_ASSESSMENT1_013);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:16:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:17::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#14)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("AssessmentNavTree");
+
+    // quest 10
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION014, "PTC University :: Assessment Viewer (#14)"); // Form 1
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_005);
+    // quest 11
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:17:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:18::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#15)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#14)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_005);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION015, "PTC University :: Assessment Viewer (#15)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_005);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_006);
+    // quset 12
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:18:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:19::::
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#15)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_006);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION016, "PTC University :: Assessment Viewer (#16)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_006);
+    MeasureStop("NextAssessmentQuestion");
+
+    // skip to quest 14 
+    // Redirecting -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:20::::
+    MeasureStart("AssessmentNavTree");
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#17)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+
+    WebPageForm(""+SITE+""+SITE_NODE+"/app/", TAKE_ASSESSMENT1_017, "PTC University :: Assessment Viewer (#17)", 
+      TAKE_ASSESSMENT1_018);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_007);
+
+    // quest 14 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:20:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:21::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#18)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#17)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_007);
+    MeasureStop("AssessmentNavTree");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION019, "PTC University :: Assessment Viewer (#18)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_007);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_008);
+    MeasureStop("NextAssessmentQuestion");
+
+    // skip back to quest 13 
+
+    MeasureStart("AssessmentNavTree");
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:21:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:22::::
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#18)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_008);
+    MeasureStop("AssessmentNavTree");
+
+    // quest 13
+    ThinkTime(rQuestionHeading);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION020, "PTC University :: Assessment Viewer (#19)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_008);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:22:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:23::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#20)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION021, "PTC University :: Assessment Viewer (#20)"); // Form 1
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_009);
+    MeasureStop("NextAssessmentQuestion");
+
+    // skip to quest 17 
+    MeasureStart("AssessmentNavTree");
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:23:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:24::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#21)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#20)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_009);
+    MeasureStop("AssessmentNavTree");
+
+    // quest 17
+    ThinkTime(rQuestionHeading);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION022, "PTC University :: Assessment Viewer (#21)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_009);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:24:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:25::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#22)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 18
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#21)", 
+      "PTC University :: Assessment Viewer (#22)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_010);
+ 
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:25:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:26::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#23)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#22)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_010);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 19
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION023, "PTC University :: Assessment Viewer (#23)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_010);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_011);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:26:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:27::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#24)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#23)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_011);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION024, "PTC University :: Assessment Viewer (#24)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_011);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_012);
+    // quest 20
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:27:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:28::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#25)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#24)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_012);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 21
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION025, "PTC University :: Assessment Viewer (#25)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_012);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_013);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:28:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:29::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#26)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#25)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_013);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 22
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION026, "PTC University :: Assessment Viewer (#26)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_013);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_014);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:29:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:30::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#27)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#26)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_014);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 23
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION027, "PTC University :: Assessment Viewer (#27)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_014);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:30:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:31::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#28)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 24
+    ThinkTime(rNextAssessment);
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#27)", 
+      "PTC University :: Assessment Viewer (#28)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_015);
+ 
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:31:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:32::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#29)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#28)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_015);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 25
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION028, "PTC University :: Assessment Viewer (#29)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_015);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_016);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:32:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:33::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#30)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#29)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_016);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION029, "PTC University :: Assessment Viewer (#30)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_016);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_017);
+    // quest 26
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:33:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:34::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#31)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#30)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_017);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION030, "PTC University :: Assessment Viewer (#31)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_017);
+    // quest 27
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:34:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:35::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#32)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#31)", 
+      "PTC University :: Assessment Viewer (#32)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_018);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 28
+    MeasureStart("NextAssessmentQuestion");
+    WebPageBack(2); 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:35:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:36::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#33)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#32)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_018);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 29
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION031, "PTC University :: Assessment Viewer (#33)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_018);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:36:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:37::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#34)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#33)", 
+      "PTC University :: Assessment Viewer (#34)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_019);
+    MeasureStop("NextAssessmentQuestion");
+
+
+    // quest 30
+    MeasureStart("NextAssessmentQuestion");
+
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:37:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:38::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#35)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#34)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_019);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 31
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION032, "PTC University :: Assessment Viewer (#35)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_019);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:38:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:39::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#36)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 32
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#35)", 
+      "PTC University :: Assessment Viewer (#36)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_020);
+ 
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:39:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:40::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#37)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#36)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_020);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 33
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION033, "PTC University :: Assessment Viewer (#37)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_020);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:40:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:41::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#38)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 34
+    ThinkTime(rNextAssessment);
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#37)", 
+      "PTC University :: Assessment Viewer (#38)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_021);
+ 
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:41:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:42::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#39)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#38)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_021);
+    MeasureStop("NextAssessmentQuestion");
+
+    // question 35
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION034, "PTC University :: Assessment Viewer (#39)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_021);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_022);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:42:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:43::::
+    WebCookieSet("yPos=!~508~!; path="+SITE_NODE+"/app; expires=Wed, 27 Sep 2017 19:04:31 GMT", 
+      ""+SITE+""+SITE_NODE+"/app/");
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#40)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#39)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_022);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION035, "PTC University :: Assessment Viewer (#40)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_022);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_023);
+    // quest 36
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:43:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:44::::
+    WebCookieSet("yPos=!~574~!; path="+SITE_NODE+"/app; expires=Wed, 27 Sep 2017 19:04:58 GMT", 
+      ""+SITE+""+SITE_NODE+"/app/");
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#41)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#40)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_023);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION036, "PTC University :: Assessment Viewer (#41)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_023);
+    // quest 37
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:44:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:45::::
+
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#41)", 
+      "PTC University :: Assessment Viewer (#42)");
+    MeasureStop("NextAssessmentQuestion");
+
+    // skip ahead to quest 48 
+    // Redirecting -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:46::::
+    ThinkTime(rQuestionHeading);
+    MeasureStart("AssessmentNavTree");
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#43)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+
+    WebPageForm(""+SITE+""+SITE_NODE+"/app/", TAKE_ASSESSMENT1_037, "PTC University :: Assessment Viewer (#43)", 
+      TAKE_ASSESSMENT1_038);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_024);
+    MeasureStop("AssessmentNavTree");
+
+    // quest 48 
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageBack(3);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:46:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:47::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#44)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#43)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_024);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 49
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION039, "PTC University :: Assessment Viewer (#44)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_024);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_025);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:47:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:48::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#45)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#44)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_025);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 50
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION040, "PTC University :: Assessment Viewer (#45)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_025);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_026);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:48:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:49::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#46)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#45)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_026);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 51
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION041, "PTC University :: Assessment Viewer (#46)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_026);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_027);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:49:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:50::::
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#46)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_027);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION042, "PTC University :: Assessment Viewer (#47)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_027);
+ 
+    // Redirecting -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:51::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#48)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    // jump back to quest 38
+    ThinkTime(rNextAssessment);
+    MeasureStart("AssessmentNavTree");
+    WebPageForm(""+SITE+""+SITE_NODE+"/app/", TAKE_ASSESSMENT1_043, "PTC University :: Assessment Viewer (#48)", 
+      TAKE_ASSESSMENT1_044);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_028);
+    MeasureStart("AssessmentNavTree");
+
+    // quest 38
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:51:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:52::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#49)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#48)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_028);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 39
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION045, "PTC University :: Assessment Viewer (#49)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_028);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_029);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:52:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:53::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#50)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#49)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_029);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 40
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION046, "PTC University :: Assessment Viewer (#50)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_029);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_030);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:53:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:54::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#51)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#50)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_030);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 41
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION047, "PTC University :: Assessment Viewer (#51)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_030);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_031);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:54:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:55::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#52)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#51)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_031);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 42
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION048, "PTC University :: Assessment Viewer (#52)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_031);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_032);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:55:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:56::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#53)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#52)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_032);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 43
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION049, "PTC University :: Assessment Viewer (#53)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_032);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_033);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:56:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:57::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#54)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#53)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_033);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 44
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION050, "PTC University :: Assessment Viewer (#54)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_033);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_034);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:57:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:58::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#55)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#54)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_034);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 45
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION051, "PTC University :: Assessment Viewer (#55)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_034);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:58:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:59::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#56)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 46
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#55)", 
+      "PTC University :: Assessment Viewer (#56)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_035);
+ 
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:59:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:60::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#57)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#56)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_035);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 47
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION052, "PTC University :: Assessment Viewer (#57)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_035);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_036);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:60:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:61::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#58)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#57)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_036);
+    MeasureStop("NextAssessmentQuestion");
+
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION053, "PTC University :: Assessment Viewer (#58)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_036);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_037);
+    MeasureStop("NextAssessmentQuestion");
+
+    // jump to quest 52
+    ThinkTime(rNextAssessment);
+    MeasureStart("AssessmentNavTree");
+
+    WebPageBack();
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:61:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:62::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#59)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#58)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_037);
+    MeasureStop("AssessmentNavTree");
+
+    // quest 52
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION054, "PTC University :: Assessment Viewer (#59)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_037);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:62:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:63::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#60)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 53
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#59)", 
+      "PTC University :: Assessment Viewer (#60)");
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_038);
+ 
+    WebPageBack(2);
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:63:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:64::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#61)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#60)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_038);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 54
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION055, "PTC University :: Assessment Viewer (#61)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_038);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_039);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:64:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:65::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#62)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#61)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_039);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 55
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION056, "PTC University :: Assessment Viewer (#62)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_039);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_040);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:65:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:66::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#63)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#62)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_040);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 56
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION057, "PTC University :: Assessment Viewer (#63)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_040);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_041);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:66:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:67::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#64)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#63)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_041);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 57
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION058, "PTC University :: Assessment Viewer (#64)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_041);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_042);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:67:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:68::::
+    WebPageParseUrl("Modified form action URL in page PTC University :: Assessment Viewer (#65)", "action=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#64)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_042);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 58
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION059, "PTC University :: Assessment Viewer (#65)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_042);
+    WebPageStoreContext(hWebStoredCtx_PTC_University_Assessment_043);
+ 
+    WebPageBack();
+ 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:68:content:assessmentForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:69::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#66)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageSetActionUrl("Modified form action URL in page PTC University :: Assessment Viewer (#65)", 1, NULL, 
+      hWebStoredCtx_PTC_University_Assessment_043);
+    MeasureStop("NextAssessmentQuestion");
+
+    // quest 59
+    ThinkTime(rNextAssessment);
+    MeasureStart("NextAssessmentQuestion");
+    WebPageSubmit("Next Question", NEXT_QUESTION060, "PTC University :: Assessment Viewer (#66)"); // Form 1
+    WebPageDeleteContext(hWebStoredCtx_PTC_University_Assessment_043);
+ 
+    WebPageAddUrl("../images/to_be_deleted/field_bg.jpg");
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:69:content:assessmentForm:iDontKnow::ILinkListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:70::::
+    WebPageParseUrl("Javascript Redirection in page PTC University :: Assessment Viewer (#67)", "href='", "'", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#66)", 
+      "PTC University :: Assessment Viewer (#67)");
+    MeasureStop("NextAssessmentQuestion");
+
+    // submit assessments
+    MeasureStart("SubmitAssessment");
+ 
+    WebPageAddUrl("../images/to_be_deleted/persistent_tools_fade.jpg");
+    WebPageAddUrl("../images/to_be_deleted/table_topbar.gif");
+    WebPageAddUrl("../images/to_be_deleted/nav_tab_background_2.jpg");
+    WebPageAddUrl("../images/to_be_deleted/tabright.gif");
+    WebPageAddUrl("../images/to_be_deleted/tableft.gif");
+    WebPageAddUrl("../images/to_be_deleted/your_score_arrow.png");
+    WebPageAddUrl("../images/to_be_deleted/quick_bar_grad.png");
+    WebPageAddUrl("../images/to_be_deleted/passing_score_arrow.png");
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:70:content:submitAssessment::ILinkListener::
+    // -> (redirection) 
+    // http://fusion-test/stablelocal/app/?wicket:bookmarkablePage=%3Acom.ptc.fusion.web.pages.assessment.AssessmentResult&examI
+    // D=163843
+    WebCookieSet("yPos=!~572~!; path="+SITE_NODE+"/app; expires=Wed, 27 Sep 2017 19:10:47 GMT", 
+      ""+SITE+""+SITE_NODE+"/app/");
+
+    ThinkTime(rNextAssessment);
+    WebPageLink("Javascript Redirection in page PTC University :: Assessment Viewer (#67)", "Assessment Result");
+    MeasureStop("SubmitAssessment");
+
+    // go to details
+    ThinkTime(rNextAssessment);
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO6_001, 0.06);
+    WebUrl(""+SITE+""+SITE_NODE+"/images/to_be_deleted/table_topbar.gif", 12.50);
+
+    // go to answers 
+    WebUrl(""+SITE+""+SITE_NODE+"/images/to_be_deleted/tabright.gif", 0.00);
+    WebUrl(""+SITE+""+SITE_NODE+"/images/to_be_deleted/tableft.gif", 0.00);
+    WebUrl(""+SITE+""+SITE_NODE+"/images/to_be_deleted/tabright.gif", 1.28);
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO6_002, 0.14);
+    WebUrl(""+SITE+""+SITE_NODE+"/images/to_be_deleted/table_topbar.gif", 9.56);
+
+    // go to recommended training
+    WebFormGet(""+SITE+""+SITE_NODE+"/app/", SCENARIO6_003, 0.05);
+    WebUrl(""+SITE+""+SITE_NODE+"/images/to_be_deleted/table_topbar.gif", 10.30);
+
+    // logout
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/main_background_fade.jpg");
+    WebPageAddUrl(""+SITE_NODE+"/images/to_be_deleted/field_bg.jpg");
+    // Redirecting "+SITE+"/stablelocal/app/?wicket:interface=:10:logoutLink::ILinkListener::
+    // -> (redirection) "+SITE+"/stablelocal/app/pages/Login/
+    WebPageLink("Logout", "Login (#1)"); // Link 3
+  end fScenario6;
+
+dclform
+//begin forms for TakeAssessment1
+  NEXT_QUESTION002:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION003:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION004:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION005:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION006:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION007:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio33", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION008:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  TAKE_ASSESSMENT1_009:
+    "LNB:tree:i:16:nodeComponent:link" := "x";
+
+  TAKE_ASSESSMENT1_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":12:content:assessmentForm::IFormSubmitListener::";
+
+  NEXT_QUESTION011:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  TAKE_ASSESSMENT1_012:
+    "LNB:tree:i:11:nodeComponent:link" := "x";
+
+  TAKE_ASSESSMENT1_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":15:content:assessmentForm::IFormSubmitListener::";
+
+  NEXT_QUESTION014:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio33", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION015:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION016:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  TAKE_ASSESSMENT1_017:
+    "LNB:tree:i:15:nodeComponent:link" := "x";
+
+  TAKE_ASSESSMENT1_018 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":19:content:assessmentForm::IFormSubmitListener::";
+
+  NEXT_QUESTION019:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio31", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION020:
+    "assessmentForm7_hf_0"      := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "LNB:tree:i:14:nodeComponent:link" := "x", // added
+    "response:group"            := "radio29"; // changed
+
+  NEXT_QUESTION021:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION022:
+    "assessmentForm7_hf_0"      := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "LNB:tree:i:18:nodeComponent:link" := "x", // added
+    "response:group"            := "radio31"; // changed
+
+  NEXT_QUESTION023:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION024:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION025:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION026:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION027:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION028:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION029:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION030:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION031:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION032:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION033:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION034:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION035:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION036:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  TAKE_ASSESSMENT1_037:
+    "LNB:tree:i:52:nodeComponent:link" := "x";
+
+  TAKE_ASSESSMENT1_038 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":45:content:assessmentForm::IFormSubmitListener::";
+
+  NEXT_QUESTION039:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio31", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION040:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION041:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION042:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  TAKE_ASSESSMENT1_043:
+    "LNB:tree:i:41:nodeComponent:link" := "x";
+
+  TAKE_ASSESSMENT1_044 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":50:content:assessmentForm::IFormSubmitListener::";
+
+  NEXT_QUESTION045:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION046:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION047:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION048:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION049:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION050:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION051:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION052:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION053:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION054:
+    "assessmentForm7_hf_0"      := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "LNB:tree:i:57:nodeComponent:link" := "x", // added
+    "response:group"            := "radio31"; // changed
+
+  NEXT_QUESTION055:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION056:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION057:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "radio29", // changed
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION058:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION059:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+  NEXT_QUESTION060:
+    "assessmentForm7_hf_0"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio27"
+    "proceed"                   := "" <USE_HTML_VAL> ; // unchanged, value: "Next Question"
+
+//  TAKE_ASSESSMENT1_061 <ENCODE_BLANKS> :
+//    "wicket:interface"          := ":73:resultsTabs:tabs-container:tabs:1:link::IBehaviorListener:0:",
+//    "random"                    := "0.6666683432897973";
+
+
+  SCENARIO6_001 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":73:resultsTabs:tabs-container:tabs:1:link::IBehaviorListener:0:",
+    "random"                    := "0.8466288869322779";
+
+  SCENARIO6_002 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":73:resultsTabs:tabs-container:tabs:2:link::IBehaviorListener:0:-1",
+    "random"                    := "0.814595978047947";
+
+  SCENARIO6_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":73:resultsTabs:tabs-container:tabs:3:link::IBehaviorListener:0:-1",
+    "random"                    := "0.5690891794503192";

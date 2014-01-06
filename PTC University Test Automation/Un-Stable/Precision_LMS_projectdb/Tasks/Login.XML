@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Login to LMS" Desc="Performs login of a valid user into LMS" TaskID="1" Path="Login.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60100" ActionName="OpenURL">
+    <Param Name="&quot;{LMS_URL}&quot;" ParamSeq="1" Parameterized="0" Data="{LMS_URL}" />
+  </Step>
+  <Step StepId="103" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60115" ActionName="MaximizeBrowser" />
+  <Step StepId="2" stepSeq="3" ObjectId="5" ObjectName="userId" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="userName" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="3" stepSeq="4" ObjectId="4" ObjectName="password" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="pwd" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="4" stepSeq="5" ObjectId="3" ObjectName="languages" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="50" stepSeq="6" ObjectId="2" ObjectName="Login" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="148" stepSeq="7" ObjectId="264" ObjectName="I Accept" ObjectTypeId="3007" ActionId="99987" ActionName="ClickIfExists" />
+</Task>

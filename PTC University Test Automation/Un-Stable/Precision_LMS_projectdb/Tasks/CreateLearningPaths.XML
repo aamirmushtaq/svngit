@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Create Learning Paths" Desc="Create Learning Paths using Admin" TaskID="47" Path="CreateLearningPaths.XML">
+  <Step StepId="3" stepSeq="1" ObjectId="217" ObjectName="Create new Learning Path" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="6" stepSeq="2" ObjectId="221" ObjectName="Name" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Name" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="5" stepSeq="3" ObjectId="222" ObjectName="Description" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Description" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="7" stepSeq="4" ObjectId="223" ObjectName="Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="4" stepSeq="5" ObjectId="224" ObjectName="Select Learning" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="52" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+</Task>

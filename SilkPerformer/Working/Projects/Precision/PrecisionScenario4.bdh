@@ -1,0 +1,106 @@
+//----------------------------------------------------------------------
+// Recorded 03/02/2008 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+
+
+const
+    NUM_SEARCHES             := 5;
+
+
+dclrand
+
+  sSearchTerm1            : RndInd("sketch" =0.05, "drawing"=0.05, "assemble"=0.05, "dimension"=0.05, "mass property"=0.05, "toolkit"=0.05, "animate"=0.05, "template"=0.05, "annotation"=0.05, "sheetmetal"=0.05,  "family table"=0.05, "constraint"=0.05, "csys"=0.05, "datum plane"=0.05, "line"=0.05, "arc"=0.05, "round"=0.05, "sweept"=0.05, "feature creation"=0.05,  "feature tree"=0.05);
+  sSearchTerm2            : RndInd("mold" =0.05, "part"=0.05,"assembly"=0.05, "wildfire"=0.05, "pro/engineer"=0.05, "wildfire 3.0"=0.05, "wildfire 2.0"=0.05, "update"=0.05, "config.pro"=0.05, "manufacturing"=0.05,"warp"=0.05, "hole"=0.05, "cosmetic"=0.05, "layout"=0.05, "cavity"=0.05, "imm"=0.05, "surface"=0.05, "draft"=0.05, "exploded"=0.05, "instance"=0.05);
+  //other terms in case we need more
+  //generic, mold base, , pocket, curve, format, point, edge, cut, interchange
+
+
+dclfunc
+
+  function fScenario4
+    var
+      iLoop         : number;
+  begin
+
+
+    // Find Training 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    ThinkTime(rShortTime);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+ 
+    ThinkTime(rShortTime);
+
+    // "Search tab" 
+    WebPageSetActionUrlAbs(SITE+"/app/", S4_APP_003);
+    WebPageSubmit(NULL, S4_APP_002, "/app/"); // Form 1
+    // Search ...
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/expand.gif");
+    
+    for iLoop := 1 to NUM_SEARCHES do
+      ThinkTime(rShortTime);
+      MeasureStart ("Search");
+      WebPageSetActionUrlAbs(SITE+"/app/", S4_APP_005);
+      ThinkTime(rShortTime);
+      WebPageSubmit(NULL, S4_APP_004, "/app/ (#1)"); // Form 1
+      MeasureStop ("Search"); 
+      WebPageBack();
+ 
+    end;
+    
+    
+    // logout
+ 
+    // Redirecting https://fusion-lb.ptc.com/app/?wicket:interface=:2:logoutLink::ILinkListener::
+    // -> (redirection) https://fusion-lb.ptc.com/app/pages/Login/
+    ThinkTime(rShortTime);
+    WebPageLink("Log Out", "Precision LMS (#1)"); // Link 6
+ 
+  end fScenario4;
+
+dclform
+  S4_APP_001:
+    "loginForm13_hf_0"          := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "loginButton"               := "x", // added
+    "userId"                    := "prof_pt_co3_usr_0115@ptcunoemail.com", // changed
+    "password"                  := Decrypt("9VJxE5/6X8E="), // changed
+    "languages"                 := "0"; // added
+
+  S4_APP_002:
+    "findTrainingForm30_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:panel:displayDesc"    := "on", // changed
+    "tabs:tabs-container:tabs:1:link" := "1"; // added
+
+  S4_APP_003 <ENCODE_BLANKS> :
+//    "wicket:interface"          := ":2:findTrainingForm:tabs:tabs-container:tabs:1:link::IActivePageBehaviorListener:0:",
+    "wicket:interface"          := ":2:findTrainingForm:tabs:tabs-container:tabs:0:link::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.03176934541181475";
+
+
+  S4_APP_004 <ENCODE_ESCAPE> :
+    "findTrainingForm30_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := sSearchTerm1 +" "+sSearchTerm2,//"draw sketch", // added
+    "tabs:panel:displayDesc"    := "on", // changed
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:panel:searchButton"   := "1"; // added
+
+  S4_APP_005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:findTrainingForm:tabs:panel:searchButton::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.21338287362166552";
+
+
+
+

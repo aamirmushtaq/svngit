@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="VerifyLicenceActionAvailability" Desc="VerifyLicenceActionAvailability" TaskID="73" Path="VerifyLicenceActionAvailability.XML">
+  <Step StepId="184" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="183" stepSeq="2" ObjectId="143" ObjectName="Manage Licenses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="250" stepSeq="3" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;LibRowNum&quot;" ParamSeq="1" Parameterized="0" Data="LibRowNum" />
+    <Param Name="LibraryName" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="1" stepSeq="4" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99992" ActionName="VerifyLinkTitleAtCell">
+    <Param Name="&quot;Assign&quot;" ParamSeq="1" Parameterized="0" Data="Assign" />
+    <Param Name="&quot;{LibRowNum}&quot;" ParamSeq="2" Parameterized="0" Data="{LibRowNum}" />
+    <Param Name="&quot;6&quot;" ParamSeq="3" Parameterized="0" Data="6" />
+  </Step>
+  <Step StepId="186" stepSeq="5" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99992" ActionName="VerifyLinkTitleAtCell">
+    <Param Name="&quot;Delegate&quot;" ParamSeq="1" Parameterized="0" Data="Delegate" />
+    <Param Name="&quot;{LibRowNum}&quot;" ParamSeq="2" Parameterized="0" Data="{LibRowNum}" />
+    <Param Name="&quot;6&quot;" ParamSeq="3" Parameterized="0" Data="6" />
+  </Step>
+</Task>

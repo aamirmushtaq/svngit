@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="testImport" Desc="testImport" TaskID="42" Path="testImport.XML">
+  <Step StepId="7" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="29" stepSeq="2" ObjectId="145" ObjectName="Manage Users" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="30" stepSeq="3" ObjectId="177" ObjectName="Create New User" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="36" stepSeq="4" ObjectId="178" ObjectName="Upload File of Email Addresses" ObjectTypeId="3005" ActionId="60505" ActionName="Click" />
+  <Step StepId="52" stepSeq="5" ObjectId="213" ObjectName="BrowseFilePath" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="CSVFilePath" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="34" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="42" stepSeq="7" ObjectId="180" ObjectName="Add to List_Upload" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="53" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="41" stepSeq="9" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="40" stepSeq="10" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="39" stepSeq="11" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60907" ActionName="ClickLinkAtCell">
+    <Param Name="&quot;Edit&quot;" ParamSeq="1" Parameterized="0" Data="Edit" />
+    <Param Name="&quot;2&quot;" ParamSeq="2" Parameterized="0" Data="2" />
+    <Param Name="&quot;8&quot;" ParamSeq="3" Parameterized="0" Data="8" />
+  </Step>
+  <Step StepId="38" stepSeq="12" ObjectId="182" ObjectName="privileges" ObjectTypeId="3004" ActionId="60406" ActionName="Click" />
+  <Step StepId="37" stepSeq="13" ObjectId="183" ObjectName="CreateUser_Administrator" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="44" stepSeq="14" ObjectId="184" ObjectName="CreateUser_Content Design" ObjectTypeId="3004" ActionId="60404" ActionName="Check" />
+  <Step StepId="46" stepSeq="15" ObjectId="185" ObjectName="CreateUser_OK" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="45" stepSeq="16" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="47" stepSeq="17" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="48" stepSeq="18" ObjectId="186" ObjectName="No-Do not send email notification" ObjectTypeId="3005" ActionId="60504" ActionName="Select" />
+  <Step StepId="49" stepSeq="19" ObjectId="187" ObjectName="CreateUser_Finish" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+</Task>

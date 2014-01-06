@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Create Empty Course" Desc="Create Empty Course function" TaskID="53" Path="CreateEmptyCourse.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="232" ObjectName="Create Course" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="51" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="52" stepSeq="3" ObjectId="234" ObjectName="Manage Courses &amp; Assessments Choice Popup" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Select Course type" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="53" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="61" stepSeq="5" ObjectId="242" ObjectName="Title" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Course title" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="60" stepSeq="6" ObjectId="241" ObjectName="Description_1" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Description" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="59" stepSeq="7" ObjectId="240" ObjectName="Category_1" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Category" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="58" stepSeq="8" ObjectId="239" ObjectName="Version" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Version" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="55" stepSeq="9" ObjectId="238" ObjectName="Language_1" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="57" stepSeq="10" ObjectId="237" ObjectName="Duration Hours" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Duration Hours" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="56" stepSeq="11" ObjectId="236" ObjectName="Duration Minutes" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Duration Mins" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="83" stepSeq="12" ObjectId="231" ObjectName="Manage Courses &amp; Assessments Page" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Course Designer Tab link" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="65" stepSeq="13" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="85" stepSeq="14" ObjectId="248" ObjectName="Custom Library Selection" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="select library" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="84" stepSeq="15" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="64" stepSeq="16" ObjectId="235" ObjectName="Course Designer" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="&quot;Link to My Own Topic&quot;" ParamSeq="1" Parameterized="0" Data="Link to My Own Topic" />
+  </Step>
+  <Step StepId="67" stepSeq="17" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="54" stepSeq="18" ObjectId="235" ObjectName="Course Designer" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="&quot;Save &amp; Close&quot;" ParamSeq="1" Parameterized="0" Data="Save &amp; Close" />
+  </Step>
+  <Step StepId="68" stepSeq="19" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7" />
+  </Step>
+</Task>

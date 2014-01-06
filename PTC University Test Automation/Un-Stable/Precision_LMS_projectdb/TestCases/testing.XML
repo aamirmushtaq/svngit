@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="9" ManualTCId="testing" TCName="testing">
+  <WF>
+    <Task Name="IPA Login" Desc="IPA Login" TaskSeq="1" ID="2">IPA Login.XML</Task>
+    <Task Name="CreateLibInitial" Desc="CreateLibInitial" TaskSeq="2" ID="20">CreateLibInitial.XML</Task>
+    <Task Name="testLibadd" Desc="testLibadd" TaskSeq="3" ID="31">testLibadd.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="2" Name="IPA Login" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="url" ParamSeq="1" Parameterized="1" Data="">http://fusion-lb1.ptc.com:8080/ipa/app</Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="IPA_userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof_verify_manager@ptcunoemail.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="IPA_password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof7763</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="20" Name="CreateLibInitial" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="7" ActionID="60200" ActionName="Set" ObjectName="name">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">test54321</Param>
+          </Step>
+          <Step StepId="8" ActionID="60200" ActionName="Set" ObjectName="description">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">test54321</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="31" Name="testLibadd" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="11" ActionID="60800" ActionName="SelectItem" ObjectName="Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+          <Step StepId="12" ActionID="60800" ActionName="SelectItem" ObjectName="Type">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Online Course</Param>
+          </Step>
+          <Step StepId="13" ActionID="60800" ActionName="SelectItem" ObjectName="Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Pro/ENGINEER</Param>
+          </Step>
+          <Step StepId="16" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;30&quot;" ParamSeq="1" Parameterized="0" Data="30">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

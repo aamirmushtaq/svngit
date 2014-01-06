@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="SelectLibrariesforOrder" Desc="SelectLibrariesforOrder" TaskID="16" Path="SelectLibrariesforOrder.XML">
+  <Step StepId="18" stepSeq="1" ObjectId="85" ObjectName="Add New License" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="20" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="21" stepSeq="3" ObjectId="104" ObjectName="SelectLibraryItems" ObjectTypeId="3011" ActionId="61103" ActionName="Click" />
+  <Step StepId="24" stepSeq="4" ObjectId="105" ObjectName="ListLibraries" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;RowNumofTitle&quot;" ParamSeq="1" Parameterized="0" Data="RowNumofTitle" />
+    <Param Name="title" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;3&quot;" ParamSeq="3" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="1" stepSeq="5" ObjectId="105" ObjectName="ListLibraries" ObjectTypeId="3009" ActionId="60924" ActionName="ClickCheckboxInCell">
+    <Param Name="&quot;{RowNumofTitle}&quot;" ParamSeq="1" Parameterized="0" Data="{RowNumofTitle}" />
+    <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1" />
+  </Step>
+</Task>

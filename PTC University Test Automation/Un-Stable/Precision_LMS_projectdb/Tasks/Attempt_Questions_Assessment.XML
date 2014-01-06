@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Attempt Questions in Assessment" Desc="Attempt Questions in Assessment and Perform Available Action" TaskID="138" Path="Attempt_Questions_Assessment.XML">
+  <Step StepId="274" stepSeq="1" ObjectId="358" ObjectName="Answer Options" ObjectTypeId="3005" ActionId="60508" ActionName="SelectByIndex">
+    <Param Name="&quot;response:group&quot;" ParamSeq="1" Parameterized="0" Data="response:group" />
+    <Param Name="Index" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="271" ObjectName="Assessment Viewer" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Next, Ignore or Submit Assmt" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="275" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

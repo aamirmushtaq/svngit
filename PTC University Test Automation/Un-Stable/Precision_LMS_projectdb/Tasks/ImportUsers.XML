@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="ImportUsers" Desc="ImportUsers" TaskID="18" Path="ImportUsers.XML">
+  <Step StepId="7" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="29" stepSeq="2" ObjectId="145" ObjectName="Manage Users" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="30" stepSeq="3" ObjectId="177" ObjectName="Create New User" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="36" stepSeq="4" ObjectId="178" ObjectName="Upload File of Email Addresses" ObjectTypeId="3005" ActionId="60505" ActionName="Click" />
+  <Step StepId="55" stepSeq="5" ObjectId="213" ObjectName="BrowseFilePath" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="CSVFilePath" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="42" stepSeq="6" ObjectId="180" ObjectName="Add to List_Upload" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="54" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="41" stepSeq="8" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="40" stepSeq="9" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="47" stepSeq="10" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="48" stepSeq="11" ObjectId="186" ObjectName="No-Do not send email notification" ObjectTypeId="3005" ActionId="60504" ActionName="Select" />
+  <Step StepId="49" stepSeq="12" ObjectId="187" ObjectName="CreateUser_Finish" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+</Task>

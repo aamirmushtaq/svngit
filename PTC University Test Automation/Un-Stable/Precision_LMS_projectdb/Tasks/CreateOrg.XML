@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="CreateOrg" Desc="CreateOrg" TaskID="5" Path="CreateOrg.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="34" ObjectName="OA_Organizations" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="9" stepSeq="2" ObjectId="19" ObjectName="ORG_Create New Organization" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="12" stepSeq="3" ObjectId="15" ObjectName="CEO_organizationName" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="OrgName" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="11" stepSeq="4" ObjectId="14" ObjectName="CEO_customerNumber" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="CustNum" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="10" stepSeq="5" ObjectId="13" ObjectName="CEO_Add" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="13" stepSeq="6" ObjectId="11" ObjectName="CEO_Save Org" ObjectTypeId="3003" ActionId="60303" ActionName="Click" />
+  <Step StepId="38" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Send Email from Course Viewer" Desc="Send Email from Course Viewer" TaskID="128" Path="SendEmail_CourseViewer.XML">
+  <Step StepId="219" stepSeq="1" ObjectId="302" ObjectName="Email Link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="245" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="224" stepSeq="3" ObjectId="307" ObjectName="Email To" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Recipient Email ID" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="223" stepSeq="4" ObjectId="345" ObjectName="Send Email Button" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="246" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7" />
+  </Step>
+</Task>

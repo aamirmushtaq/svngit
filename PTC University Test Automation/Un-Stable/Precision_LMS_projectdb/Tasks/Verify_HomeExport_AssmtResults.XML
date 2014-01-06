@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify buttons on Assessment Results Page" Desc="Verify Home and Export to excel feature in Assessment Results Page" TaskID="132" Path="Verify_HomeExport_AssmtResults.XML">
+  <Step StepId="265" stepSeq="1" ObjectId="356" ObjectName="Export to Excel button" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="266" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Wait for Export to Excel" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="284" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60106" ActionName="PressKeys">
+    <Param Name="&quot;~{ESC~}&quot;" ParamSeq="1" Parameterized="0" Data="~{ESC~}" />
+  </Step>
+  <Step StepId="264" stepSeq="4" ObjectId="355" ObjectName="Home button" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="1" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Wait for Home Page" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

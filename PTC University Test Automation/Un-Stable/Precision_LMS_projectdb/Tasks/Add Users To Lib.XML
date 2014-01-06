@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Add Users To Lib" Desc="Add Users To Lib" TaskID="54" Path="Add Users To Lib.XML">
+  <Step StepId="153" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60101" ActionName="StoreVariable">
+    <Param Name="&quot;Email&quot;" ParamSeq="1" Parameterized="0" Data="Email" />
+    <Param Name="UserEmail" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="85" stepSeq="2" ObjectId="152" ObjectName="search_General" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="&quot;{Email}&quot;" ParamSeq="1" Parameterized="0" Data="{Email}" />
+  </Step>
+  <Step StepId="86" stepSeq="3" ObjectId="7" ObjectName="Search" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="96" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="161" stepSeq="5" ObjectId="207" ObjectName="UserSelectionTBL" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;UserRowNum&quot;" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{Email}&quot;" ParamSeq="2" Parameterized="0" Data="{Email}" />
+    <Param Name="&quot;3&quot;" ParamSeq="3" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="158" stepSeq="6" ObjectId="207" ObjectName="UserSelectionTBL" ObjectTypeId="3009" ActionId="60924" ActionName="ClickCheckboxInCell">
+    <Param Name="&quot;{UserRowNum}&quot;" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

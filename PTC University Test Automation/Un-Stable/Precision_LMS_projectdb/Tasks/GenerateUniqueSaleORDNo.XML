@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="GenerateUniqueSaleORDNo" Desc="GenerateUniqueSaleORDNo" TaskID="46" Path="GenerateUniqueSaleORDNo.XML">
+  <Step StepId="117" stepSeq="1" ObjectId="32" ObjectName="OA_Orders" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="144" stepSeq="2" ObjectId="206" ObjectName="OrdStatusListBox" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Status" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="147" stepSeq="3" ObjectId="7" ObjectName="Search" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="120" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="180" stepSeq="5" ObjectId="95" ObjectName="listOrders" ObjectTypeId="3009" ActionId="99988" ActionName="GenerateAndStoreMaximumValue">
+    <Param Name="KeySalesNumber" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;4&quot;" ParamSeq="2" Parameterized="0" Data="4" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="187" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60101" ActionName="StoreVariable">
+    <Param Name="&quot;SalesNumber&quot;" ParamSeq="1" Parameterized="0" Data="SalesNumber" />
+    <Param Name="KeySaleNumber" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

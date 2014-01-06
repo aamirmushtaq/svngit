@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="96" ManualTCId="Env_properties" TCName="Define Environment Properties">
+  <WF>
+    <Task Name="Define Global Environment Variables" Desc="Define Global Environment Variables" TaskSeq="1" ID="159">Define_Global_Variables.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="159" Name="Define Global Environment Variables" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="2" ActionID="60101" ActionName="StoreVariable" ObjectName="">
+            <Param Name="&quot;LMS_URL&quot;" ParamSeq="1" Parameterized="0" Data="LMS_URL">
+            </Param>
+            <Param Name="&quot;http://profqalab1.ptcnet.ptc.com/plms&quot;" ParamSeq="2" Parameterized="0" Data="http://profqalab1.ptcnet.ptc.com/plms">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="60101" ActionName="StoreVariable" ObjectName="">
+            <Param Name="&quot;IPA_URL&quot;" ParamSeq="1" Parameterized="0" Data="IPA_URL">
+            </Param>
+            <Param Name="&quot;http://profqalab1.ptcnet.ptc.com:1010/ipa&quot;" ParamSeq="2" Parameterized="0" Data="http://profqalab1.ptcnet.ptc.com:1010/ipa">
+            </Param>
+          </Step>
+          <Step StepId="3" ActionID="60101" ActionName="StoreVariable" ObjectName="">
+            <Param Name="&quot;IMPORT_USERS_PATH&quot;" ParamSeq="1" Parameterized="0" Data="IMPORT_USERS_PATH">
+            </Param>
+            <Param Name="&quot;D:\Fusion_QA\Automation\PTC University Test Automation\Un-Stable\Precision_LMS_projectdb\UsersUploadfFiles\&quot;" ParamSeq="2" Parameterized="0" Data="D:\Fusion_QA\Automation\PTC University Test Automation\Un-Stable\Precision_LMS_projectdb\UsersUploadfFiles\">
+            </Param>
+          </Step>
+          <Step StepId="4" ActionID="60101" ActionName="StoreVariable" ObjectName="">
+            <Param Name="&quot;GRADING_FILE_PATH&quot;" ParamSeq="1" Parameterized="0" Data="GRADING_FILE_PATH">
+            </Param>
+            <Param Name="&quot;D:\Fusion_QA\Automation\PTC University Test Automation\Un-Stable\Precision_LMS_projectdb\GradingFiles\&quot;" ParamSeq="2" Parameterized="0" Data="D:\Fusion_QA\Automation\PTC University Test Automation\Un-Stable\Precision_LMS_projectdb\GradingFiles\">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

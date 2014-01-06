@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Link Libraries for existing Order" Desc="Link Libraries for existing Order" TaskID="71" Path="LinkLIbraries_ExistingOrder.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="288" ObjectName="Link Licenses in Existing Order" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="2" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Time" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

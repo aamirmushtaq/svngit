@@ -1,0 +1,248 @@
+//----------------------------------------------------------------------
+// Recorded 03/02/2008 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+
+
+const
+
+
+dclrand
+
+dclfunc
+
+  function fScenario4b
+    var
+  begin
+
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/header_banner.png");
+    WebPageAddUrl("/static/images/nav_nubbin.gif");
+    WebPageAddUrl("/static/images/tabs/orange_left.gif");
+    WebPageAddUrl("/static/images/tabs/orange_right.gif");
+    WebPageAddUrl("/static/images/tabs/blue_left.gif");
+    WebPageAddUrl("/static/images/tabs/blue_right.gif");
+    WebPageAddUrl("/static/images/drop_shadow_footer.jpg");
+    WebPageAddUrl("https://ssl.google-analytics.com/ga.js");
+    WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", UTM_GIF002);
+    WebCookieSet(
+      "__utma=194470764.1074063799.1208435413.1208461376.1208476827.3; domain=.ptc.com; path=/; expires=Wed, 18 Apr 2018 00:00:"
+      "27 GMT", "https://precisionlms.ptc.com/static/images/indicator.gif", 2);
+    WebCookieSet("__utmb=194470764.1.10.1208476827027; domain=.ptc.com; path=/; expires=Wed, 18 Apr 2018 00:00:27 GMT", 
+      "https://precisionlms.ptc.com/static/images/indicator.gif", 2);
+    WebCookieSet("__utmc=194470764; domain=.ptc.com; path=/; expires=Wed, 18 Apr 2018 00:00:27 GMT", 
+      "https://precisionlms.ptc.com/static/images/indicator.gif", 2);
+    WebPageAddUrl("/static/images/indicator.gif");
+    ThinkTime(rShortTime);
+    WebPageLink("Home", "Welcome to Precision LMS (#1)"); // Link 2
+ 
+    ThinkTime(rShortTime);
+    WebFormGet("https://precisionlms.ptc.com/app/", S4B_003, 15.18);
+ 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", UTM_GIF004);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+ 
+ /******
+    WebCookieSet("__utmb=194470764.2.10.1208476827027; domain=.ptc.com; path=/; expires=Wed, 18 Apr 2018 00:00:53 GMT", 
+      "https://precisionlms.ptc.com/app/");
+
+
+    WebPageSetActionUrlAbs("https://precisionlms.ptc.com/app/", S4B_006);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, S4B_005, "/app/"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlms.ptc.com/app/", S4B_008);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, S4B_007, "/app/ (#1)"); // Form 1
+ 
+    WebPageBack();
+
+    WebPageSetActionUrlAbs("https://precisionlms.ptc.com/app/", S4B_010);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, S4B_009, "/app/ (#2)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlms.ptc.com/app/", S4B_012);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, S4B_011, "/app/ (#3)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://precisionlms.ptc.com/app/", S4B_014);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, S4B_013, "/app/ (#4)"); // Form 1
+ 
+    WebPageBack();
+
+    WebPageSetActionUrlAbs("https://precisionlms.ptc.com/app/", S4B_016);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, S4B_015, "/app/ (#5)"); // Form 1
+ 
+    WebPageBack();
+ ******/
+ 
+    WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", UTM_GIF017);
+    // Redirecting https://precisionlms.ptc.com/app/?wicket:interface=:3:logoutLink::ILinkListener::
+    // -> (redirection) https://precisionlms.ptc.com/app/pages/Login/
+
+    ThinkTime(rShortTime);
+    WebPageLink("Log Out", "Precision LMS (#1)"); // Link 7
+  end fScenario4b;
+
+dclform
+  UTM_GIF002 <ENCODE_ESCAPE> :
+    "utmwv"                     := "4.1",
+    "utmn"                      := "752631839",
+    "utmhn"                     := "precisionlms.ptc.com",
+    "utmcs"                     := "utf-8",
+    "utmsr"                     := "1600x1200",
+    "utmsc"                     := "16-bit",
+    "utmul"                     := "en-us",
+    "utmje"                     := "1",
+    "utmfl"                     := "6.0 r88",
+    "utmdt"                     := "Welcome to Precision LMS",
+    "utmhid"                    := "523874574",
+    "utmr"                      := "0",
+    "utmp"                      := "/app/pages/Landing/",
+    "utmac"                     := "UA-4053099-1",
+    "utmcc"                     := "__utma=194470764.1074063799.1208435413.1208461376.1208476827.3;+__utmz=194470764.1208435413"
+                                   ".1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);" <ENCODE_URICOMPONENT> ;
+
+  S4B_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":2:tabs:tabs-container:tabs:1:link::IBehaviorListener:0:2",
+    "random"                    := "0.04595110587848256";
+
+  UTM_GIF004 <ENCODE_URICOMPONENT> :
+    "utmwv"                     := "4.1",
+    "utmn"                      := "1829571728",
+    "utmhn"                     := "precisionlms.ptc.com",
+    "utmcs"                     := "utf-8",
+    "utmsr"                     := "1600x1200",
+    "utmsc"                     := "16-bit",
+    "utmul"                     := "en-us",
+    "utmje"                     := "1",
+    "utmfl"                     := "6.0 r88",
+    "utmdt"                     := "Precision LMS : Find Training",
+    "utmhid"                    := "1356899050",
+    "utmr"                      := "0",
+    "utmp"                      := "/app/?wicket:bookmarkablePage=:com.ptc.fusion.web.pages.findtraining.FindTraining" <
+                                   ENCODE_BLANKS> ,
+    "utmac"                     := "UA-4053099-1",
+    "utmcc"                     := "__utma=194470764.1074063799.1208435413.1208461376.1208476827.3;+__utmz=194470764.1208435413"
+                                   ".1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);";
+
+  S4B_005:
+    "findTrainingForm32_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <USE_HTML_VAL> , // unchanged, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:tabs-container:tabs:1:link" := "1"; // added
+
+  S4B_006 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:tabs:tabs-container:tabs:1:link::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.6591403369416784";
+
+  S4B_007:
+    "findTrainingForm32_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <SUPPRESS> , // suppressed, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "topPaginatorContainer:topPaginator:navigation:1:pageLink" := "1"; // added
+
+  S4B_008 <ENCODE_BLANKS> :
+// ALEX: missing index 1!!
+//   Recorded version:
+//  "wicket:interface"          := ":3:findTrainingForm:topPaginatorContainer:topPaginator:navigation:1:pageLink::IActivePageBehaviorListener:0:-1",
+    "wicket:interface"          := ":3:findTrainingForm:topPaginatorContainer:topPaginator:navigation:1:pageLink:1:IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.8607455111073248";
+
+  S4B_009:
+    "findTrainingForm32_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <SUPPRESS> , // suppressed, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "topPaginatorContainer:topPaginator:next" := "1"; // added
+
+  S4B_010 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:topPaginatorContainer:topPaginator:next::IActivePageBehaviorListener:0:"
+                                   "-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.7637412902344398";
+
+  S4B_011:
+    "findTrainingForm32_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <SUPPRESS> , // suppressed, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "topPaginatorContainer:topPaginator:next" := "1"; // added
+
+  S4B_012 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:topPaginatorContainer:topPaginator:next::IActivePageBehaviorListener:0:"
+                                   "-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.2798455805970654";
+
+  S4B_013:
+    "findTrainingForm32_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <SUPPRESS> , // suppressed, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "topPaginatorContainer:topPaginator:next" := "1"; // added
+
+  S4B_014 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:topPaginatorContainer:topPaginator:next::IActivePageBehaviorListener:0:"
+                                   "-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.6843790892156092";
+
+  S4B_015:
+    "findTrainingForm32_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <SUPPRESS> , // suppressed, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "topPaginatorContainer:topPaginator:next" := "1"; // added
+
+  S4B_016 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:topPaginatorContainer:topPaginator:next::IActivePageBehaviorListener:0:"
+                                   "-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.1615369693067884";
+
+  UTM_GIF017 <ENCODE_ESCAPE> :
+    "utmwv"                     := "4.1",
+    "utmn"                      := "1832356197",
+    "utmhn"                     := "precisionlms.ptc.com",
+    "utmcs"                     := "utf-8",
+    "utmsr"                     := "1600x1200",
+    "utmsc"                     := "16-bit",
+    "utmul"                     := "en-us",
+    "utmje"                     := "1",
+    "utmfl"                     := "6.0 r88",
+    "utmdt"                     := "Precision LMS",
+    "utmhid"                    := "1531318465",
+    "utmr"                      := "0",
+    "utmp"                      := "/app/pages/Login/",
+    "utmac"                     := "UA-4053099-1",
+    "utmcc"                     := "__utma=194470764.1074063799.1208435413.1208461376.1208476827.3;+__utmz=194470764.1208435413"
+                                   ".1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);" <ENCODE_URICOMPONENT> ;
+
+

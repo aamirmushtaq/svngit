@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Completed Learnings Section in Home Page" Desc="Verify Completed Learnings Tab in Home Page" TaskID="133" Path="Verify_CompletedLearningSection_HomePg.XML">
+  <Step StepId="267" stepSeq="1" ObjectId="116" ObjectName="Completed Learning" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="285" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="1" stepSeq="3" ObjectId="357" ObjectName="Completed Learning Table" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;RowNo_CompleteLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_CompleteLI" />
+    <Param Name="Completed LI Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="268" stepSeq="4" ObjectId="357" ObjectName="Completed Learning Table" ObjectTypeId="3009" ActionId="60906" ActionName="VerifyCellText">
+    <Param Name="LI Score" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_CompleteLI}" />
+    <Param Name="&quot;4&quot;" ParamSeq="3" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="269" stepSeq="5" ObjectId="357" ObjectName="Completed Learning Table" ObjectTypeId="3009" ActionId="60906" ActionName="VerifyCellText">
+    <Param Name="LI Rating" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_CompleteLI}" />
+    <Param Name="&quot;5&quot;" ParamSeq="3" Parameterized="0" Data="5" />
+  </Step>
+  <Step StepId="281" stepSeq="6" ObjectId="357" ObjectName="Completed Learning Table" ObjectTypeId="3009" ActionId="60925" ActionName="VerifyImageInCell">
+    <Param Name="&quot;{RowNo_CompleteLI}&quot;" ParamSeq="1" Parameterized="0" Data="{RowNo_CompleteLI}" />
+    <Param Name="&quot;6&quot;" ParamSeq="2" Parameterized="0" Data="6" />
+    <Param Name="Actions Title" ParamSeq="3" Parameterized="1" Data="" />
+  </Step>
+</Task>

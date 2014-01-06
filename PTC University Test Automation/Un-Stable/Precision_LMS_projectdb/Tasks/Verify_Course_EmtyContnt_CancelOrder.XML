@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Course with Epty content for cancel order" Desc="Verify License, Category and Version are missing during Course Creation with Empty content for cancelled order" TaskID="109" Path="Verify_Course_EmtyContnt_CancelOrder.XML">
+  <Step StepId="251" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="250" stepSeq="2" ObjectId="140" ObjectName="Manage Courses &amp; Assessments" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="1" stepSeq="3" ObjectId="232" ObjectName="Create Course" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="51" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="52" stepSeq="5" ObjectId="234" ObjectName="Manage Courses &amp; Assessments Choice Popup" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Select Course type" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="53" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="59" stepSeq="7" ObjectId="240" ObjectName="Category_1" ObjectTypeId="3008" ActionId="60810" ActionName="VerifyListItemsInSequence">
+    <Param Name="items" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="58" stepSeq="8" ObjectId="239" ObjectName="Version" ObjectTypeId="3008" ActionId="60810" ActionName="VerifyListItemsInSequence">
+    <Param Name="items" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="83" stepSeq="9" ObjectId="231" ObjectName="Manage Courses &amp; Assessments Page" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="Course Designer Tab link" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="65" stepSeq="10" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="85" stepSeq="11" ObjectId="248" ObjectName="Custom Library Selection" ObjectTypeId="3008" ActionId="60810" ActionName="VerifyListItemsInSequence">
+    <Param Name="items" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="84" stepSeq="12" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="68" stepSeq="13" ObjectId="320" ObjectName="Cancel link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="252" stepSeq="14" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="253" stepSeq="15" ObjectId="321" ObjectName="Dont Save link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+</Task>

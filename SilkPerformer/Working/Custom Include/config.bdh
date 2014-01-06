@@ -1,0 +1,38 @@
+//-------------------------------------------------------------------
+// IOP Flooding component
+//-------------------------------------------------------------------
+// Author : Brian Le Suer (Star Quality)
+// Date   : August 2006
+// Project: IOP Flooding
+// History: 
+//-------------------------------------------------------------------
+
+
+var
+  bDownloadLabels    : boolean init TRUE;
+  sBatchID           : string init "abc"; //don't know if this is necessary unless we want to tag runs
+  nThinkTime         : float init 2.0;
+  tgtGlob_Disp_CPC   : float;
+  tgtGlob_Disp_RMG   : float;
+  tgtGlob_Disp_USPS  : float;
+  tgtGlob_Refund_CPC : float;
+  tgtGlob_Refund_RMG : float;
+  tgtGlob_Reprint_CPC : float;
+  tgtGlob_Reprint_RMG :float;
+  tgtGlob_Reprint_USPS :float;
+  tgtGlob_Retry_CPC : float;
+  tgtGlob_Retry_RMG : float;
+  tgtGlob_Retry_USPS : float;
+  tgtDom_Disp        : float;
+  tgtDom_BulkDisp    : float;
+  tgtDom_Refund      : float;
+  tgtDom_Reprint      : float;
+  tgtDom_Retry      : float;
+
+
+dclrand
+  rReprintIterations : RndInd (1=0.7; 2=0.2; 3=0.1);
+  rRetryIterations : RndInd (1=0.7; 2=0.2; 3=0.1);
+  rRefundIterations : RndInd (1=0.7; 2=0.2; 3=0.1);
+  
+

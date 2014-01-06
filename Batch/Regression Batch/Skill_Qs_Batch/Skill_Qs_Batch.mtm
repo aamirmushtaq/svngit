@@ -1,0 +1,22 @@
+[Files]
+NumberOfFiles=6
+File1=D:\Fusion_QA\Automation\Regression Suite\Skill Questions\sc_TC1_Test_Data_For_Skill_Qs;1
+File2=D:\Fusion_QA\Automation\Regression Suite\Skill Questions\sc_TC2_Take_Assmt_All_Qs_Correct;1
+File3=D:\Fusion_QA\Automation\Regression Suite\Skill Questions\sc_TC3_Take_Assmt_Qs_Incrt_&_Partial;1
+File4=D:\Fusion_QA\Automation\Regression Suite\Skill Questions\sc_TC4_Take_Assmt_Q3012_2nd_Partial_Ans;1
+File5=D:\Fusion_QA\Automation\Regression Suite\Skill Questions\sc_TC5_Take_Assmt_Q3012_3rd_Partial_Ans;1
+File6=D:\Fusion_QA\Automation\Regression Suite\Skill Questions\sc_TC6_Take_Assmt_All_Qs_In_Japanese;1
+[Report]
+CreateReport=Yes
+DefaultLocation=Yes
+ViewReport=Yes
+ReportHeader=Yes
+RunStartedHeader=Yes
+RunEndedHeader=Yes
+ReportLocation=Yes
+IterationsHeader=Yes
+[Mail]
+SendMail=3
+To=fusion-qa@ptc.com
+Subject=Test results from Regression batch run_Skill_Questions
+Message=Precision SkillQuestions Regression scripts Batch will run every Sunday on Automation Machine at 05:00am IST.E-mail is sent to fusion-qa@ptc.com with attachments of the batch results.

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Learning Item Viewer WITHOUT License access" Desc="Verify Course/Assessment Viewer WITHOUT having License access (example: Order Cancel)" TaskID="114" Path="VerifyLI_Viewer_NO_LicAccess.XML">
+  <Step StepId="249" stepSeq="1" ObjectId="314" ObjectName="Content Access Denied" ObjectTypeId="3012" ActionId="61202" ActionName="VerifyVisibility">
+    <Param Name="content view denied" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="1" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

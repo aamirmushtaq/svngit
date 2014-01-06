@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify LI Count in Self-start in Current Learning" Desc="Verify LI Count in Self-start in Current Learning in Home page" TaskID="151" Path="Verify_LICount_inSelf-Start_Home.XML">
+  <Step StepId="283" stepSeq="1" ObjectId="115" ObjectName="SelfStartedLearning" ObjectTypeId="3009" ActionId="60903" ActionName="StoreColumnCount">
+    <Param Name="&quot;Col Count of Self-Start&quot;" ParamSeq="1" Parameterized="0" Data="Col Count of Self-Start" />
+    <Param Name="Row No for Col Count" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="286" stepSeq="2" ObjectId="115" ObjectName="SelfStartedLearning" ObjectTypeId="3009" ActionId="60904" ActionName="StoreRowCount">
+    <Param Name="&quot;Row Count of Self-Start&quot;" ParamSeq="1" Parameterized="0" Data="Row Count of Self-Start" />
+  </Step>
+  <Step StepId="285" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{Col Count of Self-Start}&quot;" ParamSeq="1" Parameterized="0" Data="{Col Count of Self-Start}" />
+    <Param Name="Col Count in Self-Start" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;false&quot;" ParamSeq="3" Parameterized="0" Data="false" />
+  </Step>
+  <Step StepId="287" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{Row Count of Self-Start}&quot;" ParamSeq="1" Parameterized="0" Data="{Row Count of Self-Start}" />
+    <Param Name="Row Count in Self-Start" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;false&quot;" ParamSeq="3" Parameterized="0" Data="false" />
+  </Step>
+</Task>

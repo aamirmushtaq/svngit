@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Manage Licenses post order cancellation" Desc="Verify licenses detail in Manage licences after order has been cancelled" TaskID="115" Path="Verify_ManageLic_OrderCancel.XML">
+  <Step StepId="125" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="124" stepSeq="2" ObjectId="143" ObjectName="Manage Licenses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="196" stepSeq="3" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60915" ActionName="VerifyDataNotExistInColumn">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+    <Param Name="License name" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="131" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+</Task>

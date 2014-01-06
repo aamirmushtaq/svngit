@@ -1,0 +1,52 @@
+//----------------------------------------------------------------------
+// Recorded 10/02/2007 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+
+const
+    NUM_SEARCHES             := 5;
+
+
+dclrand
+
+  sSearchTerm1            : RndInd("sketch" =0.05, "drawing"=0.05, "assemble"=0.05, "dimension"=0.05, "mass property"=0.05, "toolkit"=0.05, "animate"=0.05, "template"=0.05, "annotation"=0.05, "sheetmetal"=0.05,  "family table"=0.05, "constraint"=0.05, "csys"=0.05, "datum plane"=0.05, "line"=0.05, "arc"=0.05, "round"=0.05, "sweept"=0.05, "feature creation"=0.05,  "feature tree"=0.05);
+  sSearchTerm2            : RndInd("mold" =0.05, "part"=0.05,"assembly"=0.05, "wildfire"=0.05, "pro/engineer"=0.05, "wildfire 3.0"=0.05, "wildfire 2.0"=0.05, "update"=0.05, "config.pro"=0.05, "manufacturing"=0.05,"warp"=0.05, "hole"=0.05, "cosmetic"=0.05, "layout"=0.05, "cavity"=0.05, "imm"=0.05, "surface"=0.05, "draft"=0.05, "exploded"=0.05, "instance"=0.05);
+   //more keywords: generic, mold base, layout, pocket, curve, format, point, edge, cut, interchange
+
+dclfunc
+
+  function fScenario4
+    var
+      iLoop         : number;
+    begin
+    // find training
+    ThinkTime(rShortTime);
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageLink("Find Training", "Find Training"); // Link 5
+
+    // click go 
+    // Redirecting http://fusion-test/stablelocal/app/?wicket:interface=:2:findTrainingForm::IFormSubmitListener::
+    // -> (redirection) http://fusion-test/stablelocal/app/?wicket:interface=:2:1:::
+
+    for iLoop := 1 to NUM_SEARCHES do
+      ThinkTime(rShortTime);
+      MeasureStart ("Search");
+      WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+      WebPageSubmit("Go", SEARCH_FORM, "Find Training (#1)"); // Form 1
+      MeasureStop ("Search");  
+    end;
+
+  end fScenario4;    
+
+dclform
+
+  SEARCH_FORM:
+    "findTrainingForm19_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "radioGroup"                := "radio25", // changed
+    "searchKeyword"             := sSearchTerm1 +" "+sSearchTerm2,//"model", // changed
+    "library"                   := "0", // added
+    "version"                   := "0", // added
+    "language"                  := "en", // added
+    "type"                      := "0"; // added
+ 
+ 

@@ -1,0 +1,148 @@
+//----------------------------------------------------------------------
+// Recorded 03/02/2008 by SilkPerformer Recorder v7.5.0.3030
+//----------------------------------------------------------------------
+
+
+
+const
+
+
+dclrand
+
+dclfunc
+
+  function fScenario4c
+    var
+  begin   
+    // // Completed learning
+ 
+    ThinkTime(rShortTime);
+    WebFormGet("https://precisionlms.ptc.com/app/", SC4C_004, 15.37);
+    // Find training
+ 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", UTM_GIF005);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+    // Browse All Train
+ 
+    WebCookieSet("__utmb=194470764.3.10.1208517079688; domain=.ptc.com; path=/; expires=Wed, 18 Apr 2018 11:12:13 GMT", 
+      "https://precisionlms.ptc.com/app/");
+    WebPageSetActionUrlAbs("https://precisionlms.ptc.com/app/", SC4C_007);
+    ThinkTime(rShortTime);
+    WebPageSubmit(NULL, SC4C_006, "/app/"); // Form 1
+    // Logout
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", UTM_GIF008);
+    // Redirecting https://precisionlms.ptc.com/app/?wicket:interface=:3:logoutLink::ILinkListener::
+    // -> (redirection) https://precisionlms.ptc.com/app/pages/Login/
+    ThinkTime(rShortTime);
+    WebPageLink("Log Out", "Precision LMS (#2)"); // Link 7
+  end fScenario4c;
+
+dclform
+  UTM_GIF001 <ENCODE_URICOMPONENT> :
+    "utmwv"                     := "4.1",
+    "utmn"                      := "1031881256",
+    "utmhn"                     := "precisionlms.ptc.com",
+    "utmcs"                     := "utf-8",
+    "utmsr"                     := "1600x1200",
+    "utmsc"                     := "16-bit",
+    "utmul"                     := "en-us",
+    "utmje"                     := "1",
+    "utmfl"                     := "6.0 r88",
+    "utmdt"                     := "Precision LMS",
+    "utmhid"                    := "672228134",
+    "utmr"                      := "-",
+    "utmp"                      := "/app/pages/Login/;jsessionid=E3723223A09FDB428E930227360D31B8" <ENCODE_BLANKS> ,
+    "utmac"                     := "UA-4053099-1",
+    "utmcc"                     := "__utma=194470764.1074063799.1208435413.1208516446.1208517080.6;+__utmz=194470764.1208435413"
+                                   ".1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);";
+
+  SC4C_002:
+    "loginForm13_hf_0"          := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "loginButton"               := "x", // added
+    "userId"                    := "prof_pt_co3_usr_0116@ptcunoemail.com", // changed
+    "password"                  := Decrypt("9VJxE5/6X8E="), // changed
+    "languages"                 := "0"; // added
+
+  UTM_GIF003 <ENCODE_ESCAPE> :
+    "utmwv"                     := "4.1",
+    "utmn"                      := "465796605",
+    "utmhn"                     := "precisionlms.ptc.com",
+    "utmcs"                     := "utf-8",
+    "utmsr"                     := "1600x1200",
+    "utmsc"                     := "16-bit",
+    "utmul"                     := "en-us",
+    "utmje"                     := "1",
+    "utmfl"                     := "6.0 r88",
+    "utmdt"                     := "Welcome to Precision LMS",
+    "utmhid"                    := "1995074408",
+    "utmr"                      := "0",
+    "utmp"                      := "/app/pages/Landing/",
+    "utmac"                     := "UA-4053099-1",
+    "utmcc"                     := "__utma=194470764.1074063799.1208435413.1208516446.1208517080.6;+__utmz=194470764.1208435413"
+                                   ".1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);" <ENCODE_URICOMPONENT> ;
+
+  SC4C_004 <ENCODE_BLANKS> :
+// ALEX:
+// incorrect index recorded!!!!
+//    "wicket:interface"          := ":2:tabs:tabs-container:tabs:1:link::IBehaviorListener:0:2",
+    "wicket:interface"          := ":1:tabs:tabs-container:tabs:1:link::IBehaviorListener:0:2",
+    "random"                    := "0.8617203862331445";
+
+  UTM_GIF005 <ENCODE_URICOMPONENT> :
+    "utmwv"                     := "4.1",
+    "utmn"                      := "1410174541",
+    "utmhn"                     := "precisionlms.ptc.com",
+    "utmcs"                     := "utf-8",
+    "utmsr"                     := "1600x1200",
+    "utmsc"                     := "16-bit",
+    "utmul"                     := "en-us",
+    "utmje"                     := "1",
+    "utmfl"                     := "6.0 r88",
+    "utmdt"                     := "Precision LMS : Find Training",
+    "utmhid"                    := "336086787",
+    "utmr"                      := "0",
+    "utmp"                      := "/app/?wicket:bookmarkablePage=:com.ptc.fusion.web.pages.findtraining.FindTraining" <
+                                   ENCODE_BLANKS> ,
+    "utmac"                     := "UA-4053099-1",
+    "utmcc"                     := "__utma=194470764.1074063799.1208435413.1208516446.1208517080.6;+__utmz=194470764.1208435413"
+                                   ".1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);";
+
+  SC4C_006:
+    "findTrainingForm32_hf_0"   := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "" <USE_HTML_VAL> , // unchanged, value: ""
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:version" := "0_0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:tabs-container:tabs:1:link" := "1"; // added
+
+  SC4C_007 <ENCODE_BLANKS> :
+// ALEX: incorrect index recorded...
+//    "wicket:interface"          := ":3:findTrainingForm:tabs:tabs-container:tabs:1:link::IActivePageBehaviorListener:0:",
+    "wicket:interface"          := ":2:findTrainingForm:tabs:tabs-container:tabs:1:link::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.5802948747104003";
+
+  UTM_GIF008 <ENCODE_ESCAPE> :
+    "utmwv"                     := "4.1",
+    "utmn"                      := "1446109012",
+    "utmhn"                     := "precisionlms.ptc.com",
+    "utmcs"                     := "utf-8",
+    "utmsr"                     := "1600x1200",
+    "utmsc"                     := "16-bit",
+    "utmul"                     := "en-us",
+    "utmje"                     := "1",
+    "utmfl"                     := "6.0 r88",
+    "utmdt"                     := "Precision LMS",
+    "utmhid"                    := "1111593682",
+    "utmr"                      := "0",
+    "utmp"                      := "/app/pages/Login/",
+    "utmac"                     := "UA-4053099-1",
+    "utmcc"                     := "__utma=194470764.1074063799.1208435413.1208516446.1208517080.6;+__utmz=194470764.1208435413"
+                                   ".1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);" <ENCODE_URICOMPONENT> ;
+

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Confirm the Assessment Submission" Desc="Confirm the Submit Assessment Confirmation frame" TaskID="139" Path="Confirm_Submit_Assessment_Frame.XML">
+  <Step StepId="276" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60117" ActionName="SelectFrame">
+    <Param Name="&quot;relative=top&quot;" ParamSeq="1" Parameterized="0" Data="relative=top" />
+  </Step>
+  <Step StepId="291" stepSeq="2" ObjectId="368" ObjectName="Title in Submit Assessment" ObjectTypeId="3012" ActionId="61204" ActionName="StorePropertyValue">
+    <Param Name="&quot;Assessment Confirm title&quot;" ParamSeq="1" Parameterized="0" Data="Assessment Confirm title" />
+    <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text" />
+  </Step>
+  <Step StepId="293" stepSeq="3" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{Assessment Confirm title}&quot;" ParamSeq="1" Parameterized="0" Data="{Assessment Confirm title}" />
+    <Param Name="Exp Confirmation title" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True" />
+  </Step>
+  <Step StepId="1" stepSeq="4" ObjectId="359" ObjectName="Ok to Submit Assessment" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="277" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Wait after Submit Assessment" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="278" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;null&quot;" ParamSeq="1" Parameterized="0" Data="null" />
+  </Step>
+  <Step StepId="282" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+</Task>

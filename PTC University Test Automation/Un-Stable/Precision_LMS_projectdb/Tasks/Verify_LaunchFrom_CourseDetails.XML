@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify and Launch from Course Detail popup" Desc="Verify and Launch from Course Detail popup from Assigned Learning section in Home page" TaskID="126" Path="Verify_LaunchFrom_CourseDetails.XML">
+  <Step StepId="151" stepSeq="1" ObjectId="270" ObjectName="Assigned Learning TBL" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="&quot;keyRowNo_LI&quot;" ParamSeq="1" Parameterized="0" Data="keyRowNo_LI" />
+    <Param Name="Course Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="159" stepSeq="2" ObjectId="270" ObjectName="Assigned Learning TBL" ObjectTypeId="3009" ActionId="60911" ActionName="ClickImageInCell">
+    <Param Name="title name" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{keyRowNo_LI}&quot;" ParamSeq="2" Parameterized="0" Data="{keyRowNo_LI}" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="156" stepSeq="3" ObjectId="330" ObjectName="Details table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;1&quot;" ParamSeq="1" Parameterized="0" Data="1" />
+    <Param Name="Record 1" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="155" stepSeq="4" ObjectId="330" ObjectName="Details table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2" />
+    <Param Name="Record 2" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="160" stepSeq="5" ObjectId="330" ObjectName="Details table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+    <Param Name="Record 3" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="161" stepSeq="6" ObjectId="330" ObjectName="Details table" ObjectTypeId="3009" ActionId="60916" ActionName="CompareTableRowData">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+    <Param Name="Record 4" ParamSeq="2" Parameterized="1" Data="" />
+  </Step>
+</Task>

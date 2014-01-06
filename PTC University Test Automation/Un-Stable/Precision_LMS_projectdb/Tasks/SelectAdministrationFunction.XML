@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Select function from Administration page" Desc="Select any activity in Administration page, example-Manage learning, users, reports, content design etc" TaskID="57" Path="SelectAdministrationFunction.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="122" ObjectName="Precision LMS : Administration" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="function link name" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="66" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

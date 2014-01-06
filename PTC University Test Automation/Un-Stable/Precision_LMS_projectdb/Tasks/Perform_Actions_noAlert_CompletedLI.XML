@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Perform Actions (w/o alert) in Completed Learning" Desc="Perform Resume and other actions from completed learnings in Home Page" TaskID="152" Path="Perform_Actions_noAlert_CompletedLI.XML">
+  <Step StepId="289" stepSeq="1" ObjectId="116" ObjectName="Completed Learning" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="290" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Wait for Complete LI Tab" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="157" stepSeq="3" ObjectId="357" ObjectName="Completed Learning Table" ObjectTypeId="3009" ActionId="60908" ActionName="StoreRowNoOfCellText">
+    <Param Name="&quot;RowNo_AssignLI&quot;" ParamSeq="1" Parameterized="0" Data="RowNo_AssignLI" />
+    <Param Name="LI Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2" />
+  </Step>
+  <Step StepId="158" stepSeq="4" ObjectId="357" ObjectName="Completed Learning Table" ObjectTypeId="3009" ActionId="60911" ActionName="ClickImageInCell">
+    <Param Name="Action to Perform" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{RowNo_AssignLI}&quot;" ParamSeq="2" Parameterized="0" Data="{RowNo_AssignLI}" />
+    <Param Name="&quot;6&quot;" ParamSeq="3" Parameterized="0" Data="6" />
+  </Step>
+  <Step StepId="151" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;7&quot;" ParamSeq="1" Parameterized="0" Data="7" />
+  </Step>
+  <Step StepId="154" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60103" ActionName="SelectPage">
+    <Param Name="&quot;name=viewerPageMap&quot;" ParamSeq="1" Parameterized="0" Data="name=viewerPageMap" />
+  </Step>
+</Task>

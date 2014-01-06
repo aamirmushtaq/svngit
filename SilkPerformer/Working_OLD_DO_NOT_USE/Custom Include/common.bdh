@@ -1,0 +1,23 @@
+const
+  //this const is used to replace the server making is easy to change servers
+//  SITE                     := "http://fusion-qa.ptc.com";
+  SITE                     := "https://fusion-test.ptc.com";
+//  SITE                     := "http://fusion-test.ptc.com";
+
+//  SITE_CONTENT             := "stablelocal_content";
+  SITE_CONTENT             := "content";
+  
+//  SITE_NODE                := "/stablelocal";
+  SITE_NODE                := "";
+  
+//  SITE_NODE_NAME           := "stablelocal";
+  SITE_NODE_NAME           := "Unnamed page";
+
+dclrand
+  // Random Variables Section used for think time randomization
+  rShortTime              : RndUniF (10.0 .. 10.0);      
+  rQuestionHeading        : RndUniF (20.0 .. 20.0);      
+  rNextQuestion           : RndUniF (20.0 .. 25.0);      
+  rSkillQuestion          : RndUniF (180.0 .. 180.0); 
+  rLoginStagger           : RndUniF (3.0 .. 60.0);
+  rNextAssessment         : RndUniF (15.0 .. 25.0);      

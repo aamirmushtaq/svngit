@@ -1,0 +1,617 @@
+//----------------------------------------------------------------------
+// Recorded 2009-06-10 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+@codepage(1252)
+
+benchmark SilkPerformerRecorder
+
+use "WebAPI.bdh"
+
+dcluser
+  user
+    VUser
+  transactions
+    TInit           : begin;
+    TMain           : 1;
+
+var
+
+dclrand
+
+dcltrans
+  transaction TInit
+  begin
+    WebSetBrowser(WEB_BROWSER_MSIE6);
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    //WebSetUserBehavior(WEB_USERBEHAVIOR_FIRST_TIME);
+    //WebSetDocumentCache(true, WEB_CACHE_CHECK_SESSION);
+  end TInit;
+
+  transaction TMain
+  var
+    hWebStoredCtx_Assessment_Result : number;
+  begin
+    // Redirecting -> (redirection) https://fusion-lb2.ptc.com/plms/
+    WebCookieSet("lang=en; domain=.ptc.com; path=/; expires=Sat, 23 Oct 2010 19:40:55 GMT", "https://fusion-lb2.ptc.com/plms");
+    WebCookieSet("Apache=132.253.104.16.1244456216955970; domain=.ptc.com; path=/; expires=Mon, 10 Jun 2019 19:39:48 GMT", 
+      "https://fusion-lb2.ptc.com/plms");
+    WebCookieSet("firstname=Alexander; domain=.ptc.com; path=/; expires=Mon, 10 Jun 2019 19:39:48 GMT", 
+      "https://fusion-lb2.ptc.com/plms");
+    WebCookieSet("uid=anowak; domain=.ptc.com; path=/; expires=Mon, 10 Jun 2019 19:39:48 GMT", "https://fusion-lb2.ptc.com/plms"
+      );
+    WebPageParseUrl("HTTP meta refresh tag in page plms", "0; url=", "\"", WEB_FLAG_IGNORE_WHITE_SPACE);
+    WebPageUrl("https://fusion-lb2.ptc.com/plms", "plms");
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageAddUrl("/static/images/login/login-top.jpg");
+    WebPageAddUrl("/static/images/login/arrow.gif");
+    WebPageAddUrl("/static/images/login/login-bottom.jpg");
+    WebPageAddUrl("/static/images/login/login-box-bottom.gif");
+    WebPageAddUrl("/static/images/login/login-box-top.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    // Redirecting https://fusion-lb2.ptc.com/plms/app
+    // -> (redirection) https://fusion-lb2.ptc.com/plms/app/
+    // -> (redirection) https://fusion-lb2.ptc.com/plms/app/pages/Landing/
+    // -> (redirection) https://fusion-lb2.ptc.com/plms/app/pages/Login/;jsessionid=630799E26CA656E2BD333A0E666AA5D1.jvm2
+    WebPageLink("HTTP meta refresh tag in page plms", "Precision LMS : Login");
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://fusion-lb2.ptc.com/web/notifications/fusion_maint_msg.html?0.8718701570178657
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    ThinkTime(4.8);
+    WebPageUrl("https://fusion-lb2.ptc.com/web/notifications/fusion_maint_msg.html", "404 Not Found", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M001);
+ 
+    ThinkTime(60.0);
+    WebUrl("https://fusion-lb2.ptc.com/static/images/indicator.gif", 1.14);
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/javascript/firebug/firebug.html", "Firebug");
+ 
+    WebPageBack(2);
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_003);
+    WebPageSubmit(NULL, PLMS_APP_002, "/plms/app/"); // Form 1
+ 
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/header_banner.jpg");
+    WebPageAddUrl("/static/images/nav_nubbin.gif");
+    WebPageAddUrl("/static/images/tabs/orange_left.gif");
+    WebPageAddUrl("/static/images/tabs/orange_right.gif");
+    WebPageAddUrl("/static/images/tabs/blue_left.gif");
+    WebPageAddUrl("/static/images/tabs/blue_right.gif");
+    WebPageAddUrl("/static/images/drop_shadow_footer.jpg");
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/pages/Landing/", "Welcome to Precision LMS");
+    // Find training tab
+ 
+    ThinkTime(22.8);
+    MeasureStart("Find Training");
+ 
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    WebPageAddUrl("/static/images/close_box.gif");
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+    // Filter assessments
+ 
+    ThinkTime(187.3);
+    MeasureStart("TMainTimer2");
+    MeasureStop("Find Training");
+ 
+    ThinkTime(12.9);
+    WebPageUrl("https://fusion-lb2.ptc.com/static/javascript/firebug/firebug.html", "Firebug (#1)");
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/online_test_icon_sm.gif");
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/search", PLMS_APP_SEARCH005);
+    WebPageSubmit(NULL, PLMS_APP_SEARCH004, "search"); // Form 1
+    MeasureStop("TMainTimer2");
+ 
+    //   Launch assessment  
+ 
+    ThinkTime(39.2);
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/search", PLMS_APP_SEARCH006, 1.08);
+    WebUrl("https://fusion-lb2.ptc.com/static/images/online_test_icon.gif", 45.34);
+    //   Start assessment  
+ 
+    WebPageAddUrl("/static/images/online_test_icon_sm-active.gif");
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/viewer/selected_arrow.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    WebPageAddUrl("/static/images/viewer/assessment/knowledge_lg.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    // Redirecting -> (redirection) https://fusion-lb2.ptc.com/plms/app/?wicket:interface=viewerPageMap:1::::
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/search", 
+      "Assessment Viewer : Benchmark - Control Baseline (Windchill PDMLink 8.0)", PLMS_APP_SEARCH007);
+ 
+    ThinkTime(18.7);
+    WebPageUrl("https://fusion-lb2.ptc.com/static/javascript/firebug/firebug.html", "Firebug (#2)");
+ 
+    ThinkTime(9.9);
+    MeasureStart("TMainTimer3");
+ 
+    WebUrl("https://fusion-lb2.ptc.com/static/images/indicator.gif", 0.11);
+ 
+    WebPageBack();
+ 
+    WebPageAddUrl("/static/images/viewer/assessment/knowledge_question_answered.gif");
+    WebCookieSet(
+      "fusion.viewstate.ieFudge=12%2C31%2C4%2C37; domain=.ptc.com; path=/plms/app; expires=Mon, 10 Jun 2019 19:46:37 GMT", 
+      "https://fusion-lb2.ptc.com/plms/app/");
+    WebCookieSet(
+      "fusion.viewstate.currentSessionId=195f797a-36ba-4dce-86f6-3811bc532200; domain=.ptc.com; path=/plms/app; expires=Mon, 10"
+      " Jun 2019 19:46:37 GMT", "https://fusion-lb2.ptc.com/plms/app/");
+    WebCookieSet("fusion.viewstate.width=227; domain=.ptc.com; path=/plms/app; expires=Mon, 10 Jun 2019 19:46:37 GMT", 
+      "https://fusion-lb2.ptc.com/plms/app/");
+    WebCookieSet("fusion.viewstate.minimized=; domain=.ptc.com; path=/plms/app; expires=Mon, 10 Jun 2019 19:46:37 GMT", 
+      "https://fusion-lb2.ptc.com/plms/app/");
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_009);
+    WebPageSubmit(NULL, PLMS_APP_008, "/plms/app/ (#1)"); // Form 1
+    MeasureStop("TMainTimer3");
+ 
+    ThinkTime(21.8);
+    MeasureStart("TMainTimer4");
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_011);
+    WebPageSubmit(NULL, PLMS_APP_010, "/plms/app/ (#2)"); // Form 1
+    MeasureStop("TMainTimer4");
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_013);
+    ThinkTime(16.6);
+    WebPageSubmit(NULL, PLMS_APP_012, "/plms/app/ (#3)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_015);
+    ThinkTime(7.2);
+    WebPageSubmit(NULL, PLMS_APP_014, "/plms/app/ (#4)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_017);
+    ThinkTime(7.1);
+    WebPageSubmit(NULL, PLMS_APP_016, "/plms/app/ (#5)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_019);
+    ThinkTime(8.2);
+    WebPageSubmit(NULL, PLMS_APP_018, "/plms/app/ (#6)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_021);
+    ThinkTime(8.4);
+    WebPageSubmit(NULL, PLMS_APP_020, "/plms/app/ (#7)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_023);
+    ThinkTime(6.3);
+    WebPageSubmit(NULL, PLMS_APP_022, "/plms/app/ (#8)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_025);
+    ThinkTime(7.4);
+    WebPageSubmit(NULL, PLMS_APP_024, "/plms/app/ (#9)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_027);
+    ThinkTime(7.0);
+    WebPageSubmit(NULL, PLMS_APP_026, "/plms/app/ (#10)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_029);
+    ThinkTime(7.0);
+    WebPageSubmit(NULL, PLMS_APP_028, "/plms/app/ (#11)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_031);
+    ThinkTime(7.1);
+    WebPageSubmit(NULL, PLMS_APP_030, "/plms/app/ (#12)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_033);
+    ThinkTime(6.9);
+    WebPageSubmit(NULL, PLMS_APP_032, "/plms/app/ (#13)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_035);
+    ThinkTime(6.7);
+    WebPageSubmit(NULL, PLMS_APP_034, "/plms/app/ (#14)"); // Form 1
+ 
+    WebPageBack();
+ 
+    WebPageSetActionUrlAbs("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_037);
+    ThinkTime(7.6);
+    WebPageSubmit(NULL, PLMS_APP_036, "/plms/app/ (#15)"); // Form 1
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/", 
+      "[Warning: String resource for 'com.ptc.fusion.web.pages.viewer.assessmen", PLMS_APP_038);
+ 
+    ThinkTime(39.6);
+    MeasureStart("Submit assessment");
+    //   Submit Assessmnet  
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/static/javascript/firebug/firebug.html", "Firebug (#3)");
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/", "/plms/app/ (#16)", PLMS_APP_039); // Ajax identified
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/", "/plms/app/ (#17)", PLMS_APP_040); // Ajax identified
+ 
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/header_banner.jpg");
+    WebPageAddUrl("/static/images/nav_nubbin.gif");
+    WebPageAddUrl("/static/images/tabs/orange_left.gif");
+    WebPageAddUrl("/static/images/tabs/blue_left.gif");
+    WebPageAddUrl("/static/images/tabs/blue_right.gif");
+    WebPageAddUrl("/static/images/tabs/orange_right.gif");
+    WebPageAddUrl("/static/images/drop_shadow_footer.jpg");
+    WebPageAddUrl("/static/images/random/nubbin_score.gif");
+    WebPageAddUrl("/static/images/random/your_score.jpg");
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/", "Assessment Result", PLMS_APP_041);
+    WebPageStoreContext(hWebStoredCtx_Assessment_Result);
+ 
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/search", "search (#1)", PLMS_APP_SEARCH042); // Ajax identified
+    MeasureStop("Submit assessment");
+ 
+    //   Answers tab
+ 
+    ThinkTime(46.2);
+    WebPageUrl("https://fusion-lb2.ptc.com/static/javascript/firebug/firebug.html", "Firebug (#4)");
+ 
+    WebPageAddUrl("/static/images/knowledge_question_unanswered.gif", FORM_NULL, 8);
+    WebPageAddUrl("/static/images/viewer/assessment/correct2.gif");
+    WebPageAddUrl("/static/images/viewer/assessment/incorrect2.gif");
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/", "/plms/app/ (#18)", PLMS_APP_043); // Ajax identified
+ 
+    ThinkTime(34.6);
+    MeasureStart("View all answers");
+    //   View all Answers
+ 
+    WebPageAddUrl("/static/images/online_test_icon_sm-active.gif");
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/viewer/selected_arrow.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    WebPageAddUrl("/static/images/viewer/assessment/knowledge_lg.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    // Redirecting -> (redirection) https://fusion-lb2.ptc.com/plms/app/?wicket:interface=viewerPageMap:3::::
+    WebPageUrl("https://fusion-lb2.ptc.com/plms/app/", 
+      "Assessment Viewer : Benchmark - Control Baseline (Windchill PDMLink 8.0) (#1)", PLMS_APP_044);
+ 
+    ThinkTime(10.4);
+    WebPageUrl("https://fusion-lb2.ptc.com/static/javascript/firebug/firebug.html", "Firebug (#5)");
+    MeasureStop("View all answers");
+ 
+    ThinkTime(28.2);
+    MeasureStart("Next Q Result");
+ 
+    WebUrl("https://fusion-lb2.ptc.com/static/images/indicator.gif", 0.11);
+    WebCookieSet(
+      "fusion.viewstate.currentSessionId=fe9e69f5-2862-4572-ba01-ed8965dfd5ec; domain=.ptc.com; path=/plms/app; expires=Mon, 10"
+      " Jun 2019 19:51:27 GMT", "https://fusion-lb2.ptc.com/plms/app/");
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_045, 4.86);
+    WebUrl("https://fusion-lb2.ptc.com/static/images/viewer/assessment/incorrect2.gif", 0.03);
+    WebUrl("https://fusion-lb2.ptc.com/static/images/viewer/assessment/incorrect2.gif");
+    MeasureStop("Next Q Result");
+ 
+    ThinkTime(10.1);
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_046, 7.77);
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_047, 7.53);
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_048, 7.41);
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_049, 47.28);
+    //   Close answer viewer
+    //   Details Tab
+    WebFormGet("https://fusion-lb2.ptc.com/plms/app/", PLMS_APP_050, 0.59);
+    WebUrl(
+      "https://fusion-lb2.ptc.com/plms/app/resources/org.apache.wicket.extensions.markup.html.tree.DefaultAbstractTree/res/tree"
+      "-table.css", 0.63);
+    WebUrl(
+      "https://fusion-lb2.ptc.com/plms/app/resources/org.apache.wicket.extensions.markup.html.tree.DefaultAbstractTree/res/dott"
+      "ed-line.png", 0.09);
+    WebUrl(
+      "https://fusion-lb2.ptc.com/plms/app/resources/org.apache.wicket.extensions.markup.html.tree.DefaultAbstractTree/res/tree"
+      "-images.png", 18.19);
+    //   Logout  
+ 
+    WebPageAddUrl("/static/images/login/login-top.jpg");
+    WebPageAddUrl("/static/images/login/login-bottom.jpg");
+    WebPageAddUrl("/static/images/login/arrow.gif");
+    WebPageAddUrl("/static/images/login/login-box-bottom.gif");
+    WebPageAddUrl("/static/images/login/login-box-top.gif");
+    // Redirecting https://fusion-lb2.ptc.com/plms/app/?wicket:interface=viewerPageMap:2:logoutLink::ILinkListener::
+    // -> (redirection) https://fusion-lb2.ptc.com/plms/app/pages/Login/wicket:pageMapName/viewerPageMap/
+    WebPageLink("Log Out", "Precision LMS : Login (#1)", 1, NULL, hWebStoredCtx_Assessment_Result); // Link 7
+    WebPageDeleteContext(hWebStoredCtx_Assessment_Result);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://fusion-lb2.ptc.com/web/notifications/fusion_maint_msg.html?0.9075002409442774
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    ThinkTime(4.9);
+    WebPageUrl("https://fusion-lb2.ptc.com/web/notifications/fusion_maint_msg.html", "404 Not Found (#1)", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M051);
+  end TMain;
+
+dclform
+  WEB_NOTIFICATIONS_FUSION_MAINT_M001:
+    ""                          := "0.8718701570178657";
+
+  PLMS_APP_002 <ENCODE_URICOMPONENT> :
+    "loginForm2_hf_0"           := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppName"          := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppVersion"       := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorAppCodeName"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorCookieEnabled"    := "" <USE_HTML_VAL> , // hidden, unchanged, value: "false"
+    "navigatorJavaEnabled"      := "" <USE_HTML_VAL> , // hidden, unchanged, value: "false"
+    "navigatorLanguage"         := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorPlatform"         := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "navigatorUserAgent"        := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenWidth"               := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenHeight"              := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "screenColorDepth"          := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "utcOffset"                 := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "userId"                    := "prof_pt_co3_mgr_0001@ptcunoemail.com", // changed
+    "password"                  := Decrypt("9VJxE5/6X8E="), // changed
+    "languages"                 := "0", // added
+    "loginButton"               := "1"; // added
+
+  PLMS_APP_003 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":0:loginForm:loginButton::IActivePageBehaviorListener:0:2",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.1303652507526334";
+
+  PLMS_APP_SEARCH004:
+    "findTrainingForm18_hf_0"   := "", // hidden, unchanged, value: ""
+    "tabs:panel:filterPanel:library" := "2266", // added
+    "tabs:panel:filterPanel:type" := "2", // added
+    "tabs:panel:filterPanel:contentType" := "0", // added
+    "tabs:panel:filterPanel:version" := "2273", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:panel:searchButton"   := "1"; // added
+
+  PLMS_APP_SEARCH005 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":3:findTrainingForm:tabs:panel:searchButton::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.2165789080676988";
+
+  PLMS_APP_SEARCH006 <ENCODE_BLANKS> :
+    // "wicket:interface"          := ":2:findTrainingForm:resultTable:learningItemRow:76:result:titleRow:titleLink::IBehaviorListener:0:-1",
+    "wicket:interface"          := ":3:findTrainingForm:resultTable:learningItemRow:76:result:titleRow:titleLink:1:IBehaviorListener:0:",
+    "random"                    := "0.9899839328076226";
+
+  PLMS_APP_SEARCH007 <ENCODE_BLANKS> :
+//    "wicket:interface"          := ":2:findTrainingForm:LightBox:content:startAssessment::ILinkListener::";
+    "wicket:interface"          := ":3:findTrainingForm:LightBox:content:startAssessment:1:ILinkListener::";
+
+  PLMS_APP_008:
+    "assessmentForm1fc_hf_0"    := "", // hidden, unchanged, value: ""
+    "response:group"            := "" <USE_HTML_VAL> , // unchanged, value: "radio21"
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_009 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.1869132066090043";
+
+  PLMS_APP_010:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm280_hf_0"    := "", // added
+    "response:group"            := "radio48", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.5790235592223218";
+
+  PLMS_APP_012:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm306_hf_0"    := "", // added
+    "response:group"            := "radio70", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.3096283220731711";
+
+  PLMS_APP_014:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm38a_hf_0"    := "", // added
+    "response:group"            := "radio89", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_015 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.2830882915018048";
+
+  PLMS_APP_016:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm40f_hf_0"    := "", // added
+    "response:group"            := "radio110", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_017 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.6964226799084164";
+
+  PLMS_APP_018:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm493_hf_0"    := "", // added
+    "response:group"            := "radio130", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_019 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.8632530332531704";
+
+  PLMS_APP_020:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm518_hf_0"    := "", // added
+    "response:group"            := "radio151", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_021 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.814933110912925";
+
+  PLMS_APP_022:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm59d_hf_0"    := "", // added
+    "response:group"            := "radio172", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_023 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.7703440906214364";
+
+  PLMS_APP_024:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm620_hf_0"    := "", // added
+    "response:group"            := "radio191", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_025 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.7494170751100271";
+
+  PLMS_APP_026:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm6a3_hf_0"    := "", // added
+    "response:group"            := "radio210", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_027 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.4480235927925908";
+
+  PLMS_APP_028:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm728_hf_0"    := "", // added
+    "response:group"            := "radio231", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_029 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.33427056049082615";
+
+  PLMS_APP_030:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm7ad_hf_0"    := "", // added
+    "response:group"            := "radio252", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_031 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.31239433760958013";
+
+  PLMS_APP_032:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm833_hf_0"    := "", // added
+    "response:group"            := "radio274", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_033 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.22743872889483857";
+
+  PLMS_APP_034:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm8b6_hf_0"    := "", // added
+    "response:group"            := "radio293", // changed
+    "proceed"                   := "1"; // added
+
+  PLMS_APP_035 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:proceed::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.6519204188362622";
+
+  PLMS_APP_036:
+    "assessmentForm1fc_hf_0"    := "" <SUPPRESS> , // hidden, suppressed, value: ""
+    "assessmentForm93b_hf_0"    := "", // added
+    "response:group"            := "radio314", // changed
+    "submitAssessment"          := "1"; // added
+
+  PLMS_APP_037 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:submitAssessment::IActivePageBehaviorListener:0:-1",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.45805161963512997";
+
+  PLMS_APP_038 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0::::";
+
+  PLMS_APP_039 <ENCODE_BLANKS> :
+    "wicket:interface"          := "modal-dialog-pagemap:0:ok::IBehaviorListener:0:",
+    "random"                    := "0.49224972055475824";
+
+  PLMS_APP_040 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:assessmentForm:confirmationBox::IBehaviorListener:1:-1",
+    "random"                    := "0.5421874854947313";
+
+  PLMS_APP_041 <ENCODE_BLANKS> :
+    "wicket:bookmarkablePage"   := "viewerPageMap:com.ptc.fusion.web.pages.assessment.AssessmentResultPage",
+    "examID"                    := "2588672",
+    "assignmentId"              := "2169447";
+
+  PLMS_APP_SEARCH042 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:1:content:tracker::IBehaviorListener:0:";
+
+  PLMS_APP_043 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:2:resultsTabs:tabs-container:tabs:1:link::IBehaviorListener:0:",
+    "random"                    := "0.7923559481720637";
+
+  PLMS_APP_044 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:2:resultsTabs:panel:viewAllLink::ILinkListener::";
+
+  PLMS_APP_045 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:3:content:assessmentForm:nextQuestionLink::IBehaviorListener:0:",
+    "random"                    := "0.249875010634522";
+
+  PLMS_APP_046 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:3:content:assessmentForm:nextQuestionLink::IBehaviorListener:0:-1",
+    "random"                    := "0.6673007659525557";
+
+  PLMS_APP_047 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:3:content:assessmentForm:nextQuestionLink::IBehaviorListener:0:-1",
+    "random"                    := "0.08915007800158286";
+
+  PLMS_APP_048 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:3:content:assessmentForm:nextQuestionLink::IBehaviorListener:0:-1",
+    "random"                    := "0.3745179420090923";
+
+  PLMS_APP_049 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:3:content:assessmentForm:nextQuestionLink::IBehaviorListener:0:-1",
+    "random"                    := "0.5696054395515215";
+
+  PLMS_APP_050 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:2:resultsTabs:tabs-container:tabs:2:link::IBehaviorListener:0:-1",
+    "random"                    := "0.6598288173940543";
+
+  WEB_NOTIFICATIONS_FUSION_MAINT_M051:
+    ""                          := "0.9075002409442774";
+

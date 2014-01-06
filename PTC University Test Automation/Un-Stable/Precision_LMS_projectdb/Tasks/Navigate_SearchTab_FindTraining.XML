@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Navigate to Search Tab in Find Training" Desc="Navigate to Search Tab in Find Training. &#xD;&#xA;The purpose is to get back to original &#xD;&#xA;state, otherwise application remembers the earlier tab selected." TaskID="149" Path="Navigate_SearchTab_FindTraining.XML">
+  <Step StepId="288" stepSeq="1" ObjectId="120" ObjectName="Find Training" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="290" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="1" stepSeq="3" ObjectId="203" ObjectName="FT_SearchTab" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="289" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="Wait for Search Tab" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

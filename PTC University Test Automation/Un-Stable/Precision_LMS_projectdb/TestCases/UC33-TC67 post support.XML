@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TC TCId="39" ManualTCId="UC33-TC67 post" TCName="Post support UC33-TC67 Purchase Perpetual access">
+  <WF>
+    <Task Name="Login to IPA" Desc="Performs login of a valid user into IPA" TaskSeq="1" ID="2">IPA Login.XML</Task>
+    <Task Name="EditLibAddLI" Desc="EditLibAddLI" TaskSeq="2" ID="56">EditLibAddLI.XML</Task>
+    <Task Name="LibraryAction" Desc="Take an actio on Library Like push/Download/Edit" TaskSeq="3" ID="13">LibraryAction.XML</Task>
+    <Task Name="packPro" Desc="packPro" TaskSeq="4" ID="10">packPro.XML</Task>
+    <Task Name="Login to LMS" Desc="Performs login of a valid user into LMS" TaskSeq="5" ID="1">Login.XML</Task>
+    <Task Name="FindInavlidTraining" Desc="FindInavlidTraining" TaskSeq="6" ID="65">FindInavlidTraining.XML</Task>
+    <Task Name="AssignLibToUsers" Desc="AssignLibToUsers" TaskSeq="7" ID="32">AssignLibToUsers.XML</Task>
+    <Task Name="Add Users To Lic" Desc="Add Users To Lic" TaskSeq="8" ID="39">Add Users To Lic.XML</Task>
+    <Task Name="Search and Select Learning Items" Desc="Search and Select Learning Items" TaskSeq="9" ID="50">Search_Select_LearningItems.XML</Task>
+  </WF>
+  <Data>
+    <TCDataSet Iteration="1" Mark="True" TCDataSetTag="">
+      <Task ID="2" Name="Login to IPA" TaskSeq="1">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;http://profqalab1.ptcnet.ptc.com:1010/ipa/app/pages/Login&quot;" ParamSeq="1" Parameterized="0" Data="http://profqalab1.ptcnet.ptc.com:1010/ipa/app/pages/Login">http://profqalab1.ptcnet.ptc.com:1010/ipa</Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="IPA_userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof_verify_manager@ptcunoemail.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="IPA_password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">prof7763</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="56" Name="EditLibAddLI" TaskSeq="2">
+        <TaskDataSet Iteration="1">
+          <Step StepId="118" ActionID="60800" ActionName="SelectItem" ObjectName="Type">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Assessment</Param>
+          </Step>
+          <Step StepId="117" ActionID="60800" ActionName="SelectItem" ObjectName="Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Pro/ENGINEER</Param>
+          </Step>
+          <Step StepId="115" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="114" ActionID="60908" ActionName="StoreRowNoOfCellText" ObjectName="ListOfLearningItems">
+            <Param Name="&quot;rowNum&quot;" ParamSeq="1" Parameterized="0" Data="rowNum">
+            </Param>
+            <Param Name="cell text" ParamSeq="2" Parameterized="1" Data="">Course Assessment - Advanced Assembly Management with Pro/ENGINEER Wildfire 2.0</Param>
+            <Param Name="&quot;2&quot;" ParamSeq="3" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+          <Step StepId="113" ActionID="60924" ActionName="ClickCheckboxInCell" ObjectName="ListOfLearningItems">
+            <Param Name="&quot;{rowNum}&quot;" ParamSeq="1" Parameterized="0" Data="{rowNum}">
+            </Param>
+            <Param Name="&quot;1&quot;" ParamSeq="2" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+          <Step StepId="110" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="109" ActionID="60106" ActionName="PressKeys" ObjectName="">
+            <Param Name="&quot;~{ENTER~}&quot;" ParamSeq="1" Parameterized="0" Data="~{ENTER~}">
+            </Param>
+          </Step>
+          <Step StepId="108" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="Seconds" ParamSeq="1" Parameterized="1" Data="">2</Param>
+          </Step>
+          <Step StepId="149" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="1" ActionID="60912" ActionName="StoreRowNoContainingCellText" ObjectName="listLibraryPanel">
+            <Param Name="&quot;RowofLib&quot;" ParamSeq="1" Parameterized="0" Data="RowofLib">
+            </Param>
+            <Param Name="cellText" ParamSeq="2" Parameterized="1" Data="">PTC Pro/FICIENCY Library UC33</Param>
+            <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+          <Step StepId="123" ActionID="60907" ActionName="ClickLinkAtCell" ObjectName="listLibraryPanel">
+            <Param Name="link" ParamSeq="1" Parameterized="1" Data="">Edit</Param>
+            <Param Name="&quot;{RowofLib}&quot;" ParamSeq="2" Parameterized="0" Data="{RowofLib}">
+            </Param>
+            <Param Name="&quot;5&quot;" ParamSeq="3" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="121" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="119" ActionID="60800" ActionName="SelectItem" ObjectName="Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Deutsch</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="13" Name="LibraryAction" TaskSeq="3">
+        <TaskDataSet Iteration="1">
+          <Step StepId="189" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="28" ActionID="60912" ActionName="StoreRowNoContainingCellText" ObjectName="listLibraryPanel">
+            <Param Name="&quot;RowofLib&quot;" ParamSeq="1" Parameterized="0" Data="RowofLib">
+            </Param>
+            <Param Name="cellText" ParamSeq="2" Parameterized="1" Data="">PTC Pro/FICIENCY Library UC33</Param>
+            <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1">
+            </Param>
+          </Step>
+          <Step StepId="27" ActionID="60907" ActionName="ClickLinkAtCell" ObjectName="listLibraryPanel">
+            <Param Name="link" ParamSeq="1" Parameterized="1" Data="">Push</Param>
+            <Param Name="&quot;{RowofLib}&quot;" ParamSeq="2" Parameterized="0" Data="{RowofLib}">
+            </Param>
+            <Param Name="&quot;5&quot;" ParamSeq="3" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="10" Name="packPro" TaskSeq="4">
+        <TaskDataSet Iteration="1">
+          <Step StepId="190" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;8&quot;" ParamSeq="1" Parameterized="0" Data="8">
+            </Param>
+          </Step>
+          <Step StepId="9" ActionID="60923" ActionName="StoreRowNumWithRowData" ObjectName="ProEffPackageTbl">
+            <Param Name="rowData" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+            <Param Name="&quot;rowProficiency&quot;" ParamSeq="2" Parameterized="0" Data="rowProficiency">
+            </Param>
+          </Step>
+          <Step StepId="8" ActionID="60907" ActionName="ClickLinkAtCell" ObjectName="ProEffPackageTbl">
+            <Param Name="link" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+            <Param Name="&quot;{rowProficiency}&quot;" ParamSeq="2" Parameterized="0" Data="{rowProficiency}">
+            </Param>
+            <Param Name="&quot;10&quot;" ParamSeq="3" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="1" Name="Login to LMS" TaskSeq="5">
+        <TaskDataSet Iteration="1">
+          <Step StepId="1" ActionID="60100" ActionName="OpenURL" ObjectName="">
+            <Param Name="&quot;http://profqalab1.ptcnet.ptc.com/plms/app/pages/Login/&quot;" ParamSeq="1" Parameterized="0" Data="http://profqalab1.ptcnet.ptc.com/plms/app/pages/Login/">http://profqalab1.ptcnet.ptc.com/plms/app/pages/Login/</Param>
+          </Step>
+          <Step StepId="2" ActionID="60200" ActionName="Set" ObjectName="userId">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">precisionuser6@plms.com</Param>
+          </Step>
+          <Step StepId="3" ActionID="60200" ActionName="Set" ObjectName="password">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">welcome</Param>
+          </Step>
+          <Step StepId="4" ActionID="60800" ActionName="SelectItem" ObjectName="languages">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">English</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="65" Name="FindInavlidTraining" TaskSeq="6">
+        <TaskDataSet Iteration="1">
+          <Step StepId="60" ActionID="60200" ActionName="Set" ObjectName="FT_searchKeyword">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">"Course Assessment - Advanced Assembly Management with Pro/ENGINEER Wildfire 2.0"</Param>
+          </Step>
+          <Step StepId="59" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Pro/ENGINEER</Param>
+          </Step>
+          <Step StepId="58" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Format">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Assessment</Param>
+          </Step>
+          <Step StepId="57" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">All Languages</Param>
+          </Step>
+          <Step StepId="56" ActionID="60800" ActionName="SelectItem" ObjectName="FT_CreatedBy">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">Anyone</Param>
+          </Step>
+          <Step StepId="153" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="61" ActionID="61202" ActionName="VerifyVisibility" ObjectName="InvalidTrainingMsg">
+            <Param Name="visibility" ParamSeq="1" Parameterized="1" Data="">TRUE</Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="32" Name="AssignLibToUsers" TaskSeq="7">
+        <TaskDataSet Iteration="1">
+          <Step StepId="67" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="73" ActionID="60800" ActionName="SelectItem" ObjectName="FT_CreatedBy">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="99" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="101" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;3&quot;" ParamSeq="1" Parameterized="0" Data="3">
+            </Param>
+          </Step>
+          <Step StepId="104" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;15&quot;" ParamSeq="1" Parameterized="0" Data="15">
+            </Param>
+          </Step>
+          <Step StepId="108" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="64" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10">
+            </Param>
+          </Step>
+          <Step StepId="70" ActionID="60200" ActionName="Set" ObjectName="ALW_SearchLibName">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="69" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="68" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Format">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="39" Name="Add Users To Lic" TaskSeq="8">
+        <TaskDataSet Iteration="1">
+          <Step StepId="151" ActionID="60101" ActionName="StoreVariable" ObjectName="">
+            <Param Name="&quot;Email&quot;" ParamSeq="1" Parameterized="0" Data="Email">
+            </Param>
+            <Param Name="data" ParamSeq="2" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="156" ActionID="60200" ActionName="Set" ObjectName="search_General">
+            <Param Name="&quot;{Email}&quot;" ParamSeq="1" Parameterized="0" Data="{Email}">
+            </Param>
+          </Step>
+          <Step StepId="155" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+      <Task ID="50" Name="Search and Select Learning Items" TaskSeq="9">
+        <TaskDataSet Iteration="1">
+          <Step StepId="70" ActionID="60200" ActionName="Set" ObjectName="ALW_SearchLibName">
+            <Param Name="value" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="99" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5">
+            </Param>
+          </Step>
+          <Step StepId="69" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Category">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="68" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Format">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="67" ActionID="60800" ActionName="SelectItem" ObjectName="FT_Language">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="73" ActionID="60800" ActionName="SelectItem" ObjectName="FT_CreatedBy">
+            <Param Name="item" ParamSeq="1" Parameterized="1" Data="">
+            </Param>
+          </Step>
+          <Step StepId="100" ActionID="60102" ActionName="Sleep" ObjectName="">
+            <Param Name="&quot;2&quot;" ParamSeq="1" Parameterized="0" Data="2">
+            </Param>
+          </Step>
+        </TaskDataSet>
+      </Task>
+    </TCDataSet>
+  </Data>
+</TC>

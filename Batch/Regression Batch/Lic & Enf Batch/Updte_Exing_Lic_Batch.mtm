@@ -1,0 +1,18 @@
+[Files]
+NumberOfFiles=2
+File1=D:\Fusion_QA\Automation\Regression Suite\Licensing & Enforcement\5. Update Existing License\sc_TC1_Updating_Existing_Lic;1
+File2=D:\Fusion_QA\Automation\Regression Suite\Licensing & Enforcement\5. Update Existing License\sc_TC2_Efft_Orgnl_Ord_Aftr_Updt_Ext_Lic;1
+[Report]
+CreateReport=Yes
+DefaultLocation=Yes
+ViewReport=Yes
+ReportHeader=Yes
+RunStartedHeader=Yes
+RunEndedHeader=Yes
+ReportLocation=Yes
+IterationsHeader=Yes
+[Mail]
+SendMail=3
+To=fusion-qa@ptc.com
+Subject=Test results from Regression batch run_Lic & Enforcement
+Message=Precision Regression scripts Batch for Lic & Enforcement will run every Saturday on Automation Machine at 05:00am IST.E-mail is sent to fusion-qa@ptc.com with attachments of the batch results.

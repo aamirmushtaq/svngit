@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Navigate LMS Main Tab" Desc="Navigate LMS Main Tab" TaskID="48" Path="NavigateLMS_MainTab.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="114" ObjectName="Welcome to Precision LMS" ObjectTypeId="3010" ActionId="61003" ActionName="ClickLinkByText">
+    <Param Name="MainTab" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="51" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

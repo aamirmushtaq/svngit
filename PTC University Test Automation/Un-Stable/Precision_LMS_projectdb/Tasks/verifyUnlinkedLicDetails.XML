@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="verifyUnlinkedLicDetails" Desc="verifyUnlinkedLicDetails" TaskID="86" Path="verifyUnlinkedLicDetails.XML">
+  <Step StepId="125" stepSeq="1" ObjectId="119" ObjectName="Administration" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="124" stepSeq="2" ObjectId="143" ObjectName="Manage Licenses" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="197" stepSeq="3" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="99986" ActionName="StoreRowNoContainingTextInArray">
+    <Param Name="&quot;LicDetailsRowNum&quot;" ParamSeq="1" Parameterized="0" Data="LicDetailsRowNum" />
+    <Param Name="License Name" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="194" stepSeq="4" ObjectId="181" ObjectName="TBL-ReviewModifyUserSettings" ObjectTypeId="3009" ActionId="60906" ActionName="VerifyCellText">
+    <Param Name="Available Users" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{LicDetailsRowNum}&quot;" ParamSeq="2" Parameterized="0" Data="{LicDetailsRowNum}" />
+    <Param Name="&quot;3&quot;" ParamSeq="3" Parameterized="0" Data="3" />
+  </Step>
+  <Step StepId="131" stepSeq="5" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

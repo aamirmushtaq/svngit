@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Verify Details tab(table header) in Assmt Results" Desc="Verify table header in Details tab within Assmt Results Page after submitting Assessment" TaskID="158" Path="VerifytableHeader_DetailsTab_AssmtResultPg.XML">
+  <Step StepId="258" stepSeq="1" ObjectId="361" ObjectName="Details Tab" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="283" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;4&quot;" ParamSeq="1" Parameterized="0" Data="4" />
+  </Step>
+  <Step StepId="288" stepSeq="3" ObjectId="373" ObjectName="Question Group Column title" ObjectTypeId="3012" ActionId="61204" ActionName="StorePropertyValue">
+    <Param Name="&quot;Question Group value&quot;" ParamSeq="1" Parameterized="0" Data="Question Group value" />
+    <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text" />
+  </Step>
+  <Step StepId="287" stepSeq="4" ObjectId="374" ObjectName="Total Questions Column title" ObjectTypeId="3012" ActionId="61204" ActionName="StorePropertyValue">
+    <Param Name="&quot;Total Questions value&quot;" ParamSeq="1" Parameterized="0" Data="Total Questions value" />
+    <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text" />
+  </Step>
+  <Step StepId="286" stepSeq="5" ObjectId="375" ObjectName="Answered Column title" ObjectTypeId="3012" ActionId="61204" ActionName="StorePropertyValue">
+    <Param Name="&quot;Answered value&quot;" ParamSeq="1" Parameterized="0" Data="Answered value" />
+    <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text" />
+  </Step>
+  <Step StepId="285" stepSeq="6" ObjectId="376" ObjectName="Percentage Column title" ObjectTypeId="3012" ActionId="61204" ActionName="StorePropertyValue">
+    <Param Name="&quot;Percentage value&quot;" ParamSeq="1" Parameterized="0" Data="Percentage value" />
+    <Param Name="&quot;text&quot;" ParamSeq="2" Parameterized="0" Data="text" />
+  </Step>
+  <Step StepId="284" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{Question Group value}&quot;" ParamSeq="1" Parameterized="0" Data="{Question Group value}" />
+    <Param Name="Exp Question Group" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True" />
+  </Step>
+  <Step StepId="291" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{Total Questions value}&quot;" ParamSeq="1" Parameterized="0" Data="{Total Questions value}" />
+    <Param Name="Exp Total Questions" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True" />
+  </Step>
+  <Step StepId="290" stepSeq="9" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{Answered value}&quot;" ParamSeq="1" Parameterized="0" Data="{Answered value}" />
+    <Param Name="Exp Answered" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True" />
+  </Step>
+  <Step StepId="289" stepSeq="10" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60110" ActionName="CompareString">
+    <Param Name="&quot;{Percentage value}&quot;" ParamSeq="1" Parameterized="0" Data="{Percentage value}" />
+    <Param Name="Exp Percentage" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;True&quot;" ParamSeq="3" Parameterized="0" Data="True" />
+  </Step>
+</Task>

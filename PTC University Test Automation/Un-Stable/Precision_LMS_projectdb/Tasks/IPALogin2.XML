@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="IPALogin2" Desc="IPALogin2" TaskID="3" Path="IPALogin2.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60100" ActionName="OpenURL">
+    <Param Name="&quot;http://fusion-lb1.ptc.com:8080/ipa/app/pages/Login&quot;" ParamSeq="1" Parameterized="0" Data="http://fusion-lb1.ptc.com:8080/ipa/app/pages/Login" />
+  </Step>
+  <Step StepId="2" stepSeq="2" ObjectId="37" ObjectName="IPA_userId" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="user" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="3" stepSeq="3" ObjectId="36" ObjectName="IPA_password" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="pwd" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="4" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60106" ActionName="PressKeys">
+    <Param Name="&quot;~{ENTER~}&quot;" ParamSeq="1" Parameterized="0" Data="~{ENTER~}" />
+  </Step>
+  <Step StepId="6" stepSeq="5" ObjectId="38" ObjectName="IPA_LoginBtn" ObjectTypeId="3003" ActionId="60303" ActionName="Click" />
+  <Step StepId="5" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+</Task>

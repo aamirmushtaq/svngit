@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="EmailNotifyforLicense" Desc="EmailNotifyforLicense" TaskID="40" Path="EmailNotifyforLicense.XML">
+  <Step StepId="140" stepSeq="1" ObjectId="209" ObjectName="Add Selected" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="137" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="1" stepSeq="3" ObjectId="155" ObjectName="ALW_Next" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="113" stepSeq="4" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="WaitTime" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="90" stepSeq="5" ObjectId="210" ObjectName="No Email" ObjectTypeId="3005" ActionId="60504" ActionName="Select" />
+  <Step StepId="114" stepSeq="6" ObjectId="228" ObjectName="Finish Link" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="116" stepSeq="7" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+</Task>

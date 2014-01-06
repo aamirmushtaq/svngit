@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="CreateOrder" Desc="CreateOrder" TaskID="14" Path="CreateOrder.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="32" ObjectName="OA_Orders" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="95" stepSeq="2" ObjectId="103" ObjectName="Create New Order" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="2" stepSeq="3" ObjectId="92" ObjectName="CreateEditOrder_customerNumber" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="CustomerNumber" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="3" stepSeq="4" ObjectId="91" ObjectName="CreateEditOrder_Select" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="4" stepSeq="5" ObjectId="90" ObjectName="Customer Email" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="CustomerEmail" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="5" stepSeq="6" ObjectId="93" ObjectName="territory" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Territory" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="6" stepSeq="7" ObjectId="89" ObjectName="salesOrderNumber" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="SalesOrdNumber" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="7" stepSeq="8" ObjectId="88" ObjectName="country" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Country" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="94" stepSeq="9" ObjectId="86" ObjectName="orderDate" ObjectTypeId="3002" ActionId="60206" ActionName="StoreText">
+    <Param Name="&quot;OrderDate&quot;" ParamSeq="1" Parameterized="0" Data="OrderDate" />
+  </Step>
+  <Step StepId="9" stepSeq="10" ObjectId="86" ObjectName="orderDate" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="&quot;{OrderDate}&quot;" ParamSeq="1" Parameterized="0" Data="{OrderDate}" />
+  </Step>
+  <Step StepId="8" stepSeq="11" ObjectId="87" ObjectName="soldBy" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="SoldBy" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="111" stepSeq="12" ObjectId="85" ObjectName="Add New License" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="112" stepSeq="13" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60117" ActionName="SelectFrame">
+    <Param Name="&quot;relative=top&quot;" ParamSeq="1" Parameterized="0" Data="relative=top" />
+  </Step>
+  <Step StepId="119" stepSeq="14" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

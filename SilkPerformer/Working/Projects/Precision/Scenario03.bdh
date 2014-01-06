@@ -1,0 +1,566 @@
+//----------------------------------------------------------------------
+// Recorded 6/16/2009 by SilkPerformer Recorder v7.8.0.3482
+//----------------------------------------------------------------------
+
+var
+
+dclrand
+
+
+dclfunc
+  function fScenario03
+  var
+    hWebStoredCtx_Precision_LMS_Find_Trainin : number;
+  begin
+    
+    ThinkTime(rShortTime);
+    // Find training
+  
+    WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", UTM_GIF005);
+    WebPageAddUrl("/static/images/header_banner.jpg");
+    WebPageAddUrl("/static/images/drop_shadow.jpg");
+    WebPageAddUrl("/static/images/nav_nubbin.gif");
+    WebPageAddUrl("/static/images/drop_shadow_footer.jpg");
+    WebPageAddUrl("/static/images/tabs/orange_left.gif");
+    WebPageAddUrl("/static/images/tabs/orange_right.gif");
+    WebPageAddUrl("/static/images/tabs/blue_right.gif");
+    WebPageAddUrl("/static/images/tabs/blue_left.gif");
+    WebCookieSet("__utmb=132614863.2.10.1245151342; domain=.ptc.com; path=/; expires=Sun, 16 Jun 2019 11:22:36 GMT", 
+      "https://precisionlmstest.ptc.com/static/images/precisionlms-logo.jpg", 2);
+    WebPageUrl("https://precisionlmstest.ptc.com/app/pages/Landing/", "Welcome to Precision LMS");
+ 
+    WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", UTM_GIF006);
+    WebCookieSet("__utmb=132614863.3.10.1245151342; domain=.ptc.com; path=/; expires=Sun, 16 Jun 2019 11:22:41 GMT", 
+      "https://precisionlmstest.ptc.com/static/images/filters/filter_bottom_curve.jpg", 2);
+    WebPageAddUrl("/static/images/filters/filter_bottom_curve.jpg");
+    WebPageAddUrl("/static/images/close_box.gif");
+    WebPageAddUrl("/static/images/filters/filter_top_curve.jpg");
+    ThinkTime(4.6);
+    WebPageLink("Find Training", "Precision LMS : Find Training"); // Link 3
+    WebPageStoreContext(hWebStoredCtx_Precision_LMS_Find_Trainin);
+ 
+    WebPageAddUrl("/static/images/expand.gif");
+    WebPageSetActionUrlAbs("https://precisionlmstest.ptc.com/app/search", SC03_008);
+    ThinkTime(8.9);
+    WebPageSubmit(NULL, SC03_007, "search"); // Form 1
+ 
+    // WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", UTM_GIF010);
+    WebPageAddUrl("/static/images/e-learning_icon_sm-active.gif");
+    WebPageAddUrl("/static/images/hide_course_map.gif");
+    WebPageAddUrl("/static/images/show_course_map.gif");
+    WebPageAddUrl("/static/images/optimize_mode.gif");
+    WebPageAddUrl("/static/images/excercise_mode.gif");
+    WebPageAddUrl("/static/images/add_bookmark.gif");
+    WebPageAddUrl("/static/images/email.gif");
+    WebPageAddUrl("/static/images/online_test_icon_sup_sm.gif");
+    WebPageAddUrl("/static/images/viewer/selected_arrow.gif");
+    WebPageAddUrl("/static/images/viewer/detail-div-drag-bar.png");
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player
+    // _media/images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl(
+      "/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player_media/images/background_darker"
+      ".gif");
+    WebPageAddUrl(
+      "/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player_media/images/bg_table_light.gi"
+      "f");
+    // Redirecting -> (redirection) https://precisionlmstest.ptc.com/app/?wicket:interface=viewerPageMap:0::::
+    WebCookieSet("__utmb=132614863.4.10.1245151342; domain=.ptc.com; path=/; expires=Sun, 16 Jun 2019 11:22:55 GMT", 
+      "https://precisionlmstest.ptc.com/static/javascript/jquery.ui-1.0/jquery.dimensions.js", 2);
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player
+    // _media/images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageParseUrl("Custom Frame in page Course Viewer : Advanced Assembly Management", "content\" src=\"", "\"", 
+      WEB_FLAG_IGNORE_WHITE_SPACE);
+    ThinkTime(5.4);
+    WebPageUrl("https://precisionlmstest.ptc.com/app/search", "Course Viewer : Advanced Assembly Management", SC03_009);
+   
+
+    WebPageAddUrl("player_preload.swf");
+    ThinkTime  (rVideoLecture);
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/playe"
+      "r_media/player_config.xml", "player_config.xml"); // Ajax identified
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebUrl("https://precisionlmstest.ptc.com/static/images/indicator.gif", 0.01);
+    WebCookieSet("fusion.viewstate.ieFudge=12%2C38%2C4%2C30; domain=.ptc.com; path=/app; expires=Sun, 16 Jun 2019 11:23:11 GMT",
+       "https://precisionlmstest.ptc.com/app/");
+    WebCookieSet(
+      "fusion.viewstate.currentSessionId=50ffabb2-a673-4fe6-9478-1a44eb099b87; domain=.ptc.com; path=/app; expires=Sun, 16 Jun "
+      "2019 11:23:11 GMT", "https://precisionlmstest.ptc.com/app/");
+    WebCookieSet("fusion.viewstate.width=227; domain=.ptc.com; path=/app; expires=Sun, 16 Jun 2019 11:23:11 GMT", 
+      "https://precisionlmstest.ptc.com/app/");
+    WebCookieSet("fusion.viewstate.minimized=; domain=.ptc.com; path=/app; expires=Sun, 16 Jun 2019 11:23:11 GMT", 
+      "https://precisionlmstest.ptc.com/app/");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_011, 3.08);
+ 
+    SetEncoding("ISO-8859-1");
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/ptcu_course_intro.html",
+       "Pro/ENGINEER Courseware Introduction");
+ 
+    ThinkTime(8.9);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_012, 0.73);
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/legal_agreement.html", 
+      "legal_agreement.html");
+ 
+    ThinkTime(4.6);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_013, 0.69);
+ 
+    WebPageUrl("https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/overview.html",
+       "overview.html");
+ 
+    ThinkTime(3.1);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_014, 0.50);
+ 
+    WebPageBack(4);
+ 
+    SetEncoding("UTF-8");
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player
+    // _media/images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl("player_media/images/background_darker.gif");
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/lecture/player
+    // _media/images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageLink("Custom Frame in page Course Viewer : Advanced Assembly Management", "PTC University");
+    // on flash content
+ 
+    ThinkTime(21.1);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_015, 2.39);
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/demo1/launche"
+      "r.html", "Created by Camtasia Studio 3");
+    
+     
+    WebPageAddUrl("player_preload.swf");
+    ThinkTime  (rVideoLecture);
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/demo1/player_"
+      "config.xml", "player_config.xml (#1)"); // Ajax identified
+    // on flash exercise
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_016, 16.08);
+ 
+    SetEncoding("ISO-8859-1");
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_01/tb_output/ind"
+      "ex.htm", "Module 01: Introduction");
+ 
+    ThinkTime(5.2);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_017, 0.53);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/lecture/player
+    // _media/images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl("player_media/images/background_darker.gif");
+    WebPageAddUrl("player_media/images/bg_table_light.gif");
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/lecture/player
+    // _media/images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/lecture/launc"
+      "her.html", "PTC University (#1)");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/lecture/playe"
+      "r_media/player_config.xml", "player_config.xml (#2)"); // Ajax identified
+    // flash content
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_018, 1.95);
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/demo1/launche"
+      "r.html", "Created by Camtasia Studio 3 (#1)");
+ 
+    
+    WebPageAddUrl("player_preload.swf");
+    ThinkTime  (rVideoLecture);
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/demo1/player_"
+      "config.xml", "player_config.xml (#3)"); // Ajax identified
+    // flash exercise
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+     
+    ThinkTime(rShortTime);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_019, 4.92);
+ 
+    SetEncoding("ISO-8859-1");
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_02/tb_output/ind"
+      "ex.htm", "Module 02: Creating Design Frameworks");
+ 
+    ThinkTime(7.5);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_020, 0.45);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_03/lecture/player
+    // _media/images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl("player_media/images/background_darker.gif");
+    WebPageAddUrl("player_media/images/bg_table_light.gif");
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_03/lecture/player
+    // _media/images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_03/lecture/launc"
+      "her.html", "PTC University (#2)");
+    
+    
+    WebPageAddUrl("player_preload.swf");
+    ThinkTime  (rVideoLecture);
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_03/lecture/playe"
+      "r_media/player_config.xml", "player_config.xml (#4)"); // Ajax identified
+    // flash content
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_021, 2.41);
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_03/demo1/launche"
+      "r.html", "Created by Camtasia Studio 3 (#2)");
+ 
+    WebPageAddUrl("player_preload.swf");    
+    ThinkTime  (rVideoDemo);
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_03/demo1/player_"
+      "config.xml", "player_config.xml (#5)"); // Ajax identified
+    // flash exercise
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_022, 27.94);
+ 
+    SetEncoding("ISO-8859-1");
+    ThinkTime  (rVideoLecture);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_03/tb_output/ind"
+      "ex.htm", "Module 03: Communicating Design Information");
+ 
+    ThinkTime(4.7);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_023, 0.67);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_04/lecture/player
+    // _media/images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl("player_media/images/background_darker.gif");
+    WebPageAddUrl("player_media/images/bg_table_light.gif");
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_04/lecture/player
+    // _media/images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_04/lecture/launc"
+      "her.html", "PTC University (#3)");
+ 
+    
+    WebPageAddUrl("player_preload.swf");
+    ThinkTime  (rVideoLecture);    
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_04/lecture/playe"
+      "r_media/player_config.xml", "player_config.xml (#6)"); // Ajax identified
+    // flash content
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_024, 5.55);
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_04/demo1/launche"
+      "r.html", "Created by Camtasia Studio 3 (#3)");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_04/demo1/player_"
+      "config.xml", "player_config.xml (#7)"); // Ajax identified
+    // flash exercise
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_025, 5.86);
+ 
+    SetEncoding("ISO-8859-1");
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_04/tb_output/ind"
+      "ex.htm", "Module 04: Analyzing and Modifying Assembly Structures");
+ 
+    ThinkTime(6.5);
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_026, 0.67);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_05/lecture/player
+    // _media/images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageAddUrl("player_media/images/background_darker.gif");
+    WebPageAddUrl("player_media/images/bg_table_light.gif");
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_05/lecture/player
+    // _media/images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_05/lecture/launc"
+      "her.html", "PTC University (#4)");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_05/lecture/playe"
+      "r_media/player_config.xml", "player_config.xml (#8)"); // Ajax identified
+    // flash content
+ 
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_027, 3.45);
+ 
+    SetEncoding("UTF-8");
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_05/demo1/launche"
+      "r.html", "Created by Camtasia Studio 3 (#4)");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_05/demo1/player_"
+      "config.xml", "player_config.xml (#9)"); // Ajax identified
+ 
+    // flash exercise
+ 
+ //   WebModifyHttpHeader("Accept-Language", "en-us");
+//    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_028, 20.81);
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/player
+    // _media/images/spacer.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/launc"
+      "her.html", "PTC University (#5)");
+ 
+    // Info: HTTP status "404 Not Found" for URL: 
+    // https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/player
+    // _media/images/background_darker.gif
+    WebIgnoreServerError(404, SEVERITY_INFORMATIONAL, 1);
+    ThinkTime(4.0);
+    WebUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/playe"
+      "r_media/images/background_darker.gif", 0.09);
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebFormGet(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/playe"
+      "r_media/player_controller.swf", CONTENT_COACH_CP_B989E031_C22C_4029, 0.00);
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/playe"
+      "r_media/images/bg_table_light.gif", 0.83);
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/playe"
+      "r_media/player_config.xml", 0.20);
+    WebUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/playe"
+      "r_media/player_preload.swf", 0.88);
+    WebUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/lecture/playe"
+      "r_media/player.swf", 12.23);
+    // flash content
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebFormGet("https://precisionlmstest.ptc.com/app/", SC03_030, 2.95);
+ 
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/demo1/launche"
+      "r.html", "Created by Camtasia Studio 3 (#5)");
+ 
+    WebPageAddUrl("player_preload.swf");
+    WebPageAddUrl("player.swf");
+    WebModifyHttpHeader("Accept-Language", NULL, WEB_MODIFY_OPT_Remove);
+    WebPageUrl(
+      "https://precisionlmstest.ptc.com/content/coach_cp_b989e031-c22c-4405-acde-935055d74b32//TRN-1705/module_08/demo1/player_"
+      "config.xml", "player_config.xml (#10)"); // Ajax identified
+    // flash exercise
+ 
+    WebPageAddUrl("https://ssl.google-analytics.com/__utm.gif", SC03_UTM_GIF031);
+    WebPageAddUrl("/static/images/login/login-top.jpg");
+    WebPageAddUrl("/static/images/login/login-bottom.jpg");
+    WebPageAddUrl("/static/images/login/arrow.gif");
+    WebPageAddUrl("/static/images/login/login-box-bottom.gif");
+    WebPageAddUrl("/static/images/login/login-box-top.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite_right.gif");
+    WebPageAddUrl("/static/images/buttons/buttons_sprite.gif");
+    // Redirecting https://precisionlmstest.ptc.com/app/search?wicket:interface=:2:logoutLink::ILinkListener::
+    // -> (redirection) https://precisionlmstest.ptc.com/app/pages/Login/
+    WebModifyHttpHeader("Accept-Language", "en-us");
+    WebCookieSet("__utmb=132614863.5.10.1245151342; domain=.ptc.com; path=/; expires=Sun, 16 Jun 2019 11:31:48 GMT", 
+      "https://precisionlmstest.ptc.com/static/javascript/viewerCheck.js", 2);
+    WebPageLink("Log Out", "Precision LMS : Login (#1)", 1, NULL, hWebStoredCtx_Precision_LMS_Find_Trainin); // Link 6
+    WebPageDeleteContext(hWebStoredCtx_Precision_LMS_Find_Trainin);
+ 
+    ThinkTime(5.2);
+    WebPageUrl("https://precisionlmstest.ptc.com/web/notifications/fusion_maint_msg.html", "Precision LMS Maintenance (#1)", 
+      WEB_NOTIFICATIONS_FUSION_MAINT_M032);
+  end fScenario03;
+
+dclform
+  
+  SC03_007 <ENCODE_ESCAPE> :
+    "id18_hf_0"                 := "" <USE_HTML_VAL> , // hidden, unchanged, value: ""
+    "tabs:panel:searchKeyword"  := "\"Advanced Assembly Management\"", // changed
+    "tabs:panel:filterPanel:library" := "0", // added
+    "tabs:panel:filterPanel:type" := "3", // added
+    "tabs:panel:filterPanel:contentType" := "0", // added
+    "tabs:panel:filterPanel:version" := "0", // added
+    "tabs:panel:filterPanel:language" := "en", // added
+    "tabs:panel:searchButton"   := "1"; // added
+
+  SC03_008 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:findTrainingForm:tabs:panel:searchButton::IActivePageBehaviorListener:0:",
+    "wicket:ignoreIfNotActive"  := "true",
+    "random"                    := "0.9624269970223849";
+
+  SC03_009 <ENCODE_BLANKS> :
+    "wicket:interface"          := ":4:findTrainingForm:resultTable:learningItemRow:1:result:titleRow:titleLink:1:ILinkListener::";    
+
+  SC03_011 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:learningItemTree:i:1:nodeComponent::IBehaviorListener:0:",
+    "random"                    := "0.2844059064003589";
+
+  SC03_012 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7474333817952694";
+
+  SC03_013 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.30749443254275566";
+
+  SC03_014 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8529449662186745";
+
+  SC03_015 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.1588547079032741";
+
+  SC03_016 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.2276768029325097";
+
+  SC03_017 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.28649980731669655";
+
+  SC03_018 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.02409113243723765";
+
+  SC03_019 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.5693870462165287";
+
+  SC03_020 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.923338582772389";
+
+  SC03_021 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.523907100486444";
+
+  SC03_022 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.018461743824724153";
+
+  SC03_023 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.26093501657824514";
+
+  SC03_024 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.8680367385166549";
+
+  SC03_025 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.13793140209914184";
+
+  SC03_026 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7374948210320756";
+
+  SC03_027 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.7351526388701131";
+
+  SC03_028 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:learningItemTree:i:27:nodeComponent::IBehaviorListener:0:-1",
+    "random"                    := "0.43306218485519893";
+
+  CONTENT_COACH_CP_B989E031_C22C_4029 <ENCODE_ESCAPE> :
+    "csConfigFile"              := "player_media/player_config.xml";
+
+  SC03_030 <ENCODE_BLANKS> :
+    "wicket:interface"          := "viewerPageMap:0:nextLink::IBehaviorListener:0:",
+    "random"                    := "0.12584944170840734";
+
+  SC03_UTM_GIF031 <ENCODE_ESCAPE> :
+    "utmwv"                     := "4.3",
+    "utmn"                      := "1473246272",
+    "utmhn"                     := "precisionlmstest.ptc.com",
+    "utmcs"                     := "utf-8",
+    "utmsr"                     := "1920x1200",
+    "utmsc"                     := "8-bit",
+    "utmul"                     := "en-us",
+    "utmje"                     := "1",
+    "utmfl"                     := "8.0 r24",
+    "utmdt"                     := "Precision LMS : Login",
+    "utmhid"                    := "22881495",
+    "utmr"                      := "0",
+    "utmp"                      := "/app/pages/Login/",
+    "utmac"                     := "UA-4053099-1",
+    "utmcc"                     := "__utma=132614863.558735213706736250.1244801435.1245151163.1245151342.17;+__utmz=132614863.1"
+                                   "244801435.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);" <ENCODE_URICOMPONENT> ;
+                                   
+  WEB_NOTIFICATIONS_FUSION_MAINT_M032:
+    ""                          := "0.8885544869602882";                                   
+

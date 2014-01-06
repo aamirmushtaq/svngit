@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="VerifyBookMark" Desc="VerifyBookMark" TaskID="108" Path="VerifyBookMark.XML">
+  <Step StepId="236" stepSeq="1" ObjectId="309" ObjectName="My Bookmarks Link" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="1" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="wait" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="238" stepSeq="3" ObjectId="311" ObjectName="MyBookMarksViewer TBL" ObjectTypeId="3009" ActionId="60912" ActionName="StoreRowNoContainingCellText">
+    <Param Name="KeyRowBookMark1" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="BookMarkData1" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="237" stepSeq="4" ObjectId="311" ObjectName="MyBookMarksViewer TBL" ObjectTypeId="3009" ActionId="60905" ActionName="StoreCellText">
+    <Param Name="keyPath" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="RowBookMark1" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="&quot;1&quot;" ParamSeq="3" Parameterized="0" Data="1" />
+  </Step>
+  <Step StepId="239" stepSeq="5" ObjectId="312" ObjectName="CancelBtn_MyBookMarks" ObjectTypeId="3007" ActionId="99987" ActionName="ClickIfExists" />
+  <Step StepId="240" stepSeq="6" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60111" ActionName="VerifyStringContainsValue">
+    <Param Name="strMainString" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="strSubString" ParamSeq="2" Parameterized="1" Data="" />
+    <Param Name="blnCaseSensitive" ParamSeq="3" Parameterized="1" Data="" />
+  </Step>
+</Task>

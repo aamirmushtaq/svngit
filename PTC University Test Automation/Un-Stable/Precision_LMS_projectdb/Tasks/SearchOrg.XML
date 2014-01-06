@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="SearchOrg" Desc="SearchOrg" TaskID="6" Path="SearchOrg.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="34" ObjectName="OA_Organizations" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="6" stepSeq="2" ObjectId="18" ObjectName="ORG_keyword" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="CustNum" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="7" stepSeq="3" ObjectId="17" ObjectName="ORG_Search" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="8" stepSeq="4" ObjectId="16" ObjectName="ORG_listOrganization" ObjectTypeId="3009" ActionId="60904" ActionName="StoreRowCount">
+    <Param Name="NoOfRows" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>

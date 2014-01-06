@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="packPro" Desc="packPro" TaskID="10" Path="packPro.XML">
+  <Step StepId="7" stepSeq="1" ObjectId="28" ObjectName="PC_Pro/FICIENCY" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="190" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;8&quot;" ParamSeq="1" Parameterized="0" Data="8" />
+  </Step>
+  <Step StepId="9" stepSeq="3" ObjectId="44" ObjectName="ProEffPackageTbl" ObjectTypeId="3009" ActionId="60923" ActionName="StoreRowNumWithRowData">
+    <Param Name="rowData" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;rowProficiency&quot;" ParamSeq="2" Parameterized="0" Data="rowProficiency" />
+  </Step>
+  <Step StepId="8" stepSeq="4" ObjectId="44" ObjectName="ProEffPackageTbl" ObjectTypeId="3009" ActionId="60907" ActionName="ClickLinkAtCell">
+    <Param Name="PackageAction" ParamSeq="1" Parameterized="1" Data="" />
+    <Param Name="&quot;{rowProficiency}&quot;" ParamSeq="2" Parameterized="0" Data="{rowProficiency}" />
+    <Param Name="&quot;10&quot;" ParamSeq="3" Parameterized="0" Data="10" />
+  </Step>
+</Task>

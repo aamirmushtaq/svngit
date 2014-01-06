@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="Add New Lic to an Order" Desc="Adds a new license to an organization order in IPA" TaskID="15" Path="Add New Lic To Order.XML">
+  <Step StepId="18" stepSeq="1" ObjectId="85" ObjectName="Add New License" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="20" stepSeq="2" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;5&quot;" ParamSeq="1" Parameterized="0" Data="5" />
+  </Step>
+</Task>

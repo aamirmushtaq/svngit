@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Task TaskName="FindInavlidTraining" Desc="FindInavlidTraining" TaskID="65" Path="FindInavlidTraining.XML">
+  <Step StepId="1" stepSeq="1" ObjectId="120" ObjectName="Find Training" ObjectTypeId="3007" ActionId="60700" ActionName="ClickAndWait" />
+  <Step StepId="60" stepSeq="2" ObjectId="201" ObjectName="FT_searchKeyword" ObjectTypeId="3002" ActionId="60200" ActionName="Set">
+    <Param Name="Library" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="59" stepSeq="3" ObjectId="197" ObjectName="FT_Category" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Category" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="58" stepSeq="4" ObjectId="195" ObjectName="FT_Format" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Format" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="57" stepSeq="5" ObjectId="193" ObjectName="FT_Language" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="Language" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="56" stepSeq="6" ObjectId="194" ObjectName="FT_CreatedBy" ObjectTypeId="3008" ActionId="60800" ActionName="SelectItem">
+    <Param Name="CreatedBy" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+  <Step StepId="55" stepSeq="7" ObjectId="190" ObjectName="ALW_SearchBtn" ObjectTypeId="3007" ActionId="60703" ActionName="Click" />
+  <Step StepId="153" stepSeq="8" ObjectId="0" ObjectName="" ObjectTypeId="0" ActionId="60102" ActionName="Sleep">
+    <Param Name="&quot;10&quot;" ParamSeq="1" Parameterized="0" Data="10" />
+  </Step>
+  <Step StepId="61" stepSeq="9" ObjectId="265" ObjectName="InvalidTrainingMsg" ObjectTypeId="3012" ActionId="61202" ActionName="VerifyVisibility">
+    <Param Name="visibility" ParamSeq="1" Parameterized="1" Data="" />
+  </Step>
+</Task>
